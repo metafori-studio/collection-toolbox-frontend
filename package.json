@@ -1,0 +1,9 @@
+{
+  "name": "@metafori/collection-toolbox-components",
+  "version": "1.0.0",
+  "author": "Metafori",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ]
+}
