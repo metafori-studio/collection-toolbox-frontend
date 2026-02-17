@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="p-4">
     <ExampleComponent
       char="👁️"
       :count="count"
