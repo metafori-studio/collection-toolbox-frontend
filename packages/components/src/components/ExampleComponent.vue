@@ -13,5 +13,5 @@
 defineProps<{
   char: string
   count: number
-}>()
+}>();
 </script>
