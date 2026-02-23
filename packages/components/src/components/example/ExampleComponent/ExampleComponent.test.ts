@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 
 import { mount } from '@vue/test-utils';
-import ExampleComponent from '../ExampleComponent.vue';
+import ExampleComponent from './ExampleComponent.vue';
 
 describe('ExampleComponent', () => {
   it('renders the char repeated count times', () => {
