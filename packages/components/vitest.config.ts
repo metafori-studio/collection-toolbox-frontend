@@ -14,15 +14,15 @@ export default mergeConfig(viteConfig, defineConfig({
       test: {
         environment: 'jsdom',
         exclude: [...configDefaults.exclude, 'e2e/**'],
-        root: fileURLToPath(new URL('./', import.meta.url))
-      }
+        root: fileURLToPath(new URL('./', import.meta.url)),
+      },
     }, {
       extends: true,
       plugins: [
       // The plugin will run tests for the stories defined in your Storybook config
       // See options at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon#storybooktest
       storybookTest({
-        configDir: path.join(dirname, '.storybook')
+        configDir: path.join(dirname, '.storybook'),
       })],
       test: {
         name: 'storybook',
@@ -31,11 +31,11 @@ export default mergeConfig(viteConfig, defineConfig({
           headless: true,
           provider: playwright({}),
           instances: [{
-            browser: 'chromium'
-          }]
+            browser: 'chromium',
+          }],
         },
-        setupFiles: ['.storybook/vitest.setup.ts']
-      }
-    }]
-  }
+        setupFiles: ['.storybook/vitest.setup.ts'],
+      },
+    }],
+  },
 }));
