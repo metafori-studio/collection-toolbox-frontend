@@ -3,9 +3,7 @@
     <input
       v-model="model"
       type="text"
-      class="
-        w-full rounded-md bg-neutral-0 border border-neutral-300 px-3 py-2 pr-7
-      "
+      class="w-full rounded-lg bg-neutral-0 border border-neutral-300 px-3 py-2 pr-7 text-sm"
       :class="[focusClasses, {
         // Disabled
         [disabledClasses]: disabled,

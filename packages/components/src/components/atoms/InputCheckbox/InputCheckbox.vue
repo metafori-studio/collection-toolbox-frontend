@@ -1,12 +1,12 @@
 <template>
   <label
     class="
-      flex justify-between border px-2 py-2 cursor-pointer
-      hover:rounded-md hover:bg-primary-100 hover:border-transparent
+      flex justify-between border px-2 py-2 cursor-pointer text-sm
+      hover:rounded-lg hover:bg-primary-100 hover:border-transparent
     "
     :class="{
       'border border-transparent border-b-neutral-200': !model,
-      'rounded-md border border-primary-600 text-primary-600': model,
+      'rounded-lg border border-primary-600 text-primary-600': model,
     }"
     :for="id"
   >
