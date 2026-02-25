@@ -1,9 +1,5 @@
 @import "tailwindcss";
 
-body {
-  font-size: 14px;
-}
-
 @theme {
   --color-primary-50: #E5F0FF;
   --color-primary-100: #CDE0FF;
@@ -32,14 +28,4 @@ body {
   --color-status-error: #EF4444;
   --color-status-warning: #F59E0B;
   --color-status-success: #22C55E;
-
-  /* Typography */
-  --text-base: 14px;
-  --text-lg: 16px;
-
-  /* Radius */
-  --radius-none: 0;
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-full: 999px;
 }

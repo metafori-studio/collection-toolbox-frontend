@@ -1,10 +1,10 @@
 <template>
   <button
-    class="inline-flex gap-2 items-center rounded-md"
+    class="inline-flex gap-2 items-center rounded-lg font-bold"
     :class="[focusClasses, {
       // Sizes
-      'h-10 p-2 text-lg': size === 'regular',
-      'h-8 px-2 py-1': size === 'small',
+      'h-10 p-2': size === 'regular',
+      'h-8 px-2 py-1 text-sm': size === 'small',
 
       // Variants
       'bg-primary-500 text-neutral-0 hover:bg-primary-600 active:bg-primary-700': variant === 'primary',

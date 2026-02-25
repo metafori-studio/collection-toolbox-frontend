@@ -1,7 +1,7 @@
 <template>
   <button
     class="
-      inline-flex gap-1 items-center w-fit
+      inline-flex gap-1 items-center w-fit text-xs
       bg-primary-100 text-primary-600 rounded-full px-2 py-1 cursor-pointer
       hover:bg-primary-500 hover:text-primary-100
     "

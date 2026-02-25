@@ -1,8 +1,8 @@
 <template>
   <div
     class="
-      flex items-center rounded-md gap-2 px-3 py-2
-      bg-white border border-neutral-200
+      flex items-center rounded-lg gap-2 px-3 py-2
+      bg-white border border-neutral-200 text-sm
       hover:bg-primary-100
     "
   >
