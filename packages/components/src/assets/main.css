@@ -1,6 +1,15 @@
 @import "tailwindcss";
 
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/700.css";
+
+
 @theme {
+  /* Typography */
+  --font-sans: "Inter", serif;
+  --font-sans--font-feature-settings: font-feature-settings: 'liga' 1, 'calt' 1;
+
+  /* Colors */
   --color-primary-50: #E5F0FF;
   --color-primary-100: #CDE0FF;
   --color-primary-200: #A0C3FF;
