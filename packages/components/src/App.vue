@@ -20,10 +20,31 @@
       placeholder="Placeholder"
       :has-error="true"
     />
-    <InputCheckbox
-      label="Placeholder"
-      :count="2345"
+    <InputCheckboxList
+      v-model="checkboxVal"
+      name="check1"
+      :options="[
+        { value: 'one', label: 'One', count: 12 },
+        { value: 'two', label: 'Two', count: 23 },
+        { value: 'three', label: 'Three', count: 34 },
+        { value: 'four', label: 'Four', count: 45 },
+      ]"
     />
+
+    {{ checkboxVal }}
+
+    <InputRadioList
+      v-model="radioVal"
+      name="radio1"
+      :options="[
+        { value: 'one', label: 'One', count: 12 },
+        { value: 'two', label: 'Two', count: 23 },
+        { value: 'three', label: 'Three', count: 34 },
+        { value: 'four', label: 'Four', count: 45 },
+      ]"
+    />
+
+    {{ radioVal }}
 
     <p class="text-xl">
       Buttons
@@ -81,11 +102,14 @@ import { ref } from 'vue';
 import BaseIcon from '@/components/atoms/BaseIcon';
 import FilterChip from '@/components/atoms/FilterChip';
 import InputText from '@/components/atoms/InputText';
-import InputCheckbox from '@/components/atoms/InputCheckbox';
+import { InputCheckboxList } from '@/components/atoms/InputCheckbox';
+import { InputRadioList } from '@/components/atoms/InputRadio/';
 import BaseButton from '@/components/atoms/BaseButton';
 import InfoBox from '@/components/molecules/InfoBox';
 import FilterSection from '@/components/molecules/FilterSection';
 import FilterItem from '@/components/molecules/FilterItem';
 
 const text = ref<string>('hello');
+const checkboxVal = ref<string[]>([]);
+const radioVal = ref<string>('one');
 </script>
