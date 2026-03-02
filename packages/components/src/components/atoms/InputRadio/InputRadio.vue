@@ -13,18 +13,21 @@
     <div class="flex items-center gap-1">
       <input
         :id="id"
-        v-model="model"
-        type="checkbox"
+        :value="value"
+        :name="name"
+        :checked="checked"
+        type="radio"
         class="hidden"
+        @change="model = ($event?.target as HTMLInputElement)?.value"
       >
       <BaseIcon
         v-if="checked"
-        icon="checkSquare"
+        icon="radioButton"
         weight="fill"
       />
       <BaseIcon
         v-else
-        icon="square"
+        icon="circle"
       />
       {{ label }}
     </div>
@@ -41,17 +44,21 @@
 import { useId, computed } from 'vue';
 import BaseIcon from '@/components/atoms/BaseIcon';
 
-const model = defineModel<boolean>();
+const model = defineModel<string>();
 
 const {
   label,
+  name,
+  value,
   count = null,
   id = useId(),
 } = defineProps<{
   label: string,
+  name: string,
+  value: string | null,
   count?: number,
   id?: string,
 }>();
 
-const checked = computed(() => model.value);
+const checked = computed(() => model.value === value);
 </script>

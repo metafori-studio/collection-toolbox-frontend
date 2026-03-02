@@ -17,6 +17,8 @@ import {
   PhSquare,
   PhCheckSquare,
   PhMagnifyingGlass,
+  PhCircle,
+  PhRadioButton,
 } from '@phosphor-icons/vue';
 
 export const icons = {
@@ -27,6 +29,8 @@ export const icons = {
   caretRight: PhCaretRight,
   square: PhSquare,
   checkSquare: PhCheckSquare,
+  circle: PhCircle,
+  radioButton: PhRadioButton,
   magnifyingGlass: PhMagnifyingGlass,
 };
 
