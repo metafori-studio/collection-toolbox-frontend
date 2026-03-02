@@ -5,7 +5,9 @@
       bg-primary-100 text-primary-600 rounded-full px-2 py-1 cursor-pointer
       hover:bg-primary-500 hover:text-primary-100
     "
-    :class="[focusClasses]"
+    :class="[focusClasses, {
+      'bg-primary-200': dark
+    }]"
     @click="$emit('clear')"
   >
     {{ label }}
@@ -22,8 +24,12 @@ import { focusClasses } from '@/misc/reusableCss';
 
 import BaseIcon from '@/components/atoms/BaseIcon';
 
-const { count } = defineProps<{
+const {
+  count,
+  dark = false,
+} = defineProps<{
   count: number
+  dark?: boolean
 }>();
 
 const label = computed(() => {

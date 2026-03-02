@@ -37,4 +37,10 @@
   --color-status-error: #EF4444;
   --color-status-warning: #F59E0B;
   --color-status-success: #22C55E;
+
+  --color-status-error-100: #FFE5E5;
+  --color-status-error-200: #FFCCCC;
+  --color-status-error-500: var(--color-status-error);
+  --color-status-error-600: #D73D3D;
+  --color-status-error-700: #BF3636;
 }
