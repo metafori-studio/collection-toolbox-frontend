@@ -9,7 +9,7 @@ const meta = {
   argTypes: {
     icon: { control: 'select', options: Object.keys(icons) },
     size: { control: 'inline-radio', options: [16, 20, 24, 32] },
-    weight: { control: 'inline-radio', options: ['light', 'fill'] },
+    weight: { control: 'inline-radio', options: ['regular', 'fill'] },
   },
 } satisfies Meta<typeof BaseIcon>;
 
@@ -20,7 +20,7 @@ export const Default: Story = {
   args: {
     icon: 'placeholder',
     size: 24,
-    weight: 'light',
+    weight: 'regular',
   },
 };
 

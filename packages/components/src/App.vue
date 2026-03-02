@@ -65,6 +65,7 @@
     >
       <FilterItem
         label="Obec"
+        icon="magnifyingGlass"
       />
       <FilterItem
         label="Kataster"

@@ -10,6 +10,10 @@
       'bg-primary-500 text-neutral-0 hover:bg-primary-600 active:bg-primary-700': variant === 'primary',
       'bg-neutral-0 text-primary-500 hover:bg-primary-100 active:bg-primary-200': variant === 'secondary',
 
+      'bg-status-error text-neutral-0 hover:bg-status-error-600 active:bg-status-700': variant === 'danger-primary',
+      'bg-neutral-0 text-status-error hover:bg-status-error-100 active:bg-status-200': variant === 'danger-secondary',
+
+
       // Disabled
       [disabledClasses]: disabled,
       'cursor-pointer': !disabled,
@@ -30,7 +34,7 @@ const {
   disabled = false,
 } = defineProps<{
   size?: 'small' | 'regular'
-  variant?: 'primary' | 'secondary'
+  variant?: 'primary' | 'secondary' | 'danger-primary' | 'danger-secondary'
   disabled?: boolean,
 }>();
 

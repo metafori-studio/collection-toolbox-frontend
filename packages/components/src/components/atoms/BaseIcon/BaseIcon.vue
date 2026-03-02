@@ -37,11 +37,11 @@ export type IconName = keyof typeof icons;
 const {
   icon = 'placeholder',
   size = 24,
-  weight = 'light',
+  weight = 'regular',
 } = defineProps<{
   icon?: IconName
   size?: 16 | 20 | 24 | 32
-  weight?: 'light' | 'fill'
+  weight?: 'regular' | 'fill'
 }>();
 
 </script>
