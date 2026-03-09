@@ -3,11 +3,9 @@
     class="
       inline-flex gap-1 items-center w-fit text-xs
       bg-primary-100 text-primary-600 rounded-full px-2 py-1 cursor-pointer
-      hover:bg-primary-500 hover:text-primary-100
+      hover:bg-primary-500 hover:text-primary-100 group-hover:bg-primary-200
     "
-    :class="[focusClasses, {
-      'bg-primary-200': dark
-    }]"
+    :class="[focusClasses]"
     @click="$emit('clear')"
   >
     {{ label }}
@@ -26,10 +24,8 @@ import BaseIcon from '@/components/atoms/BaseIcon';
 
 const {
   count,
-  dark = false,
 } = defineProps<{
   count: number
-  dark?: boolean
 }>();
 
 const label = computed(() => {

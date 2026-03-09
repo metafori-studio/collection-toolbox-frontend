@@ -2,11 +2,9 @@
   <div
     class="
       flex items-center rounded-lg gap-2 px-3 py-2
-      bg-white border border-neutral-200 text-sm relative
+      bg-white border border-neutral-200 text-sm relative group
       hover:bg-primary-100
     "
-    @mouseenter="hover = true"
-    @mouseleave="hover = false"
   >
     <button
       class="absolute inset-0 cursor-pointer rounded-lg"
@@ -25,7 +23,6 @@
         v-if="selectedCount !== null"
         class="relative"
         :count="selectedCount"
-        :dark="hover"
       />
     </div>
     <BaseIcon
@@ -37,8 +34,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-
 import BaseIcon, { type IconName } from '@/components/atoms/BaseIcon';
 import FilterChip from '@/components/atoms/FilterChip';
 import { focusClasses } from '@/misc/reusableCss';
@@ -56,7 +51,5 @@ const {
 defineEmits([
   'open',
 ]);
-
-const hover = ref(false);
 
 </script>
