@@ -1,13 +1,17 @@
 @import "tailwindcss";
+@source "../components";
 
 @import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
 @import "@fontsource/inter/700.css";
 
 
 @theme {
   /* Typography */
-  --font-sans: "Inter", serif;
-  --font-sans--font-feature-settings: font-feature-settings: 'liga' 1, 'calt' 1;
+  --font-sans: "Inter", sans-serif;
+  --font-sans--font-feature-settings: 'liga' 1, 'calt' 1;
+  --font-monospace: "Geist Mono", monospace;
 
   /* Colors */
   --color-primary-50: #E5F0FF;
@@ -43,4 +47,72 @@
   --color-status-error-500: var(--color-status-error);
   --color-status-error-600: #D73D3D;
   --color-status-error-700: #BF3636;
+
+  /* Typography sizes */
+    /* Headings */
+  --text-heading-1: 30px;
+  --text-heading-1--line-height: 120%;
+  --text-heading-1--letter-spacing: -0.02em;
+  --text-heading-1--font-weight: 600;
+
+  --text-heading-2: 24px;
+  --text-heading-2--line-height: 125%;
+  --text-heading-2--letter-spacing: -0.02em;
+  --text-heading-2--font-weight: 600;
+
+  --text-heading-3: 20px;
+  --text-heading-3--line-height: 140%;
+  --text-heading-3--letter-spacing: -0.02em;
+  --text-heading-3--font-weight: 600;
+
+  --text-heading-4: 18px;
+  --text-heading-4--line-height: 133%;
+  --text-heading-4--letter-spacing: -0.02em;
+  --text-heading-4--font-weight: 700;
+
+    /* Body */
+  --text-lg: 18px;
+  --text-lg--line-height: 133%;
+  --text-lg--font-weight: 500;
+
+  --text-base: 16px;
+  --text-base--line-height: 150%;
+
+  --text-sm: 14px;
+  --text-sm--line-height: 137.5%;
+
+    /* Semantic */
+  --text-label: 14px;
+  --text-label--line-height: 170%;
+  --text-label--letter-spacing: -0.01em;
+  --text-label--font-weight: 500;
+
+  --text-label-small: 12px;
+  --text-label-small--line-height: 170%;
+  --text-label-small--font-weight: 500;
+
+  --text-button: 16px;
+  --text-button--line-height: 150%;
+  --text-button--font-weight: 600;
+
+  --text-button-small: 14px;
+  --text-button-small--line-height: 115%;
+  --text-button-small--font-weight: 600;
+
+  --text-mono: 14px;
+  --text-mono--line-height: 115%;
+}
+
+@media screen and (min-width: theme(--breakpoint-md)) {
+  :root {
+    --text-heading-1: 36px;
+
+    --text-heading-2: 30px;
+
+    --text-heading-3: 24px;
+
+    --text-heading-4: 18px;
+
+    --text-lg: 20px;
+  }
 }
