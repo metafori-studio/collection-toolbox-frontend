@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite';
 
 import InfoBox from './InfoBox.vue';
-import BaseButton from '@/components/atoms/BaseButton';
+import BaseButton from '../../atoms/BaseButton';
 
 const meta = {
   title: 'Molecules/InfoBox',

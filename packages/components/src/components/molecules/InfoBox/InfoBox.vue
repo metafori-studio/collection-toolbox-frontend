@@ -13,5 +13,5 @@
 </template>
 
 <script setup lang="ts">
-import BaseIcon from '@/components/atoms/BaseIcon';
+import BaseIcon from '../../atoms/BaseIcon';
 </script>

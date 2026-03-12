@@ -1,5 +1,21 @@
 <template>
   <div class="p-4 flex flex-col gap-1">
+    <h1 class="text-xl">
+      Typography
+    </h1>
+    <p class="text-heading-1">
+      Hello world
+    </p>
+    <p class="text-heading-2">
+      Hello world
+    </p>
+    <p class="text-heading-3">
+      Hello world
+    </p>
+    <p class="text-heading-4">
+      Hello world
+    </p>
+
     <p class="text-xl">
       Icon
     </p>
@@ -32,6 +48,19 @@
     />
 
     {{ checkboxVal }}
+
+    <InputRange
+      v-model="rangeVal"
+      :min="1920"
+      :max="2025"
+    />
+    {{ rangeVal }}
+
+    <BaseButton
+      @click="() => rangeVal = { min: 1920, max: 2025 }"
+    >
+      Reset
+    </BaseButton>
 
     <InputRadioList
       v-model="radioVal"
@@ -99,17 +128,24 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-import BaseIcon from '@/components/atoms/BaseIcon';
-import FilterChip from '@/components/atoms/FilterChip';
-import InputText from '@/components/atoms/InputText';
-import { InputCheckboxList } from '@/components/atoms/InputCheckbox';
-import { InputRadioList } from '@/components/atoms/InputRadio/';
-import BaseButton from '@/components/atoms/BaseButton';
-import InfoBox from '@/components/molecules/InfoBox';
-import FilterSection from '@/components/molecules/FilterSection';
-import FilterItem from '@/components/molecules/FilterItem';
+import BaseIcon from './components/atoms/BaseIcon';
+import FilterChip from './components/atoms/FilterChip';
+import InputText from './components/atoms/InputText';
+import { InputCheckboxList } from './components/atoms/InputCheckbox';
+import { InputRadioList } from './components/atoms/InputRadio/';
+import InputRange from './components/molecules/InputRange';
+
+import BaseButton from './components/atoms/BaseButton';
+import InfoBox from './components/molecules/InfoBox';
+import FilterSection from './components/molecules/FilterSection';
+import FilterItem from './components/molecules/FilterItem';
 
 const text = ref<string>('hello');
 const checkboxVal = ref<string[]>([]);
 const radioVal = ref<string>('one');
+const rangeVal = ref({
+  min: 1920,
+  max: 2025,
+});
+
 </script>

@@ -1,14 +1,16 @@
 <template>
-  <InputCheckbox
-    v-for="(option, i) in options"
-    :id="option?.id"
-    :key="i"
-    :model-value="model?.includes(option.value) ?? false"
-    :name="name"
-    :label="option.label"
-    :count="option.count"
-    @update:model-value="toggle(option.value, $event ?? false)"
-  />
+  <div>
+    <InputCheckbox
+      v-for="(option, i) in options"
+      :id="option?.id"
+      :key="i"
+      :model-value="model?.includes(option.value) ?? false"
+      :name="name"
+      :label="option.label"
+      :count="option.count"
+      @update:model-value="toggle(option.value, $event ?? false)"
+    />
+  </div>
 </template>
 
 <script setup lang="ts">

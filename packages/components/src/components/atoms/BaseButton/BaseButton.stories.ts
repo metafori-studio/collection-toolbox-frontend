@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite';
 
 import BaseButton from './BaseButton.vue';
-import BaseIcon from '@/components/atoms/BaseIcon';
+import BaseIcon from '../BaseIcon';
 
 const meta = {
   title: 'Atoms/BaseButton',
