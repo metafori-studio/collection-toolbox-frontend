@@ -1,0 +1,77 @@
+{
+    "data": {
+        "id": "31270",
+        "activity_year_start": 2020,
+        "activity_year_end": 2020,
+        "activity_type": "nálezová správa - externá",
+        "action_number": null,
+        "registration_year": 2024,
+        "cadastral_area": "Nové Zámky",
+        "municipality": "Nové Zámky",
+        "position": "IBV Riverside, p.č. 304/1,2,26",
+        "district": "Nové Zámky",
+        "localization_degree": 1,
+        "coordinate_x": "-1303842.076000",
+        "coordinate_y": "-495510.244500",
+        "has_gis_link": true,
+        "cvs_number": 21043,
+        "research_leader": "Repka D.",
+        "author_ns": "KA FF UKF NR, Šimunková K., Repka D.",
+        "institution": "KA FF UKF NR",
+        "dating_ns": [
+            "negatívne"
+        ],
+        "dating_ceans": [
+            "negatívne"
+        ],
+        "dating_site_type": null,
+        "site_type_original": null,
+        "size_category": "malá",
+        "attachments": [
+            {
+                "name": "Výskumná správa",
+                "available": false
+            },
+            {
+                "name": "Výskumná správa",
+                "available": true,
+                "size": "155 MB",
+                "pages": 24,
+                "link": "https://pdfobject.com/pdf/sample.pdf"
+            }
+        ],
+        "galleries": [
+            {
+                "title": "Nálezisko",
+                "images": [
+                    {
+                        "title": "Fotka 1",
+                        "thumbnail": "https://fastly.picsum.photos/id/423/400/400.jpg?hmac=0Y_2e7lsenUvr1NfNU0qypVFPkACWzUNDqq-KE_aqic",
+                        "full": "https://fastly.picsum.photos/id/791/1200/800.jpg?hmac=kZdqKhNSfF_pcDO8i2BaLww4I8h_phrKmi8BCuc_tEY"
+                    },
+                    {
+                        "title": "Fotka 2",
+                        "thumbnail": "https://fastly.picsum.photos/id/846/400/400.jpg?hmac=Xa6BwyUkSx5JX-S2u2AeU-a-77WUaNARUqUl4JEuEhE",
+                        "full": "https://fastly.picsum.photos/id/791/1200/800.jpg?hmac=kZdqKhNSfF_pcDO8i2BaLww4I8h_phrKmi8BCuc_tEY"
+                    }
+                ]
+            },
+            {
+                "title": "Plány",
+                "images": [
+                    {
+                        "title": "Plán 1",
+                        "thumbnail": "https://fastly.picsum.photos/id/423/400/400.jpg?hmac=0Y_2e7lsenUvr1NfNU0qypVFPkACWzUNDqq-KE_aqic",
+                        "full": "https://fastly.picsum.photos/id/791/1200/800.jpg?hmac=kZdqKhNSfF_pcDO8i2BaLww4I8h_phrKmi8BCuc_tEY"
+                    },
+                    {
+                        "title": "Plán 2",
+                        "thumbnail": "https://fastly.picsum.photos/id/846/400/400.jpg?hmac=Xa6BwyUkSx5JX-S2u2AeU-a-77WUaNARUqUl4JEuEhE",
+                        "full": "https://fastly.picsum.photos/id/791/1200/800.jpg?hmac=kZdqKhNSfF_pcDO8i2BaLww4I8h_phrKmi8BCuc_tEY"
+                    }
+                ]
+            }
+        ],
+        "youtube_id": "WFWh_v341mw"
+    }
+}

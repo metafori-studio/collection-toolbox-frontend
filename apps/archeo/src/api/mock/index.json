@@ -1,0 +1,617 @@
+{
+    "data": [
+        {
+            "id": "31270",
+            "activity_year_start": 2020,
+            "activity_year_end": 2020,
+            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - extern\u00e1",
+            "action_number": null,
+            "registration_year": 2024,
+            "cadastral_area": "Nov\u00e9 Z\u00e1mky",
+            "municipality": "Nov\u00e9 Z\u00e1mky",
+            "position": "IBV Riverside, p.\u010d. 304\/1,2,26",
+            "district": "Nov\u00e9 Z\u00e1mky",
+            "localization_degree": 1,
+            "coordinate_x": "-1303842.076000",
+            "coordinate_y": "-495510.244500",
+            "has_gis_link": true,
+            "cvs_number": 21043,
+            "research_leader": "Repka D.",
+            "author_ns": "KA FF UKF NR, \u0160imunkov\u00e1 K., Repka D.",
+            "institution": "KA FF UKF NR",
+            "dating_ns": [
+                "negat\u00edvne"
+            ],
+            "dating_ceans": [
+                "negat\u00edvne"
+            ],
+            "dating_site_type": null,
+            "site_type_original": null,
+            "size_category": "mal\u00e1"
+        },
+        {
+            "id": "31272",
+            "activity_year_start": 2023,
+            "activity_year_end": 2023,
+            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - extern\u00e1",
+            "action_number": null,
+            "registration_year": 2024,
+            "cadastral_area": "Topo\u013e\u010dany",
+            "municipality": "Topo\u013e\u010dany",
+            "position": "Kulturpark, p.\u010d. 304\/1,2,26",
+            "district": "Topo\u013e\u010dany",
+            "localization_degree": 2,
+            "coordinate_x": "-1242341.391000",
+            "coordinate_y": "-490843.519000",
+            "has_gis_link": true,
+            "cvs_number": 21044,
+            "research_leader": "Steiner P.",
+            "author_ns": "KA FF UKF NR, Steiner P., Wiedwrmann E.",
+            "institution": "KA FF UKF NR",
+            "dating_ns": [
+                "negat\u00edvne"
+            ],
+            "dating_ceans": [
+                "negat\u00edvne"
+            ],
+            "dating_site_type": null,
+            "site_type_original": null,
+            "size_category": "mal\u00e1"
+        },
+        {
+            "id": "31271",
+            "activity_year_start": 2011,
+            "activity_year_end": 2018,
+            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - extern\u00e1",
+            "action_number": null,
+            "registration_year": 2024,
+            "cadastral_area": "Ostr\u00e1 L\u00faka",
+            "municipality": "Ostr\u00e1 L\u00faka",
+            "position": "Hrad Pe\u0165u\u0161a, p.\u010d. 1409",
+            "district": "Zvolen",
+            "localization_degree": 3,
+            "coordinate_x": "-1248141.301000",
+            "coordinate_y": "-424228.829200",
+            "has_gis_link": true,
+            "cvs_number": 21045,
+            "research_leader": "Beljak Pa\u017einov\u00e1 N.",
+            "author_ns": "KA FF UKF NR, Beljak Pa\u017einov\u00e1 N.",
+            "institution": "KA FF UKF NR",
+            "dating_ns": [
+                "Stredovek-vrcholn\u00fd"
+            ],
+            "dating_ceans": [
+                "ST-vr"
+            ],
+            "dating_site_type": [
+                "Stredovek - vrcholn\u00fd - s\u00eddlisko opevnen\u00e9"
+            ],
+            "site_type_original": [
+                "s\u00eddlisko opevnen\u00e9"
+            ],
+            "size_category": "ve\u013ek\u00e1"
+        },
+        {
+            "id": "31273",
+            "activity_year_start": 2022,
+            "activity_year_end": 2022,
+            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - extern\u00e1",
+            "action_number": null,
+            "registration_year": 2024,
+            "cadastral_area": "Chot\u00edn",
+            "municipality": "Chot\u00edn",
+            "position": "INS FTTH Transport KOMA 03, Pri hradskej, p.\u010d. 5415, 5449, 5479-5482",
+            "district": "Kom\u00e1rno",
+            "localization_degree": 1,
+            "coordinate_x": "-1327479.365000",
+            "coordinate_y": "-492255.870900",
+            "has_gis_link": true,
+            "cvs_number": 21046,
+            "research_leader": "Gereov\u00e1 M.",
+            "author_ns": "ARCHAEOJEDI, s.r.o., Gereov\u00e1 M., \u017dund\u00e1lek I.",
+            "institution": "ARCHAEOJEDI, s.r.o.",
+            "dating_ns": [
+                "Neolit-\u017eeliezovsk\u00e1",
+                "Eneolit-badensk\u00e1",
+                "Doba r\u00edmska-r\u00edmskobarbarsk\u00e1",
+                "Stredovek",
+                "Novovek"
+            ],
+            "dating_ceans": [
+                "NE-ze",
+                "EN-ba",
+                "RI-rb",
+                "ST",
+                "NV"
+            ],
+            "dating_site_type": [
+                "Neolit - \u017eeliezovsk\u00e1 - s\u00eddlisko",
+                "Eneolit - badensk\u00e1 - s\u00eddlisko",
+                "Doba r\u00edmska - r\u00edmskobarbarsk\u00e1 - s\u00eddlisko",
+                "Stredovek - s\u00eddlisko",
+                "Novovek - s\u00eddlisko"
+            ],
+            "site_type_original": [
+                "s\u00eddlisko"
+            ],
+            "size_category": "mal\u00e1"
+        },
+        {
+            "id": "31274",
+            "activity_year_start": 2022,
+            "activity_year_end": 2022,
+            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - extern\u00e1",
+            "action_number": null,
+            "registration_year": 2024,
+            "cadastral_area": "Kr\u00e1tke Kesy",
+            "municipality": "Marcelov\u00e1",
+            "position": "INS FTTH Transport KOMA 03, Nad chot\u00ednskou cestou, p.\u010d. 1877\/2",
+            "district": "Kom\u00e1rno",
+            "localization_degree": 1,
+            "coordinate_x": "-1325645.961000",
+            "coordinate_y": "-495435.603400",
+            "has_gis_link": true,
+            "cvs_number": 21046,
+            "research_leader": "Gereov\u00e1 M.",
+            "author_ns": "ARCHAEOJEDI, s.r.o., Gereov\u00e1 M., \u017dund\u00e1lek I.",
+            "institution": "ARCHAEOJEDI, s.r.o.",
+            "dating_ns": [
+                "Eneolit-badensk\u00e1"
+            ],
+            "dating_ceans": [
+                "EN-ba"
+            ],
+            "dating_site_type": [
+                "Eneolit - badensk\u00e1 - s\u00eddlisko"
+            ],
+            "site_type_original": [
+                "s\u00eddlisko"
+            ],
+            "size_category": "mal\u00e1"
+        },
+        {
+            "id": "31275",
+            "activity_year_start": 2022,
+            "activity_year_end": 2023,
+            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - extern\u00e1",
+            "action_number": null,
+            "registration_year": 2024,
+            "cadastral_area": "Beckov",
+            "municipality": "Beckov",
+            "position": "Hrad Beckov, obnova z\u00e1padn\u00e9ho pal\u00e1ca a z\u00e1padnej ba\u0161ty",
+            "district": "Nov\u00e9 Mesto nad V\u00e1hom",
+            "localization_degree": 1,
+            "coordinate_x": "-1214851.043000",
+            "coordinate_y": "-508666.480300",
+            "has_gis_link": true,
+            "cvs_number": 21047,
+            "research_leader": "\u017da\u00e1r O.",
+            "author_ns": "Pamarch s.r.o, \u017da\u00e1r O., \u017da\u00e1rov\u00e1 \u013d.",
+            "institution": "Pamarch s.r.o.",
+            "dating_ns": [
+                "Stredovek",
+                "Novovek"
+            ],
+            "dating_ceans": [
+                "ST",
+                "NV-16",
+                "NV-17",
+                "NV-18"
+            ],
+            "dating_site_type": [
+                "Stredovek - s\u00eddlisko opevnen\u00e9",
+                "Novovek - 16. storo\u010die - s\u00eddlisko opevnen\u00e9",
+                "Novovek - 17. storo\u010die - s\u00eddlisko opevnen\u00e9",
+                "Novovek - 18. storo\u010die - s\u00eddlisko opevnen\u00e9"
+            ],
+            "site_type_original": [
+                "s\u00eddlisko opevnen\u00e9"
+            ],
+            "size_category": "ve\u013ek\u00e1"
+        },
+        {
+            "id": "31276",
+            "activity_year_start": 2023,
+            "activity_year_end": 2023,
+            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - extern\u00e1",
+            "action_number": null,
+            "registration_year": 2024,
+            "cadastral_area": "Doln\u00e9 S\u013ea\u017eany",
+            "municipality": "S\u013ea\u017eany",
+            "position": "RD, Farsk\u00e1 ul., p.\u010d. 30\/13",
+            "district": "Zlat\u00e9 Moravce",
+            "localization_degree": 1,
+            "coordinate_x": "-1262272.218000",
+            "coordinate_y": "-481263.292800",
+            "has_gis_link": true,
+            "cvs_number": 21048,
+            "research_leader": "Iv\u00e1n R.",
+            "author_ns": "Pamarch s.r.o., Iv\u00e1n R.",
+            "institution": "Pamarch s.r.o.",
+            "dating_ns": [
+                "negat\u00edvne"
+            ],
+            "dating_ceans": [
+                "negat\u00edvne"
+            ],
+            "dating_site_type": null,
+            "site_type_original": null,
+            "size_category": "mal\u00e1"
+        },
+        {
+            "id": "31277",
+            "activity_year_start": 2019,
+            "activity_year_end": 2023,
+            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - extern\u00e1",
+            "action_number": null,
+            "registration_year": 2024,
+            "cadastral_area": "Anda\u010d",
+            "municipality": "Zbehy",
+            "position": "Kostol Narodenia Panny M\u00e1rie, p.\u010d. 45\/11, 45\/12, 75\/1, 75\/3",
+            "district": "Nitra",
+            "localization_degree": 1,
+            "coordinate_x": "-1261612.652000",
+            "coordinate_y": "-507072.606100",
+            "has_gis_link": true,
+            "cvs_number": 21049,
+            "research_leader": "Iv\u00e1n R.",
+            "author_ns": "Pamarch s.r.o., Iv\u00e1n R.",
+            "institution": "Pamarch s.r.o.",
+            "dating_ns": [
+                "negat\u00edvne"
+            ],
+            "dating_ceans": [
+                "negat\u00edvne"
+            ],
+            "dating_site_type": null,
+            "site_type_original": null,
+            "size_category": "mal\u00e1"
+        },
+        {
+            "id": "31278",
+            "activity_year_start": 2023,
+            "activity_year_end": 2023,
+            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - extern\u00e1",
+            "action_number": null,
+            "registration_year": 2024,
+            "cadastral_area": "Kom\u00e1rno",
+            "municipality": "Kom\u00e1rno",
+            "position": "Obchodn\u00e9 centrum, E\u00f6tv\u00f6sova ulica, p.\u010d. 2454\/8,69,70,83,84,86,88,  2464\/1,3",
+            "district": "Kom\u00e1rno",
+            "localization_degree": 1,
+            "coordinate_x": "-1330410.477000",
+            "coordinate_y": "-502385.759900",
+            "has_gis_link": true,
+            "cvs_number": 21050,
+            "research_leader": "\u00d6lvecky R.",
+            "author_ns": "Pamarch s.r.o., \u00d6lvecky R.",
+            "institution": "Pamarch s.r.o.",
+            "dating_ns": [
+                "Stredovek-neskor\u00fd",
+                "Novovek"
+            ],
+            "dating_ceans": [
+                "ST-ne",
+                "NV-16",
+                "NV-17",
+                "NV-18",
+                "NV-19"
+            ],
+            "dating_site_type": [
+                "Stredovek - neskor\u00fd - s\u00eddlisko",
+                "Novovek - 16. storo\u010die - s\u00eddlisko",
+                "Novovek - 17. storo\u010die - s\u00eddlisko",
+                "Novovek - 18. storo\u010die - s\u00eddlisko",
+                "Novovek - 19. storo\u010die - s\u00eddlisko"
+            ],
+            "site_type_original": [
+                "s\u00eddlisko"
+            ],
+            "size_category": "mal\u00e1"
+        },
+        {
+            "id": "31279",
+            "activity_year_start": 2023,
+            "activity_year_end": 2023,
+            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - extern\u00e1",
+            "action_number": null,
+            "registration_year": 2024,
+            "cadastral_area": "Dunajsk\u00e1 Streda",
+            "municipality": "Dunajsk\u00e1 Streda",
+            "position": "Roz\u0161\u00edrenie are\u00e1lu Metrans \/Danubia, a.s., p.\u010d. 1962\/4,5, 1963\/308,495,848",
+            "district": "Dunajsk\u00e1 Streda",
+            "localization_degree": 1,
+            "coordinate_x": "-1302656.739000",
+            "coordinate_y": "-537312.616500",
+            "has_gis_link": true,
+            "cvs_number": 21051,
+            "research_leader": "\u00d6lvecky R.",
+            "author_ns": "Pamarch s.r.o., \u00d6lvecky R.",
+            "institution": "Pamarch s.r.o.",
+            "dating_ns": [
+                "Pravek",
+                "Doba r\u00edmska",
+                "Novovek"
+            ],
+            "dating_ceans": [
+                "PK",
+                "RI",
+                "NV"
+            ],
+            "dating_site_type": [
+                "Pravek - neur\u010dite\u013en\u00e9",
+                "Doba r\u00edmska - neur\u010dite\u013en\u00e9",
+                "Novovek - neur\u010dite\u013en\u00e9"
+            ],
+            "site_type_original": [
+                "neur\u010dite\u013en\u00e9"
+            ],
+            "size_category": "mal\u00e1"
+        },
+        {
+            "id": "31280",
+            "activity_year_start": 2023,
+            "activity_year_end": 2023,
+            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - extern\u00e1",
+            "action_number": null,
+            "registration_year": 2024,
+            "cadastral_area": "Kri\u017eovany nad Dudv\u00e1hom",
+            "municipality": "Kri\u017eovany nad Dudv\u00e1hom",
+            "position": "IBV Kri\u017eovany nad Dudv\u00e1hom B lokalita: PANSK\u00c9 TABLY, etapa 1. 10 RD, p.\u010d. 2288\/72,75,28, 124, 2288\/424",
+            "district": "Trnava",
+            "localization_degree": 1,
+            "coordinate_x": "-1265663.096000",
+            "coordinate_y": "-531647.006900",
+            "has_gis_link": true,
+            "cvs_number": 21052,
+            "research_leader": "Iv\u00e1n R.",
+            "author_ns": "Pamarch s.r.o., Iv\u00e1n R.",
+            "institution": "Pamarch s.r.o.",
+            "dating_ns": [
+                "negat\u00edvne"
+            ],
+            "dating_ceans": [
+                "negat\u00edvne"
+            ],
+            "dating_site_type": null,
+            "site_type_original": null,
+            "size_category": "mal\u00e1"
+        },
+        {
+            "id": "31281",
+            "activity_year_start": 2023,
+            "activity_year_end": 2023,
+            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - extern\u00e1",
+            "action_number": null,
+            "registration_year": 2024,
+            "cadastral_area": "\u017deliezovce",
+            "municipality": "\u017deliezovce",
+            "position": "Novostavba haly drevov\u00fdroby, Letn\u00e1 ul., p.\u010d. 2401\/7",
+            "district": "Levice",
+            "localization_degree": 1,
+            "coordinate_x": "-1302701.962000",
+            "coordinate_y": "-460349.554300",
+            "has_gis_link": true,
+            "cvs_number": 21053,
+            "research_leader": "Iv\u00e1n R.",
+            "author_ns": "Pamarch s.r.o., Iv\u00e1n R.",
+            "institution": "Pamarch s.r.o.",
+            "dating_ns": [
+                "negat\u00edvne"
+            ],
+            "dating_ceans": [
+                "negat\u00edvne"
+            ],
+            "dating_site_type": null,
+            "site_type_original": null,
+            "size_category": "mal\u00e1"
+        },
+        {
+            "id": "31282",
+            "activity_year_start": 2023,
+            "activity_year_end": 2023,
+            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - extern\u00e1",
+            "action_number": null,
+            "registration_year": 2024,
+            "cadastral_area": "Lu\u017eianky",
+            "municipality": "Lu\u017eianky",
+            "position": "West park Lu\u017eianky \u2013 technick\u00e1 infra\u0161trukt\u00fara, Squarebizz Nitra, Ved\u013ea Kapitulsk\u00e9ho, ulica \u010cere\u0161\u0148ov\u00e1 a Lipov\u00e1, p.\u010d. 2073\/11,48",
+            "district": "Nitra",
+            "localization_degree": 1,
+            "coordinate_x": "-1267441.088000",
+            "coordinate_y": "-504100.451000",
+            "has_gis_link": true,
+            "cvs_number": 21054,
+            "research_leader": "\u017da\u00e1r O.",
+            "author_ns": "Pamarch s.r.o, \u017da\u00e1r O., \u017da\u00e1rov\u00e1 \u013d.",
+            "institution": "Pamarch s.r.o.",
+            "dating_ns": [
+                "Novovek"
+            ],
+            "dating_ceans": [
+                "NV-19",
+                "NV-20"
+            ],
+            "dating_site_type": [
+                "Novovek - 19. storo\u010die - s\u00eddlisko",
+                "Novovek - 20. storo\u010die - s\u00eddlisko"
+            ],
+            "site_type_original": [
+                "s\u00eddlisko"
+            ],
+            "size_category": "mal\u00e1"
+        },
+        {
+            "id": "31283",
+            "activity_year_start": 2021,
+            "activity_year_end": 2021,
+            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - extern\u00e1",
+            "action_number": null,
+            "registration_year": 2024,
+            "cadastral_area": "Tur\u010dianske Jaseno",
+            "municipality": "Tur\u010dianske Jaseno",
+            "position": "Galov diel, p.\u010d. 1052\/2, 1052\/1, 516\/1",
+            "district": "Martin",
+            "localization_degree": 1,
+            "coordinate_x": "-1196599.969000",
+            "coordinate_y": "-423020.551900",
+            "has_gis_link": true,
+            "cvs_number": 21055,
+            "research_leader": "Furman M.",
+            "author_ns": "P\u00da SR ZA, Furman M., Oporoskov\u00e1 S., Benedikov\u00e1 L., Both M.",
+            "institution": "P\u00da SR ZA",
+            "dating_ns": [
+                "Novovek"
+            ],
+            "dating_ceans": [
+                "NV"
+            ],
+            "dating_site_type": [
+                "Novovek - s\u00eddlisko opevnen\u00e9"
+            ],
+            "site_type_original": [
+                "s\u00eddlisko opevnen\u00e9"
+            ],
+            "size_category": "mal\u00e1"
+        },
+        {
+            "id": "31284",
+            "activity_year_start": 2021,
+            "activity_year_end": 2021,
+            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - extern\u00e1",
+            "action_number": null,
+            "registration_year": 2024,
+            "cadastral_area": "Tur\u010dianske Jaseno",
+            "municipality": "Tur\u010dianske Jaseno",
+            "position": "Tisov\u00e9, p.\u010d. 1048, 1049, 1050",
+            "district": "Martin",
+            "localization_degree": 1,
+            "coordinate_x": "-1196520.507000",
+            "coordinate_y": "-422091.439700",
+            "has_gis_link": true,
+            "cvs_number": 21055,
+            "research_leader": "Furman M.",
+            "author_ns": "P\u00da SR ZA, Furman M., Oporoskov\u00e1 S., Benedikov\u00e1 L., Both M.",
+            "institution": "P\u00da SR ZA",
+            "dating_ns": [
+                "Doba lat\u00e9nska-p\u00fachovsk\u00e1"
+            ],
+            "dating_ceans": [
+                "LT-pu"
+            ],
+            "dating_site_type": [
+                "Doba lat\u00e9nska - p\u00fachovsk\u00e1 - s\u00eddlisko opevnen\u00e9"
+            ],
+            "site_type_original": [
+                "s\u00eddlisko opevnen\u00e9"
+            ],
+            "size_category": "mal\u00e1"
+        }
+    ],
+    "links": {
+        "first": "https:\/\/activities.metafori.com\/api\/archeo\/activities?page=1",
+        "last": "https:\/\/activities.metafori.com\/api\/archeo\/activities?page=14",
+        "prev": null,
+        "next": "https:\/\/activities.metafori.com\/api\/archeo\/activities?page=2"
+    },
+    "meta": {
+        "current_page": 1,
+        "from": 1,
+        "last_page": 14,
+        "links": [
+            {
+                "url": null,
+                "label": "&laquo; Previous",
+                "page": null,
+                "active": false
+            },
+            {
+                "url": "https:\/\/activities.metafori.com\/api\/archeo\/activities?page=1",
+                "label": "1",
+                "page": 1,
+                "active": true
+            },
+            {
+                "url": "https:\/\/activities.metafori.com\/api\/archeo\/activities?page=2",
+                "label": "2",
+                "page": 2,
+                "active": false
+            },
+            {
+                "url": "https:\/\/activities.metafori.com\/api\/archeo\/activities?page=3",
+                "label": "3",
+                "page": 3,
+                "active": false
+            },
+            {
+                "url": "https:\/\/activities.metafori.com\/api\/archeo\/activities?page=4",
+                "label": "4",
+                "page": 4,
+                "active": false
+            },
+            {
+                "url": "https:\/\/activities.metafori.com\/api\/archeo\/activities?page=5",
+                "label": "5",
+                "page": 5,
+                "active": false
+            },
+            {
+                "url": "https:\/\/activities.metafori.com\/api\/archeo\/activities?page=6",
+                "label": "6",
+                "page": 6,
+                "active": false
+            },
+            {
+                "url": "https:\/\/activities.metafori.com\/api\/archeo\/activities?page=7",
+                "label": "7",
+                "page": 7,
+                "active": false
+            },
+            {
+                "url": "https:\/\/activities.metafori.com\/api\/archeo\/activities?page=8",
+                "label": "8",
+                "page": 8,
+                "active": false
+            },
+            {
+                "url": "https:\/\/activities.metafori.com\/api\/archeo\/activities?page=9",
+                "label": "9",
+                "page": 9,
+                "active": false
+            },
+            {
+                "url": "https:\/\/activities.metafori.com\/api\/archeo\/activities?page=10",
+                "label": "10",
+                "page": 10,
+                "active": false
+            },
+            {
+                "url": null,
+                "label": "...",
+                "active": false
+            },
+            {
+                "url": "https:\/\/activities.metafori.com\/api\/archeo\/activities?page=13",
+                "label": "13",
+                "page": 13,
+                "active": false
+            },
+            {
+                "url": "https:\/\/activities.metafori.com\/api\/archeo\/activities?page=14",
+                "label": "14",
+                "page": 14,
+                "active": false
+            },
+            {
+                "url": "https:\/\/activities.metafori.com\/api\/archeo\/activities?page=2",
+                "label": "Next &raquo;",
+                "page": 2,
+                "active": false
+            }
+        ],
+        "path": "https:\/\/activities.metafori.com\/api\/archeo\/activities",
+        "per_page": 15,
+        "to": 15,
+        "total": 204
+    }
+}
