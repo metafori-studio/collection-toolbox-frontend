@@ -1,9 +1,10 @@
 <template>
   <div class="relative">
     <input
+      :id="id"
       v-model="model"
       type="text"
-      class="w-full rounded-lg bg-neutral-0 border border-neutral-300 px-3 py-2 pr-7 text-sm"
+      class="w-full rounded-lg bg-neutral-0 border border-neutral-300 px-3 py-2 pr-7 text-label"
       :class="[focusClasses, {
         // Disabled
         [disabledClasses]: disabled,
@@ -17,6 +18,7 @@
       }]"
       :disabled="disabled"
       :placeholder="placeholder"
+      @change="$emit('change', model)"
     >
     <button
       v-if="isClearable"
@@ -40,23 +42,25 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import { focusClasses, disabledClasses } from '@/misc/reusableCss';
+import { focusClasses, disabledClasses } from '../../../misc/reusableCss';
 
-import BaseIcon, { type IconName } from '@/components/atoms/BaseIcon';
+import BaseIcon, { type IconName } from '../BaseIcon';
 
 const {
+  id = undefined,
   icon = null,
   disabled = false,
   placeholder = '',
   hasError = false,
 } = defineProps<{
+  id?: string
   icon?: IconName
   disabled?: boolean
-  placeholder?: string,
-  hasError?: boolean,
+  placeholder?: string
+  hasError?: boolean
 }>();
 
-const model = defineModel<string>();
+const model = defineModel<string|number>();
 
 const useClearing = () => {
   const isClearable = computed<boolean>(() => !!model.value);
@@ -67,5 +71,10 @@ const useClearing = () => {
 };
 
 const { isClearable, clear } = useClearing();
+
+defineEmits([
+  'update:model-value',
+  'change',
+]);
 
 </script>

@@ -14,6 +14,13 @@
 <script setup lang="ts">
 import InputRadio from './InputRadio.vue';
 
+export type InputRadioOption = {
+  label: string
+  value: string | null
+  id?: string
+  count?: number
+}
+
 const model = defineModel<string>();
 
 const {
@@ -21,11 +28,6 @@ const {
   options,
 } = defineProps<{
   name: string
-  options: {
-    label: string
-    value: string | null
-    id?: string
-    count?: number
-  }[]
+  options: InputRadioOption[]
 }>();
 </script>

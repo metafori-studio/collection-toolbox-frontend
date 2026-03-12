@@ -18,9 +18,9 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import { focusClasses } from '@/misc/reusableCss';
+import { focusClasses } from '../../../misc/reusableCss';
 
-import BaseIcon from '@/components/atoms/BaseIcon';
+import BaseIcon from '../BaseIcon';
 
 const {
   count,

@@ -5,13 +5,13 @@
 @import "@fontsource/inter/500.css";
 @import "@fontsource/inter/600.css";
 @import "@fontsource/inter/700.css";
-
+@import "@fontsource/geist-mono/400.css";
 
 @theme {
   /* Typography */
   --font-sans: "Inter", sans-serif;
   --font-sans--font-feature-settings: 'liga' 1, 'calt' 1;
-  --font-monospace: "Geist Mono", monospace;
+  --font-mono: "Geist Mono", monospace;
 
   /* Colors */
   --color-primary-50: #E5F0FF;
@@ -83,7 +83,7 @@
 
     /* Semantic */
   --text-label: 14px;
-  --text-label--line-height: 170%;
+  --text-label--line-height: 157.143%; /* 22px */
   --text-label--letter-spacing: -0.01em;
   --text-label--font-weight: 500;
 
@@ -101,6 +101,7 @@
 
   --text-mono: 14px;
   --text-mono--line-height: 115%;
+  --text-mono--font-weight: 600;
 }
 
 @media screen and (min-width: theme(--breakpoint-md)) {

@@ -5,6 +5,9 @@
       bg-white border border-neutral-200 text-sm relative group
       hover:bg-primary-100
     "
+    :class="{
+      'border-primary-500': active,
+    }"
   >
     <button
       class="absolute inset-0 cursor-pointer rounded-lg"
@@ -17,10 +20,10 @@
       :icon="icon"
       :size="24"
     />
-    <div class="flex items-center gap-2">
+    <div class="flex items-center gap-2 min-h-6">
       {{ label }}
       <FilterChip
-        v-if="selectedCount !== null"
+        v-if="selectedCount"
         class="relative"
         :count="selectedCount"
       />
@@ -34,17 +37,19 @@
 </template>
 
 <script setup lang="ts">
-import BaseIcon, { type IconName } from '@/components/atoms/BaseIcon';
-import FilterChip from '@/components/atoms/FilterChip';
-import { focusClasses } from '@/misc/reusableCss';
+import BaseIcon, { type IconName } from '../../atoms/BaseIcon';
+import FilterChip from '../../atoms/FilterChip';
+import { focusClasses } from '../../../misc/reusableCss';
 
 const {
   label = 'Filter name',
   icon = null,
+  active = false,
   selectedCount = null,
 } = defineProps<{
   label?: string
   icon?: IconName,
+  active?: boolean,
   selectedCount?: number,
 }>();
 

@@ -42,7 +42,7 @@
 
 <script setup lang="ts">
 import { useId, computed } from 'vue';
-import BaseIcon from '@/components/atoms/BaseIcon';
+import BaseIcon from '../BaseIcon';
 
 const model = defineModel<string>();
 

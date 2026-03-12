@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite';
 
 import FilterItem from './FilterItem.vue';
-import { icons } from '@/components/atoms/BaseIcon/BaseIcon.vue';
+import { icons } from '../../atoms/BaseIcon/BaseIcon.vue';
 
 const meta = {
   title: 'Molecules/FilterItem',

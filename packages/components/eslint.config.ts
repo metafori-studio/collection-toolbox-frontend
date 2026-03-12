@@ -30,6 +30,13 @@ export default defineConfigWithVueTs(
   ...pluginOxlint.buildFromOxlintConfigFile('.oxlintrc.json'),
   ...storybook.configs['flat/recommended'],
   {
+    languageOptions: {
+      parserOptions: {
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+  },
+  {
     rules: {
       // Few Airbnb-style rules
       semi: ['error', 'always'],
