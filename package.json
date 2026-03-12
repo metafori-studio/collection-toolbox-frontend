@@ -4,6 +4,7 @@
   "author": "Metafori",
   "license": "MIT",
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "apps/*"
   ]
 }
