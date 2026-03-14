@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex items-start min-h-screen"
+    class="flex flex-col md:flex-row md:items-start min-h-screen"
   >
     <router-view
       v-if="isLoaded"
@@ -9,7 +9,7 @@
     />
     <div
       v-if="isLoaded && detailPanelOpen"
-      class="p-6 flex flex-col gap-8 max-w-[420px] border-l border-neutral-200"
+      class="p-6 flex flex-col gap-8 md:max-w-[420px] border-l border-neutral-200"
     >
       <div class="flex justify-between">
         <span class="font-mono text-xs text-primary-500 bg-primary-50 px-2 py-0.5 rounded">
@@ -67,10 +67,10 @@
           <GalleryCard
             v-for="(gallery, i) in detail.galleries"
             :key="i"
+            :to="{ name: 'DetailGallery' }"
             :title="gallery.title"
             :image-count="gallery.images.length"
             :preview="gallery.images[0]?.thumbnail || ''"
-            @click="$router.push({ name: 'DetailGallery' })"
           />
         </div>
       </DetailSection>
@@ -92,8 +92,11 @@
         </div>
       </DetailSection>
 
-      <DetailSection title="Datovanie a druh náleziska">
-        <div class="flex gap-2">
+      <DetailSection
+        v-if="detail.dating_ns?.length"
+        title="Datovanie a druh náleziska"
+      >
+        <div class="flex flex-wrap gap-2">
           <ActivityChip
             v-for="(item, i) in detail.dating_ns"
             :key="i"
@@ -104,7 +107,9 @@
       </DetailSection>
 
 
-      <h2>Údaje</h2>
+      <h2 class="text-heading-4">
+        Údaje
+      </h2>
       <DetailSection
         v-for="(table, i) in tables"
         :key="i"

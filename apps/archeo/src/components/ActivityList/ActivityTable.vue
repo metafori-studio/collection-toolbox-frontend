@@ -51,15 +51,19 @@
         <tr
           v-for="item in items"
           :key="item.id"
-          class="border-b border-neutral-50 hover:bg-neutral-50 cursor-pointer transition-colors"
-          :class="[focusClasses]"
-          role="button"
-          tabindex="0"
-          @click="openDetail(item.id)"
-          @keypress.space="openDetail(item.id)"
+          class="border-b border-neutral-50 hover:bg-neutral-50 transition-colors relative"
         >
           <td class="align-top py-3 px-3 text-mono font-mono text-primary-500">
-            {{ item.id }}
+            <RouterLink
+              :to="{
+                name: 'DetailMap',
+                params: { id: item.id },
+              }"
+              :class="[focusBeforeClasses]"
+              class="before:absolute before:z-10 before:inset-0"
+            >
+              {{ item.id }}
+            </RouterLink>
           </td>
           <td
             :class="[bodyCellCss]"
@@ -97,7 +101,7 @@
           <td class="py-3 px-3 align-top">
             <div class="flex gap-1 flex-wrap">
               <ActivityChip
-                v-for="(chip, i) in item.dating_site_type"
+                v-for="(chip, i) in item.dating_ns"
                 :key="i"
               >
                 {{ chip }}
@@ -111,12 +115,10 @@
 </template>
 
 <script lang="ts" setup>
-import { useRouter } from 'vue-router';
-
 import ActivityChip from '@/components/ActivityChip.vue';
 import ActivityLevel from '@/components/ActivityLevel.vue';
 
-import { focusClasses } from '@metafori/components';
+import { focusBeforeClasses } from '@metafori/components';
 
 const headerCellCss = 'text-label-small text-neutral-400 font-semibold uppercase px-3 py-2 whitespace-nowrap';
 const bodyCellCss = 'align-top py-3 px-3 text-sm';
@@ -128,8 +130,5 @@ const {
   items?: any[]
 }>();
 
-const router = useRouter();
-
-const openDetail = (id: string) => router.push({ name: 'DetailMap', params: { id } });
 
 </script>

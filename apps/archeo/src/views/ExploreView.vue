@@ -16,7 +16,6 @@
     />
     <div class="p-4 flex flex-col lg:flex-row">
       <div
-        v-if="filterWidgetWidth"
         class="mr-4 transition-all duration-300"
         :style="{
           minWidth: `${filterWidgetWidth}px`,

@@ -1,5 +1,9 @@
 <template>
-  <button
+  <RouterLink
+    :to="{
+      name: 'DetailMap',
+      params: { id: item.id },
+    }"
     class="
       bg-white w-full text-left rounded-xl border border-neutral-200 p-3 transition-all
       hover:border-neutral-300 hover:shadow-sm
@@ -30,17 +34,17 @@
       </span>
     </div>
     <div
-      v-if="item.dating_site_type?.length"
+      v-if="item.dating_ns?.length"
       class="flex gap-1 flex-wrap pt-2 border-t border-t-neutral-200 mt-2"
     >
       <ActivityChip
-        v-for="(chip, i) in item.dating_site_type"
+        v-for="(chip, i) in item.dating_ns"
         :key="i"
       >
         {{ chip }}
       </ActivityChip>
     </div>
-  </button>
+  </RouterLink>
 </template>
 
 

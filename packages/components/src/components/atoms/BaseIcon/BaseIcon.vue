@@ -32,6 +32,7 @@ import {
   PhMapPin,
   PhCity,
   PhFileText,
+  PhSidebar,
 } from '@phosphor-icons/vue';
 
 export const icons = {
@@ -58,6 +59,7 @@ export const icons = {
   mapPin: PhMapPin,
   city: PhCity,
   document: PhFileText,
+  sidebar: PhSidebar,
 };
 
 export type IconName = keyof typeof icons;
