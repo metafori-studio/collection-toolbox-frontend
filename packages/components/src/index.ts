@@ -1,6 +1,6 @@
 // CSS
 import './assets/main.css';
-export { focusClasses, disabledClasses } from './misc/reusableCss';
+export { focusClasses, focusBeforeClasses, disabledClasses } from './misc/reusableCss';
 
 // Atoms
 export { default as BaseButton } from './components/atoms/BaseButton';

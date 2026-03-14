@@ -9,6 +9,7 @@
       >
         <th
           class="py-2 pr-2 text-sm font-normal text-left text-neutral-400 border-b border-b-neutral-200"
+          scope="row"
         >
           {{ row.label }}
         </th>

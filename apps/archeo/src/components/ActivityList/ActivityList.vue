@@ -24,26 +24,33 @@
       </div>
     </div>
     <ActivityCardList
-      :items="sortedItems"
+      :items="pagedItems"
       class="@3xl:hidden"
     />
     <ActivityTable
-      :items="sortedItems"
+      :items="pagedItems"
       class="hidden @3xl:block"
+    />
+    <ActivityListPagination
+      v-model="currentPage"
+      :total-pages="totalPages"
     />
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref, computed } from 'vue';
+import { ref, computed, watch } from 'vue';
 
 import {
   BaseButton,
   InputSelect,
+  BaseIcon,
 } from '@metafori/components';
 import ActivityTable from './ActivityTable.vue';
 import ActivityCardList from './ActivityCardList.vue';
-import BaseIcon from '../../../../../packages/components/src/components/atoms/BaseIcon/BaseIcon.vue';
+import ActivityListPagination from './ActivityListPagination.vue';
+
+const PAGE_SIZE = 20;
 
 const {
   items = [],
@@ -54,6 +61,7 @@ const {
 
 const orderAsc = ref(true);
 const orderBy = ref('id');
+const currentPage = ref(1);
 const orderByOptions = [
   { label: 'Číslo aktivity', value: 'id' },
   { label: 'Obec', value: 'municipality' },
@@ -73,6 +81,17 @@ const sortedItems = computed(() => {
     if (valA > valB) return direction;
     return 0;
   });
+});
+
+const totalPages = computed(() => Math.ceil(sortedItems.value.length / PAGE_SIZE));
+
+const pagedItems = computed(() => {
+  const start = (currentPage.value - 1) * PAGE_SIZE;
+  return sortedItems.value.slice(start, start + PAGE_SIZE);
+});
+
+watch([orderBy, orderAsc], () => {
+  currentPage.value = 1;
 });
 
 </script>

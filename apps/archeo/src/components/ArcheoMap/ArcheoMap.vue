@@ -2,7 +2,7 @@
   <div class="relative">
     <div
       ref="mapContainer"
-      class="absolute h-[calc(100vh-56px)]"
+      class="absolute h-[400px] md:h-[calc(100vh-56px)]"
     />
 
     <ArcheoMapPopover
@@ -12,25 +12,27 @@
       @close="selectedPoint = null"
     />
 
+    <div class="absolute left-4 top-4 flex gap-2">
+      <BaseButton
+        v-if="controls.openMaps"
+        variant="secondary"
+        size="small"
+        @click="openMaps()"
+      >
+        Otvoriť v Maps
+      </BaseButton>
+      <BaseButton
+        v-if="controls.copyCoordinates"
+        variant="secondary"
+        size="small"
+        @click="copyCoordinates()"
+      >
+        Kopírovať GPS
+      </BaseButton>
+    </div>
+
     <div class="absolute right-4 bottom-4 flex items-end gap-2">
       <div class="flex items-center gap-2">
-        <BaseButton
-          v-if="controls.openMaps"
-          variant="secondary"
-          size="small"
-          @click="openMaps()"
-        >
-          Otvoriť v Maps
-        </BaseButton>
-        <BaseButton
-          v-if="controls.copyCoordinates"
-          variant="secondary"
-          size="small"
-          @click="copyCoordinates()"
-        >
-          Kopírovať GPS
-        </BaseButton>
-
         <InputSelect
           v-if="controls.tileType"
           v-model="tileType"
@@ -76,6 +78,7 @@
         <BaseButton
           v-if="controls.zoomIn"
           variant="secondary"
+          aria-label="Priblížiť"
           @click="zoomIn()"
         >
           <BaseIcon icon="plus" />
@@ -83,6 +86,7 @@
         <BaseButton
           v-if="controls.zoomOut"
           variant="secondary"
+          aria-label="Oddialiť"
           @click="zoomOut()"
         >
           <BaseIcon icon="minus" />
@@ -90,6 +94,7 @@
         <BaseButton
           v-if="controls.center"
           variant="secondary"
+          aria-label="Vycentrovať"
           @click="center()"
         >
           <BaseIcon icon="gpsFix" />

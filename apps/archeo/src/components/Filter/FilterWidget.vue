@@ -1,9 +1,13 @@
 <template>
   <div
     ref="widgetEl"
-    class="fixed z-20 left-4 top-18 flex items-start gap-4"
+    class="fixed z-20 left-0 top-14 md:left-4 md:top-18 flex items-start gap-4"
   >
-    <FilterCard>
+    <FilterCard
+      :class="{
+        'hidden md:flex': nowOpen,
+      }"
+    >
       <div class="flex gap-2 items-center font-bold">
         <BaseIcon
           icon="filter"

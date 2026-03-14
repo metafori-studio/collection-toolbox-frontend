@@ -15,8 +15,10 @@
       :title="`Stupeň lokalizácie - ${level}`"
     />
     <span
-      v-if="label"
       class="text-xs text-neutral-500 font-mono"
+      :class="{
+        'sr-only': !label
+      }"
     >
       {{ levelNames[level] }}
     </span>

@@ -23,7 +23,7 @@ const getList = async (): Promise<Record<string, unknown>[]> => {
   if (USE_MOCK) {
     return mockIndex.data as Record<string, unknown>[];
   }
-  const { data } = await api.get('/activities');
+  const { data } = await api.get('/activities?per_page=1000');
   return data.data as Record<string, unknown>[];
 };
 

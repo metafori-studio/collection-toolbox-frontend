@@ -1,9 +1,10 @@
 <template>
-  <div class="sticky left-0 right-0 top-0 z-20 h-14 bg-white grid grid-cols-3 items-center gap-3 px-4 py-2 border-b border-b-neutral-200">
+  <div class="sticky left-0 right-0 top-0 z-20 h-14 bg-white grid grid-cols-[1fr_150px_1fr] items-center gap-3 px-4 py-1 border-b border-b-neutral-200">
     <div class="flex items-center gap-3">
       <BaseButton
         v-if="isExplore"
         size="small"
+        :variant="filterOpen ? 'primary' : 'secondary'"
         @click="filterOpen = !filterOpen"
       >
         <BaseIcon icon="filter" />
@@ -24,16 +25,18 @@
       Archeo Explorer
     </div>
     <div class="flex items-center justify-end gap-3">
-      <BaseButton
+      <div
         v-if="isDetail"
-        variant="secondary"
-        size="small"
-        @click="detailPanelOpen = !detailPanelOpen"
+        class="hidden md:block"
       >
-        <span class="hidden md:block">
+        <BaseButton
+          variant="secondary"
+          size="small"
+          @click="detailPanelOpen = !detailPanelOpen"
+        >
           {{ detailPanelOpen ? 'Skryť panel' : 'Otvoriť panel' }}
-        </span>
-      </BaseButton>
+        </BaseButton>
+      </div>
       <BaseButton
         variant="secondary"
         size="small"

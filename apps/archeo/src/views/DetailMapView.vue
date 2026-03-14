@@ -1,6 +1,6 @@
 <template>
   <ArcheoMap
-    class="flex-1 sticky top-14"
+    class="md:flex-1 md:sticky md:top-14"
     :map-points="[{
       id: detail.id,
       coordinate_x: detail.coordinate_x,

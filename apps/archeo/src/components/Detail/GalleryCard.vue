@@ -1,5 +1,8 @@
 <template>
-  <button class="bg-white rounded-lg border border-neutral-200 overflow-hidden text-left cursor-pointer hover:border-neutral-300 hover:shadow-sm transition-all">
+  <RouterLink
+    class="bg-white rounded-lg border border-neutral-200 overflow-hidden text-left cursor-pointer hover:border-neutral-300 hover:shadow-sm transition-all"
+    :to="to"
+  >
     <img
       :src="preview"
       :alt="title"
@@ -13,7 +16,7 @@
         {{ imageCount }} obrázkov
       </p>
     </div>
-  </button>
+  </RouterLink>
 </template>
 
 <script setup lang="ts">
@@ -21,5 +24,6 @@ defineProps<{
   title: string
   imageCount: number
   preview: string
+  to: object
 }>();
 </script>
