@@ -1,0 +1,20 @@
+{
+    "data": {
+        "id": "AD017250",
+        "title": "Ornamentálna výzdoba dreveníc, Čičmany",
+        "location_note": "Čičmany, Bytča",
+        "year": 1981,
+        "authors": [
+            { "given_name": "Milan", "family_name": "Leščák" },
+            { "given_name": "Emília", "family_name": "Horváthová" }
+        ],
+        "type": "diapozitív",
+        "abstract": "Krátky popis dokumentu pre potreby prototypu. Tento text slúži na vizualizáciu sekcie Abstrakt.",
+        "keywords": [
+            "ornament",
+            "výzdoba",
+            "drevenice",
+            "architektúra"
+        ]
+    }
+}
