@@ -20,10 +20,12 @@
 </template>
 
 <script setup lang="ts">
+import type { RouteLocationRaw } from 'vue-router';
+
 defineProps<{
   title: string
   imageCount: number
   preview: string
-  to: object
+  to: RouteLocationRaw
 }>();
 </script>

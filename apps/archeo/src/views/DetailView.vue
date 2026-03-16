@@ -9,7 +9,7 @@
     />
     <div
       v-if="isLoaded && detailPanelOpen"
-      class="p-6 flex flex-col gap-8 md:max-w-[420px] border-l border-neutral-200"
+      class="p-6 flex flex-col gap-8 md:max-w-[420px] md:border-l border-neutral-200"
     >
       <div class="flex justify-between">
         <span class="font-mono text-xs text-primary-500 bg-primary-50 px-2 py-0.5 rounded">
