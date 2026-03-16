@@ -14,6 +14,7 @@ import {
   PhInfo,
   PhStack,
   PhCaretRight,
+  PhCaretLeft,
   PhCaretDown,
   PhSquare,
   PhCheckSquare,
@@ -33,6 +34,8 @@ import {
   PhCity,
   PhFileText,
   PhSidebar,
+  PhTag,
+  PhFolder,
 } from '@phosphor-icons/vue';
 
 export const icons = {
@@ -41,6 +44,7 @@ export const icons = {
   info: PhInfo,
   stack: PhStack,
   caretRight: PhCaretRight,
+  caretLeft: PhCaretLeft,
   caretDown: PhCaretDown,
   square: PhSquare,
   checkSquare: PhCheckSquare,
@@ -60,6 +64,8 @@ export const icons = {
   city: PhCity,
   document: PhFileText,
   sidebar: PhSidebar,
+  tag: PhTag,
+  folder: PhFolder,
 };
 
 export type IconName = keyof typeof icons;

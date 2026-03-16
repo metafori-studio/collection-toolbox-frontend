@@ -1,0 +1,190 @@
+{
+    "data": [
+        {
+            "id": "AD017191",
+            "image": "https://picsum.photos/seed/1/800",
+            "location_note": "Pribylina, Liptovský Mikuláš",
+            "year": 1973,
+            "title": "Drevorubači, Pribylina",
+            "authors": [
+                { "display_name": "Novák, Ján" }
+            ],
+            "researchers": [
+                { "display_name": "Solár, Adam" }
+            ],
+            "originators": [
+                { "person": {
+                    "display_name": "Turčan, Miroslav" }
+                }
+            ],
+            "type": "diapozitív"
+        },
+        {
+            "id": "AD017192",
+            "image": "https://picsum.photos/seed/2/800",
+            "location_note": "Vlkolínec, Ružomberok",
+            "year": 1965,
+            "title": "Žatva na poli, Vlkolínec",
+            "authors": [
+                { "display_name": "Horáková, Marta" },
+                { "display_name": "Blaho, Rastislav" }
+            ],
+            "researchers": [
+                { "display_name": "Kováčová, Jana" }
+            ],
+            "originators": [
+                { "label": "Múzeum slovenskej dediny" }
+            ],
+            "type": "fotografia"
+        },
+        {
+            "id": "AD017193",
+            "image": "https://picsum.photos/seed/3/800",
+            "location_note": "Čičmany, Bytča",
+            "year": 1981,
+            "title": "Tradičné kroje, Čičmany",
+            "authors": [
+                { "display_name": "Slobodová, Elena" }
+            ],
+            "researchers": [
+                { "display_name": "Mináčová, Katarína" },
+                { "display_name": "Oravec, Milan" }
+            ],
+            "originators": [
+                { "label": "Ústav etnológie SAV" }
+            ],
+            "type": "diapozitív"
+        },
+        {
+            "id": "AD017194",
+            "image": "https://picsum.photos/seed/4/800",
+            "location_note": "Detva, Zvolen",
+            "year": 1978,
+            "title": "Folklórny festival, Detva",
+            "authors": [
+                { "display_name": "Kováč, Peter" },
+                { "display_name": "Fialová, Zuzana" },
+                { "display_name": "Mináč, Vladimír" }
+            ],
+            "researchers": [
+                { "display_name": "Dzurilla, Karol" }
+            ],
+            "originators": [
+                { "label": "Národné osvetové centrum" }
+            ],
+            "type": "fotografia"
+        },
+        {
+            "id": "AD017195",
+            "image": "https://picsum.photos/seed/5/800",
+            "location_note": "Terchová, Bytča",
+            "year": 1969,
+            "title": "Pastieri na salašoch, Terchová",
+            "authors": [
+                { "display_name": "Juríčková, Anna" }
+            ],
+            "researchers": [
+                { "display_name": "Solár, Adam" },
+                { "display_name": "Benková, Irena" }
+            ],
+            "originators": [
+                { "person": {
+                    "display_name": "Turčan, Miroslav" }
+                }
+            ],
+            "type": "výskumná správa"
+        },
+        {
+            "id": "AD017196",
+            "image": "https://picsum.photos/seed/6/800",
+            "location_note": "Hronsek, Banská Bystrica",
+            "year": 1984,
+            "title": "Drevený kostol, Hronsek",
+            "authors": [
+                { "display_name": "Šimko, Dušan" },
+                { "display_name": "Krajčíová, Božena" }
+            ],
+            "researchers": [
+                { "display_name": "Gašparíková, Vanda" }
+            ],
+            "originators": [
+                { "label": "Pamiatkový úrad SR" }
+            ],
+            "type": "fotografia"
+        },
+        {
+            "id": "AD017197",
+            "image": "https://picsum.photos/seed/7/800",
+            "location_note": "Spišská Stará Ves, Kežmarok",
+            "year": 1972,
+            "title": "Ľudová architektúra, Spiš",
+            "authors": [
+                { "display_name": "Oravec, Milan" }
+            ],
+            "researchers": [
+                { "display_name": "Lukáčová, Viera" }
+            ],
+            "originators": [
+                { "label": "Spišské múzeum" }
+            ],
+            "type": "diapozitív"
+        },
+        {
+            "id": "AD017198",
+            "image": "https://picsum.photos/seed/8/800",
+            "location_note": "Dobrá Niva, Zvolen",
+            "year": 1990,
+            "title": "Vinohradníci pri práci, Dobrá Niva",
+            "authors": [
+                { "display_name": "Lukáčová, Viera" },
+                { "display_name": "Baláž, Tomáš" }
+            ],
+            "researchers": [
+                { "display_name": "Horáková, Marta" }
+            ],
+            "originators": [
+                { "label": "Regionálne kultúrne centrum Zvolen" }
+            ],
+            "type": "fotografia"
+        },
+        {
+            "id": "AD017199",
+            "image": "https://picsum.photos/seed/9/800",
+            "location_note": "Východná, Liptovský Mikuláš",
+            "year": 1976,
+            "title": "Folkloristi, Východná",
+            "authors": [
+                { "display_name": "Dzurilla, Karol" }
+            ],
+            "researchers": [
+                { "display_name": "Slobodová, Elena" }
+            ],
+            "originators": [
+                { "person": {
+                    "display_name": "Turčan, Miroslav" }
+                }
+            ],
+            "type": "diapozitív"
+        },
+        {
+            "id": "AD017200",
+            "image": "https://picsum.photos/seed/10/800",
+            "location_note": "Stará Ľubovňa, Prešov",
+            "year": 1988,
+            "title": "Hrnčiari na jarmoku, Stará Ľubovňa",
+            "authors": [
+                { "display_name": "Benková, Irena" },
+                { "display_name": "Turčan, Miroslav" },
+                { "display_name": "Gašparíková, Vanda" }
+            ],
+            "researchers": [
+                { "display_name": "Kováč, Peter" },
+                { "display_name": "Šimko, Dušan" }
+            ],
+            "originators": [
+                { "label": "Ľubovnianske múzeum" }
+            ],
+            "type": "výskumná správa"
+        }
+    ]
+}
