@@ -96,16 +96,18 @@ import { filterSections } from '@/misc/filterSections';
 
 const widgetEl = ref<HTMLElement | null>(null);
 
-const resizeObserver = new ResizeObserver((entries) => {
-  if (entries[0]) filterWidgetWidthRaw.value = entries[0].contentRect.width;
-});
+let resizeObserver: ResizeObserver | null = null;
 
 onMounted(() => {
+  resizeObserver = new ResizeObserver((entries) => {
+    if (entries[0]) filterWidgetWidthRaw.value = entries[0].contentRect.width;
+  });
   if (widgetEl.value) resizeObserver.observe(widgetEl.value);
 });
 
 onUnmounted(() => {
-  resizeObserver.disconnect();
+  resizeObserver?.disconnect();
+  resizeObserver = null;
 });
 
 

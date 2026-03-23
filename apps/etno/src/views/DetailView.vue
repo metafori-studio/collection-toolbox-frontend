@@ -197,7 +197,9 @@ const activeViewerComponent = computed(() => {
 type Author = { family_name: string; given_name: string };
 
 const authorsReadable = computed(() => {
-  const flat = (detail.value.authors as Author[]).map((a) => `${a.family_name}, ${a.given_name}`);
+  const authors = detail.value.authors as Author[] | undefined;
+  if (!authors?.length) return '';
+  const flat = authors.map((a) => `${a.family_name}, ${a.given_name}`);
   return flat.join('; ');
 });
 

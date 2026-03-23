@@ -12,6 +12,7 @@
       <BaseButton
         variant="secondary"
         size="small"
+        aria-label="Info"
         @click="$router.push({ name: 'Info' })"
       >
         <BaseIcon icon="info" />
@@ -20,6 +21,7 @@
       <BaseButton
         variant="secondary"
         size="small"
+        aria-label="User"
       >
         <BaseIcon icon="user" />
         <span class="hidden md:block">User</span>

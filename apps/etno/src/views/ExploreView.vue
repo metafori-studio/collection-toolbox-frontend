@@ -59,8 +59,16 @@ const mapPoints = ref<MapPoint[]>([]);
 const items = ref<Record<string, unknown>[]>([]);
 
 onMounted(async() => {
-  mapPoints.value = await getMapPoints();
-  items.value = await getList();
+  try {
+    const [nextMapPoints, nextItems] = await Promise.all([
+      getMapPoints(),
+      getList(),
+    ]);
+    mapPoints.value = nextMapPoints;
+    items.value = nextItems;
+  } catch {
+    mapPoints.value = [];
+    items.value = [];
+  }
 });
-
 </script>
