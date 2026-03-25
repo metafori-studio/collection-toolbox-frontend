@@ -33,6 +33,8 @@ import {
   PhCity,
   PhFileText,
   PhSidebar,
+  PhSignIn,
+  PhUserPlus,
 } from '@phosphor-icons/vue';
 
 export const icons = {
@@ -60,6 +62,8 @@ export const icons = {
   city: PhCity,
   document: PhFileText,
   sidebar: PhSidebar,
+  signIn: PhSignIn,
+  userPlus: PhUserPlus,
 };
 
 export type IconName = keyof typeof icons;

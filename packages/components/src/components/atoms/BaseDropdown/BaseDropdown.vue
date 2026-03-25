@@ -6,6 +6,7 @@
     <BaseButton
       :id="id"
       variant="secondary"
+      :size="size"
       @click="toggle"
     >
       <slot name="trigger">
@@ -36,9 +37,11 @@ type Direction = 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
 const {
   id = undefined,
   direction = 'bottom-left',
+  size = 'regular',
 } = defineProps<{
   id?: string
   direction?: Direction
+  size?: string
 }>();
 
 

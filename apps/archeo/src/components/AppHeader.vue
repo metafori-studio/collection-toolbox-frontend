@@ -45,13 +45,34 @@
         <BaseIcon icon="info" />
         <span class="hidden md:block">Info</span>
       </BaseButton>
-      <BaseButton
-        variant="secondary"
+      <BaseDropdown
         size="small"
+        direction="bottom-left"
       >
-        <BaseIcon icon="user" />
-        <span class="hidden md:block">User</span>
-      </BaseButton>
+        <template #trigger>
+          <BaseIcon icon="user" />
+          <span class="hidden md:block">User</span>
+        </template>
+
+        <div class="p-2 flex flex-col gap-2">
+          <BaseButton
+            variant="secondary"
+            size="small"
+            @click="$router.push({ name: 'Login' })"
+          >
+            <BaseIcon icon="signIn" />
+            Prihlásiť sa
+          </BaseButton>
+          <BaseButton
+            variant="secondary"
+            size="small"
+            @click="$router.push({ name: 'Signup' })"
+          >
+            <BaseIcon icon="userPlus" />
+            Registrácia
+          </BaseButton>
+        </div>
+      </BaseDropdown>
     </div>
   </div>
 </template>
@@ -59,7 +80,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
-import { BaseButton, BaseIcon } from '@metafori/components';
+import { BaseButton, BaseIcon, BaseDropdown } from '@metafori/components';
 
 import { filterOpen, detailPanelOpen } from '@/store';
 

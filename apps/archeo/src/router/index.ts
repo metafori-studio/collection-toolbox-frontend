@@ -5,6 +5,8 @@ import DetailView from '@/views/DetailView.vue';
 import DetailMapView from '@/views/DetailMapView.vue';
 import DetailGalleryView from '@/views/DetailGalleryView.vue';
 import InfoView from '@/views/InfoView.vue';
+import LoginView from '@/views/LoginView.vue';
+import SignupView from '@/views/SignupView.vue';
 
 const routes = [
   {
@@ -34,6 +36,16 @@ const routes = [
     name: 'Info',
     path: '/info',
     component: InfoView,
+  },
+  {
+    name: 'Login',
+    path: '/login',
+    component: LoginView,
+  },
+  {
+    name: 'Signup',
+    path: '/signup',
+    component: SignupView,
   },
 ];
 
