@@ -183,5 +183,5 @@ const resetAll = () => filterValues.value = structuredClone(filterDefaults);
 // Update values
 watch(filterValues, (newVal) => {
   emit('update', toRaw(newVal));
-}, { deep: true, immediate: true });
+}, { deep: true });
 </script>
