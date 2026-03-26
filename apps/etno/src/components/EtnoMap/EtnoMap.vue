@@ -293,7 +293,14 @@ function addPoints() {
   map!.on('click', 'points', (e) => {
     const feature = e.features?.[0];
     if (!feature) return;
-    const ids: string[] = JSON.parse(feature.properties!.ids);
+    let ids: string[];
+    try {
+      const parsed = JSON.parse(feature.properties!.ids);
+      if (!Array.isArray(parsed) || !parsed.every((x) => typeof x === 'string')) return;
+      ids = parsed;
+    } catch {
+      return;
+    }
     if (ids.length === 1) {
       router.push({ name: 'Detail', params: { id: ids[0] } });
     } else {
@@ -345,10 +352,13 @@ const tileTypeOptions = [
   { value: 'standard', label: 'Štandardná mapa' },
 ];
 
-watch(() => mapPoints, () => {
+watch(() => mapPoints, (newVal, oldVal) => {
   const source = map?.getSource('points') as mapboxgl.GeoJSONSource | undefined;
   if (!source) return;
   source.setData(buildGeoJSON(mergedPoints.value));
+  if (!oldVal?.length && newVal.length) {
+    map?.flyTo(calculateDefaultCamera(mergedPoints.value));
+  }
 }, { deep: true });
 
 watch(tileType, (key) => {

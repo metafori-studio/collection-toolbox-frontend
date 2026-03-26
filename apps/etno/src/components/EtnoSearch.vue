@@ -51,6 +51,9 @@ const itemsDisplayed = computed(() => {
   }
   const normalizedQuery = normalize(query.value);
   return itemsAll.value.filter((item) => {
+    if (typeof item.title !== 'string') {
+      return false;
+    }
     const normalizedTitle = normalize(item.title as string);
     return normalizedTitle.includes(normalizedQuery);
   });
