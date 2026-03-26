@@ -35,6 +35,7 @@
           :selected-count="(filterValues[item.id] as string[] | undefined)?.length ?? 0"
           :active="item.id === nowOpen"
           @click="openItem(item)"
+          @clear="resetItem(item)"
         />
       </FilterSection>
     </FilterCard>
@@ -60,12 +61,27 @@
           Reset
         </BaseButton>
       </div>
-      <InputCheckboxList
+      <div
         v-if="nowOpenObj!.type === 'checkbox'"
-        v-model="(filterValues as Record<string, string[]>)[nowOpen!]"
-        :name="nowOpenObj!.id!"
-        :options="nowOpenObj!.options ?? []"
-      />
+      >
+        <InputText
+          v-model="query"
+          icon="magnifyingGlass"
+          class="mb-2"
+        />
+        <InputCheckboxList
+          v-model="(filterValues as Record<string, string[]>)[nowOpen!]"
+          :name="nowOpenObj!.id!"
+          :options="getOptions(nowOpenObj!.id) ?? []"
+          class="-ml-4 -mr-4"
+        />
+        <div
+          v-if="!getOptions(nowOpenObj!.id)?.length"
+          class="pt-4 pb-2 text-sm"
+        >
+          No results found
+        </div>
+      </div>
       <InputRange
         v-if="nowOpenObj!.type === 'range'"
         v-model="(filterValues as Record<string, RangeValue>)[nowOpen!]"
@@ -77,7 +93,14 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue';
+import {
+  ref,
+  computed,
+  onMounted,
+  onUnmounted,
+  watch,
+  toRaw,
+} from 'vue';
 
 import {
   BaseIcon,
@@ -86,13 +109,25 @@ import {
   FilterItem,
   InputCheckboxList,
   InputRange,
+  InputText,
 
   type RangeValue,
 } from '@metafori/components';
 import FilterCard from './FilterCard.vue';
 import { filterWidgetWidthRaw } from '@/store';
-import { type FilterItem as FilterItemDef } from '@/misc/filterTypes';
+import {
+  type FilterItem as FilterItemDef,
+  type AggregationOption,
+} from '@/misc/filterTypes';
 import { filterSections } from '@/misc/filterSections';
+
+const {
+  aggregations = {},
+} = defineProps<{
+  aggregations?: Record<string, AggregationOption[]>;
+}>();
+
+const emit = defineEmits(['update']);
 
 const widgetEl = ref<HTMLElement | null>(null);
 
@@ -110,18 +145,44 @@ onUnmounted(() => {
   resizeObserver = null;
 });
 
+// Query
+const query = ref('');
 
+const normalize = (str: string) => {
+  return str
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/\p{M}/gu, '');
+};
+
+const getOptions = (property: string) => {
+  const allOptions = aggregations[property];
+  if (!query.value) return allOptions;
+
+  const normalizedQuery = normalize(query.value);
+  return allOptions?.filter((option: AggregationOption) => normalize(option.label).includes(normalizedQuery));
+};
+
+//
 const allFilterItems = filterSections.flatMap((s) => s.items);
 const filterDefaults = Object.fromEntries(allFilterItems.map((item) => [item.id, item.defaultValue ?? []]));
 const filterValues = ref<Record<string, string[] | RangeValue>>(structuredClone(filterDefaults));
 
 const nowOpen = ref<string | null>(null);
 const nowOpenObj = computed(() => allFilterItems.find((item) => item.id === nowOpen.value) ?? null);
-const openItem = (item: FilterItemDef) => nowOpen.value = item.id ?? null;
+const openItem = (item: FilterItemDef) => {
+  nowOpen.value = item.id ?? null;
+  query.value = '';
+};
 const closeItem = () => nowOpen.value = null;
 const resetItem = (item: FilterItemDef) => {
   filterValues.value[item.id] = structuredClone(item.defaultValue);
 };
 const resetAll = () => filterValues.value = structuredClone(filterDefaults);
+
+// Update values
+watch(filterValues, (newVal) => {
+  emit('update', toRaw(newVal));
+}, { deep: true });
 
 </script>

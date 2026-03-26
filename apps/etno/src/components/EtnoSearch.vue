@@ -68,7 +68,7 @@ const resultsLabel = computed(() => {
 const showResults = computed(() => query.value.length > 0);
 
 onMounted(async() => {
-  itemsAll.value = await getList();
+  itemsAll.value = (await getList()).data;
 });
 
 </script>

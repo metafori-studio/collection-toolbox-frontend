@@ -1,6 +1,7 @@
 import axios from 'axios';
 import mockMapPoints from './mock/map-points.json';
 import mockIndex from './mock/index.json';
+import mockAggregations from './mock/aggregations.json';
 import mockDetail from './mock/detail.json';
 import { type MapPoint } from '@/components/EtnoMap/EtnoMap.vue';
 
@@ -19,15 +20,55 @@ const getMapPoints = async (): Promise<MapPoint[]> => {
   return data.data as MapPoint[];
 };
 
-const getList = async (): Promise<Record<string, unknown>[]> => {
+const getList = async (
+  filter: Record<string, string[]> = {},
+  orderBy: string = 'id',
+  orderAsc: boolean = true,
+  page: number = 1,
+): Promise<{ data: Record<string, unknown>[]; [key: string]: unknown }> => {
   if (USE_MOCK) {
-    return mockIndex.data as Record<string, unknown>[];
+    return mockIndex as unknown as { data: Record<string, unknown>[]; [key: string]: unknown };
   }
-  const { data } = await api.get('/items?per_page=50');
-  return data.data.map((record: Record<string, unknown>) => ({
-    ...record,
-    image: 'https://fastly.picsum.photos/id/4/800/800.jpg?hmac=ji2no8lxJV7_xjfY7ajNOri7_dDclKhOxxQ0gy0Svfc',
-  })) as Record<string, unknown>[];
+
+  const params = new URLSearchParams();
+  params.append('per_page', '24');
+  params.append('page', page.toString());
+  params.append('sort', orderAsc ? orderBy : `-${orderBy}`);
+  // Filter params
+  Object.entries(filter).forEach(([key, values]) => {
+    values.forEach((value) => {
+      params.append(`filter[${key}][]`, value);
+    });
+  });
+
+  const { data } = await api.get(`/items?${params.toString()}`);
+
+  return {
+    ...data,
+    data: data.data.map((record: Record<string, unknown>) => ({
+      ...record,
+      image: 'https://fastly.picsum.photos/id/4/800/800.jpg?hmac=ji2no8lxJV7_xjfY7ajNOri7_dDclKhOxxQ0gy0Svfc',
+    })) as Record<string, unknown>[],
+  };
+};
+
+const getAggregations = async (
+  filter: Record<string, string[]> = {},
+): Promise<Record<string, unknown>> => {
+  if (USE_MOCK) {
+    return mockAggregations.data as Record<string, unknown>;
+  }
+
+  const params = new URLSearchParams();
+  // Filter params
+  Object.entries(filter).forEach(([key, values]) => {
+    values.forEach((value) => {
+      params.append(`filter[${key}][]`, value);
+    });
+  });
+
+  const { data } = await api.get(`/items/aggregations?${params.toString()}`);
+  return data.data;
 };
 
 const getDetail = async (id: string): Promise<Record<string, unknown>> => {
@@ -41,5 +82,6 @@ const getDetail = async (id: string): Promise<Record<string, unknown>> => {
 export {
   getMapPoints,
   getList,
+  getAggregations,
   getDetail,
 };
