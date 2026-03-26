@@ -15,7 +15,7 @@ const getMapPoints = async (): Promise<MapPoint[]> => {
   if (USE_MOCK) {
     return mockMapPoints.data as MapPoint[];
   }
-  const { data } = await api.get('/activities/map-points');
+  const { data } = await api.get('/items/map-points');
   return data.data as MapPoint[];
 };
 
@@ -23,15 +23,18 @@ const getList = async (): Promise<Record<string, unknown>[]> => {
   if (USE_MOCK) {
     return mockIndex.data as Record<string, unknown>[];
   }
-  const { data } = await api.get('/activities?per_page=1000');
-  return data.data as Record<string, unknown>[];
+  const { data } = await api.get('/items?per_page=50');
+  return data.data.map((record) => ({
+    ...record,
+    image: 'https://fastly.picsum.photos/id/4/800/800.jpg?hmac=ji2no8lxJV7_xjfY7ajNOri7_dDclKhOxxQ0gy0Svfc',
+  })) as Record<string, unknown>[];
 };
 
 const getDetail = async (id: string): Promise<Record<string, unknown>> => {
   if (USE_MOCK) {
     return mockDetail.data as Record<string, unknown>;
   }
-  const { data } = await api.get(`/activities/${id}`);
+  const { data } = await api.get(`/items/${id}`);
   return data.data;
 };
 

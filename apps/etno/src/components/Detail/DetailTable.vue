@@ -4,11 +4,11 @@
   >
     <tbody>
       <tr
-        v-for="(row, i) in items"
+        v-for="(row, i) in nonEmptyItems"
         :key="i"
       >
         <th
-          class="py-2 pr-2 text-sm font-normal text-left text-neutral-400 border-b border-b-neutral-200"
+          class="py-2 pr-2 text-xs font-normal text-left text-neutral-400 border-b border-b-neutral-200 align-top"
           scope="row"
         >
           {{ row.label }}
@@ -32,11 +32,16 @@
 </template>
 
 <script lang="ts" setup>
+import { computed } from 'vue';
+
 const {
   items,
 } = defineProps<{
   items: {
     label: string;
-    value: string | number | boolean | null;
+    value: string | number | boolean | null | undefined;
   }[]
-}>();</script>
+}>();
+
+const nonEmptyItems = computed(() => items.filter((row) => row.value !== '' && row.value != null));
+</script>

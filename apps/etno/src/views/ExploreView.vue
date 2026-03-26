@@ -35,6 +35,7 @@
         }"
       />
       <ItemList
+        v-if="itemsLoaded"
         :items="items"
       />
     </div>
@@ -55,6 +56,7 @@ import FilterWidget from '@/components/Filter/FilterWidget.vue';
 import { getMapPoints, getList } from '@/api';
 import { filterOpen, filterWidgetWidth } from '@/store';
 
+const itemsLoaded = ref(false);
 const mapPoints = ref<MapPoint[]>([]);
 const items = ref<Record<string, unknown>[]>([]);
 
@@ -66,6 +68,7 @@ onMounted(async() => {
     ]);
     mapPoints.value = nextMapPoints;
     items.value = nextItems;
+    itemsLoaded.value = true;
   } catch {
     mapPoints.value = [];
     items.value = [];

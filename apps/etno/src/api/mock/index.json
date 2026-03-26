@@ -1,190 +1,214 @@
 {
     "data": [
         {
-            "id": "AD017191",
-            "image": "https://picsum.photos/seed/1/800",
-            "location_note": "Pribylina, Liptovský Mikuláš",
-            "year": 1973,
-            "title": "Drevorubači, Pribylina",
-            "authors": [
-                { "display_name": "Novák, Ján" }
-            ],
-            "researchers": [
-                { "display_name": "Solár, Adam" }
-            ],
-            "originators": [
-                { "person": {
-                    "display_name": "Turčan, Miroslav" }
+            "id": "AB480645:vlo",
+            "doi": "10.6052\/5572319",
+            "title": "",
+            "subtitle": "",
+            "abstract": "",
+            "general_note": "",
+            "terms_of_use": "Error delectus itaque quis aspernatur dolores. Temporibus ipsa quia a eius voluptatibus maxime magnam. Neque qui eveniet consequatur quia porro illo nihil veniam.",
+            "location_note": "In necessitatibus qui rerum et quis ut sed. Rerum velit eaque voluptatum aliquid praesentium. Voluptates tempore sunt reiciendis magnam atque asperiores suscipit qui.",
+            "content_note": "",
+            "technical_note": "",
+            "type": "masters-thesis",
+            "extents": [
+                {
+                    "value": "55.83",
+                    "unit": "research-slip"
                 }
             ],
-            "type": "diapozitív"
-        },
-        {
-            "id": "AD017192",
-            "image": "https://picsum.photos/seed/2/800",
-            "location_note": "Vlkolínec, Ružomberok",
-            "year": 1965,
-            "title": "Žatva na poli, Vlkolínec",
+            "language": "kon",
+            "accrual_method": null,
+            "collection_method": "archival-research",
+            "access_rights": "paid-access",
+            "license": "cc-by",
+            "production_methods": [
+                "dot-matrix-printing",
+                "audio-recording"
+            ],
+            "time_period_start": "2021-02-25T00:00:00.000000Z",
+            "time_period_end": null,
+            "time_period_settings": {
+                "is_range": false,
+                "precision": "month"
+            },
+            "submission_date_start": "1957-02-27T00:00:00.000000Z",
+            "submission_date_end": "1969-08-12T00:00:00.000000Z",
+            "submission_date_settings": {
+                "is_range": true,
+                "precision": "month"
+            },
+            "publication_date_start": null,
+            "publication_date_end": null,
+            "publication_date_settings": null,
+            "locality": {
+                "id": 5,
+                "name": "North Anais",
+                "district": {
+                    "id": 5,
+                    "name": "Karleechester",
+                    "region": {
+                        "id": 5,
+                        "name": "North Carolina",
+                        "country": {
+                            "id": 5,
+                            "name": "Gambia"
+                        }
+                    }
+                }
+            },
             "authors": [
-                { "display_name": "Horáková, Marta" },
-                { "display_name": "Blaho, Rastislav" }
-            ],
-            "researchers": [
-                { "display_name": "Kováčová, Jana" }
-            ],
-            "originators": [
-                { "label": "Múzeum slovenskej dediny" }
-            ],
-            "type": "fotografia"
-        },
-        {
-            "id": "AD017193",
-            "image": "https://picsum.photos/seed/3/800",
-            "location_note": "Čičmany, Bytča",
-            "year": 1981,
-            "title": "Tradičné kroje, Čičmany",
-            "authors": [
-                { "display_name": "Slobodová, Elena" }
-            ],
-            "researchers": [
-                { "display_name": "Mináčová, Katarína" },
-                { "display_name": "Oravec, Milan" }
-            ],
-            "originators": [
-                { "label": "Ústav etnológie SAV" }
-            ],
-            "type": "diapozitív"
-        },
-        {
-            "id": "AD017194",
-            "image": "https://picsum.photos/seed/4/800",
-            "location_note": "Detva, Zvolen",
-            "year": 1978,
-            "title": "Folklórny festival, Detva",
-            "authors": [
-                { "display_name": "Kováč, Peter" },
-                { "display_name": "Fialová, Zuzana" },
-                { "display_name": "Mináč, Vladimír" }
-            ],
-            "researchers": [
-                { "display_name": "Dzurilla, Karol" }
-            ],
-            "originators": [
-                { "label": "Národné osvetové centrum" }
-            ],
-            "type": "fotografia"
-        },
-        {
-            "id": "AD017195",
-            "image": "https://picsum.photos/seed/5/800",
-            "location_note": "Terchová, Bytča",
-            "year": 1969,
-            "title": "Pastieri na salašoch, Terchová",
-            "authors": [
-                { "display_name": "Juríčková, Anna" }
-            ],
-            "researchers": [
-                { "display_name": "Solár, Adam" },
-                { "display_name": "Benková, Irena" }
-            ],
-            "originators": [
-                { "person": {
-                    "display_name": "Turčan, Miroslav" }
+                {
+                    "id": 34,
+                    "given_name": "Cathy",
+                    "family_name": "Ernser",
+                    "display_name": "Ernser, Cathy",
+                    "orcid": "0000-0003-7841-9971"
                 }
             ],
-            "type": "výskumná správa"
-        },
-        {
-            "id": "AD017196",
-            "image": "https://picsum.photos/seed/6/800",
-            "location_note": "Hronsek, Banská Bystrica",
-            "year": 1984,
-            "title": "Drevený kostol, Hronsek",
-            "authors": [
-                { "display_name": "Šimko, Dušan" },
-                { "display_name": "Krajčíová, Božena" }
-            ],
             "researchers": [
-                { "display_name": "Gašparíková, Vanda" }
-            ],
-            "originators": [
-                { "label": "Pamiatkový úrad SR" }
-            ],
-            "type": "fotografia"
-        },
-        {
-            "id": "AD017197",
-            "image": "https://picsum.photos/seed/7/800",
-            "location_note": "Spišská Stará Ves, Kežmarok",
-            "year": 1972,
-            "title": "Ľudová architektúra, Spiš",
-            "authors": [
-                { "display_name": "Oravec, Milan" }
-            ],
-            "researchers": [
-                { "display_name": "Lukáčová, Viera" }
-            ],
-            "originators": [
-                { "label": "Spišské múzeum" }
-            ],
-            "type": "diapozitív"
-        },
-        {
-            "id": "AD017198",
-            "image": "https://picsum.photos/seed/8/800",
-            "location_note": "Dobrá Niva, Zvolen",
-            "year": 1990,
-            "title": "Vinohradníci pri práci, Dobrá Niva",
-            "authors": [
-                { "display_name": "Lukáčová, Viera" },
-                { "display_name": "Baláž, Tomáš" }
-            ],
-            "researchers": [
-                { "display_name": "Horáková, Marta" }
-            ],
-            "originators": [
-                { "label": "Regionálne kultúrne centrum Zvolen" }
-            ],
-            "type": "fotografia"
-        },
-        {
-            "id": "AD017199",
-            "image": "https://picsum.photos/seed/9/800",
-            "location_note": "Východná, Liptovský Mikuláš",
-            "year": 1976,
-            "title": "Folkloristi, Východná",
-            "authors": [
-                { "display_name": "Dzurilla, Karol" }
-            ],
-            "researchers": [
-                { "display_name": "Slobodová, Elena" }
-            ],
-            "originators": [
-                { "person": {
-                    "display_name": "Turčan, Miroslav" }
+                {
+                    "id": 95,
+                    "given_name": "Jewel",
+                    "family_name": "Medhurst",
+                    "display_name": "Medhurst, Jewel",
+                    "orcid": null
                 }
             ],
-            "type": "diapozitív"
+            "originators": [
+                {
+                    "id": 50,
+                    "label": "Gas Compressor Operator",
+                    "person": {
+                        "id": 145,
+                        "given_name": "Elton",
+                        "family_name": "Wehner",
+                        "display_name": "Wehner, Elton",
+                        "orcid": null
+                    }
+                },
+                {
+                    "id": 51,
+                    "label": "Craft Artist",
+                    "person": {
+                        "id": 113,
+                        "given_name": "Kaitlyn",
+                        "family_name": "Rowe",
+                        "display_name": "Rowe, Kaitlyn",
+                        "orcid": null
+                    }
+                }
+            ],
+            "document_id": "LI279735"
         },
         {
-            "id": "AD017200",
-            "image": "https://picsum.photos/seed/10/800",
-            "location_note": "Stará Ľubovňa, Prešov",
-            "year": 1988,
-            "title": "Hrnčiari na jarmoku, Stará Ľubovňa",
+            "id": "AB978461:qhn",
+            "doi": "10.9410\/5328384",
+            "title": "",
+            "subtitle": "",
+            "abstract": "Nostrum quae consectetur repudiandae vel dolores tempore. Ea nihil rerum reprehenderit voluptatum.",
+            "general_note": "",
+            "terms_of_use": "",
+            "location_note": "Qui eaque voluptas excepturi sed voluptas. Accusantium consequatur nostrum optio omnis optio ut. Aut porro eveniet aliquam illo explicabo saepe. Dolores dolores facere omnis.",
+            "content_note": "Tempore recusandae natus rerum eveniet et non. Occaecati consequatur sit laboriosam pariatur nam labore perspiciatis animi. Possimus nobis vitae est quam aspernatur deserunt. Rerum soluta reprehenderit et totam delectus.",
+            "technical_note": "Optio optio itaque fugiat quo in. Distinctio maxime magnam voluptatum natus minima beatae. Saepe mollitia non placeat autem et veritatis.",
+            "type": "research-paper",
+            "extents": [
+                {
+                    "value": "2.55",
+                    "unit": "page"
+                }
+            ],
+            "language": "pau",
+            "accrual_method": null,
+            "collection_method": "survey",
+            "access_rights": null,
+            "license": "cc-by-nc-nd",
+            "production_methods": null,
+            "time_period_start": "1948-12-27T00:00:00.000000Z",
+            "time_period_end": null,
+            "time_period_settings": {
+                "is_range": false,
+                "precision": "day"
+            },
+            "submission_date_start": "1992-01-25T00:00:00.000000Z",
+            "submission_date_end": null,
+            "submission_date_settings": {
+                "is_range": false,
+                "precision": "year"
+            },
+            "publication_date_start": "1982-07-30T00:00:00.000000Z",
+            "publication_date_end": "1984-12-07T00:00:00.000000Z",
+            "publication_date_settings": {
+                "is_range": true,
+                "precision": "month"
+            },
+            "locality": {
+                "id": 11,
+                "name": "North Annamarieberg",
+                "parent": {
+                    "id": 38,
+                    "name": "Wyattland",
+                    "region": {
+                        "id": 38,
+                        "name": "Mississippi",
+                        "country": {
+                            "id": 41,
+                            "name": "Belarus"
+                        }
+                    }
+                }
+            },
             "authors": [
-                { "display_name": "Benková, Irena" },
-                { "display_name": "Turčan, Miroslav" },
-                { "display_name": "Gašparíková, Vanda" }
+                {
+                    "id": 75,
+                    "given_name": "Daren",
+                    "family_name": "Herman",
+                    "display_name": "Herman, Daren",
+                    "orcid": "0000-0001-5258-4333"
+                },
+                {
+                    "id": 170,
+                    "given_name": "Nyah",
+                    "family_name": "Larson",
+                    "display_name": "Larson, Nyah",
+                    "orcid": null
+                },
+                {
+                    "id": 195,
+                    "given_name": "Paolo",
+                    "family_name": "Kohler",
+                    "display_name": "Kohler, Paolo",
+                    "orcid": null
+                }
             ],
-            "researchers": [
-                { "display_name": "Kováč, Peter" },
-                { "display_name": "Šimko, Dušan" }
-            ],
+            "researchers": [],
             "originators": [
-                { "label": "Ľubovnianske múzeum" }
+                {
+                    "id": 655,
+                    "label": "Stock Clerk",
+                    "person": {
+                        "id": 48,
+                        "given_name": "Genesis",
+                        "family_name": "Howell",
+                        "display_name": "Howell, Genesis",
+                        "orcid": "0000-0006-7920-013X"
+                    }
+                },
+                {
+                    "id": 656,
+                    "label": "Drycleaning Machine Operator",
+                    "person": {
+                        "id": 23,
+                        "given_name": "Henriette",
+                        "family_name": "Zulauf",
+                        "display_name": "Zulauf, Henriette",
+                        "orcid": null
+                    }
+                }
             ],
-            "type": "výskumná správa"
+            "document_id": "BF639903"
         }
     ]
 }
