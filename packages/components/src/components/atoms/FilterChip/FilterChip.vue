@@ -29,7 +29,7 @@ const {
 }>();
 
 const label = computed(() => {
-  return `${count} selected`;
+  return `${count}`;
 });
 
 defineEmits([

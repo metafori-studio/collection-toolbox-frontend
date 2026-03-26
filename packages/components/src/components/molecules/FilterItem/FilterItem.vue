@@ -26,6 +26,7 @@
         v-if="selectedCount"
         class="relative"
         :count="selectedCount"
+        @clear="emit('clear')"
       />
     </div>
     <BaseIcon
@@ -53,8 +54,9 @@ const {
   selectedCount?: number,
 }>();
 
-defineEmits([
+const emit = defineEmits([
   'open',
+  'clear',
 ]);
 
 </script>
