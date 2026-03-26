@@ -25,7 +25,9 @@
       <span v-else>Filter</span>
     </BaseButton>
     <FilterWidget
-      v-if="filterOpen"
+      v-show="filterOpen"
+      :aggregations="aggregations"
+      @update="filterValues = $event"
     />
     <div class="p-4 flex flex-col lg:flex-row">
       <div
@@ -35,15 +37,23 @@
         }"
       />
       <ItemList
-        v-if="itemsLoaded"
         :items="items"
+        :meta="itemsMeta"
+        :order-by="orderBy"
+        :order-asc="orderAsc"
+        :class="{
+          'opacity-30': isLoadingItems,
+        }"
+        @update:order-by="orderBy = $event"
+        @update:order-asc="orderAsc = $event"
+        @update:page="page = $event"
       />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, watch } from 'vue';
 
 import {
   BaseButton,
@@ -53,25 +63,76 @@ import EtnoMap, { type MapPoint } from '@/components/EtnoMap/EtnoMap.vue';
 import ItemList from '@/components/ItemList/ItemList.vue';
 import FilterWidget from '@/components/Filter/FilterWidget.vue';
 
-import { getMapPoints, getList } from '@/api';
+import { getMapPoints, getList, getAggregations } from '@/api';
 import { filterOpen, filterWidgetWidth } from '@/store';
+import { type AggregationOption } from '@/misc/filterTypes';
 
-const itemsLoaded = ref(false);
+// State
+const isLoadingItems = ref(true);
+
 const mapPoints = ref<MapPoint[]>([]);
 const items = ref<Record<string, unknown>[]>([]);
+const itemsMeta = ref<Record<string, unknown>>({});
 
-onMounted(async() => {
+const filterValues = ref<Record<string, string[]>>({});
+const aggregations = ref<Record<string, AggregationOption[]>>({});
+
+// View state
+const orderBy = ref('id');
+const orderAsc = ref(true);
+const page = ref(1);
+
+// Loading
+const loadMapPoints = async () => {
   try {
-    const [nextMapPoints, nextItems] = await Promise.all([
-      getMapPoints(),
-      getList(),
-    ]);
-    mapPoints.value = nextMapPoints;
-    items.value = nextItems;
-    itemsLoaded.value = true;
+    mapPoints.value = await getMapPoints();
   } catch {
     mapPoints.value = [];
-    items.value = [];
   }
+};
+
+const loadItems = async () => {
+  isLoadingItems.value = true;
+  try {
+    const response = await getList(filterValues.value, orderBy.value, orderAsc.value, page.value);
+    items.value = response.data;
+    itemsMeta.value = response.meta as Record<string, unknown>;
+  } catch {
+    items.value = [];
+    itemsMeta.value = {};
+  } finally {
+    isLoadingItems.value = false;
+  }
+};
+
+const loadAggregations = async () => {
+  try {
+    aggregations.value = await getAggregations(filterValues.value) as Record<string, AggregationOption[]>;
+  } catch {
+    aggregations.value = {};
+  }
+};
+
+onMounted(() => {
+  loadMapPoints();
+  loadItems();
+  loadAggregations();
 });
+
+watch([
+  orderBy,
+  orderAsc,
+  page,
+], () => {
+  loadItems();
+});
+
+watch(filterValues, () => {
+  page.value = 1;
+  loadAggregations();
+  loadItems();
+}, {
+  deep: true,
+});
+
 </script>

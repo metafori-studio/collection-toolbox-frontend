@@ -18,3 +18,10 @@ export interface FilterSection {
   icon: IconName
   items: FilterItem[]
 }
+
+export interface AggregationOption {
+  label: string
+  value: string
+  id?: string
+  count?: number
+}

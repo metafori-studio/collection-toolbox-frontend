@@ -1,21 +1,27 @@
 <template>
   <div class="@container flex-1">
     <div class="flex items-center justify-between mb-4">
-      <h2 class="text-heading-4">
-        {{ items.length }} objektov
-      </h2>
+      <div>
+        <h2 class="text-heading-4">
+          {{ meta.total }} objektov
+        </h2>
+        <p class="text-xs text-neutral-500">
+          Zobrazujem {{ meta.from }}-{{ meta.to }}
+        </p>
+      </div>
       <div class="flex items-center gap-2">
         <label for="orderBy">
           Zoradiť podľa
         </label>
         <InputSelect
           id="orderBy"
-          v-model="orderBy"
+          :model-value="orderBy"
           :options="orderByOptions"
+          @update:model-value="emit('update:orderBy', $event)"
         />
         <BaseButton
           variant="secondary"
-          @click="orderAsc = !orderAsc"
+          @click="emit('update:orderAsc', !orderAsc)"
         >
           <BaseIcon
             :icon="orderAsc ? 'arrowUp' : 'arrowDown'"
@@ -24,18 +30,17 @@
       </div>
     </div>
     <ItemCardList
-      :items="pagedItems"
+      :items="items"
     />
     <ItemListPagination
-      v-model="currentPage"
-      :total-pages="totalPages"
+      :model-value="meta.current_page ?? 1"
+      :total-pages="meta.last_page ?? 1"
+      @update:model-value="emit('update:page', $event)"
     />
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref, computed, watch } from 'vue';
-
 import {
   BaseButton,
   InputSelect,
@@ -44,46 +49,32 @@ import {
 import ItemCardList from './ItemCardList.vue';
 import ItemListPagination from './ItemListPagination.vue';
 
-const PAGE_SIZE = 20;
-
 const {
   items = [],
+  meta = {},
+  orderBy = 'id',
+  orderAsc = true,
 } = defineProps<{
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  items?: any[]
+  items?: any[];
+  meta?: {
+    total?: number;
+    from?: number;
+    to?: number;
+    current_page?: number;
+    last_page?: number;
+    [key: string]: unknown;
+  },
+  orderBy?: string;
+  orderAsc?: boolean;
 }>();
 
-const orderAsc = ref(true);
-const orderBy = ref('id');
-const currentPage = ref(1);
+const emit = defineEmits(['update:orderBy', 'update:orderAsc', 'update:page']);
+
 const orderByOptions = [
   { label: 'ID', value: 'id' },
-  { label: 'Názov', value: 'name' },
-  { label: 'Čas aktivity', value: 'year' },
+  { label: 'Názov', value: 'title' },
+  { label: 'Čas aktivity', value: 'time_period_start' },
 ];
-
-const sortedItems = computed(() => {
-  const direction = orderAsc.value ? 1 : -1;
-
-  return [...items].sort((a, b) => {
-    const valA = a[orderBy.value];
-    const valB = b[orderBy.value];
-
-    if (valA < valB) return -direction;
-    if (valA > valB) return direction;
-    return 0;
-  });
-});
-
-const totalPages = computed(() => Math.ceil(sortedItems.value.length / PAGE_SIZE));
-
-const pagedItems = computed(() => {
-  const start = (currentPage.value - 1) * PAGE_SIZE;
-  return sortedItems.value.slice(start, start + PAGE_SIZE);
-});
-
-watch([orderBy, orderAsc], () => {
-  currentPage.value = 1;
-});
 
 </script>
