@@ -6,6 +6,7 @@
       hover:bg-primary-500 hover:text-primary-100 group-hover:bg-primary-200
     "
     :class="[focusClasses]"
+    :aria-label="`Clear ${count} selected`"
     @click="$emit('clear')"
   >
     {{ label }}

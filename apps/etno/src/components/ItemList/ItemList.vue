@@ -2,10 +2,16 @@
   <div class="@container flex-1">
     <div class="flex items-center justify-between mb-4">
       <div>
-        <h2 class="text-heading-4">
+        <h2
+          v-if="meta.total"
+          class="text-heading-4"
+        >
           {{ meta.total }} objektov
         </h2>
-        <p class="text-xs text-neutral-500">
+        <p
+          v-if="meta.from && meta.to"
+          class="text-xs text-neutral-500"
+        >
           Zobrazujem {{ meta.from }}-{{ meta.to }}
         </p>
       </div>
