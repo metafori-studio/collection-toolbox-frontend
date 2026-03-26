@@ -24,7 +24,7 @@ const getList = async (): Promise<Record<string, unknown>[]> => {
     return mockIndex.data as Record<string, unknown>[];
   }
   const { data } = await api.get('/items?per_page=50');
-  return data.data.map((record) => ({
+  return data.data.map((record: Record<string, unknown>) => ({
     ...record,
     image: 'https://fastly.picsum.photos/id/4/800/800.jpg?hmac=ji2no8lxJV7_xjfY7ajNOri7_dDclKhOxxQ0gy0Svfc',
   })) as Record<string, unknown>[];

@@ -91,7 +91,7 @@
           <ul class="flex gap-1.5 flex-wrap">
             <li
               v-for="keyword in detail.keywords"
-              :key="keyword"
+              :key="keyword.id"
               class="rounded-md px-2 py-0.5 text-xs font-semibold bg-primary-100 text-primary-700"
               v-text="keyword.name"
             />
@@ -295,8 +295,9 @@ const tableAuthors = computed(() => ({
 }));
 
 const tableGeographic = computed(() => {
+  // This is temporary solution, add more robust traverse in the future
   const locality = detail.value.locality;
-  const district = locality?.district;
+  const district = locality?.district || locality?.parent;
   const region = district?.region;
   const country = region?.country;
   return {
