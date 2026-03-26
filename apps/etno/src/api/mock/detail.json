@@ -1,20 +1,137 @@
 {
     "data": {
-        "id": "AD017250",
-        "title": "Ornamentálna výzdoba dreveníc, Čičmany",
-        "location_note": "Čičmany, Bytča",
-        "year": 1981,
-        "authors": [
-            { "given_name": "Milan", "family_name": "Leščák" },
-            { "given_name": "Emília", "family_name": "Horváthová" }
+        "id": "AB480645:vlo",
+        "doi": "10.6052\/5572319",
+        "title": "",
+        "subtitle": "",
+        "abstract": "",
+        "general_note": "",
+        "terms_of_use": "Error delectus itaque quis aspernatur dolores. Temporibus ipsa quia a eius voluptatibus maxime magnam. Neque qui eveniet consequatur quia porro illo nihil veniam.",
+        "location_note": "In necessitatibus qui rerum et quis ut sed. Rerum velit eaque voluptatum aliquid praesentium. Voluptates tempore sunt reiciendis magnam atque asperiores suscipit qui.",
+        "content_note": "",
+        "technical_note": "",
+        "type": "masters-thesis",
+        "extents": [
+            {
+                "value": "55.83",
+                "unit": "research-slip"
+            }
         ],
-        "type": "diapozitív",
-        "abstract": "Krátky popis dokumentu pre potreby prototypu. Tento text slúži na vizualizáciu sekcie Abstrakt.",
+        "language": "kon",
+        "accrual_method": null,
+        "collection_method": "archival-research",
+        "access_rights": "paid-access",
+        "license": "cc-by",
+        "production_methods": [
+            "dot-matrix-printing",
+            "audio-recording"
+        ],
+        "time_period_start": "2021-02-25T00:00:00.000000Z",
+        "time_period_end": null,
+        "time_period_settings": {
+            "is_range": false,
+            "precision": "month"
+        },
+        "submission_date_start": "1957-02-27T00:00:00.000000Z",
+        "submission_date_end": "1969-08-12T00:00:00.000000Z",
+        "submission_date_settings": {
+            "is_range": true,
+            "precision": "month"
+        },
+        "publication_date_start": null,
+        "publication_date_end": null,
+        "publication_date_settings": null,
+        "institution": {
+            "id": 65,
+            "name": "Wiegand PLC",
+            "ror_id": "0wpzptg50"
+        },
+        "project": {
+            "id": 65,
+            "title": "Eum totam autem ab mollitia aut at."
+        },
+        "locality": {
+            "id": 5,
+            "name": "North Anais",
+            "district": {
+                "id": 5,
+                "name": "Karleechester",
+                "region": {
+                    "id": 5,
+                    "name": "North Carolina",
+                    "country": {
+                        "id": 5,
+                        "name": "Gambia"
+                    }
+                }
+            }
+        },
+        "authors": [
+            {
+                "id": 34,
+                "given_name": "Cathy",
+                "family_name": "Ernser",
+                "display_name": "Ernser, Cathy",
+                "orcid": "0000-0003-7841-9971"
+            }
+        ],
+        "researchers": [
+            {
+                "id": 95,
+                "given_name": "Jewel",
+                "family_name": "Medhurst",
+                "display_name": "Medhurst, Jewel",
+                "orcid": null
+            }
+        ],
+        "originators": [
+            {
+                "id": 50,
+                "label": "Gas Compressor Operator",
+                "person": {
+                    "id": 145,
+                    "given_name": "Elton",
+                    "family_name": "Wehner",
+                    "display_name": "Wehner, Elton",
+                    "orcid": null
+                }
+            },
+            {
+                "id": 51,
+                "label": "Craft Artist",
+                "person": {
+                    "id": 113,
+                    "given_name": "Kaitlyn",
+                    "family_name": "Rowe",
+                    "display_name": "Rowe, Kaitlyn",
+                    "orcid": null
+                }
+            }
+        ],
         "keywords": [
-            "ornament",
-            "výzdoba",
-            "drevenice",
-            "architektúra"
-        ]
+            {
+                "id": 2,
+                "name": "quod"
+            },
+            {
+                "id": 50,
+                "name": "a"
+            },
+            {
+                "id": 86,
+                "name": "debitis"
+            },
+            {
+                "id": 88,
+                "name": "nulla"
+            }
+        ],
+        "research_collections": [
+            {
+                "id": 15,
+                "title": "Voluptates rem qui dignissimos dolores sed quam aut."
+            }
+        ],
+        "document_id": "LI279735"
     }
 }

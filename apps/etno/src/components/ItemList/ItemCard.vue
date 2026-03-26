@@ -27,28 +27,26 @@
       />
 
       <div class="flex items-center gap-2 text-neutral-500 text-xs">
-        <div class="flex items-center gap-1">
-          <BaseIcon
-            icon="folder"
-            :size="16"
-          />
-          Zbierka (2)
-        </div>
-
-        <div class="flex items-center gap-1">
+        <div
+          v-if="item.document_id"
+          class="flex items-center gap-1"
+        >
           <BaseIcon
             icon="document"
             :size="16"
           />
-          12345
+          {{ item.document_id }}
         </div>
       </div>
     </div>
     <div class="flex flex-col">
       <div class="flex flex-wrap gap-x-1 text-xs text-neutral-500">
-        <span>{{ item.location_note }}</span>
-        <span aria-hidden>·</span>
-        <span>{{ item.year }}</span>
+        {{ item.locality?.name }}
+        <span
+          v-if="item.locality?.name && yearRange"
+          aria-hidden
+        >·</span>
+        {{ yearRange }}
       </div>
       <h3 class="text-base font-semibold">
         {{ item.title }}
@@ -86,10 +84,8 @@ import { BaseIcon } from '@metafori/components';
 import MediaTypeChip from '@/components/MediaTypeChip.vue';
 
 import { focusClasses } from '@metafori/components';
-
-type Person = { display_name: string; family_name?: string; given_name?: string };
-type Originator = { label?: string; person?: Person };
-type PersonOrOriginator = Person | Originator;
+import { toNameReadable } from '@/misc/toNameReadable';
+import { toYearRange } from '@/misc/toYearRange';
 
 const {
   item,
@@ -98,22 +94,10 @@ const {
   item: Record<string, any>
 }>();
 
-const resolveDisplayName = (entry: PersonOrOriginator): string | undefined => {
-  if ('display_name' in entry) return entry.display_name;
-  if ('label' in entry) return entry.label;
-  if ('person' in entry) return entry.person?.display_name;
-  return undefined;
-};
+const authorsReadable = computed(() => toNameReadable(item.authors));
+const researchersReadable = computed(() => toNameReadable(item.researchers));
+const originatorsReadable = computed(() => toNameReadable(item.originators));
 
-const toReadable = (people: PersonOrOriginator[] | undefined) => {
-  if (!people) {
-    return null;
-  }
-  return people.map(resolveDisplayName).filter(Boolean).join(' · ') || null;
-};
-
-const authorsReadable = computed(() => toReadable(item.authors));
-const researchersReadable = computed(() => toReadable(item.researchers));
-const originatorsReadable = computed(() => toReadable(item.originators));
+const yearRange = computed(() => toYearRange(item.time_period_start, item.time_period_end));
 
 </script>

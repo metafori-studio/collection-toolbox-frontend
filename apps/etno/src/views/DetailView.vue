@@ -31,6 +31,7 @@
 
     <component
       :is="activeViewerComponent"
+      v-if="isLoaded"
       :detail="detail"
     />
 
@@ -76,22 +77,23 @@
         </DetailSection>
 
         <DetailSection
+          v-if="detail.abstract"
           title="Abstrakt"
         >
-          <p class="text-neutral-500">
+          <p class="text-sm text-neutral-500">
             {{ detail.abstract }}
           </p>
         </DetailSection>
 
-
         <DetailSection
           title="Kľúčové slová"
         >
-          <ul class="flex gap-1 flex-wrap">
+          <ul class="flex gap-1.5 flex-wrap">
             <li
               v-for="keyword in detail.keywords"
               :key="keyword"
-              v-text="keyword"
+              class="rounded-md px-2 py-0.5 text-xs font-semibold bg-primary-100 text-primary-700"
+              v-text="keyword.name"
             />
           </ul>
         </DetailSection>
@@ -99,13 +101,85 @@
         <h2 class="text-heading-4">
           Údaje
         </h2>
+
         <DetailSection
-          v-for="(table, i) in tables"
-          :key="i"
-          :title="table.title"
+          :title="tableDesc.title"
         >
           <DetailTable
-            :items="table.items"
+            :items="tableDesc.items"
+          />
+          <div class="flex flex-col gap-2">
+            <div
+              v-if="detail.general_note"
+              class="flex flex-col gap-1 rounded-md border border-neutral-300 bg-neutral-100 px-3 py-2.5 text-neutral-600"
+            >
+              <h3 class="text-label-small font-bold text-neutral-500">
+                Všeobecná poznámka
+              </h3>
+              <p class="text-sm font-medium">
+                {{ detail.general_note }}
+              </p>
+            </div>
+            <div
+              v-if="detail.content_note"
+              class="flex flex-col gap-1 rounded-md border border-neutral-300 bg-neutral-100 px-3 py-2.5 text-neutral-600"
+            >
+              <h3 class="text-label-small font-bold text-neutral-500">
+                Obsahová poznámka
+              </h3>
+              <p class="text-sm font-medium">
+                {{ detail.content_note }}
+              </p>
+            </div>
+            <div
+              v-if="detail.technical_note"
+              class="flex flex-col gap-1 rounded-md border border-neutral-300 bg-neutral-100 px-3 py-2.5 text-neutral-600"
+            >
+              <h3 class="text-label-small font-bold text-neutral-500">
+                Technická poznámka
+              </h3>
+              <p class="text-sm font-medium">
+                {{ detail.technical_note }}
+              </p>
+            </div>
+          </div>
+        </DetailSection>
+
+        <DetailSection
+          :title="tableAuthors.title"
+        >
+          <DetailTable
+            :items="tableAuthors.items"
+          />
+        </DetailSection>
+
+        <DetailSection
+          :title="tableGeographic.title"
+        >
+          <DetailTable
+            :items="tableGeographic.items"
+          />
+        </DetailSection>
+
+        <DetailSection
+          title="Mapa"
+        >
+          [ TODO: Map ]
+        </DetailSection>
+
+        <DetailSection
+          :title="tableFormal.title"
+        >
+          <DetailTable
+            :items="tableFormal.items"
+          />
+        </DetailSection>
+
+        <DetailSection
+          :title="tableAdministrative.title"
+        >
+          <DetailTable
+            :items="tableAdministrative.items"
           />
         </DetailSection>
       </div>
@@ -139,6 +213,8 @@ import TranscriptViewer from '@/components/DetailViewers/TranscriptViewer.vue';
 
 import { detailPanelOpen } from '@/store';
 import { getDetail } from '@/api';
+import { toNameReadable } from '@/misc/toNameReadable';
+import { toYearRange } from '@/misc/toYearRange';
 
 const {
   id,
@@ -192,59 +268,73 @@ const activeViewerComponent = computed(() => {
   return match.component;
 });
 
-
 // Tables
-type Author = { family_name: string; given_name: string };
-
-const authorsReadable = computed(() => {
-  const authors = detail.value.authors as Author[] | undefined;
-  if (!authors?.length) return '';
-  const flat = authors.map((a) => `${a.family_name}, ${a.given_name}`);
-  return flat.join('; ');
-});
-
 const basicInfo = computed(() => [
-  { label: 'Autorstvo', value: authorsReadable.value },
+  { label: 'Autorstvo', value: toNameReadable(detail.value.authors) },
   { label: 'Typ dokumentu', value: detail.value.type },
-  { label: 'Výskumná zbierka', value: '' },
+  {
+    label: 'Výskumná zbierka',
+    value: detail.value.research_collections?.map((o: { title: string }) => o.title).join(', '),
+  },
 ]);
 
-const tables = computed(() => [
-  {
-    title: 'Tematické a autorské údaje',
-    items: [
-      { label: 'Autor', value: detail.value.author },
-    ],
-  },
-  {
+const tableDesc = computed(() => ({
+  title: 'Popisné údaje',
+  items: [
+    { label: 'Jazyk', value: detail.value.lang },
+  ],
+}));
+
+const tableAuthors = computed(() => ({
+  title: 'Autori a pôvodcovia',
+  items: [
+    { label: 'Autorstvo', value: toNameReadable(detail.value.authors) },
+    { label: 'Výskum', value: toNameReadable(detail.value.researchers) },
+    { label: 'Pôvod', value: toNameReadable(detail.value.originators) },
+  ],
+}));
+
+const tableGeographic = computed(() => {
+  const locality = detail.value.locality;
+  const district = locality?.district;
+  const region = district?.region;
+  const country = region?.country;
+  return {
     title: 'Geografické údaje',
     items: [
-      { label: 'Obec', value: 'Čičmany' },
-      { label: 'Okres', value: 'Žilina' },
-      { label: 'Kraj', value: 'Žilinský' },
-      { label: 'Štát', value: 'Slovensko' },
+      { label: 'Obec', value: locality?.name },
+      { label: 'Okres', value: district?.name },
+      { label: 'Kraj', value: region?.name },
+      { label: 'Štát', value: country?.name },
     ],
-  },
-  {
-    title: 'Formálne údaje',
-    items: [
-      { label: 'Typ dokumentu', value: 'diapozitív' },
-      { label: 'Čas realizácie', value: 1970 },
-      { label: 'Dátum odovzdania', value: 1971 },
-      { label: 'Spôsob zberu', value: 'terénny výskum' },
-      { label: 'Spôsob nadobudnutia', value: 'zamestnanecké dielo' },
-      { label: 'Jazyk', value: 'sk' },
-    ],
-  },
-  {
-    title: 'Administratívne údaje',
-    items: [
-      { label: 'Výskumná zbierka', value: 'Zbierka diapozitívov' },
-      { label: 'Inštitúcia', value: 'Ústav etnológie a sociálnej antropológie SAV, v. v. i.' },
-      { label: 'Prístup', value: 'otvorený prístup' },
-      { label: 'Licencia', value: 'CC BY-NC-SA' },
-    ],
-  },
-]);
+  };
+});
+
+const tableFormal = computed(() => ({
+  title: 'Pôvod a kontext výskumu',
+  items: [
+    { label: 'Inštitúcia', value: detail.value.institution?.name },
+    { label: 'Spôsob zberu', value: detail.value.collection_method },
+    { label: 'Spôsob nadobudnutia', value: detail.value.accural_method },
+
+    { label: 'Typ dokumentu', value: detail.value.type },
+    {
+      label: 'Čas realizácie',
+      value: toYearRange(detail.value.time_period_start, detail.value.time_period_end),
+    },
+    {
+      label: 'Dátum odovzdania',
+      value: toYearRange(detail.value.submission_date_start, detail.value.submission_date_end),
+    },
+  ],
+}));
+
+const tableAdministrative = computed(() => ({
+  title: 'Práva a prístup',
+  items: [
+    { label: 'Prístupové práva', value: detail.value.access_rights },
+    { label: 'Licencia', value: detail.value.licence },
+  ],
+}));
 
 </script>
