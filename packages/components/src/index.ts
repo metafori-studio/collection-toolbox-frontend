@@ -3,7 +3,7 @@ import './assets/main.css';
 export { focusClasses, focusBeforeClasses, disabledClasses } from './misc/reusableCss';
 
 // Atoms
-export { default as BaseButton } from './components/atoms/BaseButton';
+export { default as BaseButton, type ButtonSize } from './components/atoms/BaseButton';
 export { default as BaseDropdown } from './components/atoms/BaseDropdown';
 export { default as BaseIcon, type IconName } from './components/atoms/BaseIcon';
 export { default as FilterChip } from './components/atoms/FilterChip';
