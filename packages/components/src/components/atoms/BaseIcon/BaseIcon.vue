@@ -36,6 +36,8 @@ import {
   PhSidebar,
   PhTag,
   PhFolder,
+  PhSignIn,
+  PhUserPlus,
 } from '@phosphor-icons/vue';
 
 export const icons = {
@@ -66,6 +68,8 @@ export const icons = {
   sidebar: PhSidebar,
   tag: PhTag,
   folder: PhFolder,
+  signIn: PhSignIn,
+  userPlus: PhUserPlus,
 };
 
 export type IconName = keyof typeof icons;
