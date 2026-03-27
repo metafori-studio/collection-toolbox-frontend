@@ -22,7 +22,7 @@
       </BaseButton>
     </div>
     <div class="text-center font-bold">
-      Archeo Explorer
+      Archeomap
     </div>
     <div class="flex items-center justify-end gap-3">
       <div
