@@ -6,6 +6,7 @@
     <BaseButton
       :id="id"
       variant="secondary"
+      :size="size"
       @click="toggle"
     >
       <slot name="trigger">
@@ -29,16 +30,18 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue';
-import BaseButton from '../BaseButton';
+import BaseButton, { type ButtonSize } from '../BaseButton';
 
 type Direction = 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
 
 const {
   id = undefined,
   direction = 'bottom-left',
+  size = 'regular',
 } = defineProps<{
   id?: string
   direction?: Direction
+  size?: ButtonSize
 }>();
 
 
