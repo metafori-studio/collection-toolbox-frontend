@@ -5,7 +5,7 @@
       class="fixed inset-0 z-50 flex items-center justify-center"
     >
       <div class="absolute inset-0 bg-black/50" />
-      <div class="relative bg-white rounded-lg shadow-lg p-6 md:min-w-[400px] md:max-w-[600px]">
+      <div class="relative bg-white rounded-lg shadow-lg p-6 w-[calc(100%-2rem)] max-h-[calc(100vh-2rem)] overflow-y-auto md:min-w-[400px] md:max-w-[600px] md:w-auto">
         <button
           v-if="allowClose"
           class="absolute top-2 right-2 p-1 rounded hover:bg-gray-100"
