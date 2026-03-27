@@ -30,13 +30,15 @@
 <script setup lang="ts">
 import { focusClasses, disabledClasses } from '../../../misc/reusableCss';
 
+export type ButtonSize = 'small' | 'regular';
+
 const {
   size = 'regular',
   variant = 'primary',
   block = false,
   disabled = false,
 } = defineProps<{
-  size?: 'small' | 'regular'
+  size?: ButtonSize
   variant?: 'primary' | 'secondary' | 'danger-primary' | 'danger-secondary'
   block?: boolean,
   disabled?: boolean,
