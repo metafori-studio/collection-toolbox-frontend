@@ -12,11 +12,15 @@ const api = axios.create({
   timeout: 10_000,
 });
 
+const sanctum = api.create({
+  baseURL: import.meta.env.VITE_REMOTE_URL,
+});
+
 const getMapPoints = async (): Promise<MapPoint[]> => {
   if (USE_MOCK) {
     return mockMapPoints.data as MapPoint[];
   }
-  const { data } = await api.get('/items/map-points');
+  const { data } = await api.get('/etno/items/map-points');
   return data.data as MapPoint[];
 };
 
@@ -41,7 +45,7 @@ const getList = async (
     });
   });
 
-  const { data } = await api.get(`/items?${params.toString()}`);
+  const { data } = await api.get(`/etno/items?${params.toString()}`);
 
   return {
     ...data,
@@ -76,12 +80,12 @@ const getDetail = async (id: string): Promise<Record<string, unknown>> => {
   if (USE_MOCK) {
     return mockDetail.data as Record<string, unknown>;
   }
-  const { data } = await api.get(`/items/${id}`);
+  const { data } = await api.get(`/etno/items/${id}`);
   return data.data;
 };
 
 const getCsrfCookie = async () => {
-  const response = await api.get('../../sanctum/csrf-cookie');
+  const response = await sanctum.get('/sanctum/csrf-cookie');
   return response.data;
 };
 
@@ -92,7 +96,7 @@ type LoginPayload = {
 };
 
 const login = async (payload: LoginPayload) => {
-  const response = await api.post('../../api/login', payload);
+  const response = await api.post('/login', payload);
   return response.data;
 };
 
