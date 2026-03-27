@@ -80,9 +80,28 @@ const getDetail = async (id: string): Promise<Record<string, unknown>> => {
   return data.data;
 };
 
+const getCsrfCookie = async () => {
+  const response = await api.get('../../sanctum/csrf-cookie');
+  return response.data;
+};
+
+type LoginPayload = {
+  email: string;
+  password: string;
+  remember?: boolean;
+};
+
+const login = async (payload: LoginPayload) => {
+  const response = await api.post('../../api/login', payload);
+  return response.data;
+};
+
 export {
   getMapPoints,
   getList,
   getAggregations,
   getDetail,
+
+  getCsrfCookie,
+  login,
 };
