@@ -3,7 +3,7 @@
     <input
       :id="id"
       v-model="model"
-      type="text"
+      :type="type"
       class="w-full rounded-lg bg-neutral-0 border border-neutral-300 px-3 py-2 pr-7 text-label"
       :class="[focusClasses, {
         // Disabled
@@ -52,12 +52,14 @@ const {
   disabled = false,
   placeholder = '',
   hasError = false,
+  type = 'text',
 } = defineProps<{
   id?: string
   icon?: IconName
   disabled?: boolean
   placeholder?: string
   hasError?: boolean
+  type?: 'text' | 'password' | 'email' | 'search' | 'tel' | 'url'
 }>();
 
 const model = defineModel<string|number>();
