@@ -1,6 +1,7 @@
 <template>
   <ModalWindow
     :is-open="true"
+    title="Dokument na vyžiadanie"
   >
     <div class="flex flex-col items-center gap-4">
       <h2 class="text-heading-3">
