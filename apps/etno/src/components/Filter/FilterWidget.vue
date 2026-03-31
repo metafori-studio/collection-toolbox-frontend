@@ -12,26 +12,26 @@
         <BaseIcon
           icon="filter"
         />
-        <h2>Filter aktivít</h2>
+        <h2>{{ $t('filter.title') }}</h2>
         <BaseButton
           class="ml-auto"
           variant="danger-secondary"
           size="small"
           @click="resetAll"
         >
-          Reset
+          {{ $t('filter.reset') }}
         </BaseButton>
       </div>
       <FilterSection
         v-for="(section, i) in filterSections"
         :key="i"
-        :label="section.title"
+        :label="$t(section.title)"
         :icon="section.icon"
       >
         <FilterItem
           v-for="(item, j) in section.items"
           :key="j"
-          :label="item.label"
+          :label="$t(item.label)"
           :selected-count="(filterValues[item.id] as string[] | undefined)?.length ?? 0"
           :active="item.id === nowOpen"
           @click="openItem(item)"
@@ -50,7 +50,7 @@
           <BaseIcon icon="arrowLeft" />
         </BaseButton>
         <h3>
-          {{ nowOpenObj!.label }}
+          {{ $t(nowOpenObj!.label) }}
         </h3>
         <BaseButton
           class="ml-auto"
@@ -58,7 +58,7 @@
           size="small"
           @click="resetItem(nowOpenObj!)"
         >
-          Reset
+          {{ $t('filter.reset') }}
         </BaseButton>
       </div>
       <div
@@ -79,7 +79,7 @@
           v-if="!getOptions(nowOpenObj!.id)?.length"
           class="pt-4 pb-2 text-sm"
         >
-          No results found
+          {{ $t('filter.noResults') }}
         </div>
       </div>
       <InputRange

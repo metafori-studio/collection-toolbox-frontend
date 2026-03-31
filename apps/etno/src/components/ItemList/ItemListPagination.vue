@@ -2,12 +2,12 @@
   <nav
     v-if="totalPages > 1"
     class="flex items-center justify-center gap-2 mt-4"
-    aria-label="Stránkovanie"
+    :aria-label="$t('pagination.label')"
   >
     <BaseButton
       variant="secondary"
       :disabled="modelValue === 1"
-      aria-label="Predchádzajúca stránka"
+      :aria-label="$t('pagination.previousPage')"
       @click="$emit('update:modelValue', modelValue - 1)"
     >
       <BaseIcon icon="arrowLeft" />
@@ -18,7 +18,7 @@
     <BaseButton
       variant="secondary"
       :disabled="modelValue === totalPages"
-      aria-label="Ďalšia stránka"
+      :aria-label="$t('pagination.nextPage')"
       @click="$emit('update:modelValue', modelValue + 1)"
     >
       <BaseIcon icon="arrowRight" />

@@ -21,8 +21,8 @@
       <BaseIcon
         :icon="filterOpen ? 'x' : 'filter'"
       />
-      <span v-if="filterOpen">Zavrieť filter</span>
-      <span v-else>Filter</span>
+      <span v-if="filterOpen">{{ $t('explore.filterClose') }}</span>
+      <span v-else>{{ $t('explore.filterOpen') }}</span>
     </BaseButton>
     <FilterWidget
       v-show="filterOpen"

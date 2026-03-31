@@ -8,7 +8,7 @@
       @click="$router.push({ name: 'Explore' })"
     >
       <BaseIcon icon="caretLeft" />
-      Späť na explore
+      {{ $t('detail.navigation.backToExplore') }}
     </BaseButton>
 
     <BaseButton
@@ -18,10 +18,10 @@
       @click="detailPanelOpen = !detailPanelOpen"
     >
       <span v-if="detailPanelOpen">
-        Skryť
+        {{ $t('detail.panel.hide') }}
       </span>
       <span v-else>
-        Zobraziť panel
+        {{ $t('detail.panel.show') }}
       </span>
       <BaseIcon
         v-if="detailPanelOpen"
@@ -41,7 +41,7 @@
     >
       <div class="sticky z-10 top-14 bg-white px-4 py-2 flex items-center gap-2 border-b border-neutral-200 min-h-[49px]">
         <span class="">
-          Detail
+          {{ $t('detail.panel.title') }}
         </span>
         <span class="font-mono text-xs font-bold text-primary-500 bg-primary-50 px-2 py-0.5 rounded-full">
           {{ detail.id }}
@@ -50,7 +50,7 @@
 
       <div class="p-4 flex flex-col gap-8">
         <div class="flex flex-col gap-2">
-          <span class="text-label text-neutral-500">Viewer</span>
+          <span class="text-label text-neutral-500">{{ $t('detail.viewer.label') }}</span>
           <div class="flex flex-wrap items-center gap-2">
             <InputSelect
               v-model="viewerActive"
@@ -69,7 +69,7 @@
         </div>
 
         <DetailSection
-          title="Základné údaje"
+          :title="$t('detail.section.basicInfo')"
         >
           <DetailTable
             :items="basicInfo"
@@ -78,7 +78,7 @@
 
         <DetailSection
           v-if="detail.abstract"
-          title="Abstrakt"
+          :title="$t('detail.section.abstract')"
         >
           <p class="text-sm text-neutral-500">
             {{ detail.abstract }}
@@ -86,7 +86,7 @@
         </DetailSection>
 
         <DetailSection
-          title="Kľúčové slová"
+          :title="$t('detail.section.keywords')"
         >
           <ul class="flex gap-1.5 flex-wrap">
             <li
@@ -99,7 +99,7 @@
         </DetailSection>
 
         <h2 class="text-heading-4">
-          Údaje
+          {{ $t('detail.section.data') }}
         </h2>
 
         <DetailSection
@@ -114,7 +114,7 @@
               class="flex flex-col gap-1 rounded-md border border-neutral-300 bg-neutral-100 px-3 py-2.5 text-neutral-600"
             >
               <h3 class="text-label-small font-bold text-neutral-500">
-                Všeobecná poznámka
+                {{ $t('detail.notes.general') }}
               </h3>
               <p class="text-sm font-medium">
                 {{ detail.general_note }}
@@ -125,7 +125,7 @@
               class="flex flex-col gap-1 rounded-md border border-neutral-300 bg-neutral-100 px-3 py-2.5 text-neutral-600"
             >
               <h3 class="text-label-small font-bold text-neutral-500">
-                Obsahová poznámka
+                {{ $t('detail.notes.content') }}
               </h3>
               <p class="text-sm font-medium">
                 {{ detail.content_note }}
@@ -136,7 +136,7 @@
               class="flex flex-col gap-1 rounded-md border border-neutral-300 bg-neutral-100 px-3 py-2.5 text-neutral-600"
             >
               <h3 class="text-label-small font-bold text-neutral-500">
-                Technická poznámka
+                {{ $t('detail.notes.technical') }}
               </h3>
               <p class="text-sm font-medium">
                 {{ detail.technical_note }}
@@ -162,7 +162,7 @@
         </DetailSection>
 
         <DetailSection
-          title="Mapa"
+          :title="$t('detail.section.map')"
         >
           [ TODO: Map ]
         </DetailSection>
@@ -280,42 +280,42 @@ const translateEnum = (namespace: string, key: string) => {
 
 const basicInfo = computed(() => [
   {
-    label: 'Autorstvo',
+    label: t('detail.table.authorship'),
     value: toNameReadable(detail.value.authors),
   },
   {
-    label: 'Typ dokumentu',
+    label: t('detail.table.documentType'),
     value: translateEnum('ItemType', detail.value.type),
   },
   {
-    label: 'Výskumná zbierka',
+    label: t('detail.table.researchCollection'),
     value: detail.value.research_collections?.map((o: { title: string }) => o.title).join(', '),
   },
 ]);
 
 const tableDesc = computed(() => ({
-  title: 'Popisné údaje',
+  title: t('detail.section.descriptiveData'),
   items: [
     {
-      label: 'Jazyk',
+      label: t('detail.table.language'),
       value: translateEnum('Language', detail.value.lang),
     },
   ],
 }));
 
 const tableAuthors = computed(() => ({
-  title: 'Autori a pôvodcovia',
+  title: t('detail.section.authorsAndOriginators'),
   items: [
     {
-      label: 'Autorstvo',
+      label: t('detail.table.authorship'),
       value: toNameReadable(detail.value.authors),
     },
     {
-      label: 'Výskum',
+      label: t('detail.table.research'),
       value: toNameReadable(detail.value.researchers),
     },
     {
-      label: 'Pôvod',
+      label: t('detail.table.origin'),
       value: toNameReadable(detail.value.originators),
     },
   ],
@@ -328,54 +328,55 @@ const tableGeographic = computed(() => {
   const region = district?.region;
   const country = region?.country;
   return {
-    title: 'Geografické údaje',
+    title: t('detail.section.geographic'),
     items: [
-      { label: 'Obec', value: locality?.name },
-      { label: 'Okres', value: district?.name },
-      { label: 'Kraj', value: region?.name },
-      { label: 'Štát', value: country?.name },
+      { label: t('detail.table.municipality'), value: locality?.name },
+      { label: t('detail.table.district'), value: district?.name },
+      { label: t('detail.table.region'), value: region?.name },
+      { label: t('detail.table.country'), value: country?.name },
     ],
   };
 });
 
 const tableFormal = computed(() => ({
-  title: 'Pôvod a kontext výskumu',
+  title: t('detail.section.researchOriginContext'),
   items: [
     {
-      label: 'Inštitúcia',
+      label: t('detail.table.institution'),
       value: detail.value.institution?.name,
     },
     {
-      label: 'Spôsob zberu', value: translateEnum('CollectionMethod', detail.value.collection_method),
+      label: t('detail.table.collectionMethod'),
+      value: translateEnum('CollectionMethod', detail.value.collection_method),
     },
     {
-      label: 'Spôsob nadobudnutia',
+      label: t('detail.table.accrualMethod'),
       value: translateEnum('AccrualMethod', detail.value.accural_method),
     },
     {
-      label: 'Typ dokumentu',
+      label: t('detail.table.documentType'),
       value: translateEnum('ItemType', detail.value.type),
     },
     {
-      label: 'Čas realizácie',
+      label: t('detail.table.timeOfRealization'),
       value: toYearRange(detail.value.time_period_start, detail.value.time_period_end),
     },
     {
-      label: 'Dátum odovzdania',
+      label: t('detail.table.submissionDate'),
       value: toYearRange(detail.value.submission_date_start, detail.value.submission_date_end),
     },
   ],
 }));
 
 const tableAdministrative = computed(() => ({
-  title: 'Práva a prístup',
+  title: t('detail.section.rightsAndAccess'),
   items: [
     {
-      label: 'Prístupové práva',
+      label: t('detail.table.accessRights'),
       value: translateEnum('AccessRights', detail.value.access_rights),
     },
     {
-      label: 'Licencia',
+      label: t('detail.table.license'),
       value: translateEnum('License', detail.value.licence),
     },
   ],

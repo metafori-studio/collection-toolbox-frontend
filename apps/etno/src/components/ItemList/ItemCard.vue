@@ -55,21 +55,21 @@
         v-if="authorsReadable"
         class="text-xs text-neutral-500"
       >
-        Autorstvo:
+        {{ $t('itemCard.authorship') }}
         <span>{{ authorsReadable }}</span>
       </div>
       <div
         v-if="researchersReadable"
         class="text-xs text-neutral-500"
       >
-        Výskum:
+        {{ $t('itemCard.research') }}
         <span>{{ researchersReadable }}</span>
       </div>
       <div
         v-if="originatorsReadable"
         class="text-xs text-neutral-500"
       >
-        Pôvod:
+        {{ $t('itemCard.origin') }}
         <span>{{ originatorsReadable }}</span>
       </div>
     </div>

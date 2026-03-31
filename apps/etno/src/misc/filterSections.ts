@@ -2,80 +2,80 @@ import type { FilterSection } from './filterTypes';
 
 export const filterSections: FilterSection[] = [
   {
-    title: 'Tematické a autorské údaje',
+    title: 'filter.sections.thematicAndAuthor',
     icon: 'tag',
     items: [
       {
         id: 'keyword.id',
-        label: 'Kľúčové údaje',
+        label: 'filter.items.keywords',
         type: 'checkbox',
         defaultValue: <string[]>[],
       },
       {
         id: 'research_collection.id',
-        label: 'Výskumná zbierka',
+        label: 'filter.items.researchCollection',
         type: 'checkbox',
         defaultValue: <string[]>[],
       },
       {
         id: 'author.person_id',
-        label: 'Autor',
+        label: 'filter.items.author',
         type: 'checkbox',
         defaultValue: <string[]>[],
       },
     ],
   },
   {
-    title: 'Geografické údaje',
+    title: 'filter.sections.geographic',
     icon: 'mapPin',
     items: [
       {
         id: 'municipality.id',
-        label: 'Obec',
+        label: 'filter.items.municipality',
         type: 'checkbox',
         defaultValue: <string[]>[],
       },
       {
         id: 'district.id',
-        label: 'Okres',
+        label: 'filter.items.district',
         type: 'checkbox',
         defaultValue: <string[]>[],
       },
       {
         id: 'region.id',
-        label: 'Kraj',
+        label: 'filter.items.region',
         type: 'checkbox',
         defaultValue: <string[]>[],
       },
       {
         id: 'country.id',
-        label: 'Štát',
+        label: 'filter.items.country',
         type: 'checkbox',
         defaultValue: <string[]>[],
       },
     ],
   },
   {
-    title: 'Formálne a technické údaje',
+    title: 'filter.sections.formalAndTechnical',
     icon: 'document',
     items: [
       {
         id: 'type',
-        label: 'Typ dokumentu',
+        label: 'filter.items.documentType',
         type: 'checkbox',
         defaultValue: <string[]>[],
         enumNamespace: 'ItemType',
       },
       {
         id: 'collection_method',
-        label: 'Spôsob zberu',
+        label: 'filter.items.collectionMethod',
         type: 'checkbox',
         defaultValue: <string[]>[],
         enumNamespace: 'CollectionMethod',
       },
       {
         id: 'language',
-        label: 'Jazyk',
+        label: 'filter.items.language',
         type: 'checkbox',
         defaultValue: <string[]>[],
         enumNamespace: 'Language',
