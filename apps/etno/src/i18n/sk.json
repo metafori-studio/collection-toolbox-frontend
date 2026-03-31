@@ -63,7 +63,7 @@
   },
   "search": {
     "placeholder": "Prehľadaj Etno Explorer",
-    "resultsLabel": "{count} {word} vyhľadávania",
+    "resultsLabel": "{count} {results} vyhľadávania",
     "results": {
       "singular": "výsledok",
       "few": "výsledky",
@@ -100,7 +100,7 @@
       "formalAndTechnical": "Formálne a technické údaje"
     },
     "items": {
-      "keywords": "Kľúčové údaje",
+      "keywords": "Kľúčové slová",
       "researchCollection": "Výskumná zbierka",
       "author": "Autor",
       "municipality": "Obec",

@@ -64,12 +64,12 @@ const itemsDisplayed = computed(() => {
 
 const resultsLabel = computed(() => {
   const len = itemsDisplayed.value.length;
-  const word = pluralize(len, [
+  const results = pluralize(len, [
     t('search.results.singular'),
     t('search.results.few'),
     t('search.results.many'),
   ]);
-  return `${len} ${word} vyhľadávania`;
+  return t('search.resultsLabel', { count: len, results });
 });
 
 const showResults = computed(() => query.value.length > 0);
