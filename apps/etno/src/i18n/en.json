@@ -63,7 +63,7 @@
   },
   "search": {
     "placeholder": "Search Etno Explorer",
-    "resultsLabel": "{count} {word} for search",
+    "resultsLabel": "{count} search {results}",
     "results": {
       "singular": "result",
       "few": "results",
