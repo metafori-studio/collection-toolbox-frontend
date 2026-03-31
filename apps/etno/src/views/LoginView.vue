@@ -67,13 +67,13 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
 import { BaseButton, InputText } from '@metafori/components';
 
 import type { AxiosError } from 'axios';
-import { getCsrfCookie, login } from '@/api';
+import { login } from '@/api';
 
 const email = ref('');
 const password = ref('');
@@ -96,8 +96,5 @@ const submit = async () => {
   }
 };
 
-onMounted(() => {
-  getCsrfCookie();
-});
 
 </script>

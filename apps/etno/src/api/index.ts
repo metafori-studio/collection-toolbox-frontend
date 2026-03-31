@@ -12,9 +12,6 @@ const api = axios.create({
   timeout: 10_000,
 });
 
-const sanctum = axios.create({
-  baseURL: import.meta.env.VITE_REMOTE_URL,
-});
 
 const getMapPoints = async (): Promise<MapPoint[]> => {
   if (USE_MOCK) {
@@ -72,7 +69,7 @@ const getAggregations = async (
     });
   });
 
-  const { data } = await api.get(`/items/aggregations?${params.toString()}`);
+  const { data } = await api.get(`/etno/items/aggregations?${params.toString()}`);
   return data.data;
 };
 
@@ -85,7 +82,7 @@ const getDetail = async (id: string): Promise<Record<string, unknown>> => {
 };
 
 const getCsrfCookie = async () => {
-  const response = await sanctum.get('/sanctum/csrf-cookie');
+  const response = await api.get('../sanctum/csrf-cookie');
   return response.data;
 };
 
@@ -96,6 +93,7 @@ type LoginPayload = {
 };
 
 const login = async (payload: LoginPayload) => {
+  await getCsrfCookie();
   const response = await api.post('/login', payload);
   return response;
 };
@@ -107,6 +105,7 @@ type SetPasswordPayload = {
 };
 
 const setPassword = async (payload: SetPasswordPayload) => {
+  await getCsrfCookie();
   const response = await api.post('/password/set', payload);
   return response;
 };

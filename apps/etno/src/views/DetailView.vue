@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col md:flex-row min-h-screen"
+    class="flex flex-col md:flex-row"
   >
     <BaseButton
       class="fixed z-20 left-4 top-16"
@@ -187,7 +187,7 @@
 
     <div
       v-if="!isLoaded"
-      class="bg-neutral-100 flex-1 h-[calc(100vh-56px)]"
+      class="bg-neutral-100 flex-1"
     />
   </div>
 </template>
