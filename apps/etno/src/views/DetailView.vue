@@ -194,6 +194,7 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue';
+import { useI18n } from 'vue-i18n';
 
 import {
   BaseButton,
@@ -269,9 +270,23 @@ const activeViewerComponent = computed(() => {
 });
 
 // Tables
+const { t } = useI18n();
+const translateEnum = (namespace: string, key: string) => {
+  if (!key) {
+    return null;
+  }
+  return t(`enums.${namespace}.${key}`);
+};
+
 const basicInfo = computed(() => [
-  { label: 'Autorstvo', value: toNameReadable(detail.value.authors) },
-  { label: 'Typ dokumentu', value: detail.value.type },
+  {
+    label: 'Autorstvo',
+    value: toNameReadable(detail.value.authors),
+  },
+  {
+    label: 'Typ dokumentu',
+    value: translateEnum('ItemType', detail.value.type),
+  },
   {
     label: 'Výskumná zbierka',
     value: detail.value.research_collections?.map((o: { title: string }) => o.title).join(', '),
@@ -281,16 +296,28 @@ const basicInfo = computed(() => [
 const tableDesc = computed(() => ({
   title: 'Popisné údaje',
   items: [
-    { label: 'Jazyk', value: detail.value.lang },
+    {
+      label: 'Jazyk',
+      value: translateEnum('Language', detail.value.lang),
+    },
   ],
 }));
 
 const tableAuthors = computed(() => ({
   title: 'Autori a pôvodcovia',
   items: [
-    { label: 'Autorstvo', value: toNameReadable(detail.value.authors) },
-    { label: 'Výskum', value: toNameReadable(detail.value.researchers) },
-    { label: 'Pôvod', value: toNameReadable(detail.value.originators) },
+    {
+      label: 'Autorstvo',
+      value: toNameReadable(detail.value.authors),
+    },
+    {
+      label: 'Výskum',
+      value: toNameReadable(detail.value.researchers),
+    },
+    {
+      label: 'Pôvod',
+      value: toNameReadable(detail.value.originators),
+    },
   ],
 }));
 
@@ -314,11 +341,21 @@ const tableGeographic = computed(() => {
 const tableFormal = computed(() => ({
   title: 'Pôvod a kontext výskumu',
   items: [
-    { label: 'Inštitúcia', value: detail.value.institution?.name },
-    { label: 'Spôsob zberu', value: detail.value.collection_method },
-    { label: 'Spôsob nadobudnutia', value: detail.value.accural_method },
-
-    { label: 'Typ dokumentu', value: detail.value.type },
+    {
+      label: 'Inštitúcia',
+      value: detail.value.institution?.name,
+    },
+    {
+      label: 'Spôsob zberu', value: translateEnum('CollectionMethod', detail.value.collection_method),
+    },
+    {
+      label: 'Spôsob nadobudnutia',
+      value: translateEnum('AccrualMethod', detail.value.accural_method),
+    },
+    {
+      label: 'Typ dokumentu',
+      value: translateEnum('ItemType', detail.value.type),
+    },
     {
       label: 'Čas realizácie',
       value: toYearRange(detail.value.time_period_start, detail.value.time_period_end),
@@ -333,8 +370,14 @@ const tableFormal = computed(() => ({
 const tableAdministrative = computed(() => ({
   title: 'Práva a prístup',
   items: [
-    { label: 'Prístupové práva', value: detail.value.access_rights },
-    { label: 'Licencia', value: detail.value.licence },
+    {
+      label: 'Prístupové práva',
+      value: translateEnum('AccessRights', detail.value.access_rights),
+    },
+    {
+      label: 'Licencia',
+      value: translateEnum('License', detail.value.licence),
+    },
   ],
 }));
 
