@@ -11,6 +11,7 @@ export interface FilterItem {
   type: string
   defaultValue: string[] | RangeValue
   options?: FilterOption[]
+  enumNamespace?: string
 }
 
 export interface FilterSection {

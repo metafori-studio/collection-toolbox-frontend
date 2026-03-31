@@ -1,5 +1,7 @@
 import { createI18n } from 'vue-i18n';
 
+import backendDefinedTranslations from './backend-defined-translations.json';
+
 const i18n = createI18n({
   legacy: false,
   globalInjection: true,
@@ -7,8 +9,10 @@ const i18n = createI18n({
   fallbackLocale: 'sk',
   messages: {
     sk: {
+      ...backendDefinedTranslations,
     },
     en: {
+      ...backendDefinedTranslations,
     },
   },
 });

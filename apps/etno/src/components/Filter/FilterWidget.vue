@@ -101,6 +101,7 @@ import {
   watch,
   toRaw,
 } from 'vue';
+import { useI18n } from 'vue-i18n';
 
 import {
   BaseIcon,
@@ -120,6 +121,8 @@ import {
   type AggregationOption,
 } from '@/misc/filterTypes';
 import { filterSections } from '@/misc/filterSections';
+
+const { t } = useI18n();
 
 const {
   aggregations = {},
@@ -157,10 +160,19 @@ const normalize = (str: string) => {
 
 const getOptions = (property: string) => {
   const allOptions = aggregations[property];
-  if (!query.value) return allOptions;
+  const enumNamespace = nowOpenObj.value?.enumNamespace;
+
+  const translated = allOptions?.map((option) => ({
+    ...option,
+    label: enumNamespace
+      ? t(`enums.${enumNamespace}.${option.label}`, option.label)
+      : option.label,
+  }));
+
+  if (!query.value) return translated;
 
   const normalizedQuery = normalize(query.value);
-  return allOptions?.filter((option: AggregationOption) => normalize(option.label).includes(normalizedQuery));
+  return translated?.filter((option: AggregationOption) => normalize(option.label).includes(normalizedQuery));
 };
 
 //
