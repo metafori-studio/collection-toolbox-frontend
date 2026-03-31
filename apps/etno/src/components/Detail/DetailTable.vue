@@ -23,7 +23,7 @@
             {{ row.value }}
           </span>
           <span v-if="typeof row.value === 'boolean'">
-            {{ row.value ? 'Áno' : 'Nie' }}
+            {{ row.value ? $t('detail.boolean.true') : $t('detail.boolean.false') }}
           </span>
         </td>
       </tr>

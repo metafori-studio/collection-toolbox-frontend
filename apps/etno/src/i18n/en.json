@@ -1,0 +1,135 @@
+{
+  "header": {
+    "explore": "Explore",
+    "info": "Info",
+    "user": "User"
+  },
+  "explore": {
+    "filterClose": "Close filter",
+    "filterOpen": "Filter"
+  },
+  "detail": {
+    "navigation": {
+      "backToExplore": "Back to explore"
+    },
+    "panel": {
+      "hide": "Hide",
+      "show": "Show panel",
+      "title": "Detail"
+    },
+    "viewer": {
+      "label": "Viewer"
+    },
+    "section": {
+      "basicInfo": "Basic information",
+      "abstract": "Abstract",
+      "keywords": "Keywords",
+      "data": "Data",
+      "descriptiveData": "Descriptive data",
+      "authorsAndOriginators": "Authors and originators",
+      "geographic": "Geographic data",
+      "map": "Map",
+      "researchOriginContext": "Research origin and context",
+      "rightsAndAccess": "Rights and access"
+    },
+    "table": {
+      "authorship": "Authorship",
+      "documentType": "Document type",
+      "researchCollection": "Research collection",
+      "language": "Language",
+      "research": "Research",
+      "origin": "Origin",
+      "municipality": "Municipality",
+      "district": "District",
+      "region": "Region",
+      "country": "Country",
+      "institution": "Institution",
+      "collectionMethod": "Collection method",
+      "accrualMethod": "Accrual method",
+      "timeOfRealization": "Time of realization",
+      "submissionDate": "Submission date",
+      "accessRights": "Access rights",
+      "license": "License"
+    },
+    "notes": {
+      "general": "General note",
+      "content": "Content note",
+      "technical": "Technical note"
+    },
+    "boolean": {
+      "true": "Yes",
+      "false": "No"
+    }
+  },
+  "search": {
+    "placeholder": "Search Etno Explorer",
+    "resultsLabel": "{count} {word} for search",
+    "results": {
+      "singular": "result",
+      "few": "results",
+      "many": "results"
+    }
+  },
+  "itemList": {
+    "totalObjects": "{total} objects",
+    "showing": "Showing {from}-{to}",
+    "sortBy": "Sort by",
+    "sortOptions": {
+      "id": "ID",
+      "title": "Title",
+      "timePeriod": "Time period"
+    }
+  },
+  "itemCard": {
+    "authorship": "Authorship:",
+    "research": "Research:",
+    "origin": "Origin:"
+  },
+  "pagination": {
+    "label": "Pagination",
+    "previousPage": "Previous page",
+    "nextPage": "Next page"
+  },
+  "filter": {
+    "title": "Activity filter",
+    "reset": "Reset",
+    "noResults": "No results found",
+    "sections": {
+      "thematicAndAuthor": "Thematic and author data",
+      "geographic": "Geographic data",
+      "formalAndTechnical": "Formal and technical data"
+    },
+    "items": {
+      "keywords": "Keywords",
+      "researchCollection": "Research collection",
+      "author": "Author",
+      "municipality": "Municipality",
+      "district": "District",
+      "region": "Region",
+      "country": "Country",
+      "documentType": "Document type",
+      "collectionMethod": "Collection method",
+      "language": "Language"
+    }
+  },
+  "map": {
+    "selectRecord": "Select record",
+    "openInMaps": "Open in Maps",
+    "copyCoordinates": "Copy GPS",
+    "legend": "Legend",
+    "toggle2D": "Switch to 2D",
+    "toggle3D": "Switch to 3D",
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out",
+    "center": "Center",
+    "tileTypes": {
+      "orthophoto": "Orthophoto",
+      "standard": "Standard map"
+    }
+  },
+  "info": {
+    "title": "About Etno Explorer",
+    "description1": "Etno Explorer SAV is a repository of ethnological and social-anthropological research data from the Institute of Ethnology and Social Anthropology of the Slovak Academy of Sciences. This page contains informational, technical, legal, and other materials for using the repository.",
+    "description2": "The repository allows browsing and searching documents from field research, archival units, photographs, audio recordings, and videos. Data is structured according to research collections, collections, and documents. Content is continuously added and updated."
+  }
+}

@@ -6,18 +6,18 @@
           v-if="meta.total"
           class="text-heading-4"
         >
-          {{ meta.total }} objektov
+          {{ $t('itemList.totalObjects', { total: meta.total }) }}
         </h2>
         <p
           v-if="meta.from && meta.to"
           class="text-xs text-neutral-500"
         >
-          Zobrazujem {{ meta.from }}-{{ meta.to }}
+          {{ $t('itemList.showing', { from: meta.from, to: meta.to }) }}
         </p>
       </div>
       <div class="flex items-center gap-2">
         <label for="orderBy">
-          Zoradiť podľa
+          {{ $t('itemList.sortBy') }}
         </label>
         <InputSelect
           id="orderBy"
@@ -47,6 +47,8 @@
 </template>
 
 <script lang="ts" setup>
+import { computed } from 'vue';
+import { useI18n } from 'vue-i18n';
 import {
   BaseButton,
   InputSelect,
@@ -54,6 +56,8 @@ import {
 } from '@metafori/components';
 import ItemCardList from './ItemCardList.vue';
 import ItemListPagination from './ItemListPagination.vue';
+
+const { t } = useI18n();
 
 const {
   items = [],
@@ -77,10 +81,10 @@ const {
 
 const emit = defineEmits(['update:orderBy', 'update:orderAsc', 'update:page']);
 
-const orderByOptions = [
-  { label: 'ID', value: 'id' },
-  { label: 'Názov', value: 'title' },
-  { label: 'Čas aktivity', value: 'time_period_start' },
-];
+const orderByOptions = computed(() => [
+  { label: t('itemList.sortOptions.id'), value: 'id' },
+  { label: t('itemList.sortOptions.title'), value: 'title' },
+  { label: t('itemList.sortOptions.timePeriod'), value: 'time_period_start' },
+]);
 
 </script>

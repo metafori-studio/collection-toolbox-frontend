@@ -1,0 +1,135 @@
+{
+  "header": {
+    "explore": "Explore",
+    "info": "Info",
+    "user": "Používateľ"
+  },
+  "explore": {
+    "filterClose": "Zavrieť filter",
+    "filterOpen": "Filter"
+  },
+  "detail": {
+    "navigation": {
+      "backToExplore": "Späť na explore"
+    },
+    "panel": {
+      "hide": "Skryť",
+      "show": "Zobraziť panel",
+      "title": "Detail"
+    },
+    "viewer": {
+      "label": "Viewer"
+    },
+    "section": {
+      "basicInfo": "Základné údaje",
+      "abstract": "Abstrakt",
+      "keywords": "Kľúčové slová",
+      "data": "Údaje",
+      "descriptiveData": "Popisné údaje",
+      "authorsAndOriginators": "Autori a pôvodcovia",
+      "geographic": "Geografické údaje",
+      "map": "Mapa",
+      "researchOriginContext": "Pôvod a kontext výskumu",
+      "rightsAndAccess": "Práva a prístup"
+    },
+    "table": {
+      "authorship": "Autorstvo",
+      "documentType": "Typ dokumentu",
+      "researchCollection": "Výskumná zbierka",
+      "language": "Jazyk",
+      "research": "Výskum",
+      "origin": "Pôvod",
+      "municipality": "Obec",
+      "district": "Okres",
+      "region": "Kraj",
+      "country": "Štát",
+      "institution": "Inštitúcia",
+      "collectionMethod": "Spôsob zberu",
+      "accrualMethod": "Spôsob nadobudnutia",
+      "timeOfRealization": "Čas realizácie",
+      "submissionDate": "Dátum odovzdania",
+      "accessRights": "Prístupové práva",
+      "license": "Licencia"
+    },
+    "notes": {
+      "general": "Všeobecná poznámka",
+      "content": "Obsahová poznámka",
+      "technical": "Technická poznámka"
+    },
+    "boolean": {
+      "true": "Áno",
+      "false": "Nie"
+    }
+  },
+  "search": {
+    "placeholder": "Prehľadaj Etno Explorer",
+    "resultsLabel": "{count} {word} vyhľadávania",
+    "results": {
+      "singular": "výsledok",
+      "few": "výsledky",
+      "many": "výsledkov"
+    }
+  },
+  "itemList": {
+    "totalObjects": "{total} objektov",
+    "showing": "Zobrazujem {from}-{to}",
+    "sortBy": "Zoradiť podľa",
+    "sortOptions": {
+      "id": "ID",
+      "title": "Názov",
+      "timePeriod": "Čas aktivity"
+    }
+  },
+  "itemCard": {
+    "authorship": "Autorstvo:",
+    "research": "Výskum:",
+    "origin": "Pôvod:"
+  },
+  "pagination": {
+    "label": "Stránkovanie",
+    "previousPage": "Predchádzajúca stránka",
+    "nextPage": "Ďalšia stránka"
+  },
+  "filter": {
+    "title": "Filter aktivít",
+    "reset": "Reset",
+    "noResults": "Žiadne výsledky",
+    "sections": {
+      "thematicAndAuthor": "Tematické a autorské údaje",
+      "geographic": "Geografické údaje",
+      "formalAndTechnical": "Formálne a technické údaje"
+    },
+    "items": {
+      "keywords": "Kľúčové údaje",
+      "researchCollection": "Výskumná zbierka",
+      "author": "Autor",
+      "municipality": "Obec",
+      "district": "Okres",
+      "region": "Kraj",
+      "country": "Štát",
+      "documentType": "Typ dokumentu",
+      "collectionMethod": "Spôsob zberu",
+      "language": "Jazyk"
+    }
+  },
+  "map": {
+    "selectRecord": "Zvoľte záznam",
+    "openInMaps": "Otvoriť v Maps",
+    "copyCoordinates": "Kopírovať GPS",
+    "legend": "Legenda",
+    "toggle2D": "Prepnúť na 2D",
+    "toggle3D": "Prepnúť na 3D",
+    "zoomIn": "Priblížiť",
+    "zoomOut": "Oddialiť",
+    "center": "Vycentrovať",
+    "tileTypes": {
+      "orthophoto": "Ortofotomozaika",
+      "standard": "Štandardná mapa"
+    }
+  },
+  "info": {
+    "title": "O projekte Etno Explorer",
+    "description1": "Etno Explorer SAV je repozitár etnologických a sociálno-antropologických výskumných dát Ústavu etnológie a sociálnej antropológie SAV, v. v. i. Táto stránka obsahuje informačné, technické, právne a ďalšie materiály k používaniu repozitára.",
+    "description2": "Repozitár umožňuje prehliadať a vyhľadávať dokumenty z terénnych výskumov, archívne jednotky, fotografie, audionahrávky a videá. Dáta sú štrukturované podľa výskumných zbierok, kolekcií a dokumentov. Obsah je priebežne dopĺňaný a aktualizovaný."
+  }
+}

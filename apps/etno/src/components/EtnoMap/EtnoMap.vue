@@ -11,7 +11,7 @@
     >
       <div class="flex flex-col gap-4">
         <h2 class="text-heading-4">
-          Zvoľte záznam
+          {{ $t('map.selectRecord') }}
         </h2>
         <ul class="flex flex-col gap-2">
           <li
@@ -37,7 +37,7 @@
         size="small"
         @click="openMaps()"
       >
-        Otvoriť v Maps
+        {{ $t('map.openInMaps') }}
       </BaseButton>
       <BaseButton
         v-if="controls.copyCoordinates"
@@ -45,7 +45,7 @@
         size="small"
         @click="copyCoordinates()"
       >
-        Kopírovať GPS
+        {{ $t('map.copyCoordinates') }}
       </BaseButton>
     </div>
 
@@ -68,7 +68,7 @@
           </template>
           <div class="p-4">
             <div class="text-label mb-2">
-              Legenda
+              {{ $t('map.legend') }}
             </div>
           </div>
         </BaseDropdown>
@@ -76,7 +76,7 @@
         <BaseButton
           v-if="controls.terrain3d"
           variant="secondary"
-          :aria-label="is3D ? 'Prepnúť na 2D' : 'Prepnúť na 3D'"
+          :aria-label="is3D ? $t('map.toggle2D') : $t('map.toggle3D')"
           @click="toggle3D()"
         >
           {{ is3D ? '2D' : '3D' }}
@@ -84,7 +84,7 @@
         <BaseButton
           v-if="controls.zoomIn"
           variant="secondary"
-          aria-label="Priblížiť"
+          :aria-label="$t('map.zoomIn')"
           @click="zoomIn()"
         >
           <BaseIcon icon="plus" />
@@ -92,7 +92,7 @@
         <BaseButton
           v-if="controls.zoomOut"
           variant="secondary"
-          aria-label="Oddialiť"
+          :aria-label="$t('map.zoomOut')"
           @click="zoomOut()"
         >
           <BaseIcon icon="minus" />
@@ -100,7 +100,7 @@
         <BaseButton
           v-if="controls.center"
           variant="secondary"
-          aria-label="Vycentrovať"
+          :aria-label="$t('map.center')"
           @click="center()"
         >
           <BaseIcon icon="gpsFix" />
@@ -113,6 +113,7 @@
 <script lang="ts" setup>
 import { computed, onMounted, onUnmounted, ref, watch } from 'vue';
 import { useRouter } from 'vue-router';
+import { useI18n } from 'vue-i18n';
 import mapboxgl, { type CameraOptions } from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
@@ -162,6 +163,8 @@ const {
   mapPoints: MapPoint[]
   controls?: MapControls
 }>();
+
+const { t } = useI18n();
 
 // Mapbox
 mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN;
@@ -347,10 +350,10 @@ const tileStyles: Record<string, string> = {
 };
 
 const tileType = ref('standard');
-const tileTypeOptions = [
-  { value: 'orto', label: 'Ortofotomozaika' },
-  { value: 'standard', label: 'Štandardná mapa' },
-];
+const tileTypeOptions = computed(() => [
+  { value: 'orto', label: t('map.tileTypes.orthophoto') },
+  { value: 'standard', label: t('map.tileTypes.standard') },
+]);
 
 watch(() => mapPoints, (newVal, oldVal) => {
   const source = map?.getSource('points') as mapboxgl.GeoJSONSource | undefined;

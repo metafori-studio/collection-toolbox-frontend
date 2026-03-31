@@ -3,7 +3,7 @@
     <InputText
       v-model="query"
       icon="magnifyingGlass"
-      placeholder="Prehľadaj Etno Explorer"
+      :placeholder="$t('search.placeholder')"
     />
     <div
       v-if="showResults"
@@ -27,11 +27,14 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue';
+import { useI18n } from 'vue-i18n';
 
 import { InputText } from '@metafori/components';
 import ItemPreview from '@/components/ItemPreview.vue';
 import { getList } from '@/api';
 import { pluralize } from '@/misc/pluralize';
+
+const { t } = useI18n();
 
 const itemsAll = ref<Record<string, unknown>[]>([]);
 
@@ -61,8 +64,12 @@ const itemsDisplayed = computed(() => {
 
 const resultsLabel = computed(() => {
   const len = itemsDisplayed.value.length;
-  const pluralized = pluralize(len, ['výsledok', 'výsledky', 'výsledkov']);
-  return `${len} ${pluralized} vyhľadávania`;
+  const word = pluralize(len, [
+    t('search.results.singular'),
+    t('search.results.few'),
+    t('search.results.many'),
+  ]);
+  return `${len} ${word} vyhľadávania`;
 });
 
 const showResults = computed(() => query.value.length > 0);
