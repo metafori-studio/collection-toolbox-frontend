@@ -12,7 +12,7 @@ const api = axios.create({
   timeout: 10_000,
 });
 
-const sanctum = api.create({
+const sanctum = axios.create({
   baseURL: import.meta.env.VITE_REMOTE_URL,
 });
 
@@ -97,7 +97,18 @@ type LoginPayload = {
 
 const login = async (payload: LoginPayload) => {
   const response = await api.post('/login', payload);
-  return response.data;
+  return response;
+};
+
+type SetPasswordPayload = {
+  token: string;
+  email: string;
+  password: string;
+};
+
+const setPassword = async (payload: SetPasswordPayload) => {
+  const response = await api.post('/password/set', payload);
+  return response;
 };
 
 export {
@@ -108,4 +119,5 @@ export {
 
   getCsrfCookie,
   login,
+  setPassword,
 };

@@ -21,7 +21,7 @@
       @change="$emit('change', model)"
     >
     <button
-      v-if="isClearable"
+      v-if="isClearable && !disabled"
       class="absolute p-2 right-1 top-1 cursor-pointer rounded-full hover:bg-neutral-200"
       aria-label="Clear this value"
       @click="clear()"

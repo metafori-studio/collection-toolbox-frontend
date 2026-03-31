@@ -3,10 +3,10 @@
     <div class="rounded-lg bg-white border border-neutral-200 max-w-[448px] mx-auto p-6">
       <div class="mb-4">
         <h1 class="text-heading-3">
-          Prihlásenie
+          Nastavenie účtu
         </h1>
         <p class="text-sm text-neutral-500">
-          Prihláste sa
+          Nastavte si heslo a aktivujte účet
         </p>
       </div>
       <form
@@ -20,13 +20,13 @@
             for="email"
             class="block text-sm font-medium text-foreground mb-2"
           >
-            E-mail
+            Váš účet
           </label>
           <InputText
             id="email"
-            v-model="email"
-            type="email"
-            autocomplete="email"
+            :model-value="email"
+            type="text"
+            disabled
           />
         </div>
 
@@ -35,7 +35,7 @@
             for="password"
             class="block text-sm font-medium text-foreground mb-2"
           >
-            Heslo
+            Nové heslo
           </label>
           <InputText
             id="password"
@@ -44,12 +44,19 @@
           />
         </div>
 
-        <p class="text-sm text-neutral-500">
-          Nemáte účet?
-          <RouterLink :to="{ name: 'Signup' }">
-            Požiadajte o registráciu
-          </RouterLink>
-        </p>
+        <div>
+          <label
+            for="passwordRepeat"
+            class="block text-sm font-medium text-foreground mb-2"
+          >
+            Nové heslo znovu
+          </label>
+          <InputText
+            id="passwordRepeat"
+            v-model="passwordRepeat"
+            type="password"
+          />
+        </div>
 
         <p
           v-if="error"
@@ -59,7 +66,7 @@
         </p>
 
         <BaseButton>
-          Prihlásiť sa
+          Potvrdiť
         </BaseButton>
       </form>
     </div>
@@ -73,31 +80,40 @@ import { useRouter } from 'vue-router';
 import { BaseButton, InputText } from '@metafori/components';
 
 import type { AxiosError } from 'axios';
-import { getCsrfCookie, login } from '@/api';
+import { getCsrfCookie, setPassword } from '@/api';
 
-const email = ref('');
+const {
+  email,
+  token,
+} = defineProps<{
+  email: string
+  token: string
+}>();
+
 const password = ref('');
+const passwordRepeat = ref('');
+
 const error = ref('');
 const router = useRouter();
 
+onMounted(() => {
+  getCsrfCookie();
+});
+
 const submit = async () => {
   error.value = '';
+  if (password.value !== passwordRepeat.value) {
+    error.value = 'Zadané heslá sa nezhodujú';
+    return;
+  }
   try {
-    const response = await login({
-      email: email.value,
-      password: password.value,
-      remember: true,
-    });
-    if (response.status === 204) {
-      router.push({ name: 'Explore' });
+    const response = await setPassword({ token, email, password: password.value });
+    if (response.status === 200) {
+      router.push({ name: 'Login' });
     }
   } catch (e: unknown) {
     error.value = (e as AxiosError<{ message: string }>)?.response?.data?.message || 'Neznáma chyba';
   }
 };
-
-onMounted(() => {
-  getCsrfCookie();
-});
 
 </script>
