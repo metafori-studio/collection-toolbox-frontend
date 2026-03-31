@@ -5,6 +5,7 @@ import DetailView from '@/views/DetailView.vue';
 import InfoView from '@/views/InfoView.vue';
 import LoginView from '@/views/LoginView.vue';
 import SignupView from '@/views/SignupView.vue';
+import SetupAccountView from '@/views/SetupAccountView.vue';
 
 const routes = [
   {
@@ -32,6 +33,12 @@ const routes = [
     name: 'Signup',
     path: '/signup',
     component: SignupView,
+  },
+  {
+    name: 'SetupAccount',
+    path: '/setup-account/:email/:token',
+    component: SetupAccountView,
+    props: true,
   },
 ];
 
