@@ -22,6 +22,7 @@
     "proj4": "^2.20.4",
     "tailwindcss": "^4.1.18",
     "vue": "^3.5.28",
+    "vue-i18n": "^11.3.0",
     "vue-router": "^4.6.4"
   },
   "devDependencies": {
