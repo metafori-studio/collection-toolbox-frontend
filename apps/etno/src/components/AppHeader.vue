@@ -44,6 +44,22 @@
             <BaseIcon icon="userPlus" />
             {{ $t('header.signup') }}
           </BaseButton>
+          <BaseButton
+            v-if="$i18n.locale === 'sk'"
+            variant="secondary"
+            size="small"
+            @click="$i18n.locale = 'en'"
+          >
+            Switch to English
+          </BaseButton>
+          <BaseButton
+            v-if="$i18n.locale === 'en'"
+            variant="secondary"
+            size="small"
+            @click="$i18n.locale = 'sk'"
+          >
+            Prepnúť na Slovenčinu
+          </BaseButton>
         </div>
       </BaseDropdown>
     </div>
