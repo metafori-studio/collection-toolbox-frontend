@@ -2,7 +2,33 @@
   "header": {
     "explore": "Explore",
     "info": "Info",
-    "user": "Používateľ"
+    "user": "Používateľ",
+    "login": "Prihlásiť sa",
+    "signup": "Registrácia"
+  },
+  "auth": {
+    "login": {
+      "title": "Prihlásenie",
+      "subtitle": "Prihláste sa do vášho účtu",
+      "email": "E-mail",
+      "password": "Heslo",
+      "noAccount": "Nemáte účet?",
+      "requestSignup": "Požiadajte o registráciu",
+      "submit": "Prihlásiť sa"
+    },
+    "setupAccount": {
+      "title": "Nastavenie účtu",
+      "subtitle": "Nastavte si heslo a aktivujte účet",
+      "yourAccount": "Váš účet",
+      "newPassword": "Nové heslo",
+      "newPasswordRepeat": "Nové heslo znovu",
+      "submit": "Potvrdiť",
+      "passwordMismatch": "Zadané heslá sa nezhodujú"
+    },
+    "signup": {
+      "contactUs": "Pre registráciu nás kontaktujte"
+    },
+    "unknownError": "Neznáma chyba"
   },
   "explore": {
     "filterClose": "Zavrieť filter",

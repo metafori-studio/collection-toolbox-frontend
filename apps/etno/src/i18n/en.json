@@ -2,7 +2,33 @@
   "header": {
     "explore": "Explore",
     "info": "Info",
-    "user": "User"
+    "user": "User",
+    "login": "Sign in",
+    "signup": "Register"
+  },
+  "auth": {
+    "login": {
+      "title": "Sign in",
+      "subtitle": "Sign in to your account",
+      "email": "E-mail",
+      "password": "Password",
+      "noAccount": "Don't have an account?",
+      "requestSignup": "Request registration",
+      "submit": "Sign in"
+    },
+    "setupAccount": {
+      "title": "Account setup",
+      "subtitle": "Set your password and activate your account",
+      "yourAccount": "Your account",
+      "newPassword": "New password",
+      "newPasswordRepeat": "Repeat new password",
+      "submit": "Confirm",
+      "passwordMismatch": "Passwords do not match"
+    },
+    "signup": {
+      "contactUs": "Contact us to register"
+    },
+    "unknownError": "Unknown error"
   },
   "explore": {
     "filterClose": "Close filter",

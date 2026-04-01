@@ -34,7 +34,7 @@
             @click="$router.push({ name: 'Login' })"
           >
             <BaseIcon icon="signIn" />
-            Prihlásiť sa
+            {{ $t('header.login') }}
           </BaseButton>
           <BaseButton
             variant="secondary"
@@ -42,7 +42,7 @@
             @click="$router.push({ name: 'Signup' })"
           >
             <BaseIcon icon="userPlus" />
-            Registrácia
+            {{ $t('header.signup') }}
           </BaseButton>
         </div>
       </BaseDropdown>
