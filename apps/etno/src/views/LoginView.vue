@@ -3,10 +3,10 @@
     <div class="rounded-lg bg-white border border-neutral-200 max-w-[448px] mx-auto p-6">
       <div class="mb-4">
         <h1 class="text-heading-3">
-          Prihlásenie
+          {{ $t('auth.login.title') }}
         </h1>
         <p class="text-sm text-neutral-500">
-          Prihláste sa
+          {{ $t('auth.login.subtitle') }}
         </p>
       </div>
       <form
@@ -20,7 +20,7 @@
             for="email"
             class="block text-sm font-medium text-foreground mb-2"
           >
-            E-mail
+            {{ $t('auth.login.email') }}
           </label>
           <InputText
             id="email"
@@ -35,7 +35,7 @@
             for="password"
             class="block text-sm font-medium text-foreground mb-2"
           >
-            Heslo
+            {{ $t('auth.login.password') }}
           </label>
           <InputText
             id="password"
@@ -45,9 +45,9 @@
         </div>
 
         <p class="text-sm text-neutral-500">
-          Nemáte účet?
+          {{ $t('auth.login.noAccount') }}
           <RouterLink :to="{ name: 'Signup' }">
-            Požiadajte o registráciu
+            {{ $t('auth.login.requestSignup') }}
           </RouterLink>
         </p>
 
@@ -59,7 +59,7 @@
         </p>
 
         <BaseButton>
-          Prihlásiť sa
+          {{ $t('auth.login.submit') }}
         </BaseButton>
       </form>
     </div>
@@ -69,12 +69,14 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
+import { useI18n } from 'vue-i18n';
 
 import { BaseButton, InputText } from '@metafori/components';
 
 import type { AxiosError } from 'axios';
 import { login } from '@/api';
 
+const { t } = useI18n();
 const email = ref('');
 const password = ref('');
 const error = ref('');
@@ -92,7 +94,7 @@ const submit = async () => {
       router.push({ name: 'Explore' });
     }
   } catch (e: unknown) {
-    error.value = (e as AxiosError<{ message: string }>)?.response?.data?.message || 'Neznáma chyba';
+    error.value = (e as AxiosError<{ message: string }>)?.response?.data?.message || t('auth.unknownError');
   }
 };
 

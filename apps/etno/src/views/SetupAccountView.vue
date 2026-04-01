@@ -3,10 +3,10 @@
     <div class="rounded-lg bg-white border border-neutral-200 max-w-[448px] mx-auto p-6">
       <div class="mb-4">
         <h1 class="text-heading-3">
-          Nastavenie účtu
+          {{ $t('auth.setupAccount.title') }}
         </h1>
         <p class="text-sm text-neutral-500">
-          Nastavte si heslo a aktivujte účet
+          {{ $t('auth.setupAccount.subtitle') }}
         </p>
       </div>
       <form
@@ -20,7 +20,7 @@
             for="email"
             class="block text-sm font-medium text-foreground mb-2"
           >
-            Váš účet
+            {{ $t('auth.setupAccount.yourAccount') }}
           </label>
           <InputText
             id="email"
@@ -35,7 +35,7 @@
             for="password"
             class="block text-sm font-medium text-foreground mb-2"
           >
-            Nové heslo
+            {{ $t('auth.setupAccount.newPassword') }}
           </label>
           <InputText
             id="password"
@@ -49,7 +49,7 @@
             for="passwordRepeat"
             class="block text-sm font-medium text-foreground mb-2"
           >
-            Nové heslo znovu
+            {{ $t('auth.setupAccount.newPasswordRepeat') }}
           </label>
           <InputText
             id="passwordRepeat"
@@ -66,7 +66,7 @@
         </p>
 
         <BaseButton>
-          Potvrdiť
+          {{ $t('auth.setupAccount.submit') }}
         </BaseButton>
       </form>
     </div>
@@ -76,6 +76,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
+import { useI18n } from 'vue-i18n';
 
 import { BaseButton, InputText } from '@metafori/components';
 
@@ -90,6 +91,7 @@ const {
   token: string
 }>();
 
+const { t } = useI18n();
 const password = ref('');
 const passwordRepeat = ref('');
 
@@ -103,7 +105,7 @@ onMounted(() => {
 const submit = async () => {
   error.value = '';
   if (password.value !== passwordRepeat.value) {
-    error.value = 'Zadané heslá sa nezhodujú';
+    error.value = t('auth.setupAccount.passwordMismatch');
     return;
   }
   try {
@@ -112,7 +114,7 @@ const submit = async () => {
       router.push({ name: 'Login' });
     }
   } catch (e: unknown) {
-    error.value = (e as AxiosError<{ message: string }>)?.response?.data?.message || 'Neznáma chyba';
+    error.value = (e as AxiosError<{ message: string }>)?.response?.data?.message || t('auth.unknownError');
   }
 };
 
