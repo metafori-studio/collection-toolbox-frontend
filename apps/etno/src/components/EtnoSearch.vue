@@ -1,9 +1,25 @@
 <template>
   <div class="relative md:w-[600px]">
+    <label
+      v-if="showLabel"
+      for="appSearch"
+      class="absolute z-10 left-9 top-2.5 text-neutral-400 text-sm font-normal"
+    >
+      <i18n-t
+        keypath="search.label"
+        tag="span"
+      >
+        <template #title>
+          <span class="font-bold text-neutral-900">
+            {{ $t('appName') }}
+          </span>
+        </template>
+      </i18n-t>
+    </label>
     <InputText
+      id="appSearch"
       v-model="query"
       icon="magnifyingGlass"
-      :placeholder="$t('search.placeholder')"
     />
     <div
       v-if="showResults"
@@ -73,6 +89,14 @@ const resultsLabel = computed(() => {
 });
 
 const showResults = computed(() => query.value.length > 0);
+
+// Label
+const showLabel = computed(() => {
+  if (query.value) {
+    return false;
+  }
+  return true;
+});
 
 onMounted(async() => {
   itemsAll.value = (await getList()).data;
