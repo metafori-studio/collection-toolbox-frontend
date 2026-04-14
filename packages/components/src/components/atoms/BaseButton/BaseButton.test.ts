@@ -77,9 +77,9 @@ describe('BaseButton', () => {
 
   it('does not emit click when disabled', async () => {
     const wrapper = mount(BaseButton, { props: { disabled: true } });
-    await wrapper.trigger('click');
-    // Button is disabled via HTML attribute; native click is blocked
     const button = wrapper.find('button');
+    await button.trigger('click');
     expect(button.element.disabled).toBe(true);
+    expect(wrapper.emitted('click')).toBeUndefined();
   });
 });

@@ -32,7 +32,7 @@ describe('FilterItem', () => {
 
   it('shows selected count in FilterChip', () => {
     const wrapper = mount(FilterItem, { props: { label: 'City', selectedCount: 4 } });
-    expect(wrapper.text()).toContain('4');
+    expect(wrapper.findComponent({ name: 'FilterChip' }).text()).toContain('4');
   });
 
   it('emits clear event when FilterChip emits clear', async () => {
@@ -44,12 +44,12 @@ describe('FilterItem', () => {
 
   it('applies active border class when active is true', () => {
     const wrapper = mount(FilterItem, { props: { label: 'City', active: true } });
-    expect(wrapper.find('div').classes()).toContain('border-primary-500');
+    expect(wrapper.classes()).toContain('border-primary-500');
   });
 
   it('does not apply active border class by default', () => {
     const wrapper = mount(FilterItem, { props: { label: 'City' } });
-    expect(wrapper.find('div').classes()).not.toContain('border-primary-500');
+    expect(wrapper.classes()).not.toContain('border-primary-500');
   });
 
   it('renders a caretRight icon', () => {
