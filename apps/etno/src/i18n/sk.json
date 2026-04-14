@@ -154,6 +154,9 @@
       "standard": "Štandardná mapa"
     }
   },
+  "footer": {
+    "legalText": "Tento repozitár vznikol vďaka finančnej podpore ESFRI výskumných infraštruktúr Ministerstva školstva, výskumu, vývoja a mládeže Slovenskej republiky a národného konzorcia DARIAH-SK."
+  },
   "info": {
     "title": "O projekte @:appName",
     "description1": "Etnoskop SAV je repozitár etnologických a sociálno-antropologických výskumných dát Ústavu etnológie a sociálnej antropológie SAV, v. v. i. Táto stránka obsahuje informačné, technické, právne a ďalšie materiály k používaniu repozitára.",
