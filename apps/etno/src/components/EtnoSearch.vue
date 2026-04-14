@@ -1,9 +1,11 @@
 <template>
   <div class="relative md:w-[600px]">
     <label
-      v-if="showLabel"
       for="appSearch"
       class="absolute z-10 left-9 top-2.5 text-neutral-400 text-sm font-normal"
+      :class="{
+        'sr-only': !showLabel,
+      }"
     >
       <i18n-t
         keypath="search.label"
