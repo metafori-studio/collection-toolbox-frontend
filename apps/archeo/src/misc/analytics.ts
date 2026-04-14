@@ -24,13 +24,18 @@ const setupGtm = () => {
 
 // Matomo
 const setupMatomo = () => {
-  const enabled = PROD && VITE_MATOMO_HOST && VITE_MATOMO_SITEID;
+  const siteId = Number(VITE_MATOMO_SITEID);
+  const enabled = PROD
+    && VITE_MATOMO_HOST
+    && Number.isInteger(siteId)
+    && siteId > 0;
+
   if (!enabled) {
     return;
   }
   return initMatomo({
     host: VITE_MATOMO_HOST as string,
-    siteId: Number(VITE_MATOMO_SITEID),
+    siteId,
     trackRouter: true,
   });
 };
