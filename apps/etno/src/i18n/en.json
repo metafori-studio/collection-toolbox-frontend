@@ -154,6 +154,9 @@
       "standard": "Standard map"
     }
   },
+  "footer": {
+    "legalText": "This repository was created with the financial support of ESFRI research infrastructures of the Ministry of Education, Research, Development and Youth of the Slovak Republic and the national consortium DARIAH-SK."
+  },
   "info": {
     "title": "About @:appName",
     "description1": "Etnoskop SAV is a repository of ethnological and social-anthropological research data from the Institute of Ethnology and Social Anthropology of the Slovak Academy of Sciences. This page contains informational, technical, legal, and other materials for using the repository.",

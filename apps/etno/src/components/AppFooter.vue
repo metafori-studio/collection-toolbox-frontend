@@ -16,7 +16,7 @@
       </li>
     </ul>
     <p class="max-w-[900px] text-neutral-400 text-sm">
-      Tento repozitár vznikol vďaka finančnej podpore ESFRI výskumných infraštruktúr Ministerstva školstva, výskumu, vývoja a mládeže Slovenskej republiky a národného konzorcia DARIAH-SK.
+      {{ $t('footer.legalText') }}
     </p>
     <div class="text-neutral-500">
       <span>&copy; 2026</span>
