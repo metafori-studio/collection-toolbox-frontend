@@ -41,7 +41,8 @@ describe('InputRadio', () => {
       props: { label: 'Option A', name: 'group', value: 'a', modelValue: '' },
     });
     await wrapper.find('input[type="radio"]').trigger('change');
-    expect(wrapper.emitted('update:modelValue')).toBeDefined();
+    expect(wrapper.emitted('update:modelValue')).toHaveLength(1);
+    expect(wrapper.emitted('update:modelValue')![0]).toEqual(['a']);
   });
 });
 

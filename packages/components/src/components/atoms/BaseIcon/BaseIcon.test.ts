@@ -16,7 +16,7 @@ describe('BaseIcon', () => {
   it('falls back to placeholder icon for unknown icon name', () => {
     // @ts-expect-error intentionally passing unknown icon
     const wrapper = mount(BaseIcon, { props: { icon: 'nonexistent-icon' } });
-    expect(wrapper.exists()).toBe(true);
+    expect(wrapper.findComponent(icons.placeholder).exists()).toBe(true);
   });
 
   it('accepts all defined icon names without errors', () => {

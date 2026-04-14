@@ -84,31 +84,27 @@ describe('InputRange', () => {
     expect((ranges[1].element as HTMLInputElement).value).toBe('2025');
   });
 
-  it('clamps min value to prop min when model.min goes below min', async () => {
+  it('clamps min value to prop min when range input goes below min', async () => {
     const wrapper = mount(InputRange, {
       props: { min: 0, max: 100, modelValue: { min: 10, max: 90 } },
     });
-    await wrapper.setProps({ modelValue: { min: -5, max: 90 } });
+    const minRange = wrapper.findAll('input[type="range"]')[0]!;
+    (minRange.element as HTMLInputElement).value = '-5';
+    await minRange.trigger('input');
     await nextTick();
-    await nextTick();
-    const emitted = wrapper.emitted('update:modelValue');
-    if (emitted) {
-      const lastEmit = emitted[emitted.length - 1][0] as { min: number; max: number };
-      expect(lastEmit.min).toBeGreaterThanOrEqual(0);
-    }
+    // The watcher clamps in place; verify the DOM reflects the clamped value
+    expect(Number((minRange.element as HTMLInputElement).value)).toBeGreaterThanOrEqual(0);
   });
 
-  it('clamps max value to prop max when model.max exceeds max', async () => {
+  it('clamps max value to prop max when range input exceeds max', async () => {
     const wrapper = mount(InputRange, {
       props: { min: 0, max: 100, modelValue: { min: 10, max: 90 } },
     });
-    await wrapper.setProps({ modelValue: { min: 10, max: 150 } });
+    const maxRange = wrapper.findAll('input[type="range"]')[1]!;
+    (maxRange.element as HTMLInputElement).value = '150';
+    await maxRange.trigger('input');
     await nextTick();
-    await nextTick();
-    const emitted = wrapper.emitted('update:modelValue');
-    if (emitted) {
-      const lastEmit = emitted[emitted.length - 1][0] as { min: number; max: number };
-      expect(lastEmit.max).toBeLessThanOrEqual(100);
-    }
+    // The watcher clamps in place; verify the DOM reflects the clamped value
+    expect(Number((maxRange.element as HTMLInputElement).value)).toBeLessThanOrEqual(100);
   });
 });
