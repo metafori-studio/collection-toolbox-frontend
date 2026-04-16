@@ -14,7 +14,7 @@ const routes = [
   },
   {
     name: 'Detail',
-    path: '/detail/:id/',
+    path: '/activities/:id/',
     component: DetailView,
     props: true,
     children: [
