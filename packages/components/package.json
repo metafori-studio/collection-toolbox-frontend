@@ -24,6 +24,13 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@embedpdf/core": "^2.14.0",
+    "@embedpdf/engines": "^2.14.0",
+    "@embedpdf/plugin-document-manager": "^2.14.0",
+    "@embedpdf/plugin-render": "^2.14.0",
+    "@embedpdf/plugin-scroll": "^2.14.0",
+    "@embedpdf/plugin-viewport": "^2.14.0",
+    "@embedpdf/plugin-zoom": "^2.14.0",
     "@fontsource/geist-mono": "^5.2.7",
     "@fontsource/inter": "^5.2.8",
     "@phosphor-icons/vue": "^2.2.1",

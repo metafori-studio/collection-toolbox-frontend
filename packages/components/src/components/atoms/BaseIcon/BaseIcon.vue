@@ -38,6 +38,8 @@ import {
   PhFolder,
   PhSignIn,
   PhUserPlus,
+  PhMagnifyingGlassPlus,
+  PhMagnifyingGlassMinus,
 } from '@phosphor-icons/vue';
 
 export const icons = {
@@ -70,6 +72,8 @@ export const icons = {
   folder: PhFolder,
   signIn: PhSignIn,
   userPlus: PhUserPlus,
+  zoomIn: PhMagnifyingGlassPlus,
+  zoomOut: PhMagnifyingGlassMinus,
 };
 
 export type IconName = keyof typeof icons;
