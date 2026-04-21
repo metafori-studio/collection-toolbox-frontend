@@ -45,7 +45,16 @@
       "title": "Detail"
     },
     "viewer": {
-      "label": "Viewer"
+      "label": "Viewer",
+      "empty": "No media available",
+      "types": {
+        "image": "Image",
+        "video": "Video",
+        "audio": "Audio",
+        "pdf": "PDF",
+        "transcript": "Transcript",
+        "map": "Map"
+      }
     },
     "section": {
       "basicInfo": "Basic information",

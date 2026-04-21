@@ -1,20 +1,24 @@
 {
     "data": {
         "id": "AB480645:vlo",
-        "doi": "10.6052\/5572319",
-        "title": "",
-        "subtitle": "",
-        "abstract": "",
-        "general_note": "",
+        "doi": "10.6052/5572319",
+        "title": "Oral histories of the Kolari valley weavers",
+        "subtitle": "Field recordings from the 2021 summer expedition",
+        "abstract": "A collection of recorded interviews documenting traditional weaving techniques practiced in the Kolari valley. Material gathered during the 2021 summer expedition includes audio interviews, video documentation of looms in use, and photographs of finished textiles.",
+        "general_note": "Recordings were made with the informed consent of all participants.",
         "terms_of_use": "Error delectus itaque quis aspernatur dolores. Temporibus ipsa quia a eius voluptatibus maxime magnam. Neque qui eveniet consequatur quia porro illo nihil veniam.",
         "location_note": "In necessitatibus qui rerum et quis ut sed. Rerum velit eaque voluptatum aliquid praesentium. Voluptates tempore sunt reiciendis magnam atque asperiores suscipit qui.",
-        "content_note": "",
-        "technical_note": "",
+        "content_note": "Contains references to traditional ceremonies.",
+        "technical_note": "Recorded on Zoom H5 at 48kHz/24-bit.",
         "type": "masters-thesis",
         "extents": [
             {
                 "value": "55.83",
                 "unit": "research-slip"
+            },
+            {
+                "value": "12",
+                "unit": "hours"
             }
         ],
         "language": "kon",
@@ -109,22 +113,10 @@
             }
         ],
         "keywords": [
-            {
-                "id": 2,
-                "name": "quod"
-            },
-            {
-                "id": 50,
-                "name": "a"
-            },
-            {
-                "id": 86,
-                "name": "debitis"
-            },
-            {
-                "id": 88,
-                "name": "nulla"
-            }
+            { "id": 2, "name": "quod" },
+            { "id": 50, "name": "a" },
+            { "id": 86, "name": "debitis" },
+            { "id": 88, "name": "nulla" }
         ],
         "research_collections": [
             {
@@ -132,6 +124,83 @@
                 "title": "Voluptates rem qui dignissimos dolores sed quam aut."
             }
         ],
-        "document_id": "LI279735"
+        "document_id": "LI279735",
+        "first_media": {
+            "id": 812,
+            "name": "AB480645-cover",
+            "file_name": "AB480645-cover.jpg",
+            "human_readable_size": "1.24 MB",
+            "mime_type": "image/jpeg",
+            "url": "https://fastly.picsum.photos/id/1043/1600/1067.jpg?hmac=F0jYEhXj2mH1iDv9rbPMXW3X1Xbfx6tDcL1JQsmN6Hw",
+            "conversions": {
+                "thumb": "https://fastly.picsum.photos/id/1043/320/213.jpg?hmac=eIqLAqzSj7kAyoL-6hH5aBs0pS3mdZXKAcAgr-wQVxE",
+                "preview": "https://fastly.picsum.photos/id/1043/800/534.jpg?hmac=JtArKiKAmrHklSJ2oHHDtAOm3YoLpA-oBQ3r8U5r6NM"
+            }
+        },
+        "media": {
+            "image": [
+                {
+                    "id": 812,
+                    "name": "AB480645-cover",
+                    "file_name": "AB480645-cover.jpg",
+                    "human_readable_size": "1.24 MB",
+                    "mime_type": "image/jpeg",
+                    "url": "https://fastly.picsum.photos/id/1043/1600/1067.jpg?hmac=F0jYEhXj2mH1iDv9rbPMXW3X1Xbfx6tDcL1JQsmN6Hw",
+                    "conversions": {
+                        "thumb": "https://fastly.picsum.photos/id/1043/320/213.jpg?hmac=eIqLAqzSj7kAyoL-6hH5aBs0pS3mdZXKAcAgr-wQVxE",
+                        "preview": "https://fastly.picsum.photos/id/1043/800/534.jpg?hmac=JtArKiKAmrHklSJ2oHHDtAOm3YoLpA-oBQ3r8U5r6NM"
+                    }
+                },
+                {
+                    "id": 813,
+                    "name": "loom-detail-01",
+                    "file_name": "loom-detail-01.jpg",
+                    "human_readable_size": "2.87 MB",
+                    "mime_type": "image/jpeg",
+                    "url": "https://fastly.picsum.photos/id/659/1600/1067.jpg?hmac=DvdD1VR3fjOi_yxW2ypQoWY3i7RZvIHE0VrPXH9y2z0",
+                    "conversions": {
+                        "thumb": "https://fastly.picsum.photos/id/659/320/213.jpg?hmac=x8ZDJmVVZPDqbbLzJH6K-J5jlmZ7yCGq3k2WoU64b3E"
+                    }
+                }
+            ],
+            "audio": [
+                {
+                    "id": 814,
+                    "name": "interview-weaver-01",
+                    "file_name": "interview-weaver-01.mp3",
+                    "human_readable_size": "48.2 MB",
+                    "mime_type": "audio/mpeg",
+                    "url": "https://files.vidstack.io/sprite-fight/audio.mp3",
+                    "conversions": {},
+                    "transcript": "Interviewer: Can you describe how you first learned to weave?\nParticipant: My grandmother taught me when I was seven years old. She sat me down at the small loom by the window and showed me how to pass the shuttle through the warp.\n\nInterviewer: Were there specific patterns your family used?\nParticipant: Yes, every family in the valley had its own arrangement of stripes and motifs. Ours used a red and ochre diamond that my great-grandmother brought from the mountains.\n\nInterviewer: How has the practice changed over the years?\nParticipant: Fewer people weave now. The young ones move to the cities for work, and the wool is harder to source. But a handful of us still meet each winter to share patterns and stories."
+                }
+            ],
+            "document": [
+                {
+                    "id": 815,
+                    "name": "field-notes-2021",
+                    "file_name": "field-notes-2021.pdf",
+                    "human_readable_size": "3.15 MB",
+                    "mime_type": "application/pdf",
+                    "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+                    "conversions": {},
+                    "transcript": "Field notes, Kolari valley, July 2021.\n\nDay 1. Arrived in the morning, met with the head of the weaving cooperative. She introduced us to three weavers who had agreed to be recorded.\n\nDay 2. Recorded interview with weaver A in her workshop. Two looms active. Ambient noise from the nearby river is audible on the recording.\n\nDay 3. Photographed a series of finished textiles dating back to the 1960s. Wrote down notes on dye sources, warp counts, and regional variants."
+                }
+            ],
+            "video": [
+                {
+                    "id": 816,
+                    "name": "ceremony-recording",
+                    "file_name": "ceremony-recording.mp4",
+                    "human_readable_size": "512.4 MB",
+                    "mime_type": "video/mp4",
+                    "url": "https://files.vidstack.io/sprite-fight/720p.mp4",
+                    "conversions": {
+                        "poster": "https://files.vidstack.io/sprite-fight/poster.webp"
+                    },
+                    "transcript": "[00:00] The recording opens on a wide shot of the courtyard where the ceremony takes place.\n[00:12] A group of elders enters from the east side, carrying the ceremonial loom.\n[00:45] The head weaver welcomes the participants and explains the significance of the pattern being woven this year.\n[02:10] Music begins. Three younger weavers begin passing shuttles in alternating turns.\n[05:30] The ceremony closes with a communal meal served in the same courtyard."
+                }
+            ]
+        }
     }
 }

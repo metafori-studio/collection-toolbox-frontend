@@ -45,7 +45,16 @@
       "title": "Detail"
     },
     "viewer": {
-      "label": "Viewer"
+      "label": "Viewer",
+      "empty": "Žiadne médiá nie sú k dispozícii",
+      "types": {
+        "image": "Obrázok",
+        "video": "Video",
+        "audio": "Audio",
+        "pdf": "PDF",
+        "transcript": "Prepis",
+        "map": "Mapa"
+      }
     },
     "section": {
       "basicInfo": "Základné údaje",

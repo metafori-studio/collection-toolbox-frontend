@@ -12,7 +12,13 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [
-      vue(),
+      vue({
+        template: {
+          compilerOptions: {
+            isCustomElement: (tag) => tag.startsWith('media-'),
+          },
+        },
+      }),
       vueDevTools(),
       tailwindcss(),
     ],
