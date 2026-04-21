@@ -44,6 +44,8 @@ import {
   PhPlay,
   PhBug,
   PhList,
+  PhMagnifyingGlassPlus,
+  PhMagnifyingGlassMinus,
 } from '@phosphor-icons/vue';
 
 export const icons = {
@@ -82,6 +84,8 @@ export const icons = {
   play: PhPlay,
   bug: PhBug,
   list: PhList,
+  zoomIn: PhMagnifyingGlassPlus,
+  zoomOut: PhMagnifyingGlassMinus,
 };
 
 export type IconName = keyof typeof icons;

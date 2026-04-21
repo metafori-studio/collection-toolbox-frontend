@@ -1,1 +1,7 @@
-{}
+{
+  "viewer": {
+    "pdf": {
+      "loading": "Načítavanie PDF..."
+    }
+  }
+}
