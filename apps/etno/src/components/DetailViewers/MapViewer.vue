@@ -5,5 +5,5 @@
 </template>
 
 <script setup lang="ts">
-import BaseViewer from './BaseViewer.vue';
+import { BaseViewer } from '@metafori/components';
 </script>
