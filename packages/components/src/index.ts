@@ -1,5 +1,8 @@
 export { focusClasses, focusBeforeClasses, disabledClasses } from './misc/reusableCss';
 
+// i18n
+export { sk, en } from './i18n';
+
 // Atoms
 export { default as BaseButton, type ButtonSize } from './components/atoms/BaseButton';
 export { default as BaseDropdown } from './components/atoms/BaseDropdown';
