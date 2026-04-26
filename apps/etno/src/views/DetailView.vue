@@ -200,17 +200,15 @@ import {
   BaseButton,
   BaseIcon,
   InputSelect,
+  ImageViewer,
+  MapViewer,
+  VideoViewer,
+  AudioViewer,
+  PdfViewer,
+  TranscriptViewer,
 } from '@metafori/components';
 import DetailSection from '@/components/Detail/DetailSection.vue';
 import DetailTable from '@/components/Detail/DetailTable.vue';
-
-// Modules
-import ImageViewer from '@/components/DetailViewers/ImageViewer.vue';
-import MapViewer from '@/components/DetailViewers/MapViewer.vue';
-import VideoViewer from '@/components/DetailViewers/VideoViewer.vue';
-import AudioViewer from '@/components/DetailViewers/AudioViewer.vue';
-import PdfViewer from '@/components/DetailViewers/PdfViewer.vue';
-import TranscriptViewer from '@/components/DetailViewers/TranscriptViewer.vue';
 
 import { detailPanelOpen } from '@/store';
 import { getDetail } from '@/api';

@@ -10,7 +10,7 @@
     </BaseButton>
 
     <BaseViewer>
-      Video viewer
+      Audio viewer
     </BaseViewer>
 
     <TranscriptViewer
@@ -22,10 +22,10 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-import { BaseButton } from '@metafori/components';
-
-import BaseViewer from './BaseViewer.vue';
-import TranscriptViewer from './TranscriptViewer.vue';
+import BaseButton from '../../atoms/BaseButton';
+import BaseViewer from '../BaseViewer';
+import TranscriptViewer from '../TranscriptViewer';
 
 const showTranscript = ref(true);
 </script>
+

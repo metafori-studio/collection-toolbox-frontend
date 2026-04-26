@@ -1,9 +1,10 @@
 <template>
   <BaseViewer>
-    Map viewer
+    PDF viewer
   </BaseViewer>
 </template>
 
 <script setup lang="ts">
-import BaseViewer from './BaseViewer.vue';
+import BaseViewer from '../BaseViewer';
 </script>
+
