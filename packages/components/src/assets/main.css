@@ -104,6 +104,10 @@
   --text-mono--font-weight: 600;
 }
 
+:root {
+  --header-height: 3.5rem;
+}
+
 @media screen and (min-width: theme(--breakpoint-md)) {
   :root {
     --text-heading-1: 36px;
