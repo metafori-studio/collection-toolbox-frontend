@@ -1,4 +1,4 @@
-import { createWebHistory, createRouter } from 'vue-router';
+import { createWebHistory, createRouter, type RouteLocationNormalized } from 'vue-router';
 
 import ExploreView from '@/views/ExploreView.vue';
 import DetailView from '@/views/DetailView.vue';
@@ -36,9 +36,12 @@ const routes = [
   },
   {
     name: 'SetupAccount',
-    path: '/setup-account/:email/:token',
+    path: '/setup-account',
     component: SetupAccountView,
-    props: true,
+    props: (route: RouteLocationNormalized) => ({
+      email: route.query.email,
+      token: route.query.token,
+    }),
   },
 ];
 
