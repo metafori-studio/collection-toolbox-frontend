@@ -9,16 +9,13 @@
       params: { id: item.id },
     }"
   >
-    <div
-      v-if="item.image"
-      class="shrink-0"
-    >
-      <img
-        :src="item.image"
-        :alt="item.title"
-        class="rounded-md h-24 w-24"
-      >
-    </div>
+    <MediaImage
+      class="shrink-0 h-24 w-24 rounded-md"
+      :src="item.first_media?.conversions?.thumbnail"
+      :alt="item.title"
+      :icon="icon"
+      :theme="theme"
+    />
     <div class="flex-1 flex flex-col gap-0.5">
       <p class="text-sm font-medium">
         {{ item.title }}
@@ -26,8 +23,9 @@
       <div>
         <MediaTypeChip
           v-if="item.type"
-          icon="stack"
-          :label="item.type"
+          :icon="icon"
+          :theme="theme"
+          :label="translateEnum('ItemType', item.type) || item.type"
         />
       </div>
       <div
@@ -47,6 +45,9 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 
+import { useTranslateEnum } from '@/composables/useTranslateEnum';
+import { getIconForMediaType, getThemeForMediaType } from '@/misc/mediaTypeHelpers';
+import { MediaImage } from '@metafori/components';
 import MediaTypeChip from '@/components/MediaTypeChip.vue';
 import { toNameReadable } from '@/misc/toNameReadable';
 
@@ -59,6 +60,9 @@ const {
   isLast: boolean
 }>();
 
-const authorsReadable = computed(() => toNameReadable(item.authors));
+const { translateEnum } = useTranslateEnum();
 
+const authorsReadable = computed(() => toNameReadable(item.authors));
+const icon = computed(() => getIconForMediaType(item.media_type));
+const theme = computed(() => getThemeForMediaType(item.media_type));
 </script>

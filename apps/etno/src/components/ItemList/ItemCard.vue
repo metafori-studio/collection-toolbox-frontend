@@ -14,16 +14,19 @@
     <span class="font-mono text-xs text-primary-500">
       {{ item.id }}
     </span>
-    <img
-      :src="item.image"
+    <MediaImage
+      class="aspect-4/3 rounded-lg"
+      :src="item.first_media?.conversions?.thumbnail"
       :alt="item.title"
-      class="aspect-[4/3] object-cover rounded-lg"
-    >
+      :icon="icon"
+      :theme="theme"
+    />
     <div class="flex items-center justify-between gap-2 mb-2">
       <MediaTypeChip
         v-if="item.type"
-        icon="stack"
-        :label="item.type"
+        :icon="icon"
+        :theme="theme"
+        :label="translateEnum('ItemType', item.type) || item.type"
       />
 
       <div class="flex items-center gap-2 text-neutral-500 text-xs">
@@ -79,11 +82,12 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue';
+import { useTranslateEnum } from '@/composables/useTranslateEnum';
 
-import { BaseIcon } from '@metafori/components';
+import { BaseIcon, focusClasses, MediaImage } from '@metafori/components';
+import { getIconForMediaType, getThemeForMediaType } from '@/misc/mediaTypeHelpers';
 import MediaTypeChip from '@/components/MediaTypeChip.vue';
 
-import { focusClasses } from '@metafori/components';
 import { toNameReadable } from '@/misc/toNameReadable';
 import { toYearRange } from '@/misc/toYearRange';
 
@@ -94,10 +98,12 @@ const {
   item: Record<string, any>
 }>();
 
+const { translateEnum } = useTranslateEnum();
+
 const authorsReadable = computed(() => toNameReadable(item.authors));
 const researchersReadable = computed(() => toNameReadable(item.researchers));
 const originatorsReadable = computed(() => toNameReadable(item.originators));
-
 const yearRange = computed(() => toYearRange(item.time_period_start, item.time_period_end));
-
+const icon = computed(() => getIconForMediaType(item.media_type));
+const theme = computed(() => getThemeForMediaType(item.media_type));
 </script>
