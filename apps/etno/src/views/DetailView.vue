@@ -195,6 +195,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
+import { useTranslateEnum } from '@/composables/useTranslateEnum';
 
 import {
   BaseButton,
@@ -271,12 +272,7 @@ const activeViewerComponent = computed(() => {
 
 // Tables
 const { t } = useI18n();
-const translateEnum = (namespace: string, key: string) => {
-  if (!key) {
-    return null;
-  }
-  return t(`enums.${namespace}.${key}`);
-};
+const { translateEnum } = useTranslateEnum();
 
 const basicInfo = computed(() => [
   {
