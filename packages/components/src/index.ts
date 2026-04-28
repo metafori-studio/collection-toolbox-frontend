@@ -7,6 +7,7 @@ export { focusClasses, focusBeforeClasses, disabledClasses } from './misc/reusab
 export { default as BaseButton, type ButtonSize } from './components/atoms/BaseButton';
 export { default as BaseDropdown } from './components/atoms/BaseDropdown';
 export { default as BaseIcon, type IconName } from './components/atoms/BaseIcon';
+export { default as MediaImage, type MediaImageTheme } from './components/atoms/MediaImage';
 export { default as FilterChip } from './components/atoms/FilterChip';
 export { InputCheckbox, InputCheckboxList } from './components/atoms/InputCheckbox';
 export { InputRadio, InputRadioList } from './components/atoms/InputRadio';
