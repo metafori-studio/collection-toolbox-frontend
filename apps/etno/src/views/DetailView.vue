@@ -165,6 +165,12 @@
           />
         </DetailSection>
 
+        <!-- <DetailSection
+          :title="$t('detail.section.map')"
+        >
+          [ TODO: Map ]
+        </DetailSection> -->
+
         <DetailSection
           :title="tableFormal.title"
         >
@@ -198,7 +204,6 @@ import { useTranslateEnum } from '@/composables/useTranslateEnum';
 import {
   BaseButton,
   BaseIcon,
-  InputSelect,
   ImageViewer,
   MapViewer,
   VideoViewer,
@@ -209,6 +214,7 @@ import {
 } from '@metafori/components';
 import DetailSection from '@/components/Detail/DetailSection.vue';
 import DetailTable from '@/components/Detail/DetailTable.vue';
+import EtnoMap from '@/components/EtnoMap/EtnoMap.vue';
 
 import { detailPanelOpen } from '@/store';
 import { getDetail } from '@/api';
