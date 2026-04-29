@@ -49,7 +49,7 @@
       </div>
 
       <div class="p-4 flex flex-col gap-8">
-        <div class="flex flex-col gap-2">
+        <!-- <div class="flex flex-col gap-2">
           <span class="text-label text-neutral-500">{{ $t('detail.viewer.label') }}</span>
           <div class="flex flex-wrap items-center gap-2">
             <InputSelect
@@ -60,7 +60,7 @@
               }))"
             />
           </div>
-        </div>
+        </div> -->
 
         <div class="flex flex-col gap-1">
           <h1 class="text-heading-3">
