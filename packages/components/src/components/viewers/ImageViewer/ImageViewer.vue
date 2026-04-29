@@ -1,6 +1,6 @@
 <template>
   <div class="flex-1 flex relative min-w-0">
-    <!-- <BaseButton
+    <BaseButton
       v-if="hasTranscript"
       variant="secondary"
       size="small"
@@ -8,7 +8,7 @@
       @click="showTranscript = !showTranscript"
     >
       Toggle transcript
-    </BaseButton> -->
+    </BaseButton>
 
     <BaseViewer class="flex flex-col relative overflow-hidden min-w-0">
       <div class="flex-1 relative bg-neutral-100 flex overflow-hidden min-w-0">
