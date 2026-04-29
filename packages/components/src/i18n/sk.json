@@ -2,6 +2,14 @@
   "viewer": {
     "pdf": {
       "loading": "Načítavanie PDF..."
+    },
+    "transcript": {
+      "title": "Transkript"
+    },
+    "image": {
+      "thumbnailStrip": {
+        "title": "Obrázky"
+      }
     }
   }
 }

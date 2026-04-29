@@ -1,31 +1,25 @@
 <template>
-  <component
-    :is="sidePanel ? 'aside' : BaseViewer"
-    :class="{
-      'bg-white': true,
-      'w-full shrink-0 border-l border-neutral-200 md:w-[360px]': sidePanel,
-    }"
-  >
-    <div class="flex max-h-[calc(100vh-56px)] flex-col gap-3 overflow-auto p-4">
-      <h2 class="text-heading-4">
-        Transcript
-      </h2>
-      <p class="whitespace-pre-line text-sm text-neutral-600">
-        {{ transcript }}
-      </p>
+  <BaseViewer class="bg-white relative">
+    <div class="sticky top-0 bg-white border-b border-neutral-200 px-6 py-3 z-10 flex items-center">
+      <span class="font-bold text-neutral-800">{{ $t('viewer.transcript.title') }}</span>
     </div>
-  </component>
+    <div class="p-6 whitespace-pre-wrap text-sm text-neutral-700 leading-relaxed">
+      {{ content }}
+    </div>
+  </BaseViewer>
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue';
 import BaseViewer from '../BaseViewer';
 
-const {
-  transcript,
-  sidePanel = false,
-} = defineProps<{
-  transcript: string
-  sidePanel?: boolean
+const props = defineProps<{
+  transcript?: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  detail?: any;
 }>();
-</script>
 
+const content = computed(() => {
+  return props.transcript || props.detail?.media?.transcript || 'No transcript available.';
+});
+</script>
