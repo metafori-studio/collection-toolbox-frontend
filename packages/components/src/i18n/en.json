@@ -4,7 +4,9 @@
       "loading": "Loading PDF..."
     },
     "transcript": {
-      "title": "Transcript"
+      "title": "Transcript",
+      "show": "Show transcript",
+      "close": "Close"
     },
     "image": {
       "thumbnailStrip": {

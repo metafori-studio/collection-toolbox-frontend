@@ -4,7 +4,9 @@
       "loading": "Načítavanie PDF..."
     },
     "transcript": {
-      "title": "Transkript"
+      "title": "Prepis",
+      "show": "Zobraziť prepis",
+      "close": "Skryť"
     },
     "image": {
       "thumbnailStrip": {

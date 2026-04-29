@@ -1,14 +1,16 @@
 <template>
   <div class="flex-1 flex relative min-w-0">
-    <BaseButton
-      v-if="hasTranscript"
-      variant="secondary"
-      size="small"
-      class="absolute top-2 right-4 z-10"
-      @click="showTranscript = !showTranscript"
-    >
-      Toggle transcript
-    </BaseButton>
+    <div class="absolute inset-0 pointer-events-none z-10 flex flex-col items-end">
+      <BaseButton
+        v-if="hasTranscript && !showTranscript"
+        variant="secondary"
+        size="small"
+        class="sticky top-[64px] mr-4 pointer-events-auto"
+        @click="showTranscript = !showTranscript"
+      >
+        {{ $t('viewer.transcript.show') }}
+      </BaseButton>
+    </div>
 
     <BaseViewer class="flex flex-col relative overflow-hidden min-w-0">
       <div class="flex-1 relative bg-neutral-100 flex overflow-hidden min-w-0">
@@ -71,6 +73,7 @@
       v-if="showTranscript && hasTranscript"
       class="w-80 max-w-[33%] shrink-0 border-l border-neutral-200"
       :transcript="currentImage?.transcript"
+      @close="showTranscript = false"
     />
   </div>
 </template>
@@ -90,7 +93,7 @@ const props = defineProps<{
 
 const showTranscript = ref(false);
 
-const images = computed(() => props.detail?.media?.images || []);
+const images = computed<any[]>(() => props.detail?.media?.images || []);
 const currentIndex = ref(0);
 
 const currentImage = computed(() => images.value[currentIndex.value]);
