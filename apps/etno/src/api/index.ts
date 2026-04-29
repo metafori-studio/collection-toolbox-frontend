@@ -44,14 +44,7 @@ const getList = async (
 
   const { data } = await api.get(`/etno/items?${params.toString()}`);
 
-  return {
-    ...data,
-    data: data.data.map((record: Record<string, unknown>) => ({
-      ...record,
-      // TODO: Setting default image because images are not yet set in API
-      image: 'https://fastly.picsum.photos/id/4/800/800.jpg?hmac=ji2no8lxJV7_xjfY7ajNOri7_dDclKhOxxQ0gy0Svfc',
-    })) as Record<string, unknown>[],
-  };
+  return data;
 };
 
 const getAggregations = async (
