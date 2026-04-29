@@ -40,6 +40,9 @@ import {
   PhUserPlus,
   PhMagnifyingGlassPlus,
   PhMagnifyingGlassMinus,
+  PhImage,
+  PhMusicNotes,
+  PhPlay,
 } from '@phosphor-icons/vue';
 
 export const icons = {
@@ -74,6 +77,9 @@ export const icons = {
   userPlus: PhUserPlus,
   zoomIn: PhMagnifyingGlassPlus,
   zoomOut: PhMagnifyingGlassMinus,
+  image: PhImage,
+  musicNotes: PhMusicNotes,
+  play: PhPlay,
 };
 
 export type IconName = keyof typeof icons;
@@ -86,7 +92,7 @@ const {
   weight = 'regular',
 } = defineProps<{
   icon?: IconName
-  size?: 16 | 20 | 24 | 32
+  size?: 16 | 20 | 24 | 32 | 96
   weight?: 'regular' | 'fill'
 }>();
 
