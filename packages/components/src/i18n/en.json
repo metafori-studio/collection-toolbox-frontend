@@ -2,6 +2,14 @@
   "viewer": {
     "pdf": {
       "loading": "Loading PDF..."
+    },
+    "transcript": {
+      "title": "Transcript"
+    },
+    "image": {
+      "thumbnailStrip": {
+        "title": "Images"
+      }
     }
   }
 }
