@@ -51,7 +51,11 @@
       <div class="p-4 flex flex-col gap-8">
         <div class="flex flex-col gap-2">
           <span class="text-label text-neutral-500">{{ $t('detail.viewer.label') }}</span>
-          <div class="flex flex-wrap items-center gap-2">
+
+          <div
+            v-if="isDev"
+            class="flex flex-wrap items-center gap-2"
+          >
             <InputSelect
               v-model="viewerActive"
               :options="viewers.map((v) => ({
@@ -162,12 +166,6 @@
         </DetailSection>
 
         <DetailSection
-          :title="$t('detail.section.map')"
-        >
-          [ TODO: Map ]
-        </DetailSection>
-
-        <DetailSection
           :title="tableFormal.title"
         >
           <DetailTable
@@ -223,6 +221,8 @@ const {
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const detail = ref<any>({});
+
+const isDev = import.meta.env.DEV;
 
 onMounted(async () => {
   detail.value = await getDetail(id);
