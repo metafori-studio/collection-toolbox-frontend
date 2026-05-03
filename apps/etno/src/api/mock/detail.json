@@ -132,6 +132,71 @@
                 "title": "Voluptates rem qui dignissimos dolores sed quam aut."
             }
         ],
-        "document_id": "LI279735"
+        "document_id": "LI279735",
+        "media_type": "videos",
+        "first_media": {
+            "id": 1,
+            "name": "Field research video recording",
+            "file_name": "field-research-video.mp4",
+            "human_readable_size": "12.4 MB",
+            "mime_type": "video/mp4",
+            "url": "https://files.vidstack.io/sprite-fight/720p.mp4",
+            "conversions": {
+                "poster": "https://files.vidstack.io/sprite-fight/poster.webp"
+            },
+            "transcript": "Interviewer: Please describe the setting of this recording.\nRespondent: The recording was made during a field research visit and documents local oral history.\nInterviewer: What should listeners pay attention to?\nRespondent: The vocabulary and cadence are representative of the region."
+        },
+        "media": {
+            "audios": [
+                {
+                    "id": 2,
+                    "name": "Field research audio recording",
+                    "file_name": "field-research-audio.mp3",
+                    "human_readable_size": "4.8 MB",
+                    "mime_type": "audio/mpeg",
+                    "url": "https://files.vidstack.io/agent-327/audio.mp3",
+                    "conversions": {},
+                    "transcript": "Speaker: This is an accompanying audio recording from the same research collection.\nSpeaker: The transcript is included to exercise the universal audio viewer."
+                }
+            ],
+            "documents": [
+                {
+                    "id": 3,
+                    "name": "Research document",
+                    "file_name": "research-document.pdf",
+                    "human_readable_size": "142 KB",
+                    "mime_type": "application/pdf",
+                    "url": "https://pdfobject.com/pdf/sample.pdf",
+                    "conversions": {}
+                }
+            ],
+            "images": [
+                {
+                    "id": 4,
+                    "name": "Research image",
+                    "file_name": "research-image.jpg",
+                    "human_readable_size": "86 KB",
+                    "mime_type": "image/jpeg",
+                    "url": "https://fastly.picsum.photos/id/791/1200/800.jpg?hmac=kZdqKhNSfF_pcDO8i2BaLww4I8h_phrKmi8BCuc_tEY",
+                    "conversions": {
+                        "thumb": "https://fastly.picsum.photos/id/791/400/300.jpg?hmac=Ih25EqC17SgnqsgEitvV1TNQxVnBv8fQ5_MNaU7LGD4"
+                    }
+                }
+            ],
+            "videos": [
+                {
+                    "id": 1,
+                    "name": "Field research video recording",
+                    "file_name": "field-research-video.mp4",
+                    "human_readable_size": "12.4 MB",
+                    "mime_type": "video/mp4",
+                    "url": "https://files.vidstack.io/sprite-fight/720p.mp4",
+                    "conversions": {
+                        "poster": "https://files.vidstack.io/sprite-fight/poster.webp"
+                    },
+                    "transcript": "Interviewer: Please describe the setting of this recording.\nRespondent: The recording was made during a field research visit and documents local oral history.\nInterviewer: What should listeners pay attention to?\nRespondent: The vocabulary and cadence are representative of the region."
+                }
+            ]
+        }
     }
 }

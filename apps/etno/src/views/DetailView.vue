@@ -37,7 +37,7 @@
 
     <div
       v-if="isLoaded && detailPanelOpen"
-      class="md:max-w-[392px]"
+      class="bg-white md:max-w-[392px]"
     >
       <div class="sticky z-10 top-14 bg-white px-4 py-2 flex items-center gap-2 border-b border-neutral-200 min-h-[49px]">
         <span class="">
@@ -54,7 +54,7 @@
           <div class="flex flex-wrap items-center gap-2">
             <InputSelect
               v-model="viewerActive"
-              :options="viewers.map((v) => ({
+              :options="availableViewers.map((v) => ({
                 value: v.key,
                 label: v.key,
               }))"
@@ -226,46 +226,75 @@ const detail = ref<any>({});
 
 onMounted(async () => {
   detail.value = await getDetail(id);
+  viewerActive.value = getInitialViewer();
 });
 
 const isLoaded = computed(() => !!detail.value.id);
 
-const viewers = [
+type ViewerKey = 'image' | 'map' | 'pdf' | 'audio' | 'video' | 'transcript';
+type MediaKind = 'audios' | 'documents' | 'images' | 'videos';
+type DetailMedia = Partial<Record<MediaKind, { transcript?: string | null }[]>>;
+
+const viewerActive = ref<ViewerKey>('image');
+
+const mediaTypeToViewer: Record<MediaKind, ViewerKey> = {
+  audios: 'audio',
+  documents: 'pdf',
+  images: 'image',
+  videos: 'video',
+};
+
+const availableViewers = computed(() => [
   {
-    key: 'image',
+    key: 'image' as const,
     component: ImageViewer,
+    available: !!detail.value.media?.images?.length,
   },
   {
-    key: 'map',
+    key: 'map' as const,
     component: MapViewer,
+    available: !!detail.value.locality,
   },
   {
-    key: 'pdf',
+    key: 'pdf' as const,
     component: PdfViewer,
+    available: !!detail.value.media?.documents?.length,
   },
   {
-    key: 'audio',
+    key: 'audio' as const,
     component: AudioViewer,
+    available: !!detail.value.media?.audios?.length,
   },
   {
-    key: 'video',
+    key: 'video' as const,
     component: VideoViewer,
+    available: !!detail.value.media?.videos?.length,
   },
   {
-    key: 'transcript',
+    key: 'transcript' as const,
     component: TranscriptViewer,
+    available: Object.values((detail.value.media ?? {}) as DetailMedia).some((items) => (
+      items?.some((item) => !!item.transcript)
+    )),
   },
-];
+].filter((viewer) => viewer.available));
 
-const viewerActive = ref<string>('image');
+const getInitialViewer = (): ViewerKey => {
+  const mediaType = detail.value.media_type as MediaKind | undefined;
+  const preferredViewer = mediaType ? mediaTypeToViewer[mediaType] : undefined;
 
-const activeViewerComponent = computed(() => {
-  const match = viewers.find((viewer) => viewer.key === viewerActive.value);
-  if (!match) {
-    return null;
+  if (preferredViewer && availableViewers.value.some((viewer) => viewer.key === preferredViewer)) {
+    return preferredViewer;
   }
-  return match.component;
-});
+
+  return availableViewers.value[0]?.key ?? 'image';
+};
+
+const activeViewerComponent = computed(() => (
+  availableViewers.value.find((viewer) => viewer.key === viewerActive.value)?.component
+  ?? availableViewers.value[0]?.component
+  ?? null
+));
 
 // Tables
 const { t } = useI18n();

@@ -1,5 +1,12 @@
 // CSS
 import './assets/main.css';
+import 'vidstack/player/styles/default/theme.css';
+import 'vidstack/player/styles/default/layouts/audio.css';
+import 'vidstack/player/styles/default/layouts/video.css';
+import 'vidstack/player';
+import 'vidstack/player/ui';
+import 'vidstack/player/layouts/default';
+
 export { focusClasses, focusBeforeClasses, disabledClasses } from './misc/reusableCss';
 
 // Atoms

@@ -12,7 +12,13 @@ const isStorybookProcess = process.env.npm_lifecycle_event === 'storybook';
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
-    vue(),
+    vue({
+      template: {
+        compilerOptions: {
+          isCustomElement: (tag) => tag.startsWith('media-'),
+        },
+      },
+    }),
     !isStorybookProcess && vueDevTools(),
     tailwindcss(),
   ],
