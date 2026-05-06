@@ -206,6 +206,7 @@ import {
   AudioViewer,
   PdfViewer,
   TranscriptViewer,
+  type ViewerMediaKind,
 } from '@metafori/components';
 import DetailSection from '@/components/Detail/DetailSection.vue';
 import DetailTable from '@/components/Detail/DetailTable.vue';
@@ -232,12 +233,11 @@ onMounted(async () => {
 const isLoaded = computed(() => !!detail.value.id);
 
 type ViewerKey = 'image' | 'map' | 'pdf' | 'audio' | 'video' | 'transcript';
-type MediaKind = 'audios' | 'documents' | 'images' | 'videos';
-type DetailMedia = Partial<Record<MediaKind, { transcript?: string | null }[]>>;
+type DetailMedia = Partial<Record<ViewerMediaKind, { transcript?: string | null }[]>>;
 
 const viewerActive = ref<ViewerKey>('image');
 
-const mediaTypeToViewer: Record<MediaKind, ViewerKey> = {
+const mediaTypeToViewer: Record<ViewerMediaKind, ViewerKey> = {
   audios: 'audio',
   documents: 'pdf',
   images: 'image',
@@ -280,7 +280,7 @@ const availableViewers = computed(() => [
 ].filter((viewer) => viewer.available));
 
 const getInitialViewer = (): ViewerKey => {
-  const mediaType = detail.value.media_type as MediaKind | undefined;
+  const mediaType = detail.value.media_type as ViewerMediaKind | undefined;
   const preferredViewer = mediaType ? mediaTypeToViewer[mediaType] : undefined;
 
   if (preferredViewer && availableViewers.value.some((viewer) => viewer.key === preferredViewer)) {

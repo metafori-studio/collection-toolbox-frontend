@@ -48,6 +48,12 @@
 </template>
 
 <script setup lang="ts">
+import 'vidstack/player/styles/default/theme.css';
+import 'vidstack/player/styles/default/layouts/video.css';
+import 'vidstack/player';
+import 'vidstack/player/ui';
+import 'vidstack/player/layouts/default';
+
 import { computed, ref } from 'vue';
 
 import BaseButton from '../../atoms/BaseButton';
