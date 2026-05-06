@@ -1,11 +1,5 @@
 // CSS
 import './assets/main.css';
-import 'vidstack/player/styles/default/theme.css';
-import 'vidstack/player/styles/default/layouts/audio.css';
-import 'vidstack/player/styles/default/layouts/video.css';
-import 'vidstack/player';
-import 'vidstack/player/ui';
-import 'vidstack/player/layouts/default';
 
 export { focusClasses, focusBeforeClasses, disabledClasses } from './misc/reusableCss';
 
@@ -34,3 +28,4 @@ export { default as VideoViewer } from './components/viewers/VideoViewer';
 export { default as AudioViewer } from './components/viewers/AudioViewer';
 export { default as PdfViewer } from './components/viewers/PdfViewer';
 export { default as TranscriptViewer } from './components/viewers/TranscriptViewer';
+export type { ViewerMediaKind } from './components/viewers/media';
