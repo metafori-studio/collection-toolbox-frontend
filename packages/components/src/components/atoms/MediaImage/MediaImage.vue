@@ -30,7 +30,7 @@ const props = withDefaults(defineProps<{
   theme?: MediaImageTheme
 }>(), {
   src: null,
-  alt: undefined,
+  alt: '',
   icon: 'stack',
   theme: 'neutral',
 });
