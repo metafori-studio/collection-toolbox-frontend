@@ -1,6 +1,6 @@
-import { type IconName, type MediaImageTheme } from '@metafori/components';
+import { type IconName, type MediaImageTheme, type ViewerMediaKind } from '@metafori/components';
 
-export function getIconForMediaType(mediaType?: string | null): IconName {
+export function getIconForMediaType(mediaType?: ViewerMediaKind | null): IconName {
   switch (mediaType) {
     case 'audios':
       return 'musicNotes';
@@ -15,7 +15,7 @@ export function getIconForMediaType(mediaType?: string | null): IconName {
   }
 }
 
-export function getThemeForMediaType(mediaType?: string | null): MediaImageTheme {
+export function getThemeForMediaType(mediaType?: ViewerMediaKind | null): MediaImageTheme {
   switch (mediaType) {
     case 'audios':
       return 'green';
