@@ -1,6 +1,6 @@
 import { createGtm } from '@gtm-support/vue-gtm';
 import { initMatomo } from '@certible/use-matomo';
-import router from '@/router';
+import { type Router } from 'vue-router';
 
 const {
   PROD,
@@ -10,7 +10,7 @@ const {
 } = import.meta.env;
 
 // GTM
-const setupGtm = () => {
+const setupGtm = (router: Router) => {
   const enabled = PROD && VITE_GTM_ID;
   if (!enabled) {
     return;
