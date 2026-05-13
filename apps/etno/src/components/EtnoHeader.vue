@@ -33,6 +33,7 @@
 
         <div class="p-2 flex flex-col gap-2">
           <BaseButton
+            v-if="!isLoggedIn"
             variant="secondary"
             size="small"
             @click="$router.push({ name: 'Login' })"
@@ -41,6 +42,7 @@
             {{ $t('header.login') }}
           </BaseButton>
           <BaseButton
+            v-if="!isLoggedIn"
             variant="secondary"
             size="small"
             @click="$router.push({ name: 'Signup' })"
@@ -48,6 +50,16 @@
             <BaseIcon icon="userPlus" />
             {{ $t('header.signup') }}
           </BaseButton>
+          <BaseButton
+            v-if="isLoggedIn"
+            variant="secondary"
+            size="small"
+            @click="tryLogout()"
+          >
+            <BaseIcon icon="signOut" />
+            {{ $t('header.logout') }}
+          </BaseButton>
+
           <BaseButton
             v-if="$i18n.locale === 'sk'"
             variant="secondary"
@@ -71,6 +83,8 @@
 </template>
 
 <script setup lang="ts">
+import { useRouter } from 'vue-router';
+
 import { AppHeader } from '@metafori/components';
 import {
   BaseButton,
@@ -78,5 +92,17 @@ import {
   BaseDropdown,
 } from '@metafori/components';
 import EtnoSearch from './EtnoSearch.vue';
+
+import { isLoggedIn } from '@/store';
+import { logout } from '@/api';
+
+const router = useRouter();
+
+const tryLogout = async () => {
+  const response = await logout();
+  if (response.status = 200) {
+    router.push({ name: 'Explore' });
+  }
+};
 
 </script>
