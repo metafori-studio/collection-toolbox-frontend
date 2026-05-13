@@ -140,6 +140,28 @@ const setPassword = async (payload: SetPasswordPayload) => {
   return response;
 };
 
+type ForgotPasswordPayload = {
+  email: string;
+};
+
+const forgotPassword = async (payload: ForgotPasswordPayload) => {
+  await getCsrfCookie();
+  const response = await api.post('/password/forgot', payload);
+  return response;
+};
+
+type ResetPasswordPayload = {
+  token: string;
+  email: string;
+  password: string;
+};
+
+const resetPassword = async (payload: ResetPasswordPayload) => {
+  await getCsrfCookie();
+  const response = await api.post('/password/reset', payload);
+  return response;
+};
+
 export {
   getMapPoints,
   getList,
@@ -151,4 +173,6 @@ export {
   login,
   logout,
   setPassword,
+  forgotPassword,
+  resetPassword,
 };

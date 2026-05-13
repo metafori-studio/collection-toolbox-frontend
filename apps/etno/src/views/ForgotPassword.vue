@@ -3,10 +3,10 @@
     <div class="rounded-lg bg-white border border-neutral-200 max-w-[448px] mx-auto p-6">
       <div class="mb-4">
         <h1 class="text-heading-3">
-          {{ $t('auth.login.title') }}
+          {{ $t('auth.forgotPassword.title') }}
         </h1>
         <p class="text-sm text-neutral-500">
-          {{ $t('auth.login.subtitle') }}
+          {{ $t('auth.forgotPassword.subtitle') }}
         </p>
       </div>
       <form
@@ -30,36 +30,6 @@
           />
         </div>
 
-        <div>
-          <label
-            for="password"
-            class="block text-sm font-medium text-foreground mb-2"
-          >
-            {{ $t('auth.common.password') }}
-          </label>
-          <InputText
-            id="password"
-            v-model="password"
-            type="password"
-          />
-        </div>
-
-        <div class="text-sm flex gap-3">
-          <RouterLink
-            class="text-primary-500 hover:underline"
-            :to="{ name: 'ForgotPassword' }"
-          >
-            {{ $t('auth.login.forgotPassword') }}
-          </RouterLink>
-
-          <RouterLink
-            class="text-primary-500 hover:underline"
-            :to="{ name: 'Signup' }"
-          >
-            {{ $t('auth.login.requestSignup') }}
-          </RouterLink>
-        </div>
-
         <p
           v-if="error"
           class="bg-red-100 py-2 px-3 rounded-lg text-sm text-red-500"
@@ -67,9 +37,19 @@
           {{ error }}
         </p>
 
-        <BaseButton type="submit">
-          {{ $t('auth.login.submit') }}
-        </BaseButton>
+        <div class="flex justify-end gap-3">
+          <BaseButton
+            type="button"
+            variant="secondary"
+            @click="$router.push({ name: 'Login' })"
+          >
+            {{ $t('auth.forgotPassword.toLogin') }}
+          </BaseButton>
+
+          <BaseButton type="submit">
+            {{ $t('auth.forgotPassword.submit') }}
+          </BaseButton>
+        </div>
       </form>
     </div>
   </div>
@@ -83,29 +63,20 @@ import { useI18n } from 'vue-i18n';
 import { BaseButton, InputText } from '@metafori/components';
 
 import type { AxiosError } from 'axios';
-import { login } from '@/api';
+import { forgotPassword } from '@/api';
 
 const { t } = useI18n();
 const email = ref('');
-const password = ref('');
 const error = ref('');
 const router = useRouter();
 
 const submit = async () => {
   error.value = '';
   try {
-    const response = await login({
-      email: email.value,
-      password: password.value,
-      remember: true,
-    });
-    if (response.status === 204) {
-      router.push({ name: 'Explore' });
-    }
+    await forgotPassword({ email: email.value });
+    router.push({ name: 'Login' });
   } catch (e: unknown) {
     error.value = (e as AxiosError<{ message: string }>)?.response?.data?.message || t('auth.unknownError');
   }
 };
-
-
 </script>

@@ -3,10 +3,10 @@
     <div class="rounded-lg bg-white border border-neutral-200 max-w-[448px] mx-auto p-6">
       <div class="mb-4">
         <h1 class="text-heading-3">
-          {{ $t('auth.login.title') }}
+          {{ $t('auth.resetPassword.title') }}
         </h1>
         <p class="text-sm text-neutral-500">
-          {{ $t('auth.login.subtitle') }}
+          {{ $t('auth.resetPassword.subtitle') }}
         </p>
       </div>
       <form
@@ -24,9 +24,9 @@
           </label>
           <InputText
             id="email"
-            v-model="email"
-            type="email"
-            autocomplete="email"
+            :model-value="email"
+            type="text"
+            disabled
           />
         </div>
 
@@ -35,7 +35,7 @@
             for="password"
             class="block text-sm font-medium text-foreground mb-2"
           >
-            {{ $t('auth.common.password') }}
+            {{ $t('auth.common.newPassword') }}
           </label>
           <InputText
             id="password"
@@ -44,20 +44,18 @@
           />
         </div>
 
-        <div class="text-sm flex gap-3">
-          <RouterLink
-            class="text-primary-500 hover:underline"
-            :to="{ name: 'ForgotPassword' }"
+        <div>
+          <label
+            for="passwordRepeat"
+            class="block text-sm font-medium text-foreground mb-2"
           >
-            {{ $t('auth.login.forgotPassword') }}
-          </RouterLink>
-
-          <RouterLink
-            class="text-primary-500 hover:underline"
-            :to="{ name: 'Signup' }"
-          >
-            {{ $t('auth.login.requestSignup') }}
-          </RouterLink>
+            {{ $t('auth.common.newPasswordRepeat') }}
+          </label>
+          <InputText
+            id="passwordRepeat"
+            v-model="passwordRepeat"
+            type="password"
+          />
         </div>
 
         <p
@@ -68,7 +66,7 @@
         </p>
 
         <BaseButton type="submit">
-          {{ $t('auth.login.submit') }}
+          {{ $t('auth.resetPassword.submit') }}
         </BaseButton>
       </form>
     </div>
@@ -83,29 +81,30 @@ import { useI18n } from 'vue-i18n';
 import { BaseButton, InputText } from '@metafori/components';
 
 import type { AxiosError } from 'axios';
-import { login } from '@/api';
+import { resetPassword } from '@/api';
+
+const { email, token } = defineProps<{
+  email: string;
+  token: string;
+}>();
 
 const { t } = useI18n();
-const email = ref('');
 const password = ref('');
+const passwordRepeat = ref('');
 const error = ref('');
 const router = useRouter();
 
 const submit = async () => {
   error.value = '';
+  if (password.value !== passwordRepeat.value) {
+    error.value = t('auth.common.passwordMismatch');
+    return;
+  }
   try {
-    const response = await login({
-      email: email.value,
-      password: password.value,
-      remember: true,
-    });
-    if (response.status === 204) {
-      router.push({ name: 'Explore' });
-    }
+    await resetPassword({ token, email, password: password.value });
+    router.push({ name: 'Login' });
   } catch (e: unknown) {
     error.value = (e as AxiosError<{ message: string }>)?.response?.data?.message || t('auth.unknownError');
   }
 };
-
-
 </script>

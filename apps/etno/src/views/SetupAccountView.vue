@@ -20,7 +20,7 @@
             for="email"
             class="block text-sm font-medium text-foreground mb-2"
           >
-            {{ $t('auth.setupAccount.yourAccount') }}
+            {{ $t('auth.common.email') }}
           </label>
           <InputText
             id="email"
@@ -35,7 +35,7 @@
             for="password"
             class="block text-sm font-medium text-foreground mb-2"
           >
-            {{ $t('auth.setupAccount.newPassword') }}
+            {{ $t('auth.common.newPassword') }}
           </label>
           <InputText
             id="password"
@@ -49,7 +49,7 @@
             for="passwordRepeat"
             class="block text-sm font-medium text-foreground mb-2"
           >
-            {{ $t('auth.setupAccount.newPasswordRepeat') }}
+            {{ $t('auth.common.newPasswordRepeat') }}
           </label>
           <InputText
             id="passwordRepeat"
@@ -65,7 +65,7 @@
           {{ error }}
         </p>
 
-        <BaseButton>
+        <BaseButton type="submit">
           {{ $t('auth.setupAccount.submit') }}
         </BaseButton>
       </form>
@@ -105,7 +105,7 @@ onMounted(() => {
 const submit = async () => {
   error.value = '';
   if (password.value !== passwordRepeat.value) {
-    error.value = t('auth.setupAccount.passwordMismatch');
+    error.value = t('auth.common.passwordMismatch');
     return;
   }
   try {
