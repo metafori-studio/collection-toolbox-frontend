@@ -325,7 +325,7 @@ onMounted(() => {
   map = new mapboxgl.Map({
     cooperativeGestures: true,
     container: mapContainer.value,
-    style: 'mapbox://styles/metafori/cmmm3fxgm009m01sb54ebhktg',
+    style: 'mapbox://styles/metafori/cmneefv1i000a01r04ss499wl',
     center: MAP_DEFAULT.center,
     zoom: MAP_DEFAULT.zoom,
     scrollZoom: { around: 'center' },
