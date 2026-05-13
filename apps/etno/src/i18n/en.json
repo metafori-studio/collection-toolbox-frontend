@@ -9,23 +9,38 @@
     "logout": "Log out"
   },
   "auth": {
+    "common": {
+      "email": "E-mail",
+      "password": "Password",
+      "newPassword": "New password",
+      "newPasswordRepeat": "Repeat new password",
+      "passwordMismatch": "Passwords do not match"
+    },
     "login": {
       "title": "Sign in",
       "subtitle": "Sign in to your account",
-      "email": "E-mail",
-      "password": "Password",
-      "noAccount": "Don't have an account?",
-      "requestSignup": "Request registration",
+      "forgotPassword": "Forgot password?",
+      "requestSignup": "No account? Registration",
       "submit": "Sign in"
+    },
+    "forgotPassword": {
+      "title": "Reset password",
+      "subtitle": "Enter your email to receive a password reset link",
+      "email": "E-mail",
+      "submit": "Send",
+      "toLogin": "Back to login"
+    },
+    "resetPassword": {
+      "title": "Set new password",
+      "subtitle": "Enter your new password to complete the reset",
+      "email": "Your account",
+      "submit": "Set password"
     },
     "setupAccount": {
       "title": "Account setup",
       "subtitle": "Set your password and activate your account",
       "yourAccount": "Your account",
-      "newPassword": "New password",
-      "newPasswordRepeat": "Repeat new password",
-      "submit": "Confirm",
-      "passwordMismatch": "Passwords do not match"
+      "submit": "Confirm"
     },
     "signup": {
       "contactUs": "Contact us to register"
