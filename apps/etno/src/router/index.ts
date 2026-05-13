@@ -6,6 +6,8 @@ import InfoView from '@/views/InfoView.vue';
 import LoginView from '@/views/LoginView.vue';
 import SignupView from '@/views/SignupView.vue';
 import SetupAccountView from '@/views/SetupAccountView.vue';
+import ForgotPassword from '@/views/ForgotPassword.vue';
+import ResetPassword from '@/views/ResetPassword.vue';
 
 const routes = [
   {
@@ -33,6 +35,20 @@ const routes = [
     name: 'Signup',
     path: '/signup',
     component: SignupView,
+  },
+  {
+    name: 'ForgotPassword',
+    path: '/forgot-password',
+    component: ForgotPassword,
+  },
+  {
+    name: 'ResetPassword',
+    path: '/reset-password',
+    component: ResetPassword,
+    props: (route: RouteLocationNormalized) => ({
+      email: route.query.email,
+      token: route.query.token,
+    }),
   },
   {
     name: 'SetupAccount',

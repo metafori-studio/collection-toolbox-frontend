@@ -1,14 +1,18 @@
 <template>
-  <div class="sticky left-0 right-0 top-0 z-30 h-14 bg-white grid grid-cols-[1fr_150px_1fr] lg:grid-cols-[1fr_600px_1fr] items-center gap-3 px-4 py-1 border-b border-b-neutral-200">
-    <div class="flex items-center gap-3">
+  <AppHeader
+    grid-classes="grid-cols-[1fr_150px_1fr] lg:grid-cols-[1fr_600px_1fr]"
+  >
+    <template #left>
       <RouterLink to="/">
         {{ $t('header.explore') }}
       </RouterLink>
-    </div>
-    <div class="text-center font-bold">
+    </template>
+
+    <template #center>
       <EtnoSearch />
-    </div>
-    <div class="flex items-center justify-end gap-3">
+    </template>
+
+    <template #right>
       <BaseButton
         variant="secondary"
         size="small"
@@ -29,6 +33,7 @@
 
         <div class="p-2 flex flex-col gap-2">
           <BaseButton
+            v-if="!isLoggedIn"
             variant="secondary"
             size="small"
             @click="$router.push({ name: 'Login' })"
@@ -37,6 +42,7 @@
             {{ $t('header.login') }}
           </BaseButton>
           <BaseButton
+            v-if="!isLoggedIn"
             variant="secondary"
             size="small"
             @click="$router.push({ name: 'Signup' })"
@@ -44,6 +50,16 @@
             <BaseIcon icon="userPlus" />
             {{ $t('header.signup') }}
           </BaseButton>
+          <BaseButton
+            v-if="isLoggedIn"
+            variant="secondary"
+            size="small"
+            @click="tryLogout()"
+          >
+            <BaseIcon icon="signOut" />
+            {{ $t('header.logout') }}
+          </BaseButton>
+
           <BaseButton
             v-if="$i18n.locale === 'sk'"
             variant="secondary"
@@ -62,16 +78,31 @@
           </BaseButton>
         </div>
       </BaseDropdown>
-    </div>
-  </div>
+    </template>
+  </AppHeader>
 </template>
 
 <script setup lang="ts">
+import { useRouter } from 'vue-router';
+
+import { AppHeader } from '@metafori/components';
 import {
   BaseButton,
   BaseIcon,
   BaseDropdown,
 } from '@metafori/components';
 import EtnoSearch from './EtnoSearch.vue';
+
+import { isLoggedIn } from '@/store';
+import { logout } from '@/api';
+
+const router = useRouter();
+
+const tryLogout = async () => {
+  const response = await logout();
+  if (response.status = 200) {
+    router.push({ name: 'Explore' });
+  }
+};
 
 </script>

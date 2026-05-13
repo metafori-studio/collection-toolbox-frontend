@@ -1,12 +1,12 @@
 <template>
   <div class="flex flex-col min-h-screen">
-    <AppHeader />
+    <EtnoHeader />
     <router-view class="flex-1" />
-    <AppFooter />
+    <EtnoFooter />
   </div>
 </template>
 
 <script setup lang="ts">
-import AppHeader from '@/components/AppHeader.vue';
-import AppFooter from '@/components/AppFooter.vue';
+import EtnoHeader from '@/components/EtnoHeader.vue';
+import EtnoFooter from '@/components/EtnoFooter.vue';
 </script>

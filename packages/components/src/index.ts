@@ -29,3 +29,7 @@ export { default as AudioViewer } from './components/viewers/AudioViewer';
 export { default as PdfViewer } from './components/viewers/PdfViewer';
 export { default as TranscriptViewer } from './components/viewers/TranscriptViewer';
 export type { ViewerMediaKind } from './components/viewers/media';
+
+// Layout
+export { default as AppHeader } from './components/layout/AppHeader';
+export { default as AppFooter } from './components/layout/AppFooter';
