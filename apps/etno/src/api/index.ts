@@ -4,6 +4,7 @@ import mockIndex from './mock/index.json';
 import mockAggregations from './mock/aggregations.json';
 import mockDetail from './mock/detail.json';
 import { type MapPoint } from '@/components/EtnoMap/EtnoMap.vue';
+import { isLoggedIn } from '@/store';
 
 const USE_MOCK = import.meta.env.VITE_USE_MOCK === 'true';;
 
@@ -11,6 +12,19 @@ const api = axios.create({
   baseURL: import.meta.env.VITE_API_BASE,
   timeout: 10_000,
 });
+
+api.interceptors.response.use(
+  (response) => {
+    const header = response.headers['x-is-authenticated'];
+    isLoggedIn.value = !!header;
+    return response;
+  },
+  (error) => {
+    const header = error.response?.headers['x-is-authenticated'];
+    isLoggedIn.value = !!header;
+    return Promise.reject(error);
+  },
+);
 
 
 const getMapPoints = async (): Promise<MapPoint[]> => {
@@ -98,6 +112,12 @@ const login = async (payload: LoginPayload) => {
   return response;
 };
 
+const logout = async () => {
+  await getCsrfCookie();
+  const response = await api.post('/logout');
+  return response;
+};
+
 type SetPasswordPayload = {
   token: string;
   email: string;
@@ -118,5 +138,6 @@ export {
 
   getCsrfCookie,
   login,
+  logout,
   setPassword,
 };

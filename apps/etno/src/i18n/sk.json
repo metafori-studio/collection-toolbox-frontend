@@ -5,7 +5,8 @@
     "info": "Info",
     "user": "Používateľ",
     "login": "Prihlásiť sa",
-    "signup": "Registrácia"
+    "signup": "Registrácia",
+    "logout": "Odhlásiť sa"
   },
   "auth": {
     "login": {

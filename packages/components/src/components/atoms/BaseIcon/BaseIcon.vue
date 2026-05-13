@@ -38,6 +38,7 @@ import {
   PhFolder,
   PhSignIn,
   PhUserPlus,
+  PhSignOut,
 } from '@phosphor-icons/vue';
 
 export const icons = {
@@ -70,6 +71,7 @@ export const icons = {
   folder: PhFolder,
   signIn: PhSignIn,
   userPlus: PhUserPlus,
+  signOut: PhSignOut,
 };
 
 export type IconName = keyof typeof icons;
