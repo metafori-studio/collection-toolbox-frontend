@@ -9,23 +9,36 @@
     "logout": "Odhlásiť sa"
   },
   "auth": {
+    "common": {
+      "email": "E-mail",
+      "password": "Heslo",
+      "newPassword": "Nové heslo",
+      "newPasswordRepeat": "Nové heslo znovu",
+      "passwordMismatch": "Zadané heslá sa nezhodujú"
+    },
     "login": {
       "title": "Prihlásenie",
       "subtitle": "Prihláste sa do vášho účtu",
-      "email": "E-mail",
-      "password": "Heslo",
-      "noAccount": "Nemáte účet?",
-      "requestSignup": "Požiadajte o registráciu",
+      "forgotPassword": "Zabudnuté heslo?",
+      "requestSignup": "Nemáte účet? Registrácia",
       "submit": "Prihlásiť sa"
+    },
+    "forgotPassword": {
+      "title": "Obnoviť heslo",
+      "subtitle": "Zadajte e-mail a my vám pošleme odkaz na obnovenie hesla.",
+      "submit": "Odoslať",
+      "toLogin": "Späť na prihlásenie"
+    },
+    "resetPassword": {
+      "title": "Nastavenie nového hesla",
+      "subtitle": "Zadajte nové heslo na dokončenie obnovy",
+      "submit": "Nastaviť heslo"
     },
     "setupAccount": {
       "title": "Nastavenie účtu",
       "subtitle": "Nastavte si heslo a aktivujte účet",
       "yourAccount": "Váš účet",
-      "newPassword": "Nové heslo",
-      "newPasswordRepeat": "Nové heslo znovu",
-      "submit": "Potvrdiť",
-      "passwordMismatch": "Zadané heslá sa nezhodujú"
+      "submit": "Potvrdiť"
     },
     "signup": {
       "contactUs": "Pre registráciu nás kontaktujte"

@@ -21,6 +21,7 @@
       'cursor-pointer': !disabled,
     }]"
     :disabled="disabled"
+    :type="type"
     @click="$emit('click')"
   >
     <slot />
@@ -37,11 +38,13 @@ const {
   variant = 'primary',
   block = false,
   disabled = false,
+  type = 'button',
 } = defineProps<{
   size?: ButtonSize
   variant?: 'primary' | 'secondary' | 'danger-primary' | 'danger-secondary'
   block?: boolean,
   disabled?: boolean,
+  type?: 'button' | 'submit' | 'reset',
 }>();
 
 defineEmits([
