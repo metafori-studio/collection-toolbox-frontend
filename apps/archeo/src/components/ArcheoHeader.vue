@@ -1,6 +1,6 @@
 <template>
-  <div class="sticky left-0 right-0 top-0 z-20 h-14 bg-white grid grid-cols-[1fr_150px_1fr] items-center gap-3 px-4 py-1 border-b border-b-neutral-200">
-    <div class="flex items-center gap-3">
+  <AppHeader>
+    <template #left>
       <BaseButton
         v-if="isExplore"
         size="small"
@@ -20,11 +20,13 @@
         <BaseIcon icon="arrowLeft" />
         <span class="hidden md:block">Späť do Explore</span>
       </BaseButton>
-    </div>
-    <div class="text-center font-bold">
-      Archeomap
-    </div>
-    <div class="flex items-center justify-end gap-3">
+    </template>
+
+    <template #center>
+      <span class="font-bold">Archeomap</span>
+    </template>
+
+    <template #right>
       <div
         v-if="isDetail"
         class="hidden md:block"
@@ -52,11 +54,13 @@
         <BaseIcon icon="user" />
         <span class="hidden md:block">User</span>
       </BaseButton>
-    </div>
-  </div>
+    </template>
+  </AppHeader>
 </template>
 
 <script setup lang="ts">
+import { AppHeader } from '@metafori/components';
+
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
 import { BaseButton, BaseIcon } from '@metafori/components';
