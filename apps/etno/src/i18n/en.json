@@ -5,7 +5,8 @@
     "info": "Info",
     "user": "User",
     "login": "Sign in",
-    "signup": "Register"
+    "signup": "Register",
+    "logout": "Log out"
   },
   "auth": {
     "login": {
