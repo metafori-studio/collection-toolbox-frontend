@@ -47,8 +47,8 @@ const routes = [
     path: '/reset-password',
     component: ResetPassword,
     props: (route: RouteLocationNormalized) => ({
-      email: route.query.email,
-      token: route.query.token,
+      email: route.query.email as string ?? '',
+      token: route.query.token as string ?? '',
     }),
   },
   {
@@ -56,8 +56,8 @@ const routes = [
     path: '/setup-account',
     component: SetupAccountView,
     props: (route: RouteLocationNormalized) => ({
-      email: route.query.email,
-      token: route.query.token,
+      email: route.query.email as string ?? '',
+      token: route.query.token as string ?? '',
     }),
   },
   {

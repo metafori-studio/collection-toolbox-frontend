@@ -100,7 +100,7 @@ const router = useRouter();
 
 const tryLogout = async () => {
   const response = await logout();
-  if (response.status = 200) {
+  if (response.status === 200) {
     router.push({ name: 'Explore' });
   }
 };
