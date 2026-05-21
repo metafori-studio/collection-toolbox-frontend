@@ -1,4 +1,4 @@
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect } from 'vitest';
 import { mount } from '@vue/test-utils';
 import { nextTick } from 'vue';
 import InputRange from './InputRange.vue';
@@ -25,10 +25,10 @@ describe('InputRange', () => {
       props: { min: 200, max: 500, modelValue: { min: 250, max: 450 } },
     });
     const ranges = wrapper.findAll('input[type="range"]');
-    expect(ranges[0].attributes('min')).toBe('200');
-    expect(ranges[0].attributes('max')).toBe('500');
-    expect(ranges[1].attributes('min')).toBe('200');
-    expect(ranges[1].attributes('max')).toBe('500');
+    expect(ranges[0]!.attributes('min')).toBe('200');
+    expect(ranges[0]!.attributes('max')).toBe('500');
+    expect(ranges[1]!.attributes('min')).toBe('200');
+    expect(ranges[1]!.attributes('max')).toBe('500');
   });
 
   it('reflects modelValue.min in the min range input', () => {
@@ -36,7 +36,7 @@ describe('InputRange', () => {
       props: { min: 0, max: 100, modelValue: { min: 30, max: 70 } },
     });
     const ranges = wrapper.findAll('input[type="range"]');
-    expect((ranges[0].element as HTMLInputElement).value).toBe('30');
+    expect((ranges[0]!.element as HTMLInputElement).value).toBe('30');
   });
 
   it('reflects modelValue.max in the max range input', () => {
@@ -44,7 +44,7 @@ describe('InputRange', () => {
       props: { min: 0, max: 100, modelValue: { min: 30, max: 70 } },
     });
     const ranges = wrapper.findAll('input[type="range"]');
-    expect((ranges[1].element as HTMLInputElement).value).toBe('70');
+    expect((ranges[1]!.element as HTMLInputElement).value).toBe('70');
   });
 
   it('renders "Začiatok" label for min input', () => {
@@ -66,7 +66,7 @@ describe('InputRange', () => {
       props: { min: 0, max: 100, modelValue: { min: 10, max: 90 } },
     });
     const ranges = wrapper.findAll('input[type="range"]');
-    expect(ranges[0].attributes('step')).toBe('1');
+    expect(ranges[0]!.attributes('step')).toBe('1');
   });
 
   it('applies custom step', () => {
@@ -74,14 +74,14 @@ describe('InputRange', () => {
       props: { min: 0, max: 100, step: 5, modelValue: { min: 10, max: 90 } },
     });
     const ranges = wrapper.findAll('input[type="range"]');
-    expect(ranges[0].attributes('step')).toBe('5');
+    expect(ranges[0]!.attributes('step')).toBe('5');
   });
 
   it('uses default modelValue of { min: 1920, max: 2025 } when not provided', () => {
     const wrapper = mount(InputRange, { props: { min: 1900, max: 2030 } });
     const ranges = wrapper.findAll('input[type="range"]');
-    expect((ranges[0].element as HTMLInputElement).value).toBe('1920');
-    expect((ranges[1].element as HTMLInputElement).value).toBe('2025');
+    expect((ranges[0]!.element as HTMLInputElement).value).toBe('1920');
+    expect((ranges[1]!.element as HTMLInputElement).value).toBe('2025');
   });
 
   it('clamps min value to prop min when range input goes below min', async () => {

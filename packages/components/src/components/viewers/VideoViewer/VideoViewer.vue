@@ -53,6 +53,7 @@ import 'vidstack/player/styles/default/layouts/video.css';
 import 'vidstack/player';
 import 'vidstack/player/ui';
 import 'vidstack/player/layouts/default';
+import type { MediaSrc } from 'vidstack';
 
 import { computed, ref } from 'vue';
 
@@ -70,10 +71,9 @@ const {
 const media = computed(() => getFirstMedia(detail, 'videos'));
 const mediaSource = computed(() => (
   media.value
-    ? {
-      src: media.value.url,
-      type: media.value.mime_type ?? undefined,
-    }
+    ? media.value.mime_type
+      ? { src: media.value.url, type: media.value.mime_type } as MediaSrc
+      : media.value.url
     : undefined
 ));
 const poster = computed(() => getMediaPoster(media.value));
