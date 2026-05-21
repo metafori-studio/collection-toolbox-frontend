@@ -49,6 +49,8 @@ import { useI18n } from 'vue-i18n';
 
 import { InputText } from '@metafori/components';
 import ItemPreview from '@/components/ItemPreview.vue';
+
+import { normalizeString } from '@metafori/shared';
 import { getList } from '@/api';
 import { pluralize } from '@/misc/pluralize';
 
@@ -59,23 +61,16 @@ const itemsAll = ref<Record<string, unknown>[]>([]);
 
 const query = ref('');
 
-const normalize = (str: string) => {
-  return str
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/\p{M}/gu, '');
-};
-
 const itemsDisplayed = computed(() => {
   if (!query.value) {
     return [];
   }
-  const normalizedQuery = normalize(query.value);
+  const normalizedQuery = normalizeString(query.value);
   return itemsAll.value.filter((item) => {
     if (typeof item.title !== 'string') {
       return false;
     }
-    const normalizedTitle = normalize(item.title as string);
+    const normalizedTitle = normalizeString(item.title as string);
     return normalizedTitle.includes(normalizedQuery);
   });
 });

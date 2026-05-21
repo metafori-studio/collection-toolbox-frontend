@@ -115,7 +115,9 @@ import {
   type RangeValue,
 } from '@metafori/components';
 import FilterCard from './FilterCard.vue';
+
 import { filterWidgetWidthRaw } from '@/store';
+import { normalizeString } from '@metafori/shared';
 import {
   type FilterItem as FilterItemDef,
   type AggregationOption,
@@ -151,13 +153,6 @@ onUnmounted(() => {
 // Query
 const query = ref('');
 
-const normalize = (str: string) => {
-  return str
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/\p{M}/gu, '');
-};
-
 const getOptions = (property: string) => {
   const allOptions = aggregations[property];
   const enumNamespace = nowOpenObj.value?.enumNamespace;
@@ -171,8 +166,8 @@ const getOptions = (property: string) => {
 
   if (!query.value) return translated;
 
-  const normalizedQuery = normalize(query.value);
-  return translated?.filter((option: AggregationOption) => normalize(option.label).includes(normalizedQuery));
+  const normalizedQuery = normalizeString(query.value);
+  return translated?.filter((option: AggregationOption) => normalizeString(option.label).includes(normalizedQuery));
 };
 
 //
