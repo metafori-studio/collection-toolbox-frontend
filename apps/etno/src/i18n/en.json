@@ -95,7 +95,8 @@
       "singular": "result",
       "few": "results",
       "many": "results"
-    }
+    },
+    "loading": "Searching…"
   },
   "itemList": {
     "totalObjects": "{total} objects",

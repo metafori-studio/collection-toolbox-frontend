@@ -4,7 +4,7 @@
       for="appSearch"
       class="absolute z-10 left-9 top-2.5 text-neutral-400 text-sm font-normal"
       :class="{
-        'sr-only': !showLabel,
+        'sr-only': !showInputLabel,
       }"
     >
       <i18n-t
@@ -24,78 +24,69 @@
       icon="magnifyingGlass"
     />
     <div
-      v-if="showResults"
-      class="absolute z-30 left-0 right-0 top-14 max-h-[calc(100vh-80px)] text-left bg-white border border-neutral-200 rounded-lg flex flex-col overflow-hidden"
+      v-if="showDropdown"
+      class="absolute z-30 left-0 right-0 top-14 text-left bg-white border border-neutral-200 rounded-lg"
     >
-      <div class="px-4 py-3">
-        {{ resultsLabel }}
+      <div
+        v-if="isLoading"
+        class="px-4 py-3"
+      >
+        {{ $t('search.loading') }}
       </div>
-      <div class="flex-1 overflow-auto">
-        <ItemPreview
-          v-for="(item, i) in itemsDisplayed"
-          :key="i"
-          :item="item"
-          :is-last="i === itemsDisplayed.length - 1"
-          @click="query = ''"
-        />
+      <div
+        v-else
+        class="flex flex-col max-h-[calc(100vh-80px)]"
+      >
+        <div class="px-4 py-3">
+          {{ resultsLabel }}
+        </div>
+        <div class="flex-1 overflow-auto">
+          <ItemPreview
+            v-for="(item, i) in results"
+            :key="i"
+            :item="item"
+            :is-last="i === results.length - 1"
+            @click="query = ''"
+          />
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue';
+import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 import { InputText } from '@metafori/components';
 import ItemPreview from '@/components/ItemPreview.vue';
 
-import { normalizeString, pluralize } from '@metafori/shared';
-import { getList } from '@/api';
+import { pluralize } from '@metafori/shared';
+import { useSearch } from '@/composables/useSearch';
 
 const { t } = useI18n();
 
-const itemsAll = ref<Record<string, unknown>[]>([]);
+const { query, results, isLoading } = useSearch();
 
-
-const query = ref('');
-
-const itemsDisplayed = computed(() => {
-  if (!query.value) {
-    return [];
-  }
-  const normalizedQuery = normalizeString(query.value);
-  return itemsAll.value.filter((item) => {
-    if (typeof item.title !== 'string') {
-      return false;
-    }
-    const normalizedTitle = normalizeString(item.title as string);
-    return normalizedTitle.includes(normalizedQuery);
-  });
-});
+// Results display
+const showDropdown = computed(() => query.value.length > 0);
 
 const resultsLabel = computed(() => {
-  const len = itemsDisplayed.value.length;
-  const results = pluralize(len, [
+  const len = results.value.length;
+  const label = pluralize(len, [
     t('search.results.singular'),
     t('search.results.few'),
     t('search.results.many'),
   ]);
-  return t('search.resultsLabel', { count: len, results });
+  return t('search.resultsLabel', { count: len, results: label });
 });
 
-const showResults = computed(() => query.value.length > 0);
-
-// Label
-const showLabel = computed(() => {
+// Input Label
+const showInputLabel = computed(() => {
   if (query.value) {
     return false;
   }
   return true;
-});
-
-onMounted(async() => {
-  itemsAll.value = (await getList()).data;
 });
 
 </script>

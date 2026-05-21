@@ -95,7 +95,8 @@
       "singular": "výsledok",
       "few": "výsledky",
       "many": "výsledkov"
-    }
+    },
+    "loading": "Hľadám…"
   },
   "itemList": {
     "totalObjects": "{total} objektov",
