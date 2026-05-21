@@ -2,5 +2,6 @@ export const normalizeString = (str: string) => {
   return str
     .toLowerCase()
     .normalize('NFD')
-    .replace(/\p{M}/gu, '');
+    .replace(/\p{M}/gu, '')
+    .trim();
 };

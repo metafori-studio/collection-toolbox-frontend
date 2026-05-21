@@ -66,6 +66,19 @@ const getAggregations = async (
   return data.data;
 };
 
+const getSearch = async (query: string) => {
+  if (USE_MOCK) {
+    return mockIndex.data as Record<string, unknown>[];
+  }
+
+  const params = new URLSearchParams();
+  params.append('q', query);
+  params.append('size', '20');
+
+  const { data } = await api.get(`/etno/items/search?${params.toString()}`);
+  return data.data;
+};
+
 const getDetail = async (id: string): Promise<Record<string, unknown>> => {
   if (USE_MOCK) {
     return mockDetail.data as Record<string, unknown>;
@@ -107,6 +120,7 @@ export {
   getMapPoints,
   getList,
   getAggregations,
+  getSearch,
   getDetail,
 
   getCsrfCookie,
