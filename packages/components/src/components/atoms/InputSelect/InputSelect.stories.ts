@@ -14,7 +14,6 @@ const meta = {
   component: InputSelect,
   tags: ['autodocs'],
   argTypes: {
-    placeholder: { control: 'text' },
     disabled: { control: 'boolean' },
     hasError: { control: 'boolean' },
   },
@@ -26,7 +25,6 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     options: sampleOptions,
-    placeholder: 'Select an option...',
     disabled: false,
     hasError: false,
   },
@@ -43,7 +41,6 @@ export const Default: Story = {
 export const WithValue: Story = {
   args: {
     options: sampleOptions,
-    placeholder: 'Select an option...',
     disabled: false,
     hasError: false,
   },
@@ -60,7 +57,6 @@ export const WithValue: Story = {
 export const Disabled: Story = {
   args: {
     options: sampleOptions,
-    placeholder: 'Disabled select',
     disabled: true,
     hasError: false,
   },
@@ -77,7 +73,6 @@ export const Disabled: Story = {
 export const WithError: Story = {
   args: {
     options: sampleOptions,
-    placeholder: 'Select an option...',
     disabled: false,
     hasError: true,
   },

@@ -45,6 +45,7 @@ import 'vidstack/player/styles/default/layouts/audio.css';
 import 'vidstack/player';
 import 'vidstack/player/ui';
 import 'vidstack/player/layouts/default';
+import type { MediaSrc } from 'vidstack';
 
 import { computed, ref } from 'vue';
 
@@ -62,10 +63,9 @@ const {
 const media = computed(() => getFirstMedia(detail, 'audios'));
 const mediaSource = computed(() => (
   media.value
-    ? {
-      src: media.value.url,
-      type: media.value.mime_type ?? undefined,
-    }
+    ? media.value.mime_type
+      ? { src: media.value.url, type: media.value.mime_type } as MediaSrc
+      : media.value.url
     : undefined
 ));
 const mediaTitle = computed(() => media.value?.name ?? media.value?.file_name ?? detail.title ?? 'Audio');
