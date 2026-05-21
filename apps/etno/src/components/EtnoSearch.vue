@@ -50,9 +50,8 @@ import { useI18n } from 'vue-i18n';
 import { InputText } from '@metafori/components';
 import ItemPreview from '@/components/ItemPreview.vue';
 
-import { normalizeString } from '@metafori/shared';
+import { normalizeString, pluralize } from '@metafori/shared';
 import { getList } from '@/api';
-import { pluralize } from '@/misc/pluralize';
 
 const { t } = useI18n();
 
