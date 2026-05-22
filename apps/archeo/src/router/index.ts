@@ -5,6 +5,7 @@ import DetailView from '@/views/DetailView.vue';
 import DetailMapView from '@/views/DetailMapView.vue';
 import DetailGalleryView from '@/views/DetailGalleryView.vue';
 import InfoView from '@/views/InfoView.vue';
+import Error404View from '@/views/Error404View.vue';
 
 const routes = [
   {
@@ -34,6 +35,11 @@ const routes = [
     name: 'Info',
     path: '/info',
     component: InfoView,
+  },
+  {
+    name: 'Error404',
+    path: '/:pathMatch(.*)*',
+    component: Error404View,
   },
 ];
 
