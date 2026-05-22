@@ -6,6 +6,7 @@ import InfoView from '@/views/InfoView.vue';
 import LoginView from '@/views/LoginView.vue';
 import SignupView from '@/views/SignupView.vue';
 import SetupAccountView from '@/views/SetupAccountView.vue';
+import Error404View from '@/views/Error404View.vue';
 
 const routes = [
   {
@@ -42,6 +43,11 @@ const routes = [
       email: route.query.email,
       token: route.query.token,
     }),
+  },
+  {
+    name: 'Error404',
+    path: '/:pathMatch(.*)*',
+    component: Error404View,
   },
 ];
 
