@@ -20,6 +20,7 @@ export { default as FilterItem } from './components/molecules/FilterItem';
 export { default as FilterSection } from './components/molecules/FilterSection';
 export { default as InfoBox } from './components/molecules/InfoBox';
 export { default as ModalWindow } from './components/molecules/ModalWindow';
+export { default as ErrorState } from './components/molecules/ErrorState';
 
 // Viewers
 export { default as BaseViewer } from './components/viewers/BaseViewer';
