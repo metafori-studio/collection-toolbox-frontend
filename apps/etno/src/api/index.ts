@@ -67,13 +67,17 @@ const getAggregations = async (
 };
 
 const getSearch = async (query: string) => {
+  const MAX_RESULTS = 20;
+
   if (USE_MOCK) {
-    return mockIndex.data as Record<string, unknown>[];
+    const sliced = (mockIndex.data as Record<string, unknown>[])
+      .slice(0, MAX_RESULTS);
+    return sliced;
   }
 
   const params = new URLSearchParams();
   params.append('q', query);
-  params.append('size', '20');
+  params.append('size', MAX_RESULTS.toString());
 
   const { data } = await api.get(`/etno/items/search?${params.toString()}`);
   return data.data;

@@ -43,7 +43,7 @@
         <div class="flex-1 overflow-auto">
           <ItemPreview
             v-for="(item, i) in results"
-            :key="i"
+            :key="item.id"
             :item="item"
             :is-last="i === results.length - 1"
             @click="query = ''"
@@ -66,10 +66,10 @@ import { useSearch } from '@/composables/useSearch';
 
 const { t } = useI18n();
 
-const { query, results, isLoading } = useSearch();
+const { query, hasQuery, results, isLoading } = useSearch();
 
 // Results display
-const showDropdown = computed(() => query.value.length > 0);
+const showDropdown = computed(() => hasQuery.value);
 
 const resultsLabel = computed(() => {
   const len = results.value.length;
