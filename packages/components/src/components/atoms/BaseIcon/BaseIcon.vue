@@ -41,6 +41,7 @@ import {
   PhImage,
   PhMusicNotes,
   PhPlay,
+  PhBug,
 } from '@phosphor-icons/vue';
 
 export const icons = {
@@ -76,6 +77,7 @@ export const icons = {
   image: PhImage,
   musicNotes: PhMusicNotes,
   play: PhPlay,
+  bug: PhBug,
 };
 
 export type IconName = keyof typeof icons;
@@ -88,7 +90,7 @@ const {
   weight = 'regular',
 } = defineProps<{
   icon?: IconName
-  size?: 16 | 20 | 24 | 32 | 96
+  size?: 16 | 20 | 24 | 32 | 80 | 96
   weight?: 'regular' | 'fill'
 }>();
 
