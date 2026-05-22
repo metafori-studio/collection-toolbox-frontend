@@ -11,7 +11,7 @@ export const useSearch = () => {
   const queryNormalized = computed(() => normalizeString(query.value));
   const results = ref<SearchResult[]>([]);
   const isLoading = ref(false);
-  const hasQuery = computed(() => queryNormalized.value.length);
+  const hasQuery = computed(() => queryNormalized.value.length > 0);
 
   let activeRequestId = 0;
 
