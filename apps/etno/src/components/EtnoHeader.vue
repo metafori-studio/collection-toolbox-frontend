@@ -64,7 +64,7 @@
             v-if="$i18n.locale === 'sk'"
             variant="secondary"
             size="small"
-            @click="$i18n.locale = 'en'"
+            @click="switchLang('en')"
           >
             Switch to English
           </BaseButton>
@@ -72,7 +72,7 @@
             v-if="$i18n.locale === 'en'"
             variant="secondary"
             size="small"
-            @click="$i18n.locale = 'sk'"
+            @click="switchLang('sk')"
           >
             Prepnúť na Slovenčinu
           </BaseButton>
@@ -83,7 +83,7 @@
 </template>
 
 <script setup lang="ts">
-import { useRouter } from 'vue-router';
+import { useRouter, useRoute } from 'vue-router';
 
 import { AppHeader } from '@metafori/components';
 import {
@@ -97,6 +97,7 @@ import { isLoggedIn } from '@/store';
 import { logout } from '@/api';
 
 const router = useRouter();
+const route = useRoute();
 
 const tryLogout = async () => {
   const response = await logout();
@@ -105,4 +106,11 @@ const tryLogout = async () => {
   }
 };
 
+const switchLang = (lang: string) => {
+  router.push({
+    name: route.name ?? undefined,
+    params: { ...route.params, lang },
+    query: route.query,
+  });
+};
 </script>
