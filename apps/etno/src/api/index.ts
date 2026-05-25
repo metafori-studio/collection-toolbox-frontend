@@ -5,6 +5,7 @@ import mockAggregations from './mock/aggregations.json';
 import mockDetail from './mock/detail.json';
 import { type MapPoint } from '@/components/EtnoMap/EtnoMap.vue';
 import { isLoggedIn } from '@/store';
+import i18n from '@/i18n';
 
 const USE_MOCK = import.meta.env.VITE_USE_MOCK === 'true';;
 
@@ -26,6 +27,10 @@ api.interceptors.response.use(
   },
 );
 
+api.interceptors.request.use((config) => {
+  config.headers['Accept-Language'] = i18n.global.locale.value;
+  return config;
+});
 
 const getMapPoints = async (): Promise<MapPoint[]> => {
   if (USE_MOCK) {
