@@ -11,7 +11,7 @@ describe('ErrorState', () => {
   it('renders default title and text', () => {
     const wrapper = mount(ErrorState);
     expect(wrapper.text()).toContain('Error');
-    expect(wrapper.text()).toContain('Unknown error ocurred.');
+    expect(wrapper.text()).toContain('Unknown error occurred.');
   });
 
   it('renders custom title and text props', () => {
