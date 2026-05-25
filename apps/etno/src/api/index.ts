@@ -4,12 +4,18 @@ import mockIndex from './mock/index.json';
 import mockAggregations from './mock/aggregations.json';
 import mockDetail from './mock/detail.json';
 import { type MapPoint } from '@/components/EtnoMap/EtnoMap.vue';
+import i18n from '@/i18n';
 
 const USE_MOCK = import.meta.env.VITE_USE_MOCK === 'true';;
 
 const api = axios.create({
   baseURL: import.meta.env.VITE_API_BASE,
   timeout: 10_000,
+});
+
+api.interceptors.request.use((config) => {
+  config.headers['Accept-Language'] = i18n.global.locale.value;
+  return config;
 });
 
 
