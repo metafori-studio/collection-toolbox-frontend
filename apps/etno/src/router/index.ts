@@ -1,5 +1,5 @@
 import { createWebHistory, createRouter, type RouteLocationNormalized } from 'vue-router';
-import i18n, { SUPPORTED_LANGS } from '@/i18n';
+import i18n, { SUPPORTED_LANGS, isSupportedLang } from '@/i18n';
 
 import ExploreView from '@/views/ExploreView.vue';
 import DetailView from '@/views/DetailView.vue';
@@ -13,7 +13,7 @@ import Error404View from '@/views/Error404View.vue';
 
 const routes = [
   {
-    path: '/:lang(sk|en)',
+    path: `/:lang(${SUPPORTED_LANGS.join('|')})`,
     children: [
       {
         name: 'Explore',
@@ -67,12 +67,12 @@ const routes = [
     ],
   },
   {
-    path: '/:pathMatch(.*)*',
+    path: '/',
     redirect: () => `/${i18n.global.locale.value}`,
   },
   {
     name: 'Error404',
-    path: '/:lang(sk|en)/:pathMatch(.*)*',
+    path: '/:pathMatch(.*)*',
     component: Error404View,
   },
 ];
@@ -87,8 +87,8 @@ const router = createRouter({
 
 router.beforeEach((to) => {
   const lang = to.params.lang as string;
-  if (SUPPORTED_LANGS.includes(lang)) {
-    i18n.global.locale.value = lang as 'sk' | 'en';
+  if (isSupportedLang(lang)) {
+    i18n.global.locale.value = lang;
   }
 });
 
