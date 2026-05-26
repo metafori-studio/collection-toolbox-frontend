@@ -1,8 +1,14 @@
 import { createI18n } from 'vue-i18n';
 
-import backendDefinedTranslations from './backend-defined-translations.json';
+import backendSk from './backend-defined/sk.json';
+import backendEn from './backend-defined/en.json';
 import sk from './sk.json';
 import en from './en.json';
+
+const SUPPORTED_LANGS = ['sk', 'en'] as const;
+type SupportedLang = typeof SUPPORTED_LANGS[number];
+const isSupportedLang = (lang: string): lang is SupportedLang =>
+  (SUPPORTED_LANGS as readonly string[]).includes(lang);
 
 const i18n = createI18n({
   legacy: false,
@@ -11,14 +17,16 @@ const i18n = createI18n({
   fallbackLocale: 'sk',
   messages: {
     sk: {
-      ...backendDefinedTranslations,
+      ...backendSk,
       ...sk,
     },
     en: {
-      ...backendDefinedTranslations,
+      ...backendEn,
       ...en,
     },
   },
 });
 
 export default i18n;
+
+export { SUPPORTED_LANGS, isSupportedLang };

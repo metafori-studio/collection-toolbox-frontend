@@ -48,7 +48,7 @@
             v-if="$i18n.locale === 'sk'"
             variant="secondary"
             size="small"
-            @click="$i18n.locale = 'en'"
+            @click="switchLang('en')"
           >
             Switch to English
           </BaseButton>
@@ -56,7 +56,7 @@
             v-if="$i18n.locale === 'en'"
             variant="secondary"
             size="small"
-            @click="$i18n.locale = 'sk'"
+            @click="switchLang('sk')"
           >
             Prepnúť na Slovenčinu
           </BaseButton>
@@ -73,5 +73,16 @@ import {
   BaseDropdown,
 } from '@metafori/components';
 import EtnoSearch from './EtnoSearch.vue';
+import { useRouter, useRoute } from 'vue-router';
 
+const router = useRouter();
+const route = useRoute();
+
+const switchLang = (lang: string) => {
+  router.push({
+    name: route.name ?? undefined,
+    params: { ...route.params, lang },
+    query: route.query,
+  });
+};
 </script>

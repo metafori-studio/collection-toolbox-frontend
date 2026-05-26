@@ -194,6 +194,7 @@
 import { ref, computed, onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useTranslateEnum } from '@/composables/useTranslateEnum';
+import { useRouter } from 'vue-router';
 
 import {
   BaseButton,
@@ -221,13 +222,19 @@ const {
   id: string
 }>();
 
+const router = useRouter();
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const detail = ref<any>({});
 
 const isDev = import.meta.env.DEV;
 
 onMounted(async () => {
-  detail.value = await getDetail(id);
+  try {
+    detail.value = await getDetail(id);
+  } catch {
+    router.push({ name: 'Error404' });
+  }
   viewerActive.value = getInitialViewer();
 });
 
