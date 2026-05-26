@@ -5,7 +5,10 @@ import backendEn from './backend-defined/en.json';
 import sk from './sk.json';
 import en from './en.json';
 
-const SUPPORTED_LANGS = ['sk', 'en'];
+const SUPPORTED_LANGS = ['sk', 'en'] as const;
+type SupportedLang = typeof SUPPORTED_LANGS[number];
+const isSupportedLang = (lang: string): lang is SupportedLang =>
+  (SUPPORTED_LANGS as readonly string[]).includes(lang);
 
 const i18n = createI18n({
   legacy: false,
@@ -26,4 +29,4 @@ const i18n = createI18n({
 
 export default i18n;
 
-export { SUPPORTED_LANGS };
+export { SUPPORTED_LANGS, isSupportedLang };
