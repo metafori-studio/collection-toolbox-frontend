@@ -1,0 +1,213 @@
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/700.css";
+@import "@fontsource/geist-mono/400.css";
+
+@theme {
+  /*
+  PRIMITIVES
+  */
+
+  /* Fonts */
+  --font-sans: "Inter", sans-serif;
+  --font-sans--font-feature-settings: 'liga' 1, 'calt' 1;
+  --font-mono: "Geist Mono", monospace;
+
+  /* Weight */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Type Scale */
+  --text-01: 12px;
+  --text-02: 14px;
+  --text-03: 16px;
+  --text-04: 18px;
+  --text-05: 20px;
+  --text-06: 24px;
+  --text-07: 28px;
+  --text-08: 32px;
+  --text-09: 36px;
+  --text-10: 40px;
+  --text-11: 48px;
+  --text-12: 64px;
+  --text-13: 72px;
+
+  /*
+  SEMANTIC
+  */
+
+  /* Font semantics */
+  --font-body: var(--font-sans);
+  --font-headline: var(--font-sans);
+  --font-data: "Geist Mono", monospace;
+
+  /* Display */
+  --text-display-1: var(--text-11);
+  --text-display-1--line-height: 108.3%;
+  --text-display-1--letter-spacing: -2px;
+  --text-display-1--font-weight: var(--font-weight-bold);
+
+  --text-display-2: var(--text-10);
+  --text-display-2--line-height: 108.3%;
+  --text-display-2--letter-spacing: -0.5px;
+  --text-display-2--font-weight: var(--font-weight-bold);
+
+  --text-display-3: var(--text-09);
+  --text-display-3--line-height: 108.3%;
+  --text-display-3--letter-spacing: 0;
+  --text-display-3--font-weight: var(--font-weight-bold);
+
+  /* Heading */
+  --text-heading-1: var(--text-07);
+  --text-heading-1--line-height: 122.2%;
+  --text-heading-1--letter-spacing: -0.5px;
+  --text-heading-1--font-weight: var(--font-weight-bold);
+
+  --text-heading-2: var(--text-06);
+  --text-heading-2--line-height: 125%;
+  --text-heading-2--letter-spacing: -0.5px;
+  --text-heading-2--font-weight: var(--font-weight-bold);
+
+  --text-heading-3: var(--text-05);
+  --text-heading-3--line-height: 133.3%;
+  --text-heading-3--letter-spacing: 0;
+  --text-heading-3--font-weight: var(--font-weight-bold);
+
+  --text-heading-4: var(--text-04);
+  --text-heading-4--line-height: 140%;
+  --text-heading-4--letter-spacing: 0;
+  --text-heading-4--font-weight: var(--font-weight-semibold);
+
+  /* Body */
+  --text-xl: var(--text-05);
+  --text-xl--line-height: 150%;
+  --text-xl--font-weight: var(--font-weight-medium);
+
+  --text-lg: var(--text-04);
+  --text-lg--line-height: 150%;
+
+  --text-base: var(--text-02);
+  --text-base--line-height: 150%;
+
+  --text-sm: var(--text-01);
+  --text-sm--line-height: 137.5%;
+
+  /* Semantic */
+  --text-label: var(--text-02);
+  --text-label--line-height: 150%;
+  --text-label--letter-spacing: -0.01em;
+  --text-label--font-weight: 500;
+
+  --text-label-sm: var(--text-01);
+  --text-label-sm--line-height: 150%;
+  --text-label-sm--font-weight: 500;
+
+  --text-list-lg: var(--text-03);
+  --text-list-lg--line-height: 150%;
+
+  --text-list-sm: var(--text-02);
+  --text-list-sm--line-height: 150%;
+
+  --text-caption: var(--text-01);
+  --text-caption--line-height: 150%;
+
+  --text-eyebrow: var(--text-02);
+  --text-eyebrow--line-height: 150%;
+  --text-eyebrow--font-weight: var(--font-weight-semibold);
+  --text-eyebrow--letter-spacing: 1px;
+
+  --text-overline: var(--text-01);
+  --text-overline--line-height: 150%;
+  --text-overline--letter-spacing: 1px;
+  --text-overline--font-weight: var(--font-weight-semibold);
+
+  --text-code: var(--text-01);
+  --text-code--line-height: 150%;
+
+  --text-data: var(--text-01);
+  --text-data--line-height: 150%;
+  --text-data--line-height: 150%;
+  --text-data--letter-spacing: 1px;
+
+  --text-data-label: var(--text-01);
+  --text-data-label--line-height: 150%;
+  --text-data-label--letter-spacing: 1px;
+  --text-data-label--font-weight: var(--font-weight-semibold);
+
+  --text-title-card: var(--text-03);
+  --text-title-card--line-height: 150%;
+  --text-title-card--font-weight: var(--font-weight-semibold);
+
+  --text-button-lg: var(--text-03);
+  --text-button-lg--line-height: 150%;
+  --text-button-lg--font-weight: var(--font-weight-bold);
+
+  --text-button-md: var(--text-02);
+  --text-button-md--line-height: 142.9%;
+  --text-button-md--font-weight: var(--font-weight-bold);
+
+  --text-button-sm: var(--text-02);
+  --text-button-sm--line-height: 114.3%;
+  --text-button-sm--font-weight: var(--font-weight-bold);
+}
+
+.text-display-1,
+.text-display-2,
+.text-display-3,
+.text-heading-1,
+.text-heading-2,
+.text-heading-3,
+.text-heading-4 {
+  font-family: var(--font-headline);
+}
+
+.text-code,
+.text-data {
+  font-family: var(--font-data);
+}
+
+@media screen and (min-width: theme(--breakpoint-md)) {
+  :root {
+    /* Display */
+    --text-display-1: var(--text-13);
+    --text-display-1--letter-spacing: -3px;
+    --text-display-2: var(--text-12);
+    --text-display-2--letter-spacing: -1px;
+    --text-display-3: var(--text-11);
+    --text-display-3--letter-spacing: -1px;
+
+    /* Heading */
+    --text-heading-1: var(--text-09);
+    --text-heading-1--letter-spacing: -1px;
+    --text-heading-2: var(--text-08);
+    --text-heading-2--letter-spacing: -1px;
+    --text-heading-3: var(--text-06);
+    --text-heading-4: var(--text-05);
+
+    /* Body */
+    --text-xl: var(--text-06);
+    --text-lg: var(--text-05);
+    --text-base: var(--text-03);
+    --text-sm: var(--text-02);
+
+    /* Semantic */
+    --text-label: var(--text-03);
+    --text-label-sm: var(--text-02);
+    --text-list-lg: var(--text-03);
+    --text-list-sm: var(--text-02);
+    --text-caption: var(--text-01);
+    --text-eyebrow: var(--text-02);
+    --text-overline: var(--text-01);
+    --text-code: var(--text-02);
+    --text-data: var(--text-03);
+    --text-data--letter-spacing: 2px;
+    --text-data-label: var(--text-01);
+    --text-title-card: var(--text-03);
+    --text-button-lg: var(--text-03);
+    --text-button-md: var(--text-02);
+    --text-button-sm: var(--text-02);
+  }
+}

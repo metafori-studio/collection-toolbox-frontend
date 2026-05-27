@@ -120,7 +120,7 @@ import ActivityLevel from '@/components/ActivityLevel.vue';
 
 import { focusBeforeClasses } from '@metafori/components';
 
-const headerCellCss = 'text-label-small text-neutral-400 font-semibold uppercase px-3 py-2 whitespace-nowrap';
+const headerCellCss = 'text-label-sm text-neutral-400 font-semibold uppercase px-3 py-2 whitespace-nowrap';
 const bodyCellCss = 'align-top py-3 px-3 text-sm';
 
 const {

@@ -4,9 +4,9 @@
       class="rounded-full"
       :class="{
         // Levels
-        'bg-status-success': level === 1,
-        'bg-status-warning': level === 2,
-        'bg-status-error': level === 3,
+        'bg-status-success-500': level === 1,
+        'bg-status-warning-500': level === 2,
+        'bg-status-error-500': level === 3,
 
         // Sizes
         'size-2': label,
