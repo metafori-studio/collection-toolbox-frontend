@@ -13,7 +13,7 @@
       >
         <button
           v-if="allowClose"
-          class="absolute top-2 right-2 p-1 rounded hover:bg-gray-100"
+          class="absolute top-2 right-2 p-1 rounded hover:bg-neutral-100"
           :class="[focusClasses]"
           aria-label="Close window"
           @click="emit('close')"

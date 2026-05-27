@@ -3,6 +3,11 @@ import '../src/assets/main.css';
 
 const preview: Preview = {
   parameters: {
+    options: {
+      storySort: {
+        order: ['Design System', 'Atoms', 'Molecules'],
+      },
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,

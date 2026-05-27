@@ -117,7 +117,7 @@
               v-if="detail.general_note"
               class="flex flex-col gap-1 rounded-md border border-neutral-300 bg-neutral-100 px-3 py-2.5 text-neutral-600"
             >
-              <h3 class="text-label-small font-bold text-neutral-500">
+              <h3 class="text-label-sm font-bold text-neutral-500">
                 {{ $t('detail.notes.general') }}
               </h3>
               <p class="text-sm font-medium">
@@ -128,7 +128,7 @@
               v-if="detail.content_note"
               class="flex flex-col gap-1 rounded-md border border-neutral-300 bg-neutral-100 px-3 py-2.5 text-neutral-600"
             >
-              <h3 class="text-label-small font-bold text-neutral-500">
+              <h3 class="text-label-sm font-bold text-neutral-500">
                 {{ $t('detail.notes.content') }}
               </h3>
               <p class="text-sm font-medium">
@@ -139,7 +139,7 @@
               v-if="detail.technical_note"
               class="flex flex-col gap-1 rounded-md border border-neutral-300 bg-neutral-100 px-3 py-2.5 text-neutral-600"
             >
-              <h3 class="text-label-small font-bold text-neutral-500">
+              <h3 class="text-label-sm font-bold text-neutral-500">
                 {{ $t('detail.notes.technical') }}
               </h3>
               <p class="text-sm font-medium">
