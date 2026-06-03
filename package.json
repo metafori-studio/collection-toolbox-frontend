@@ -14,7 +14,14 @@
     "check": "npm run lint && npm run type-check && npm run test:unit",
     "prepare": "husky"
   },
+  "lint-staged": {
+    "**/*.{ts,vue}": [
+      "oxlint --fix",
+      "eslint --fix --cache"
+    ]
+  },
   "devDependencies": {
-    "husky": "^9.1.7"
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.5"
   }
 }
