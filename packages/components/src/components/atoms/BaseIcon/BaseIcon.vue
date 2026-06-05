@@ -43,6 +43,7 @@ import {
   PhMusicNotes,
   PhPlay,
   PhBug,
+  PhList,
 } from '@phosphor-icons/vue';
 
 export const icons = {
@@ -80,6 +81,7 @@ export const icons = {
   musicNotes: PhMusicNotes,
   play: PhPlay,
   bug: PhBug,
+  list: PhList,
 };
 
 export type IconName = keyof typeof icons;
