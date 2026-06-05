@@ -21,7 +21,7 @@
       <div
         class="md:flex md:flex-1 md:p-0 md:relative md:flex-row md:bg-transparent justify-between"
         :class="{
-          'fixed -z-10 inset-0 bg-surface-bg-brand p-4 py-20 flex flex-col items-end justify-between text-right': isOpen,
+          'fixed -z-10 inset-0 bg-header-bg p-4 py-20 flex flex-col items-end justify-between text-right': isOpen,
           'hidden': !isOpen,
         }"
       >
