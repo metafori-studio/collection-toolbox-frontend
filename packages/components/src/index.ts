@@ -1,6 +1,3 @@
-// CSS
-import './assets/main.css';
-
 export { focusClasses, focusBeforeClasses, disabledClasses } from './misc/reusableCss';
 
 // Atoms
@@ -35,3 +32,5 @@ export type { ViewerMediaKind } from './components/viewers/media';
 // Layout
 export { default as AppHeader } from './components/layout/AppHeader';
 export { default as AppFooter } from './components/layout/AppFooter';
+export { default as AppFooterNew } from './components/layout/AppFooterNew';
+export { default as AppHeaderNew } from './components/layout/AppHeaderNew';

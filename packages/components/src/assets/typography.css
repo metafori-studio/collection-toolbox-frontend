@@ -4,6 +4,12 @@
 @import "@fontsource/inter/700.css";
 @import "@fontsource/geist-mono/400.css";
 
+@layer base {
+  body {
+    font-family: var(--font-body);
+  }
+}
+
 @theme {
   /*
   PRIMITIVES
@@ -42,7 +48,7 @@
   /* Font semantics */
   --font-body: var(--font-sans);
   --font-headline: var(--font-sans);
-  --font-data: "Geist Mono", monospace;
+  --font-data: var(--font-mono);
 
   /* Display */
   --text-display-1: var(--text-11);
@@ -129,7 +135,6 @@
 
   --text-data: var(--text-01);
   --text-data--line-height: 150%;
-  --text-data--line-height: 150%;
   --text-data--letter-spacing: 1px;
 
   --text-data-label: var(--text-01);
@@ -143,14 +148,17 @@
 
   --text-button-lg: var(--text-03);
   --text-button-lg--line-height: 150%;
+  --text-button-lg--letter-spacing: 0;
   --text-button-lg--font-weight: var(--font-weight-bold);
 
   --text-button-md: var(--text-02);
   --text-button-md--line-height: 142.9%;
+  --text-button-md--letter-spacing: 0;
   --text-button-md--font-weight: var(--font-weight-bold);
 
   --text-button-sm: var(--text-02);
   --text-button-sm--line-height: 114.3%;
+  --text-button-sm--letter-spacing: 0;
   --text-button-sm--font-weight: var(--font-weight-bold);
 }
 

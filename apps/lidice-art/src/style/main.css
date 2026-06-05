@@ -1,0 +1,40 @@
+@import "@metafori/components/assets/main.css";
+
+/* Font imports */
+@import "@fontsource/montserrat/400.css";
+@import "@fontsource/montserrat/500.css";
+@import "@fontsource/montserrat/700.css";
+@import "@fontsource/montserrat/800.css";
+
+@import "@fontsource/raleway/400.css";
+@import "@fontsource/raleway/500.css";
+@import "@fontsource/raleway/700.css";
+@import "@fontsource/raleway/800.css";
+
+@theme {
+  /* Primary */
+  --color-primary-50: #FFFCEB;
+  --color-primary-100: #FFF6C2;
+  --color-primary-200: #FDEFA0;
+  --color-primary-300: #FCEC8D;
+  --color-primary-400: #FAE67B;
+  --color-primary-500: #FAE67B;
+  --color-primary-600: #D9C566;
+  --color-primary-700: #777777;
+  --color-primary-800: #424242;
+  --color-primary-900: #141414;
+
+  /* Semantics */
+  --color-header-bg: var(--color-primary-200);
+  --color-header-border: transparent;
+  --color-footer-bg: var(--color-primary-200);
+
+  /* Typography */
+  --font-body: Montserrat, sans-serif;
+  --font-headline: Raleway, sans-serif;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 700;
+  --font-weight-bold: 800;
+}

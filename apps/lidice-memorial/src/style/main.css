@@ -1,0 +1,45 @@
+@import "@metafori/components/assets/main.css";
+
+/* Font imports */
+@import "@fontsource/geist/400.css";
+@import "@fontsource/geist/500.css";
+@import "@fontsource/geist/700.css";
+@import "@fontsource/geist/800.css";
+
+@import "@fontsource/barlow-condensed/400.css";
+@import "@fontsource/barlow-condensed/500.css";
+@import "@fontsource/barlow-condensed/700.css";
+@import "@fontsource/barlow-condensed/800.css";
+
+@theme {
+  /* Primary */
+  --color-primary-50: #FDECE8;
+  --color-primary-100: #FBD0C7;
+  --color-primary-200: #F7AD9D;
+  --color-primary-300: #EE8773;
+  --color-primary-400: #E15F47;
+  --color-primary-500: #D53D22;
+  --color-primary-600: #B53017;
+  --color-primary-700: #8E2511;
+  --color-primary-800: #6B1C0D;
+  --color-primary-900: #3D0F05;
+
+  /* Semantics */
+  --color-header-bg: white;
+  --color-header-text: var(--color-neutral-600);
+  --color-header-border: var(--color-neutral-200);
+  --color-footer-bg: var(--color-primary-500);
+  --color-footer-text: white;
+
+  --color-surface-bg-brand: var(--color-primary-500);
+  --color-text-on-accent: white;
+
+  /* Typography */
+  --font-body: 'Geist', sans-serif;
+  --font-headline: 'Barlow Condensed', sans-serif;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 700;
+  --font-weight-bold: 800;
+}
