@@ -1,5 +1,5 @@
-import { describe, it, expect } from 'vitest';
-import { mount } from '@vue/test-utils';
+import { describe, it, expect, beforeEach } from 'vitest';
+import { mount, VueWrapper } from '@vue/test-utils';
 import { createRouter, createWebHashHistory } from 'vue-router';
 import App from './App.vue';
 import i18n from './i18n';
@@ -13,34 +13,25 @@ const router = createRouter({
 });
 
 describe('App', () => {
-  it('mounts and renders the home view', async () => {
-    const wrapper = mount(App, {
+  let wrapper: VueWrapper;
+
+  beforeEach(async () => {
+    wrapper = mount(App, {
       global: { plugins: [router, i18n] },
     });
-
     await router.isReady();
+  });
 
+  it('mounts and renders the home view', () => {
     expect(wrapper.find('div').exists()).toBe(true);
     expect(wrapper.text()).toContain('Hello World');
   });
 
-  it('renders the header', async () => {
-    const wrapper = mount(App, {
-      global: { plugins: [router, i18n] },
-    });
-
-    await router.isReady();
-
+  it('renders the header', () => {
     expect(wrapper.findComponent(LidiceMemorialHeader).exists()).toBe(true);
   });
 
-  it('renders the footer', async () => {
-    const wrapper = mount(App, {
-      global: { plugins: [router, i18n] },
-    });
-
-    await router.isReady();
-
+  it('renders the footer', () => {
     expect(wrapper.findComponent(LidiceMemorialFooter).exists()).toBe(true);
   });
 });
