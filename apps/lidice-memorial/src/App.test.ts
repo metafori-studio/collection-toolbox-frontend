@@ -2,14 +2,14 @@ import { describe, it, expect } from 'vitest';
 import { mount } from '@vue/test-utils';
 import { createRouter, createWebHashHistory } from 'vue-router';
 import App from './App.vue';
-import HomeView from './views/HomeView.vue';
 import i18n from './i18n';
+import { routes } from './router';
 import LidiceMemorialHeader from './components/LidiceMemorialHeader.vue';
 import LidiceMemorialFooter from './components/LidiceMemorialFooter.vue';
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes: [{ path: '/', component: HomeView }],
+  routes,
 });
 
 describe('App', () => {

@@ -11,7 +11,11 @@
     <template #nav-primary>
       <li>One</li>
       <li>Two</li>
-      <li>Three</li>
+      <li>
+        <router-link :to="{ name: 'Info' }">
+          Info
+        </router-link>
+      </li>
     </template>
 
     <template #nav-secondary>

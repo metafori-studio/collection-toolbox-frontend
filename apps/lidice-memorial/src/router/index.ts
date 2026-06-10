@@ -1,12 +1,18 @@
 import { createWebHistory, createRouter } from 'vue-router';
 
 import HomeView from '@/views/HomeView.vue';
+import InfoView from '@/views/InfoView.vue';
 
-const routes = [
+export const routes = [
   {
     name: 'Home',
     path: '/',
     component: HomeView,
+  },
+  {
+    name: 'Info',
+    path: '/info',
+    component: InfoView,
   },
 ];
 
