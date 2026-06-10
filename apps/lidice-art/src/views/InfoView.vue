@@ -8,12 +8,12 @@
   >
     <div
       class="
-        md:!max-w-full md:w-full md:bg-primary-200 md:py-16
+        md:max-w-full! md:w-full md:bg-primary-200 md:py-16
         flex flex-col items-center gap-4 md:gap-10
       "
     >
       <img
-        class="max-w-full max-w-[1000px]"
+        class="w-full max-w-[1000px]"
         src="https://fastly.picsum.photos/id/399/1000/500.jpg?hmac=SQTwqkg3qogIW3wOwwn01t8zlMGGuZLt_UPtq4Q_DW8"
         alt=""
       >
