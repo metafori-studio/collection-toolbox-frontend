@@ -1,5 +1,5 @@
-import { describe, it, expect } from 'vitest';
-import { mount } from '@vue/test-utils';
+import { describe, it, expect, beforeEach } from 'vitest';
+import { mount, VueWrapper } from '@vue/test-utils';
 import { createRouter, createWebHashHistory } from 'vue-router';
 import InfoView from '@/views/InfoView.vue';
 import i18n from '@/i18n';
@@ -10,43 +10,28 @@ const router = createRouter({
 });
 
 describe('InfoView', () => {
-  it('mounts without errors', async () => {
-    const wrapper = mount(InfoView, {
+  let wrapper: VueWrapper;
+
+  beforeEach(async () => {
+    wrapper = mount(InfoView, {
       global: { plugins: [router, i18n] },
     });
-
     await router.isReady();
+  });
 
+  it('mounts without errors', () => {
     expect(wrapper.exists()).toBe(true);
   });
 
-  it('renders the main heading', async () => {
-    const wrapper = mount(InfoView, {
-      global: { plugins: [router, i18n] },
-    });
-
-    await router.isReady();
-
+  it('renders the main heading', () => {
     expect(wrapper.find('h1').exists()).toBe(true);
   });
 
-  it('renders the hero image', async () => {
-    const wrapper = mount(InfoView, {
-      global: { plugins: [router, i18n] },
-    });
-
-    await router.isReady();
-
+  it('renders the hero image', () => {
     expect(wrapper.find('img').exists()).toBe(true);
   });
 
-  it('renders multiple sections', async () => {
-    const wrapper = mount(InfoView, {
-      global: { plugins: [router, i18n] },
-    });
-
-    await router.isReady();
-
+  it('renders multiple sections', () => {
     expect(wrapper.findAll('h2').length).toBeGreaterThan(0);
   });
 });
