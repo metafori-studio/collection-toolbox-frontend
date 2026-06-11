@@ -34,7 +34,15 @@
       <h2 class="text-heading-2">
         Vážíme si vašeho názoru
       </h2>
-      <p>Tento online katalog spouštíme ve verzi Beta. Protože stále pracujeme na zdokonalování tohoto digitálního prostředí, jsou pro nás vaše postřehy nesmírně cenné. Pokud narazíte na jakékoli problémy nebo máte návrhy na zlepšení, napište nám prosím na e-mailovou adresu feedback-digi@lidice.art</p>
+      <p>
+        Tento online katalog spouštíme ve verzi Beta. Protože stále pracujeme na zdokonalování tohoto digitálního prostředí, jsou pro nás vaše postřehy nesmírně cenné. Pokud narazíte na jakékoli problémy nebo máte návrhy na zlepšení, napište nám prosím na e-mailovou adresu
+        <a
+          href="mailto:feedback-digi@lidice.art"
+          class="underline"
+        >
+          feedback-digi@lidice.art
+        </a>
+      </p>
       <p>Děkujeme, že nám pomáháte zlepšovat způsob, jakým sdílíme tuto důležitou historii.</p>
     </BaseParagraph>
 

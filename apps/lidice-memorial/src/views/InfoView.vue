@@ -20,21 +20,32 @@
 
       <BaseParagraph class="max-w-[800px] text-xl md:gap-10">
         <h1 class="text-heading-1">
-          Lidická sbírka umění
+          Sbírky Památníku Lidice
         </h1>
-        <p>Vítejte v digitálním archivu Lidické sbírky umění (v Centrální evidenci sbírek uvedena jako podsbírka Sbírky Památníku, 15 - Výtvarného umění) zaujímá v kontextu evropských galerií a muzeí zcela výjimečné postavení. Tento unikátní soubor současného světového umění nevznikl tradiční sběratelskou činností, ale jako spontánní projev mezinárodní solidarity.</p>
+        <p>
+          Vítejte v digitálním archivu Památníku Lidice. Jsme národní paměťová instituce pečující o trvalé uchování vzpomínky na vyhlazení obce Lidice a osady Ležáky a utrpení jejich občanů, kteří se stali obětmi nacistického násilí. Tento portál zpřístupňuje naše fondy široké veřejnosti a badatelům. Naplňujeme tím své poslání uchovat jméno Lidic jako celosvětový symbol nevinných obětí a jméno Ležáků coby symbol hrdinného protinacistického odboje.
+        </p>
       </BaseParagraph>
     </div>
 
     <BaseParagraph>
-      <p>Lidická sbírka umění byla iniciována v roce 1966 výzvou sira Barnetta Strosse, předsedy hnutí „Lidice Shall Live", na kterou reagovali umělci z celého světa. Darováním svých děl vyjádřili úctu obětem lidické tragédie a protest proti válce a násilí. Dnes tento fond, spravovaný jako sbírka muzejní povahy, zahrnuje díla významných českých i zahraničních autorů a představuje trvalý dialog mezi historií a současným uměním. Skrze tato díla Památník Lidice naplňuje své poslání uchovávat vzpomínku na tragédii a šířit myšlenky humanity.</p>
+      <p>Jádrem Sbírky Památníku Lidice, zapsané v Centrální evidenci sbírek, jsou rozsáhlé podsbírky Historická (v CES uvedena jako 10 – Historická) a Fotografická (21 - Fotografie, filmy, videozáznamy a jiná média). Tyto materiály, od dobových fotografií a dokumentů až po osobní předměty a archeologické nálezy přímo z místa tragédie, vyprávějí autentické příběhy obyvatel starých Lidic, dokumentují lidickou tragédii a jsou nenahraditelným svědectvím o životě obce a jejím poválečném odkazu. Menší sbírkový fond představuje podsbírka Ležáky (25 - NKP Ležáky) tvořená zejména fotografiemi s potenciálem pro budoucí růst.</p>
+      <p> Nedílnou součástí našich fondů, o které pečujeme ve smyslu zákona o ochraně sbírek muzejní povahy, je Lidická sbírka umění (podsbírka 15 - Výtvarného umění). Tento jedinečný soubor současného umění vznikl z darů umělců z celého světa jako gesto trvalé mezinárodní solidarity. Lidická sbírka umění je jednou z mála solidárních sbírek na světě a ve svém nitru pečuje o nejvýznamnější díla současného umění na našem území.</p>
     </BaseParagraph>
 
     <BaseParagraph>
       <h2 class="text-heading-2">
         Vážíme si vašeho názoru
       </h2>
-      <p>Tento online katalog spouštíme ve verzi Beta. Protože stále pracujeme na zdokonalování tohoto digitálního prostředí, jsou pro nás vaše postřehy nesmírně cenné. Pokud narazíte na jakékoli problémy nebo máte návrhy na zlepšení, napište nám prosím na e-mailovou adresu feedback-digi@lidice.art</p>
+      <p>
+        Tento online katalog spouštíme ve verzi Beta. Protože stále pracujeme na zdokonalování tohoto digitálního prostředí, jsou pro nás vaše postřehy nesmírně cenné. Pokud narazíte na jakékoli problémy nebo máte návrhy na zlepšení, napište nám prosím na e-mailovou adresu
+        <a
+          href="mailto:feedback-digitalizace@lidice-memorial.cz"
+          class="underline"
+        >
+          feedback-digitalizace@lidice-memorial.cz
+        </a>
+      </p>
       <p>Děkujeme, že nám pomáháte zlepšovat způsob, jakým sdílíme tuto důležitou historii.</p>
     </BaseParagraph>
 
@@ -42,7 +53,7 @@
       <h2 class="text-heading-2">
         Poděkování
       </h2>
-      <p>Digitalizace sbírek Památníku Lidice je realizována díky finanční podpoře od Evropské unie prostřednictvím <strong>Národního plánu obnovy a Ministerstva kultury ČR</strong>. Tento web byl spolufinancován Ministerstvem kultury ČR.</p>
+      <p>Digitalizace sbírek Památníku Lidice je realizována díky finanční podpoře od <strong>Evropské unie</strong> prostřednictvím <strong>Národního plánu obnovy a Ministerstva kultury ČR</strong>. Tento web byl spolufinancován <strong>Ministerstvem kultury ČR</strong>. </p>
     </BaseParagraph>
   </div>
 </template>
