@@ -23,5 +23,9 @@
   "devDependencies": {
     "husky": "^9.1.7",
     "lint-staged": "^17.0.5"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "4.57.1",
+    "@rollup/rollup-linux-x64-musl": "4.57.1"
   }
 }
