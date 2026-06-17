@@ -1,5 +1,6 @@
 import { createI18n } from 'vue-i18n';
 
+import { cs as csCommon, en as enCommon } from '@metafori/i18n';
 import cs from './cs.json';
 import en from './en.json';
 
@@ -11,8 +12,14 @@ const i18n = createI18n({
   locale: SUPPORTED_LANGS[0],
   fallbackLocale: SUPPORTED_LANGS[0],
   messages: {
-    cs,
-    en,
+    cs: {
+      ...csCommon,
+      ...cs,
+    },
+    en: {
+      ...enCommon,
+      ...en,
+    },
   },
 });
 
