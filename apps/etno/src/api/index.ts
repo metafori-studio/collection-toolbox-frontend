@@ -3,7 +3,9 @@ import mockMapPoints from './mock/map-points.json';
 import mockIndex from './mock/index.json';
 import mockAggregations from './mock/aggregations.json';
 import mockDetail from './mock/detail.json';
+import mockDocument from './mock/document.json';
 import { type MapPoint } from '@/components/EtnoMap/EtnoMap.vue';
+import type { ListItem, ListMeta, Detail } from './types';
 import { isLoggedIn } from '@/store';
 import i18n from '@/i18n';
 
@@ -45,9 +47,9 @@ const getList = async (
   orderBy: string = 'id',
   orderAsc: boolean = true,
   page: number = 1,
-): Promise<{ data: Record<string, unknown>[]; [key: string]: unknown }> => {
+): Promise<{ data: ListItem[]; meta: ListMeta }> => {
   if (USE_MOCK) {
-    return mockIndex as unknown as { data: Record<string, unknown>[]; [key: string]: unknown };
+    return mockIndex as unknown as { data: ListItem[]; meta: ListMeta };
   }
 
   const params = new URLSearchParams();
@@ -102,9 +104,17 @@ const getSearch = async (query: string) => {
   return data.data;
 };
 
-const getDetail = async (id: string): Promise<Record<string, unknown>> => {
+const getDocument = async (id: string): Promise<Detail> => {
   if (USE_MOCK) {
-    return mockDetail.data as Record<string, unknown>;
+    return mockDocument.data as unknown as Detail;
+  }
+  const { data } = await api.get(`/etno/documents/${id}`);
+  return data.data;
+};
+
+const getDetail = async (id: string): Promise<Detail> => {
+  if (USE_MOCK) {
+    return mockDetail.data as unknown as Detail;
   }
   const { data } = await api.get(`/etno/items/${id}`);
   return data.data;
@@ -172,6 +182,7 @@ export {
   getList,
   getAggregations,
   getSearch,
+  getDocument,
   getDetail,
 
   getCsrfCookie,
@@ -181,3 +192,9 @@ export {
   forgotPassword,
   resetPassword,
 };
+
+export type {
+  ListItem,
+  ListMeta,
+  Detail,
+} from './types';

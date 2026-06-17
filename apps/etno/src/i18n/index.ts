@@ -28,6 +28,13 @@ const i18n = createI18n({
       ...en,
     },
   },
+  pluralRules: {
+    sk: (choice) => {
+      if (choice === 1) return 0;
+      if (choice >= 2 && choice <= 4) return 1;
+      return 2;
+    },
+  },
 });
 
 export default i18n;
