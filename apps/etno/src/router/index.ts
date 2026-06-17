@@ -43,12 +43,12 @@ const routes = [
       },
       {
         name: 'ForgotPassword',
-        path: '/forgot-password',
+        path: 'forgot-password',
         component: ForgotPassword,
       },
       {
         name: 'ResetPassword',
-        path: '/reset-password',
+        path: 'reset-password',
         component: ResetPassword,
         props: (route: RouteLocationNormalized) => ({
           email: route.query.email as string ?? '',
