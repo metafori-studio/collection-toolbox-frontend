@@ -13,7 +13,7 @@
         {{ title }}
       </h4>
       <p class="text-xs text-neutral-400">
-        {{ imageCount }} obrázkov
+        {{ $t('gallery.imageCount', imageCount) }}
       </p>
     </div>
   </RouterLink>

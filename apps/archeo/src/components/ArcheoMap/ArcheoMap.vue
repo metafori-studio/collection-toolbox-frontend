@@ -19,7 +19,7 @@
         size="small"
         @click="openMaps()"
       >
-        Otvoriť v Maps
+        {{ $t('map.openInMaps') }}
       </BaseButton>
       <BaseButton
         v-if="controls.copyCoordinates"
@@ -27,7 +27,7 @@
         size="small"
         @click="copyCoordinates()"
       >
-        Kopírovať GPS
+        {{ $t('map.copyCoordinates') }}
       </BaseButton>
     </div>
 
@@ -50,7 +50,7 @@
           </template>
           <div class="p-4">
             <div class="text-label mb-2">
-              Legenda
+              {{ $t('map.legend') }}
             </div>
             <ul>
               <li>
@@ -78,7 +78,7 @@
         <BaseButton
           v-if="controls.zoomIn"
           variant="secondary"
-          aria-label="Priblížiť"
+          :aria-label="$t('map.zoomIn')"
           @click="zoomIn()"
         >
           <BaseIcon icon="plus" />
@@ -86,7 +86,7 @@
         <BaseButton
           v-if="controls.zoomOut"
           variant="secondary"
-          aria-label="Oddialiť"
+          :aria-label="$t('map.zoomOut')"
           @click="zoomOut()"
         >
           <BaseIcon icon="minus" />
@@ -94,7 +94,7 @@
         <BaseButton
           v-if="controls.center"
           variant="secondary"
-          aria-label="Vycentrovať"
+          :aria-label="$t('map.center')"
           @click="center()"
         >
           <BaseIcon icon="gpsFix" />
@@ -106,6 +106,7 @@
 
 <script lang="ts" setup>
 import { computed, onMounted, onUnmounted, ref, watch } from 'vue';
+import { useI18n } from 'vue-i18n';
 import mapboxgl, { type CameraOptions } from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
@@ -139,6 +140,8 @@ export type MapControls = {
   openMaps?: boolean
   copyCoordinates?: boolean
 };
+
+const { t } = useI18n();
 
 const {
   mapPoints,
@@ -328,10 +331,10 @@ const tileStyles: Record<string, string> = {
 };
 
 const tileType = ref('orto');
-const tileTypeOptions = [
-  { value: 'orto', label: 'Ortofotomozaika' },
-  { value: 'standard', label: 'Štandardná mapa' },
-];
+const tileTypeOptions = computed(() => [
+  { value: 'orto', label: t('map.tileTypes.orto') },
+  { value: 'standard', label: t('map.tileTypes.standard') },
+]);
 
 watch(() => mapPoints, () => {
   const source = map?.getSource('points') as mapboxgl.GeoJSONSource | undefined;

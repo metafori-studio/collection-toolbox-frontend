@@ -1,8 +1,8 @@
 <template>
   <div class="flex items-center justify-center py-8">
     <ErrorState
-      title="Chyba 404"
-      text="V prípade pretrvávajúcich ťažkostí kontaktujte prevádzkovateľa služieb."
+      :title="$t('error404.title')"
+      :text="$t('error404.text')"
     />
   </div>
 </template>

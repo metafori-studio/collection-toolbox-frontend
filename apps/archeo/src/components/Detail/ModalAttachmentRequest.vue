@@ -1,14 +1,14 @@
 <template>
   <ModalWindow
     :is-open="true"
-    title="Dokument na vyžiadanie"
+    :title="$t('attachmentRequest.title')"
   >
     <div class="flex flex-col items-center gap-4">
       <h2 class="text-heading-3">
-        Dokument na vyžiadanie
+        {{ $t('attachmentRequest.title') }}
       </h2>
       <p class="text-sm text-neutral-500">
-        Tento dokument nie je voľne dostupný. Pre jeho získanie kontaktujte:
+        {{ $t('attachmentRequest.description') }}
       </p>
       <div class="flex flex-col gap-1 text-sm bg-neutral-100 text-neutral-500 rounded-lg p-4 w-full">
         <p class="text-base font-semibold text-neutral-900">
@@ -28,13 +28,13 @@
         block
         @click="sendEmail()"
       >
-        Napísať email
+        {{ $t('attachmentRequest.sendEmail') }}
       </BaseButton>
       <BaseButton
         variant="secondary"
         block
       >
-        Zavrieť
+        {{ $t('attachmentRequest.close') }}
       </BaseButton>
     </div>
   </ModalWindow>

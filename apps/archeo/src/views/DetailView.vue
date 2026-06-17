@@ -13,7 +13,7 @@
     >
       <div class="flex justify-between">
         <span class="font-mono text-xs text-primary-500 bg-primary-50 px-2 py-0.5 rounded">
-          č.a. {{ detail.id }}
+          {{ $t('detail.activityNumber', { id: detail.id }) }}
         </span>
         <ActivityLevel
           :level="localizationDegree"
@@ -25,7 +25,7 @@
           {{ title }}
         </h1>
         <p>
-          okres {{ detail.district }}
+          {{ $t('detail.district', { district: detail.district }) }}
         </p>
         <p class="text-sm text-neutral-500">
           {{ detail.position }}
@@ -34,7 +34,7 @@
 
       <DetailSection
         v-if="detail.attachments?.length"
-        title="Dokumenty"
+        :title="$t('detail.sections.documents')"
       >
         <div class="flex flex-col gap-2">
           <DocumentCard
@@ -51,7 +51,7 @@
 
       <DetailSection
         v-if="detail.galleries?.length"
-        title="Obrázky"
+        :title="$t('detail.sections.images')"
       >
         <template #actions>
           <BaseButton
@@ -59,7 +59,7 @@
             variant="secondary"
             @click="$router.push({ name: 'DetailGallery' })"
           >
-            Otvoriť galériu
+            {{ $t('detail.openGallery') }}
             <BaseIcon icon="arrowRight" />
           </BaseButton>
         </template>
@@ -77,7 +77,7 @@
 
       <DetailSection
         v-if="detail.youtube_id"
-        title="Video"
+        :title="$t('detail.sections.video')"
       >
         <div class="relative w-full aspect-video">
           <iframe
@@ -94,7 +94,7 @@
 
       <DetailSection
         v-if="detail.dating_ns?.length"
-        title="Datovanie a druh náleziska"
+        :title="$t('detail.sections.datingType')"
       >
         <div class="flex flex-wrap gap-2">
           <ActivityChip
@@ -106,9 +106,8 @@
         </div>
       </DetailSection>
 
-
       <h2 class="text-heading-4">
-        Údaje
+        {{ $t('detail.sections.data') }}
       </h2>
       <DetailSection
         v-for="(table, i) in tables"
@@ -140,6 +139,7 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue';
+import { useI18n } from 'vue-i18n';
 
 import {
   BaseButton,
@@ -155,6 +155,8 @@ import GalleryCard from '@/components/Detail/GalleryCard.vue';
 
 import { detailPanelOpen } from '@/store';
 import { getDetail } from '@/api';
+
+const { t } = useI18n();
 
 const {
   id,
@@ -175,40 +177,43 @@ const localizationDegree = computed(() => detail.value.localization_degree as 1 
 // Tables
 const tables = computed(() => [
   {
-    title: 'Identifikačné údaje',
+    title: t('detail.sections.identification'),
     items: [
-      { label: 'Číslo aktivity', value: `č. a. ${detail.value.id}` },
-      { label: 'ČVS', value: detail.value.cvs_number },
-      { label: 'Rok zaevidovania', value: detail.value.registration_year },
-      { label: 'Rok aktivity', value: detail.value.activity_year_start },
-      { label: 'Druh aktivity', value: detail.value.activity_type },
-      { label: 'Číslo akcie', value: detail.value.action_number },
+      {
+        label: t('detail.table.activityNumber'),
+        value: t('detail.activityNumber', { id: detail.value.id }),
+      },
+      { label: t('detail.table.cvs'), value: detail.value.cvs_number },
+      { label: t('detail.table.registrationYear'), value: detail.value.registration_year },
+      { label: t('detail.table.activityYear'), value: detail.value.activity_year_start },
+      { label: t('detail.table.activityType'), value: detail.value.activity_type },
+      { label: t('detail.table.actionNumber'), value: detail.value.action_number },
     ],
   },
   {
-    title: 'Geografické údaje',
+    title: t('detail.sections.geographic'),
     items: [
-      { label: 'Katastrálne územie', value: detail.value.cadastral_area },
-      { label: 'Obec', value: detail.value.municipality },
-      { label: 'Poloha', value: detail.value.position },
-      { label: 'Okres', value: detail.value.district },
+      { label: t('detail.table.cadastralArea'), value: detail.value.cadastral_area },
+      { label: t('detail.table.municipality'), value: detail.value.municipality },
+      { label: t('detail.table.position'), value: detail.value.position },
+      { label: t('detail.table.district'), value: detail.value.district },
     ],
   },
   {
-    title: 'Personálne údaje',
+    title: t('detail.sections.personnel'),
     items: [
-      { label: 'Vedúci výskumu', value: detail.value.research_leader },
-      { label: 'Autor – NS', value: detail.value.author_ns },
-      { label: 'Inštitúcia', value: detail.value.institution },
+      { label: t('detail.table.researchLeader'), value: detail.value.research_leader },
+      { label: t('detail.table.authorNs'), value: detail.value.author_ns },
+      { label: t('detail.table.institution'), value: detail.value.institution },
     ],
   },
   {
-    title: 'Lokalizácia',
+    title: t('detail.sections.localization'),
     items: [
-      { label: 'Stupeň lokalizácie', value: detail.value.localization_degree },
-      { label: 'Existuje GIS vrstva', value: detail.value.has_gis_link },
-      { label: 'Súradnica X', value: detail.value.coordinate_x },
-      { label: 'Súradnica Y', value: detail.value.coordinate_y },
+      { label: t('detail.table.localizationDegree'), value: detail.value.localization_degree },
+      { label: t('detail.table.hasGisLink'), value: detail.value.has_gis_link },
+      { label: t('detail.table.coordinateX'), value: detail.value.coordinate_x },
+      { label: t('detail.table.coordinateY'), value: detail.value.coordinate_y },
     ],
   },
 ]);

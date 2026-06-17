@@ -7,43 +7,43 @@
             :class="[headerCellCss]"
             class="text-left"
           >
-            Č.A.
+            {{ $t('activityTable.activityNumber') }}
           </th>
           <th
             :class="[headerCellCss]"
             class="text-center"
           >
-            St.
+            {{ $t('activityTable.level') }}
           </th>
           <th
             :class="[headerCellCss]"
             class="text-left lg:min-w-[100px]"
           >
-            Obec
+            {{ $t('activityTable.municipality') }}
           </th>
           <th
             :class="[headerCellCss]"
             class="text-left lg:min-w-[90px]"
           >
-            KÚ
+            {{ $t('activityTable.cadastralArea') }}
           </th>
           <th
             :class="[headerCellCss]"
             class="text-left lg:min-w-[90px]"
           >
-            Okres
+            {{ $t('activityTable.district') }}
           </th>
           <th
             :class="[headerCellCss]"
             class="text-left lg:min-w-[120px]"
           >
-            Poloha
+            {{ $t('activityTable.position') }}
           </th>
           <th
             :class="[headerCellCss]"
             class="text-left lg:min-w-[200px]"
           >
-            Datovanie – Druh
+            {{ $t('activityTable.datingType') }}
           </th>
         </tr>
       </thead>
@@ -129,6 +129,5 @@ const {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   items?: any[]
 }>();
-
 
 </script>
