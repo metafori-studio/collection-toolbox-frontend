@@ -63,24 +63,23 @@ import EtnoMap, { type MapPoint } from '@/components/EtnoMap/EtnoMap.vue';
 import ItemList from '@/components/ItemList/ItemList.vue';
 import FilterWidget from '@/components/Filter/FilterWidget.vue';
 
-import { getMapPoints, getList, getAggregations } from '@/api';
+import { getMapPoints, getList, getAggregations, type ListItem, type ListMeta } from '@/api';
 import { filterOpen, filterWidgetWidth } from '@/store';
 import { type AggregationOption } from '@/misc/filterTypes';
+import { useListControls } from '@/composables/useListControls';
 
 // State
 const isLoadingItems = ref(true);
 
 const mapPoints = ref<MapPoint[]>([]);
-const items = ref<Record<string, unknown>[]>([]);
-const itemsMeta = ref<Record<string, unknown>>({});
+const items = ref<ListItem[]>([]);
+const itemsMeta = ref<ListMeta>({});
 
 const filterValues = ref<Record<string, string[]>>({});
 const aggregations = ref<Record<string, AggregationOption[]>>({});
 
-// View state
-const orderBy = ref('id');
-const orderAsc = ref(true);
-const page = ref(1);
+// View state - list controls
+const { orderBy, orderAsc, page, resetPage, reloadTriggers } = useListControls();
 
 // Loading
 const loadMapPoints = async () => {
@@ -96,7 +95,7 @@ const loadItems = async () => {
   try {
     const response = await getList(filterValues.value, orderBy.value, orderAsc.value, page.value);
     items.value = response.data;
-    itemsMeta.value = response.meta as Record<string, unknown>;
+    itemsMeta.value = response.meta;
   } catch {
     items.value = [];
     itemsMeta.value = {};
@@ -119,16 +118,12 @@ onMounted(() => {
   loadAggregations();
 });
 
-watch([
-  orderBy,
-  orderAsc,
-  page,
-], () => {
+watch(reloadTriggers, () => {
   loadItems();
 });
 
 watch(filterValues, () => {
-  page.value = 1;
+  resetPage();
   loadAggregations();
   loadItems();
 }, {

@@ -3,6 +3,7 @@ import i18n, { SUPPORTED_LANGS, isSupportedLang } from '@/i18n';
 
 import ExploreView from '@/views/ExploreView.vue';
 import DetailView from '@/views/DetailView.vue';
+import DocumentView from '@/views/DocumentView.vue';
 import InfoView from '@/views/InfoView.vue';
 import LoginView from '@/views/LoginView.vue';
 import SignupView from '@/views/SignupView.vue';
@@ -24,6 +25,12 @@ const routes = [
         name: 'Detail',
         path: 'items/:id/',
         component: DetailView,
+        props: true,
+      },
+      {
+        name: 'Document',
+        path: 'document/:id/',
+        component: DocumentView,
         props: true,
       },
       {

@@ -1,12 +1,12 @@
 <template>
   <div class="@container flex-1">
-    <div class="flex items-center justify-between mb-4">
+    <div class="flex items-center justify-between gap-4 mb-4">
       <div>
         <h2
           v-if="meta.total"
           class="text-heading-4"
         >
-          {{ $t('itemList.totalObjects', { total: meta.total }) }}
+          {{ $t('itemList.totalObjects', meta.total) }}
         </h2>
         <p
           v-if="meta.from && meta.to"

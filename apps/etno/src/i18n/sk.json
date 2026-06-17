@@ -113,7 +113,7 @@
     "loading": "Hľadám…"
   },
   "itemList": {
-    "totalObjects": "{total} objektov",
+    "totalObjects": "{n} objekt | {n} objekty | {n} objektov",
     "showing": "Zobrazujem {from}-{to}",
     "sortBy": "Zoradiť podľa",
     "sortOptions": {
