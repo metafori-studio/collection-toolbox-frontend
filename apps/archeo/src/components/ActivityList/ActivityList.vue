@@ -2,11 +2,11 @@
   <div class="@container flex-1">
     <div class="flex items-center justify-between mb-4">
       <h2 class="text-heading-4">
-        {{ items.length }} aktivít
+        {{ $t('activityList.count', items.length) }}
       </h2>
       <div class="flex items-center gap-2">
         <label for="orderBy">
-          Zoradiť podľa
+          {{ $t('activityList.sortBy') }}
         </label>
         <InputSelect
           id="orderBy"
@@ -40,6 +40,7 @@
 
 <script lang="ts" setup>
 import { ref, computed, watch } from 'vue';
+import { useI18n } from 'vue-i18n';
 
 import {
   BaseButton,
@@ -49,6 +50,8 @@ import {
 import ActivityTable from './ActivityTable.vue';
 import ActivityCardList from './ActivityCardList.vue';
 import ActivityListPagination from './ActivityListPagination.vue';
+
+const { t } = useI18n();
 
 const PAGE_SIZE = 20;
 
@@ -62,13 +65,13 @@ const {
 const orderAsc = ref(true);
 const orderBy = ref('id');
 const currentPage = ref(1);
-const orderByOptions = [
-  { label: 'Číslo aktivity', value: 'id' },
-  { label: 'Obec', value: 'municipality' },
-  { label: 'Katastrálne územie', value: 'cadastral_area' },
-  { label: 'Okres', value: 'district' },
-  { label: 'Poloha', value: 'position' },
-];
+const orderByOptions = computed(() => [
+  { label: t('activityList.orderByOptions.id'), value: 'id' },
+  { label: t('activityList.orderByOptions.municipality'), value: 'municipality' },
+  { label: t('activityList.orderByOptions.cadastralArea'), value: 'cadastral_area' },
+  { label: t('activityList.orderByOptions.district'), value: 'district' },
+  { label: t('activityList.orderByOptions.position'), value: 'position' },
+]);
 
 const sortedItems = computed(() => {
   const direction = orderAsc.value ? 1 : -1;

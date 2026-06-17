@@ -8,7 +8,7 @@
         @click="filterOpen = !filterOpen"
       >
         <BaseIcon icon="filter" />
-        <span class="hidden md:block">Filter</span>
+        <span class="hidden md:block">{{ $t('header.filter') }}</span>
       </BaseButton>
 
       <BaseButton
@@ -18,12 +18,12 @@
         @click="$router.push({ name: 'Explore' })"
       >
         <BaseIcon icon="arrowLeft" />
-        <span class="hidden md:block">Späť do Explore</span>
+        <span class="hidden md:block">{{ $t('header.backToExplore') }}</span>
       </BaseButton>
     </template>
 
     <template #center>
-      <span class="font-bold">Archeomap</span>
+      <span class="font-bold">{{ $t('appName') }}</span>
     </template>
 
     <template #right>
@@ -36,7 +36,7 @@
           size="small"
           @click="detailPanelOpen = !detailPanelOpen"
         >
-          {{ detailPanelOpen ? 'Skryť panel' : 'Otvoriť panel' }}
+          {{ detailPanelOpen ? $t('header.hidePanel') : $t('header.openPanel') }}
         </BaseButton>
       </div>
       <BaseButton
@@ -45,14 +45,14 @@
         @click="$router.push({ name: 'Info' })"
       >
         <BaseIcon icon="info" />
-        <span class="hidden md:block">Info</span>
+        <span class="hidden md:block">{{ $t('header.info') }}</span>
       </BaseButton>
       <BaseButton
         variant="secondary"
         size="small"
       >
         <BaseIcon icon="user" />
-        <span class="hidden md:block">User</span>
+        <span class="hidden md:block">{{ $t('header.user') }}</span>
       </BaseButton>
     </template>
   </AppHeader>

@@ -2,7 +2,7 @@
   <div class="absolute right-4 top-4 bg-white rounded-lg shadow-lg p-3 flex flex-col gap-3 w-60">
     <button
       class="absolute top-2 right-2 p-1 rounded hover:bg-neutral-100"
-      aria-label="Zatvoriť okno"
+      :aria-label="$t('mapPopover.close')"
       @click="emit('close')"
     >
       <BaseIcon
@@ -12,7 +12,7 @@
     </button>
 
     <span class="text-mono font-mono text-primary-500">
-      Č.A. {{ id }}
+      {{ $t('mapPopover.activityNumber', { id }) }}
     </span>
     <ActivityLevel
       :level="localizationDegree"
@@ -22,7 +22,7 @@
       variant="primary"
       @click="$router.push({ name: 'DetailMap', params: { id } })"
     >
-      Detail aktivity
+      {{ $t('mapPopover.detail') }}
       <BaseIcon icon="arrowRight" />
     </BaseButton>
   </div>

@@ -6,7 +6,7 @@
         @click="$router.back()"
       >
         <BaseIcon icon="arrowLeft" />
-        Naspäť
+        {{ $t('gallery.back') }}
       </BaseButton>
       <div
         v-for="(gallery, i) in galleries"

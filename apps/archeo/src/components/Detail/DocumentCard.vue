@@ -23,7 +23,7 @@
             {{ size }} · {{ pages }}
           </span>
           <span v-else>
-            Na vyžiadanie
+            {{ $t('document.onRequest') }}
           </span>
         </p>
       </div>
@@ -36,10 +36,10 @@
       }"
     >
       <span v-if="available">
-        Otvoriť PDF
+        {{ $t('document.openPdf') }}
       </span>
       <span v-else>
-        Vyžiadať
+        {{ $t('document.request') }}
       </span>
     </span>
   </button>

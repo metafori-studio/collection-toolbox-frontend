@@ -1,0 +1,133 @@
+{
+  "appName": "Archeomap",
+  "header": {
+    "filter": "Filter",
+    "backToExplore": "Späť do Explore",
+    "hidePanel": "Skryť panel",
+    "openPanel": "Otvoriť panel",
+    "info": "Info",
+    "user": "User"
+  },
+  "intro": {
+    "title": "Rešpektujte prosím podmienky používania",
+    "body": "<p>Tento portál sprístupňuje výskumné materiály, pri ktorých je dôležité rešpektovať autorské a majetkové práva uvedené pri dokumentoch.</p><p>Aby sme chránili dáta aj autorov, dokumenty sú dostupné len na čítanie, nie je možné ich priamo sťahovať ani hromadne exportovať. Ak potrebujete prístup k plnej verzii konkrétneho dokumentu, môžete si oň jednoducho požiadať priamo v systéme cez funkciu „Žiadosť o sprístupnenie“.</p><p>Kliknutím na tlačidlo <strong>„Zoznámil(a) som sa s podmienkami používania“</strong> potvrdzujete, že týmto pravidlám rozumiete a budete ich dodržiavať.</p>",
+    "checkboxLabel": "Zoznámil(a) som sa s podmienkami používania portálu Archeomap.",
+    "submitButton": "Prejsť na portál",
+    "alertTerms": "Prosím, potvrďte podmienky"
+  },
+  "activityLevel": {
+    "localizationTitle": "Stupeň lokalizácie - {level}",
+    "1": "presná",
+    "2": "orientačná",
+    "3": "neurčená"
+  },
+  "activityList": {
+    "count": "{n} aktivita | {n} aktivity | {n} aktivít",
+    "sortBy": "Zoradiť podľa",
+    "orderByOptions": {
+      "id": "Číslo aktivity",
+      "municipality": "Obec",
+      "cadastralArea": "Katastrálne územie",
+      "district": "Okres",
+      "position": "Poloha"
+    }
+  },
+  "activityListPagination": {
+    "ariaLabel": "Stránkovanie",
+    "previousPage": "Predchádzajúca stránka",
+    "nextPage": "Ďalšia stránka"
+  },
+  "activityTable": {
+    "activityNumber": "Č.A.",
+    "level": "St.",
+    "municipality": "Obec",
+    "cadastralArea": "KÚ",
+    "district": "Okres",
+    "position": "Poloha",
+    "datingType": "Datovanie – Druh"
+  },
+  "map": {
+    "openInMaps": "Otvoriť v Maps",
+    "copyCoordinates": "Kopírovať GPS",
+    "legend": "Legenda",
+    "zoomIn": "Priblížiť",
+    "zoomOut": "Oddialiť",
+    "center": "Vycentrovať",
+    "tileTypes": {
+      "orto": "Ortofotomozaika",
+      "standard": "Štandardná mapa"
+    }
+  },
+  "mapPopover": {
+    "close": "Zatvoriť okno",
+    "activityNumber": "Č.A. {id}",
+    "detail": "Detail aktivity"
+  },
+  "detail": {
+    "activityNumber": "č.a. {id}",
+    "district": "okres {district}",
+    "sections": {
+      "documents": "Dokumenty",
+      "images": "Obrázky",
+      "video": "Video",
+      "datingType": "Datovanie a druh náleziska",
+      "data": "Údaje",
+      "identification": "Identifikačné údaje",
+      "geographic": "Geografické údaje",
+      "personnel": "Personálne údaje",
+      "localization": "Lokalizácia"
+    },
+    "openGallery": "Otvoriť galériu",
+    "table": {
+      "activityNumber": "Číslo aktivity",
+      "cvs": "ČVS",
+      "registrationYear": "Rok zaevidovania",
+      "activityYear": "Rok aktivity",
+      "activityType": "Druh aktivity",
+      "actionNumber": "Číslo akcie",
+      "cadastralArea": "Katastrálne územie",
+      "municipality": "Obec",
+      "position": "Poloha",
+      "district": "Okres",
+      "researchLeader": "Vedúci výskumu",
+      "authorNs": "Autor – NS",
+      "institution": "Inštitúcia",
+      "localizationDegree": "Stupeň lokalizácie",
+      "hasGisLink": "Existuje GIS vrstva",
+      "coordinateX": "Súradnica X",
+      "coordinateY": "Súradnica Y"
+    },
+    "boolean": {
+      "yes": "Áno",
+      "no": "Nie"
+    }
+  },
+  "document": {
+    "onRequest": "Na vyžiadanie",
+    "openPdf": "Otvoriť PDF",
+    "request": "Vyžiadať"
+  },
+  "gallery": {
+    "imageCount": "{n} obrázok | {n} obrázky | {n} obrázkov",
+    "back": "Naspäť"
+  },
+  "attachmentRequest": {
+    "title": "Dokument na vyžiadanie",
+    "description": "Tento dokument nie je voľne dostupný. Pre jeho získanie kontaktujte:",
+    "sendEmail": "Napísať email",
+    "close": "Zavrieť"
+  },
+  "filter": {
+    "title": "Filter aktivít",
+    "reset": "Reset"
+  },
+  "info": {
+    "title": "O projekte Archeomap",
+    "body1": "Archeomap sprístupňuje vybrané informácie z evidencie archeologických aktivít širokej aj odbornej verejnosti. Portál umožňuje prehliadanie lokalít a výskumných aktivít prostredníctvom interaktívnej mapy, filtrovanie podľa rôznych kritérií a zobrazenie detailných informácií vrátane metadát, fotografií a výskumnej dokumentácie.",
+    "body2": "Dôraz kladieme na ochranu dát, preto sú výskumné dokumenty dostupné len v režime na čítanie bez možnosti sťahovania. Súčasťou systému je tiež možnosť podávať žiadosti o sprístupnenie vybraných dokumentov."
+  },
+  "error404": {
+    "title": "Chyba 404",
+    "text": "V prípade pretrvávajúcich ťažkostí kontaktujte prevádzkovateľa služieb."
+  }
+}

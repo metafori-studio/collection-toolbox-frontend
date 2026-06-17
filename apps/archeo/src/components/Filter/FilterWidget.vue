@@ -12,14 +12,14 @@
         <BaseIcon
           icon="filter"
         />
-        <h2>Filter aktivít</h2>
+        <h2>{{ $t('filter.title') }}</h2>
         <BaseButton
           class="ml-auto"
           variant="danger-secondary"
           size="small"
           @click="resetAll"
         >
-          Reset
+          {{ $t('filter.reset') }}
         </BaseButton>
       </div>
       <FilterSection
@@ -57,7 +57,7 @@
           size="small"
           @click="resetItem(nowOpenObj!)"
         >
-          Reset
+          {{ $t('filter.reset') }}
         </BaseButton>
       </div>
       <InputCheckboxList
