@@ -1,7 +1,8 @@
 import { createI18n } from 'vue-i18n';
 
-import backendSk from './backend-defined/sk.json';
-import backendEn from './backend-defined/en.json';
+import { sk as skCommon, en as enCommon } from '@metafori/i18n';
+import skBackend from './backend-defined/sk.json';
+import enBackend from './backend-defined/en.json';
 import sk from './sk.json';
 import en from './en.json';
 
@@ -17,11 +18,13 @@ const i18n = createI18n({
   fallbackLocale: 'sk',
   messages: {
     sk: {
-      ...backendSk,
+      ...skBackend,
+      ...skCommon,
       ...sk,
     },
     en: {
-      ...backendEn,
+      ...enBackend,
+      ...enCommon,
       ...en,
     },
   },

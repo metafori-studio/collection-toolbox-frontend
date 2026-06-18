@@ -1,4 +1,5 @@
 import { createI18n } from 'vue-i18n';
+import { sk as skCommon } from '@metafori/i18n';
 import sk from './sk.json';
 
 const i18n = createI18n({
@@ -6,7 +7,12 @@ const i18n = createI18n({
   globalInjection: true,
   locale: 'sk',
   fallbackLocale: 'sk',
-  messages: { sk },
+  messages: {
+    sk: {
+      ...sk,
+      ...skCommon,
+    },
+  },
   pluralRules: {
     sk: (choice) => {
       if (choice === 1) return 0;
