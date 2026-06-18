@@ -125,9 +125,5 @@
     "title": "O projekte Archeomap",
     "body1": "Archeomap sprístupňuje vybrané informácie z evidencie archeologických aktivít širokej aj odbornej verejnosti. Portál umožňuje prehliadanie lokalít a výskumných aktivít prostredníctvom interaktívnej mapy, filtrovanie podľa rôznych kritérií a zobrazenie detailných informácií vrátane metadát, fotografií a výskumnej dokumentácie.",
     "body2": "Dôraz kladieme na ochranu dát, preto sú výskumné dokumenty dostupné len v režime na čítanie bez možnosti sťahovania. Súčasťou systému je tiež možnosť podávať žiadosti o sprístupnenie vybraných dokumentov."
-  },
-  "error404": {
-    "title": "Chyba 404",
-    "text": "V prípade pretrvávajúcich ťažkostí kontaktujte prevádzkovateľa služieb."
   }
 }
