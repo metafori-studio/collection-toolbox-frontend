@@ -2,1220 +2,1220 @@
     "data": [
         {
             "id": "31270",
-            "coordinate_x": "-1303842.076000",
-            "coordinate_y": "-495510.244500",
+            "latitude": 48.004958,
+            "longitude": 18.184906,
             "localization_degree": 1
         },
         {
             "id": "31272",
-            "coordinate_x": "-1242341.391000",
-            "coordinate_y": "-490843.519000",
+            "latitude": 48.559621,
+            "longitude": 18.175656,
             "localization_degree": 1
         },
         {
             "id": "31271",
-            "coordinate_x": "-1248141.301000",
-            "coordinate_y": "-424228.829200",
+            "latitude": 48.556097,
+            "longitude": 19.081568,
             "localization_degree": 1
         },
         {
             "id": "31273",
-            "coordinate_x": "-1327479.365000",
-            "coordinate_y": "-492255.870900",
+            "latitude": 47.795693,
+            "longitude": 18.255521,
             "localization_degree": 1
         },
         {
             "id": "31274",
-            "coordinate_x": "-1325645.961000",
-            "coordinate_y": "-495435.603400",
+            "latitude": 47.80966,
+            "longitude": 18.211128,
             "localization_degree": 1
         },
         {
             "id": "31275",
-            "coordinate_x": "-1214851.043000",
-            "coordinate_y": "-508666.480300",
+            "latitude": 48.791672,
+            "longitude": 17.901491,
             "localization_degree": 1
         },
         {
             "id": "31276",
-            "coordinate_x": "-1262272.218000",
-            "coordinate_y": "-481263.292800",
+            "latitude": 48.388429,
+            "longitude": 18.327894,
             "localization_degree": 1
         },
         {
             "id": "31277",
-            "coordinate_x": "-1261612.652000",
-            "coordinate_y": "-507072.606100",
+            "latitude": 48.37412,
+            "longitude": 17.979995,
             "localization_degree": 1
         },
         {
             "id": "31278",
-            "coordinate_x": "-1330410.477000",
-            "coordinate_y": "-502385.759900",
+            "latitude": 47.761542,
+            "longitude": 18.12426,
             "localization_degree": 1
         },
         {
             "id": "31279",
-            "coordinate_x": "-1302656.739000",
-            "coordinate_y": "-537312.616500",
+            "latitude": 47.981611,
+            "longitude": 17.625686,
             "localization_degree": 1
         },
         {
             "id": "31280",
-            "coordinate_x": "-1265663.096000",
-            "coordinate_y": "-531647.006900",
+            "latitude": 48.31762,
+            "longitude": 17.654847,
             "localization_degree": 1
         },
         {
             "id": "31281",
-            "coordinate_x": "-1302701.962000",
-            "coordinate_y": "-460349.554300",
+            "latitude": 48.041617,
+            "longitude": 18.653354,
             "localization_degree": 1
         },
         {
             "id": "31282",
-            "coordinate_x": "-1267441.088000",
-            "coordinate_y": "-504100.451000",
+            "latitude": 48.324291,
+            "longitude": 18.026942,
             "localization_degree": 1
         },
         {
             "id": "31283",
-            "coordinate_x": "-1196599.969000",
-            "coordinate_y": "-423020.551900",
+            "latitude": 49.019124,
+            "longitude": 19.045208,
             "localization_degree": 1
         },
         {
             "id": "31284",
-            "coordinate_x": "-1196520.507000",
-            "coordinate_y": "-422091.439700",
+            "latitude": 49.020467,
+            "longitude": 19.057794,
             "localization_degree": 1
         },
         {
             "id": "31285",
-            "coordinate_x": "-1257279.093000",
-            "coordinate_y": "-438786.644200",
-            "localization_degree": 1
-        },
-        {
-            "id": "31286",
-            "coordinate_x": "-1230513.774000",
-            "coordinate_y": "-420359.156900",
-            "localization_degree": 1
-        },
-        {
-            "id": "31287",
-            "coordinate_x": "-1246934.854000",
-            "coordinate_y": "-447736.405600",
-            "localization_degree": 1
-        },
-        {
-            "id": "31288",
-            "coordinate_x": "-1243503.288000",
-            "coordinate_y": "-316518.166500",
-            "localization_degree": 1
-        },
-        {
-            "id": "31289",
-            "coordinate_x": "-1220655.606000",
-            "coordinate_y": "-418424.474000",
-            "localization_degree": 1
-        },
-        {
-            "id": "31290",
-            "coordinate_x": "-1283064.654000",
-            "coordinate_y": "-397358.781700",
-            "localization_degree": 1
-        },
-        {
-            "id": "31291",
-            "coordinate_x": "-1228633.581000",
-            "coordinate_y": "-417865.774100",
-            "localization_degree": 1
-        },
-        {
-            "id": "31292",
-            "coordinate_x": "-1311628.864000",
-            "coordinate_y": "-499478.653200",
-            "localization_degree": 1
-        },
-        {
-            "id": "31293",
-            "coordinate_x": "-1269140.260000",
-            "coordinate_y": "-333356.549300",
-            "localization_degree": 1
-        },
-        {
-            "id": "31294",
-            "coordinate_x": "-1228348.050000",
-            "coordinate_y": "-417660.136300",
-            "localization_degree": 1
-        },
-        {
-            "id": "31295",
-            "coordinate_x": "-1242341.539000",
-            "coordinate_y": "-420115.684900",
-            "localization_degree": 1
-        },
-        {
-            "id": "31296",
-            "coordinate_x": "-1242371.599000",
-            "coordinate_y": "-419985.879200",
-            "localization_degree": 1
-        },
-        {
-            "id": "31297",
-            "coordinate_x": "-1228592.955000",
-            "coordinate_y": "-417873.013700",
-            "localization_degree": 1
-        },
-        {
-            "id": "31298",
-            "coordinate_x": "-1333931.026000",
-            "coordinate_y": "-489444.703500",
-            "localization_degree": 1
-        },
-        {
-            "id": "31299",
-            "coordinate_x": "-1210519.562000",
-            "coordinate_y": "-454112.635900",
-            "localization_degree": 1
-        },
-        {
-            "id": "31300",
-            "coordinate_x": "-1223081.598000",
-            "coordinate_y": "-419667.100200",
-            "localization_degree": 1
-        },
-        {
-            "id": "31301",
-            "coordinate_x": "-1279255.315000",
-            "coordinate_y": "-489832.691000",
-            "localization_degree": 1
-        },
-        {
-            "id": "31302",
-            "coordinate_x": "-1227939.525000",
-            "coordinate_y": "-418165.786700",
-            "localization_degree": 1
-        },
-        {
-            "id": "31303",
-            "coordinate_x": "-1192456.052000",
-            "coordinate_y": "-424403.142200",
-            "localization_degree": 1
-        },
-        {
-            "id": "31304",
-            "coordinate_x": "-1236761.970000",
-            "coordinate_y": "-419806.850200",
-            "localization_degree": 1
-        },
-        {
-            "id": "31305",
-            "coordinate_x": "-1279629.829000",
-            "coordinate_y": "-525180.418400",
-            "localization_degree": 1
-        },
-        {
-            "id": "31306",
-            "coordinate_x": "-1220573.634000",
-            "coordinate_y": "-418202.190200",
-            "localization_degree": 1
-        },
-        {
-            "id": "31307",
-            "coordinate_x": "-1239672.243000",
-            "coordinate_y": "-420841.567400",
-            "localization_degree": 1
-        },
-        {
-            "id": "31308",
-            "coordinate_x": "-1275660.686000",
-            "coordinate_y": "-505107.262900",
-            "localization_degree": 1
-        },
-        {
-            "id": "31309",
-            "coordinate_x": "-1220467.365000",
-            "coordinate_y": "-418311.350900",
-            "localization_degree": 1
-        },
-        {
-            "id": "31310",
-            "coordinate_x": "-1269303.115000",
-            "coordinate_y": "-333449.624200",
-            "localization_degree": 1
-        },
-        {
-            "id": "31311",
-            "coordinate_x": "-1278580.739000",
-            "coordinate_y": "-535054.020800",
-            "localization_degree": 1
-        },
-        {
-            "id": "31312",
-            "coordinate_x": "-1257887.714000",
-            "coordinate_y": "-438657.220300",
-            "localization_degree": 1
-        },
-        {
-            "id": "31313",
-            "coordinate_x": "-1245213.787000",
-            "coordinate_y": "-422271.331900",
-            "localization_degree": 1
-        },
-        {
-            "id": "31314",
-            "coordinate_x": "-1256275.237000",
-            "coordinate_y": "-497741.453800",
-            "localization_degree": 1
-        },
-        {
-            "id": "31315",
-            "coordinate_x": "-1236214.404000",
-            "coordinate_y": "-419265.803800",
-            "localization_degree": 1
-        },
-        {
-            "id": "31316",
-            "coordinate_x": "-1230468.690000",
-            "coordinate_y": "-514089.478900",
-            "localization_degree": 1
-        },
-        {
-            "id": "31317",
-            "coordinate_x": "-1284031.156000",
-            "coordinate_y": "-407953.175200",
-            "localization_degree": 1
-        },
-        {
-            "id": "31318",
-            "coordinate_x": "-1226661.175000",
-            "coordinate_y": "-461585.207500",
-            "localization_degree": 1
-        },
-        {
-            "id": "31319",
-            "coordinate_x": "-1256631.676000",
-            "coordinate_y": "-444316.205800",
-            "localization_degree": 1
-        },
-        {
-            "id": "31320",
-            "coordinate_x": "-1166460.311000",
-            "coordinate_y": "-385275.167000",
-            "localization_degree": 1
-        },
-        {
-            "id": "31321",
-            "coordinate_x": "-1220420.598000",
-            "coordinate_y": "-418071.094800",
-            "localization_degree": 1
-        },
-        {
-            "id": "31322",
-            "coordinate_x": "-1256419.654000",
-            "coordinate_y": "-507261.443100",
-            "localization_degree": 1
-        },
-        {
-            "id": "31323",
-            "coordinate_x": "-1228847.718000",
-            "coordinate_y": "-418073.229400",
-            "localization_degree": 1
-        },
-        {
-            "id": "31324",
-            "coordinate_x": "-1257684.078000",
-            "coordinate_y": "-438699.909400",
-            "localization_degree": 1
-        },
-        {
-            "id": "31325",
-            "coordinate_x": "-1267426.313000",
-            "coordinate_y": "-475179.437000",
-            "localization_degree": 1
-        },
-        {
-            "id": "31326",
-            "coordinate_x": "-1250295.028000",
-            "coordinate_y": "-399817.454600",
-            "localization_degree": 1
-        },
-        {
-            "id": "31327",
-            "coordinate_x": "-1212568.647000",
-            "coordinate_y": "-523954.107800",
-            "localization_degree": 1
-        },
-        {
-            "id": "31328",
-            "coordinate_x": "-1228413.098000",
-            "coordinate_y": "-418155.830000",
-            "localization_degree": 1
-        },
-        {
-            "id": "31329",
-            "coordinate_x": "-1230999.268000",
-            "coordinate_y": "-490369.219500",
-            "localization_degree": 1
-        },
-        {
-            "id": "31330",
-            "coordinate_x": "-1262158.522000",
-            "coordinate_y": "-435288.568900",
-            "localization_degree": 1
-        },
-        {
-            "id": "31331",
-            "coordinate_x": "-1216604.986000",
-            "coordinate_y": "-418995.394600",
-            "localization_degree": 1
-        },
-        {
-            "id": "31332",
-            "coordinate_x": "-1260756.466000",
-            "coordinate_y": "-535913.431900",
-            "localization_degree": 1
-        },
-        {
-            "id": "31333",
-            "coordinate_x": "-1317503.780000",
-            "coordinate_y": "-527460.045200",
-            "localization_degree": 1
-        },
-        {
-            "id": "31334",
-            "coordinate_x": "-1192546.119000",
-            "coordinate_y": "-419788.961100",
-            "localization_degree": 1
-        },
-        {
-            "id": "31336",
-            "coordinate_x": "-1231911.362000",
-            "coordinate_y": "-519906.622000",
-            "localization_degree": 1
-        },
-        {
-            "id": "31337",
-            "coordinate_x": "-1298673.975000",
-            "coordinate_y": "-484553.810700",
-            "localization_degree": 1
-        },
-        {
-            "id": "31338",
-            "coordinate_x": "-1270311.106000",
-            "coordinate_y": "-499925.463000",
-            "localization_degree": 1
-        },
-        {
-            "id": "31346",
-            "coordinate_x": "-1301991.249000",
-            "coordinate_y": "-536130.411000",
-            "localization_degree": 1
-        },
-        {
-            "id": "31347",
-            "coordinate_x": "-1243999.607000",
-            "coordinate_y": "-558810.513200",
-            "localization_degree": 1
-        },
-        {
-            "id": "31348",
-            "coordinate_x": "-1226150.465000",
-            "coordinate_y": "-538581.811900",
-            "localization_degree": 1
-        },
-        {
-            "id": "31349",
-            "coordinate_x": "-1269272.975000",
-            "coordinate_y": "-578089.970800",
-            "localization_degree": 1
-        },
-        {
-            "id": "31350",
-            "coordinate_x": "-1232992.846000",
-            "coordinate_y": "-416065.004400",
-            "localization_degree": 1
-        },
-        {
-            "id": "31351",
-            "coordinate_x": "-1275218.270000",
-            "coordinate_y": "-355238.710500",
-            "localization_degree": 1
-        },
-        {
-            "id": "31176",
-            "coordinate_x": "-1264451.833000",
-            "coordinate_y": "-501195.653500",
-            "localization_degree": 1
-        },
-        {
-            "id": "31246",
-            "coordinate_x": "-1266356.256000",
-            "coordinate_y": "-505215.055400",
-            "localization_degree": 1
-        },
-        {
-            "id": "31145",
-            "coordinate_x": "-1258534.260000",
-            "coordinate_y": "-437910.821100",
-            "localization_degree": 1
-        },
-        {
-            "id": "30790",
-            "coordinate_x": "-1231327.969000",
-            "coordinate_y": "-435113.809200",
-            "localization_degree": 1
-        },
-        {
-            "id": "31352",
-            "coordinate_x": "-1273711.913000",
-            "coordinate_y": "-519900.082300",
-            "localization_degree": 1
-        },
-        {
-            "id": "31353",
-            "coordinate_x": "-1222842.592000",
-            "coordinate_y": "-232281.156000",
-            "localization_degree": 1
-        },
-        {
-            "id": "31354",
-            "coordinate_x": "-1266068.157000",
-            "coordinate_y": "-468314.001600",
-            "localization_degree": 1
-        },
-        {
-            "id": "31355",
-            "coordinate_x": "-1266568.544000",
-            "coordinate_y": "-502083.440100",
+            "latitude": 48.464178,
+            "longitude": 18.894518,
             "localization_degree": 1
         },
         {
             "id": "31231",
-            "coordinate_x": "-1241966.223000",
-            "coordinate_y": "-543202.189000",
+            "latitude": 48.519915,
+            "longitude": 17.469061,
+            "localization_degree": 1
+        },
+        {
+            "id": "31286",
+            "latitude": 48.716787,
+            "longitude": 19.116051,
+            "localization_degree": 1
+        },
+        {
+            "id": "31287",
+            "latitude": 48.550624,
+            "longitude": 18.762797,
+            "localization_degree": 1
+        },
+        {
+            "id": "31288",
+            "latitude": 48.661146,
+            "longitude": 20.535096,
+            "localization_degree": 1
+        },
+        {
+            "id": "31289",
+            "latitude": 48.806494,
+            "longitude": 19.132317,
+            "localization_degree": 1
+        },
+        {
+            "id": "31290",
+            "latitude": 48.26032,
+            "longitude": 19.477731,
+            "localization_degree": 1
+        },
+        {
+            "id": "31291",
+            "latitude": 48.735316,
+            "longitude": 19.147952,
+            "localization_degree": 1
+        },
+        {
+            "id": "31292",
+            "latitude": 47.932089,
+            "longitude": 18.141032,
+            "localization_degree": 1
+        },
+        {
+            "id": "31293",
+            "latitude": 48.422273,
+            "longitude": 20.327319,
+            "localization_degree": 1
+        },
+        {
+            "id": "31294",
+            "latitude": 48.738014,
+            "longitude": 19.150452,
+            "localization_degree": 1
+        },
+        {
+            "id": "31295",
+            "latitude": 48.610873,
+            "longitude": 19.131298,
+            "localization_degree": 1
+        },
+        {
+            "id": "31296",
+            "latitude": 48.61069,
+            "longitude": 19.133084,
+            "localization_degree": 1
+        },
+        {
+            "id": "31297",
+            "latitude": 48.735676,
+            "longitude": 19.147813,
+            "localization_degree": 1
+        },
+        {
+            "id": "31298",
+            "latitude": 47.740043,
+            "longitude": 18.300238,
+            "localization_degree": 1
+        },
+        {
+            "id": "31299",
+            "latitude": 48.872485,
+            "longitude": 18.636852,
+            "localization_degree": 1
+        },
+        {
+            "id": "31300",
+            "latitude": 48.783905,
+            "longitude": 19.117906,
+            "localization_degree": 1
+        },
+        {
+            "id": "31301",
+            "latitude": 48.229663,
+            "longitude": 18.232352,
+            "localization_degree": 1
+        },
+        {
+            "id": "31302",
+            "latitude": 48.741341,
+            "longitude": 19.143184,
+            "localization_degree": 1
+        },
+        {
+            "id": "31303",
+            "latitude": 49.055343,
+            "longitude": 19.022067,
+            "localization_degree": 1
+        },
+        {
+            "id": "31304",
+            "latitude": 48.66112,
+            "longitude": 19.12985,
+            "localization_degree": 1
+        },
+        {
+            "id": "31305",
+            "latitude": 48.197961,
+            "longitude": 17.759045,
+            "localization_degree": 1
+        },
+        {
+            "id": "31306",
+            "latitude": 48.807377,
+            "longitude": 19.135252,
+            "localization_degree": 1
+        },
+        {
+            "id": "31307",
+            "latitude": 48.634327,
+            "longitude": 19.118784,
+            "localization_degree": 1
+        },
+        {
+            "id": "31308",
+            "latitude": 48.249856,
+            "longitude": 18.023262,
+            "localization_degree": 1
+        },
+        {
+            "id": "31309",
+            "latitude": 48.808258,
+            "longitude": 19.133662,
+            "localization_degree": 1
+        },
+        {
+            "id": "31310",
+            "latitude": 48.420762,
+            "longitude": 20.326193,
+            "localization_degree": 1
+        },
+        {
+            "id": "31311",
+            "latitude": 48.199084,
+            "longitude": 17.625488,
+            "localization_degree": 1
+        },
+        {
+            "id": "31312",
+            "latitude": 48.458811,
+            "longitude": 18.8969,
+            "localization_degree": 1
+        },
+        {
+            "id": "31313",
+            "latitude": 48.583669,
+            "longitude": 19.105052,
+            "localization_degree": 1
+        },
+        {
+            "id": "31314",
+            "latitude": 48.429369,
+            "longitude": 18.099141,
+            "localization_degree": 1
+        },
+        {
+            "id": "31315",
+            "latitude": 48.666393,
+            "longitude": 19.136623,
+            "localization_degree": 1
+        },
+        {
+            "id": "31316",
+            "latitude": 48.647371,
+            "longitude": 17.847358,
+            "localization_degree": 1
+        },
+        {
+            "id": "31317",
+            "latitude": 48.244911,
+            "longitude": 19.336332,
+            "localization_degree": 1
+        },
+        {
+            "id": "31318",
+            "latitude": 48.722335,
+            "longitude": 18.55334,
+            "localization_degree": 1
+        },
+        {
+            "id": "31319",
+            "latitude": 48.466109,
+            "longitude": 18.819284,
+            "localization_degree": 1
+        },
+        {
+            "id": "31320",
+            "latitude": 49.31397,
+            "longitude": 19.531601,
+            "localization_degree": 1
+        },
+        {
+            "id": "31321",
+            "latitude": 48.808837,
+            "longitude": 19.136877,
+            "localization_degree": 1
+        },
+        {
+            "id": "31322",
+            "latitude": 48.420484,
+            "longitude": 17.971182,
+            "localization_degree": 1
+        },
+        {
+            "id": "31323",
+            "latitude": 48.733257,
+            "longitude": 19.145355,
+            "localization_degree": 1
+        },
+        {
+            "id": "31324",
+            "latitude": 48.460607,
+            "longitude": 18.896111,
+            "localization_degree": 1
+        },
+        {
+            "id": "31325",
+            "latitude": 48.34685,
+            "longitude": 18.415579,
+            "localization_degree": 1
+        },
+        {
+            "id": "31326",
+            "latitude": 48.552761,
+            "longitude": 19.413524,
+            "localization_degree": 1
+        },
+        {
+            "id": "31327",
+            "latitude": 48.79949,
+            "longitude": 17.69142,
+            "localization_degree": 1
+        },
+        {
+            "id": "31328",
+            "latitude": 48.7371,
+            "longitude": 19.143797,
+            "localization_degree": 1
+        },
+        {
+            "id": "31329",
+            "latitude": 48.66161,
+            "longitude": 18.168701,
+            "localization_degree": 1
+        },
+        {
+            "id": "31330",
+            "latitude": 48.42285,
+            "longitude": 18.946747,
+            "localization_degree": 1
+        },
+        {
+            "id": "31331",
+            "latitude": 48.842439,
+            "longitude": 19.120459,
+            "localization_degree": 1
+        },
+        {
+            "id": "31332",
+            "latitude": 48.357942,
+            "longitude": 17.591326,
+            "localization_degree": 1
+        },
+        {
+            "id": "31333",
+            "latitude": 47.85691,
+            "longitude": 17.775404,
+            "localization_degree": 1
+        },
+        {
+            "id": "31334",
+            "latitude": 49.057661,
+            "longitude": 19.085117,
+            "localization_degree": 1
+        },
+        {
+            "id": "31336",
+            "latitude": 48.629657,
+            "longitude": 17.770548,
+            "localization_degree": 1
+        },
+        {
+            "id": "31337",
+            "latitude": 48.059717,
+            "longitude": 18.325332,
+            "localization_degree": 1
+        },
+        {
+            "id": "31338",
+            "latitude": 48.301899,
+            "longitude": 18.086431,
+            "localization_degree": 1
+        },
+        {
+            "id": "31346",
+            "latitude": 47.988568,
+            "longitude": 17.640616,
+            "localization_degree": 1
+        },
+        {
+            "id": "31347",
+            "latitude": 48.488036,
+            "longitude": 17.261516,
+            "localization_degree": 1
+        },
+        {
+            "id": "31348",
+            "latitude": 48.665477,
+            "longitude": 17.510868,
+            "localization_degree": 1
+        },
+        {
+            "id": "31349",
+            "latitude": 48.244507,
+            "longitude": 17.036828,
+            "localization_degree": 1
+        },
+        {
+            "id": "31350",
+            "latitude": 48.697416,
+            "longitude": 19.176738,
+            "localization_degree": 1
+        },
+        {
+            "id": "31351",
+            "latitude": 48.355786,
+            "longitude": 20.037351,
+            "localization_degree": 1
+        },
+        {
+            "id": "31176",
+            "latitude": 48.353382,
+            "longitude": 18.062402,
+            "localization_degree": 1
+        },
+        {
+            "id": "31246",
+            "latitude": 48.333118,
+            "longitude": 18.010668,
+            "localization_degree": 1
+        },
+        {
+            "id": "31145",
+            "latitude": 48.453533,
+            "longitude": 18.907637,
+            "localization_degree": 1
+        },
+        {
+            "id": "30790",
+            "latitude": 48.699425,
+            "longitude": 18.916972,
+            "localization_degree": 1
+        },
+        {
+            "id": "31352",
+            "latitude": 48.25532,
+            "longitude": 17.8225,
+            "localization_degree": 1
+        },
+        {
+            "id": "31353",
+            "latitude": 48.883548,
+            "longitude": 21.666199,
+            "localization_degree": 1
+        },
+        {
+            "id": "31354",
+            "latitude": 48.364153,
+            "longitude": 18.506379,
+            "localization_degree": 1
+        },
+        {
+            "id": "31355",
+            "latitude": 48.333714,
+            "longitude": 18.052995,
             "localization_degree": 1
         },
         {
             "id": "31251",
-            "coordinate_x": "-1246421.326000",
-            "coordinate_y": "-420479.565600",
+            "latitude": 48.57404,
+            "longitude": 19.13049,
             "localization_degree": 1
         },
         {
             "id": "31075",
-            "coordinate_x": "-1247294.513000",
-            "coordinate_y": "-425290.550600",
+            "latitude": 48.562974,
+            "longitude": 19.066362,
             "localization_degree": 1
         },
         {
             "id": "31165",
-            "coordinate_x": "-1273656.276000",
-            "coordinate_y": "-520157.006700",
+            "latitude": 48.255607,
+            "longitude": 17.818986,
             "localization_degree": 1
         },
         {
             "id": "31183",
-            "coordinate_x": "-1332725.519000",
-            "coordinate_y": "-496652.035500",
+            "latitude": 47.745284,
+            "longitude": 18.203118,
             "localization_degree": 1
         },
         {
             "id": "29295",
-            "coordinate_x": "-1291798.970000",
-            "coordinate_y": "-556954.966100",
+            "latitude": 48.061883,
+            "longitude": 17.34964,
             "localization_degree": 1
         },
         {
             "id": "31180",
-            "coordinate_x": "-1257640.841000",
-            "coordinate_y": "-438428.064000",
+            "latitude": 48.461184,
+            "longitude": 18.899731,
             "localization_degree": 1
         },
         {
             "id": "31268",
-            "coordinate_x": "-1316085.364000",
-            "coordinate_y": "-472288.639100",
+            "latitude": 47.912901,
+            "longitude": 18.508578,
             "localization_degree": 3
         },
         {
             "id": "31375",
-            "coordinate_x": "-1268144.010000",
-            "coordinate_y": "-502638.454100",
+            "latitude": 48.319159,
+            "longitude": 18.047419,
             "localization_degree": 1
         },
         {
             "id": "31376",
-            "coordinate_x": "-1268020.636000",
-            "coordinate_y": "-498684.454600",
-            "localization_degree": 1
-        },
-        {
-            "id": "31424",
-            "coordinate_x": "-1237995.665000",
-            "coordinate_y": "-505779.923600",
+            "latitude": 48.323399,
+            "longitude": 18.100384,
             "localization_degree": 1
         },
         {
             "id": "31359",
-            "coordinate_x": "-1258898.700000",
-            "coordinate_y": "-510255.573600",
+            "latitude": 48.395862,
+            "longitude": 17.933906,
             "localization_degree": 1
         },
         {
             "id": "31360",
-            "coordinate_x": "-1258200.072000",
-            "coordinate_y": "-510819.269900",
+            "latitude": 48.401663,
+            "longitude": 17.925474,
             "localization_degree": 1
         },
         {
             "id": "31361",
-            "coordinate_x": "-1258405.988000",
-            "coordinate_y": "-510729.018800",
+            "latitude": 48.399891,
+            "longitude": 17.926939,
             "localization_degree": 1
         },
         {
             "id": "31362",
-            "coordinate_x": "-1260387.216000",
-            "coordinate_y": "-508088.456200",
+            "latitude": 48.384279,
+            "longitude": 17.964855,
             "localization_degree": 1
         },
         {
             "id": "31363",
-            "coordinate_x": "-1263271.719000",
-            "coordinate_y": "-512039.016700",
+            "latitude": 48.355248,
+            "longitude": 17.915248,
             "localization_degree": 1
         },
         {
             "id": "31364",
-            "coordinate_x": "-1263242.583000",
-            "coordinate_y": "-512356.647900",
+            "latitude": 48.355251,
+            "longitude": 17.910944,
             "localization_degree": 1
         },
         {
             "id": "31365",
-            "coordinate_x": "-1263193.669000",
-            "coordinate_y": "-512336.342300",
+            "latitude": 48.355705,
+            "longitude": 17.911158,
             "localization_degree": 1
         },
         {
             "id": "31377",
-            "coordinate_x": "-1241530.505000",
-            "coordinate_y": "-419346.608200",
+            "latitude": 48.618661,
+            "longitude": 19.140884,
             "localization_degree": 1
         },
         {
             "id": "31380",
-            "coordinate_x": "-1264857.019000",
-            "coordinate_y": "-519598.295500",
+            "latitude": 48.334871,
+            "longitude": 17.815631,
             "localization_degree": 1
         },
         {
             "id": "31381",
-            "coordinate_x": "-1295112.388000",
-            "coordinate_y": "-560092.267300",
+            "latitude": 48.029467,
+            "longitude": 17.312115,
             "localization_degree": 1
         },
         {
             "id": "31382",
-            "coordinate_x": "-1263816.834000",
-            "coordinate_y": "-503807.074500",
+            "latitude": 48.356991,
+            "longitude": 18.026543,
             "localization_degree": 1
         },
         {
             "id": "31386",
-            "coordinate_x": "-1260540.637000",
-            "coordinate_y": "-556471.286000",
+            "latitude": 48.342072,
+            "longitude": 17.314964,
             "localization_degree": 1
         },
         {
             "id": "31387",
-            "coordinate_x": "-1201806.838000",
-            "coordinate_y": "-327115.597900",
+            "latitude": 49.030066,
+            "longitude": 20.358481,
             "localization_degree": 1
         },
         {
             "id": "31392",
-            "coordinate_x": "-1295153.011000",
-            "coordinate_y": "-560044.110500",
+            "latitude": 48.029146,
+            "longitude": 17.312811,
             "localization_degree": 1
         },
         {
             "id": "31393",
-            "coordinate_x": "-1190143.457000",
-            "coordinate_y": "-320925.314200",
+            "latitude": 49.137989,
+            "longitude": 20.43386,
             "localization_degree": 1
         },
         {
             "id": "31394",
-            "coordinate_x": "-1190157.578000",
-            "coordinate_y": "-320936.599700",
-            "localization_degree": 1
-        },
-        {
-            "id": "31415",
-            "coordinate_x": "-1281862.504000",
-            "coordinate_y": "-538892.308200",
+            "latitude": 49.137857,
+            "longitude": 20.433717,
             "localization_degree": 1
         },
         {
             "id": "31395",
-            "coordinate_x": "-1190102.951000",
-            "coordinate_y": "-321198.488900",
+            "latitude": 49.138212,
+            "longitude": 20.430091,
             "localization_degree": 1
         },
         {
             "id": "31396",
-            "coordinate_x": "-1187209.403000",
-            "coordinate_y": "-319815.834000",
+            "latitude": 49.1649,
+            "longitude": 20.446744,
             "localization_degree": 1
         },
         {
             "id": "31397",
-            "coordinate_x": "-1192700.746000",
-            "coordinate_y": "-326131.166700",
+            "latitude": 49.112329,
+            "longitude": 20.364674,
             "localization_degree": 1
         },
         {
             "id": "31398",
-            "coordinate_x": "-1203441.096000",
-            "coordinate_y": "-317638.009800",
+            "latitude": 49.020288,
+            "longitude": 20.48915,
             "localization_degree": 1
         },
         {
             "id": "31401",
-            "coordinate_x": "-1325746.566000",
-            "coordinate_y": "-483309.060500",
+            "latitude": 47.818057,
+            "longitude": 18.372561,
             "localization_degree": 1
         },
         {
             "id": "31402",
-            "coordinate_x": "-1256451.866000",
-            "coordinate_y": "-535792.146200",
+            "latitude": 48.396585,
+            "longitude": 17.587465,
             "localization_degree": 1
         },
         {
             "id": "31055",
-            "coordinate_x": "-1267639.803000",
-            "coordinate_y": "-526192.353900",
+            "latitude": 48.304489,
+            "longitude": 17.730549,
             "localization_degree": 1
         },
         {
             "id": "31235",
-            "coordinate_x": "-1272986.948000",
-            "coordinate_y": "-498247.853600",
+            "latitude": 48.279251,
+            "longitude": 18.112119,
             "localization_degree": 1
         },
         {
             "id": "29636",
-            "coordinate_x": "-1293625.355000",
-            "coordinate_y": "-490265.689500",
+            "latitude": 48.10057,
+            "longitude": 18.243166,
             "localization_degree": 1
         },
         {
             "id": "31208",
-            "coordinate_x": "-1258992.051000",
-            "coordinate_y": "-474268.119600",
+            "latitude": 48.423124,
+            "longitude": 18.418313,
             "localization_degree": 1
         },
         {
             "id": "31230",
-            "coordinate_x": "-1259039.822000",
-            "coordinate_y": "-474536.043000",
+            "latitude": 48.422495,
+            "longitude": 18.41476,
             "localization_degree": 1
         },
         {
             "id": "31167",
-            "coordinate_x": "-1266255.081000",
-            "coordinate_y": "-541947.143200",
+            "latitude": 48.303562,
+            "longitude": 17.517359,
             "localization_degree": 1
         },
         {
             "id": "30772",
-            "coordinate_x": "-1269054.939000",
-            "coordinate_y": "-497754.969600",
+            "latitude": 48.314866,
+            "longitude": 18.114092,
             "localization_degree": 1
         },
         {
             "id": "31218",
-            "coordinate_x": "-1300872.408000",
-            "coordinate_y": "-466131.705300",
+            "latitude": 48.053801,
+            "longitude": 18.574064,
             "localization_degree": 1
         },
         {
             "id": "31384",
-            "coordinate_x": "-1299649.474000",
-            "coordinate_y": "-467053.824200",
+            "latitude": 48.064086,
+            "longitude": 18.560395,
             "localization_degree": 1
         },
         {
             "id": "31356",
-            "coordinate_x": "-1249138.382000",
-            "coordinate_y": "-425963.493900",
+            "latitude": 48.545983,
+            "longitude": 19.05915,
             "localization_degree": 1
         },
         {
             "id": "31034",
-            "coordinate_x": "-1249035.256000",
-            "coordinate_y": "-261271.584600",
+            "latitude": 48.636829,
+            "longitude": 21.287798,
             "localization_degree": 1
         },
         {
             "id": "31403",
-            "coordinate_x": "-1299301.267000",
-            "coordinate_y": "-494133.165500",
+            "latitude": 48.046714,
+            "longitude": 18.198027,
             "localization_degree": 1
         },
         {
             "id": "31406",
-            "coordinate_x": "-1226113.039000",
-            "coordinate_y": "-565605.687300",
+            "latitude": 48.64201,
+            "longitude": 17.145769,
             "localization_degree": 1
         },
         {
             "id": "31412",
-            "coordinate_x": "-1239433.848000",
-            "coordinate_y": "-347240.492300",
+            "latitude": 48.681458,
+            "longitude": 20.115403,
             "localization_degree": 1
         },
         {
             "id": "31413",
-            "coordinate_x": "-1255625.586000",
-            "coordinate_y": "-355747.317400",
+            "latitude": 48.531366,
+            "longitude": 20.013902,
+            "localization_degree": 1
+        },
+        {
+            "id": "31415",
+            "latitude": 48.166446,
+            "longitude": 17.578264,
             "localization_degree": 1
         },
         {
             "id": "31407",
-            "coordinate_x": "-1269813.542000",
-            "coordinate_y": "-358448.188800",
+            "latitude": 48.402487,
+            "longitude": 19.989525,
             "localization_degree": 1
         },
         {
             "id": "31408",
-            "coordinate_x": "-1270357.177000",
-            "coordinate_y": "-358551.808800",
+            "latitude": 48.397549,
+            "longitude": 19.988591,
             "localization_degree": 1
         },
         {
             "id": "31400",
-            "coordinate_x": "-1198898.400000",
-            "coordinate_y": "-489370.322300",
+            "latitude": 48.949985,
+            "longitude": 18.144188,
             "localization_degree": 1
         },
         {
             "id": "31209",
-            "coordinate_x": "-1282770.230000",
-            "coordinate_y": "-424769.257800",
+            "latitude": 48.245163,
+            "longitude": 19.109267,
             "localization_degree": 1
         },
         {
             "id": "31379",
-            "coordinate_x": "-1268675.701000",
-            "coordinate_y": "-499305.816900",
+            "latitude": 48.31704,
+            "longitude": 18.092814,
             "localization_degree": 1
         },
         {
             "id": "31149",
-            "coordinate_x": "-1302685.781000",
-            "coordinate_y": "-430185.541600",
+            "latitude": 48.0629,
+            "longitude": 19.056732,
             "localization_degree": 1
         },
         {
             "id": "31053",
-            "coordinate_x": "-1246730.205000",
-            "coordinate_y": "-424841.482900",
+            "latitude": 48.568339,
+            "longitude": 19.071856,
             "localization_degree": 1
         },
         {
             "id": "31373",
-            "coordinate_x": "-1272027.502000",
-            "coordinate_y": "-493259.857500",
+            "latitude": 48.29176,
+            "longitude": 18.177951,
             "localization_degree": 1
         },
         {
             "id": "31256",
-            "coordinate_x": "-1242292.393000",
-            "coordinate_y": "-490871.963000",
+            "latitude": 48.560038,
+            "longitude": 18.175215,
             "localization_degree": 1
         },
         {
             "id": "31345",
-            "coordinate_x": "-1246761.024000",
-            "coordinate_y": "-421298.598200",
+            "latitude": 48.570445,
+            "longitude": 19.119763,
             "localization_degree": 1
         },
         {
             "id": "31425",
-            "coordinate_x": "-1302218.662000",
-            "coordinate_y": "-490417.244900",
+            "latitude": 48.023454,
+            "longitude": 18.25104,
             "localization_degree": 1
         },
         {
             "id": "31391",
-            "coordinate_x": "-1306232.293000",
-            "coordinate_y": "-481630.884500",
+            "latitude": 47.994206,
+            "longitude": 18.372946,
             "localization_degree": 1
         },
         {
             "id": "31378",
-            "coordinate_x": "-1316150.188000",
-            "coordinate_y": "-528376.384800",
+            "latitude": 47.868272,
+            "longitude": 17.761544,
             "localization_degree": 1
         },
         {
             "id": "30921",
-            "coordinate_x": "-1259290.958000",
-            "coordinate_y": "-482364.309800",
+            "latitude": 48.414303,
+            "longitude": 18.309657,
             "localization_degree": 1
         },
         {
             "id": "31071",
-            "coordinate_x": "-1249064.892000",
-            "coordinate_y": "-262332.192500",
+            "latitude": 48.636122,
+            "longitude": 21.27344,
             "localization_degree": 1
         },
         {
             "id": "30919",
-            "coordinate_x": "-1226019.202000",
-            "coordinate_y": "-272349.866400",
+            "latitude": 48.838882,
+            "longitude": 21.122562,
             "localization_degree": 1
         },
         {
             "id": "31164",
-            "coordinate_x": "-1226019.202000",
-            "coordinate_y": "-272349.866400",
+            "latitude": 48.838882,
+            "longitude": 21.122562,
             "localization_degree": 1
         },
         {
             "id": "30628",
-            "coordinate_x": "-1281021.860000",
-            "coordinate_y": "-574186.643100",
+            "latitude": 48.142948,
+            "longitude": 17.105065,
             "localization_degree": 1
         },
         {
             "id": "31192",
-            "coordinate_x": "-1235192.261000",
-            "coordinate_y": "-503157.309500",
+            "latitude": 48.613924,
+            "longitude": 18.000854,
             "localization_degree": 1
         },
         {
             "id": "31193",
-            "coordinate_x": "-1233956.841000",
-            "coordinate_y": "-501434.483200",
+            "latitude": 48.62637,
+            "longitude": 18.02264,
             "localization_degree": 1
         },
         {
             "id": "31195",
-            "coordinate_x": "-1266311.690000",
-            "coordinate_y": "-496671.893500",
+            "latitude": 48.340296,
+            "longitude": 18.125404,
             "localization_degree": 1
         },
         {
             "id": "31197",
-            "coordinate_x": "-1268515.169000",
-            "coordinate_y": "-499541.763700",
+            "latitude": 48.318291,
+            "longitude": 18.089454,
             "localization_degree": 1
         },
         {
             "id": "31199",
-            "coordinate_x": "-1274452.632000",
-            "coordinate_y": "-468763.438400",
+            "latitude": 48.28867,
+            "longitude": 18.509664,
             "localization_degree": 1
         },
         {
             "id": "31200",
-            "coordinate_x": "-1210959.335000",
-            "coordinate_y": "-434550.587400",
+            "latitude": 48.882449,
+            "longitude": 18.903208,
             "localization_degree": 1
         },
         {
             "id": "31203",
-            "coordinate_x": "-1279179.402000",
-            "coordinate_y": "-466969.212900",
+            "latitude": 48.24763,
+            "longitude": 18.538989,
             "localization_degree": 1
         },
         {
             "id": "31423",
-            "coordinate_x": "-1237516.591000",
-            "coordinate_y": "-504382.053700",
+            "latitude": 48.592121,
+            "longitude": 17.987124,
+            "localization_degree": 1
+        },
+        {
+            "id": "31424",
+            "latitude": 48.586706,
+            "longitude": 17.968831,
             "localization_degree": 1
         },
         {
             "id": "31422",
-            "coordinate_x": "-1235279.734000",
-            "coordinate_y": "-502741.707200",
+            "latitude": 48.613474,
+            "longitude": 18.006574,
             "localization_degree": 1
         },
         {
             "id": "31456",
-            "coordinate_x": "-1274717.516000",
-            "coordinate_y": "-381594.330400",
+            "latitude": 48.344922,
+            "longitude": 19.682041,
             "localization_degree": 1
         },
         {
             "id": "31457",
-            "coordinate_x": "-1316918.871000",
-            "coordinate_y": "-495357.960400",
+            "latitude": 47.887912,
+            "longitude": 18.202089,
             "localization_degree": 1
         },
         {
             "id": "31458",
-            "coordinate_x": "-1255579.831000",
-            "coordinate_y": "-519683.471800",
+            "latitude": 48.417883,
+            "longitude": 17.803012,
             "localization_degree": 1
         },
         {
             "id": "31470",
-            "coordinate_x": "-1258652.657000",
-            "coordinate_y": "-542783.733500",
+            "latitude": 48.370901,
+            "longitude": 17.496324,
             "localization_degree": 1
         },
         {
             "id": "31442",
-            "coordinate_x": "-1267339.552000",
-            "coordinate_y": "-501561.915600",
+            "latitude": 48.327222,
+            "longitude": 18.060921,
             "localization_degree": 1
         },
         {
             "id": "31446",
-            "coordinate_x": "-1279309.241000",
-            "coordinate_y": "-463639.740600",
+            "latitude": 48.248915,
+            "longitude": 18.583816,
             "localization_degree": 1
         },
         {
             "id": "31196",
-            "coordinate_x": "-1332735.805000",
-            "coordinate_y": "-496687.088200",
+            "latitude": 47.745165,
+            "longitude": 18.202664,
             "localization_degree": 1
         },
         {
             "id": "31198",
-            "coordinate_x": "-1276655.268000",
-            "coordinate_y": "-447858.686600",
+            "latitude": 48.284077,
+            "longitude": 18.792849,
             "localization_degree": 1
         },
         {
             "id": "31201",
-            "coordinate_x": "-1267622.027000",
-            "coordinate_y": "-526193.276200",
+            "latitude": 48.304647,
+            "longitude": 17.730514,
             "localization_degree": 1
         },
         {
             "id": "31204",
-            "coordinate_x": "-1249744.000000",
-            "coordinate_y": "-260889.000000",
+            "latitude": 48.630621,
+            "longitude": 21.293427,
             "localization_degree": 1
         },
         {
             "id": "31205",
-            "coordinate_x": "-1248532.540000",
-            "coordinate_y": "-261619.000000",
+            "latitude": 48.641201,
+            "longitude": 21.282774,
             "localization_degree": 1
         },
         {
             "id": "31206",
-            "coordinate_x": "-1252550.000000",
-            "coordinate_y": "-435200.000000",
+            "latitude": 48.509071,
+            "longitude": 18.937962,
             "localization_degree": 1
         },
         {
             "id": "31472",
-            "coordinate_x": "-1268479.811000",
-            "coordinate_y": "-499359.450800",
+            "latitude": 48.318752,
+            "longitude": 18.091861,
             "localization_degree": 1
         },
         {
             "id": "31473",
-            "coordinate_x": "-1281184.445000",
-            "coordinate_y": "-574284.817400",
+            "latitude": 48.141404,
+            "longitude": 17.103973,
             "localization_degree": 1
         },
         {
             "id": "31479",
-            "coordinate_x": "-1269808.874000",
-            "coordinate_y": "-510097.888600",
+            "latitude": 48.298266,
+            "longitude": 17.949256,
             "localization_degree": 1
         },
         {
             "id": "31487",
-            "coordinate_x": "-1177280.029000",
-            "coordinate_y": "-312755.584100",
+            "latitude": 49.257631,
+            "longitude": 20.535787,
             "localization_degree": 1
         },
         {
             "id": "31488",
-            "coordinate_x": "-1300655.202000",
-            "coordinate_y": "-536301.632700",
+            "latitude": 48.000386,
+            "longitude": 17.636652,
             "localization_degree": 1
         },
         {
             "id": "31489",
-            "coordinate_x": "-1177709.632000",
-            "coordinate_y": "-451125.049300",
+            "latitude": 49.168745,
+            "longitude": 18.641337,
             "localization_degree": 2
         },
         {
             "id": "31493",
-            "coordinate_x": "-1301790.938000",
-            "coordinate_y": "-538419.395200",
+            "latitude": 47.988427,
+            "longitude": 17.609834,
             "localization_degree": 1
         },
         {
             "id": "31166",
-            "coordinate_x": "-1187585.969000",
-            "coordinate_y": "-333811.691000",
+            "latitude": 49.154174,
+            "longitude": 20.255477,
             "localization_degree": 1
         },
         {
             "id": "31399",
-            "coordinate_x": "-1201026.500000",
-            "coordinate_y": "-283322.149000",
+            "latitude": 49.058486,
+            "longitude": 20.956083,
             "localization_degree": 1
         },
         {
             "id": "31250",
-            "coordinate_x": "-1193522.475000",
-            "coordinate_y": "-330080.446300",
+            "latitude": 49.102873,
+            "longitude": 20.311334,
             "localization_degree": 1
         },
         {
             "id": "31262",
-            "coordinate_x": "-1255568.400000",
-            "coordinate_y": "-319021.659500",
+            "latitude": 48.551545,
+            "longitude": 20.510384,
             "localization_degree": 1
         },
         {
             "id": "31367",
-            "coordinate_x": "-1306861.095000",
-            "coordinate_y": "-489151.452500",
+            "latitude": 47.982831,
+            "longitude": 18.273271,
             "localization_degree": 1
         },
         {
             "id": "31358",
-            "coordinate_x": "-1276757.797000",
-            "coordinate_y": "-455020.335200",
+            "latitude": 48.278045,
+            "longitude": 18.696764,
             "localization_degree": 1
         },
         {
             "id": "31421",
-            "coordinate_x": "-1270482.699000",
-            "coordinate_y": "-519037.975500",
+            "latitude": 48.284949,
+            "longitude": 17.830089,
             "localization_degree": 1
         },
         {
             "id": "31411",
-            "coordinate_x": "-1244940.180000",
-            "coordinate_y": "-420629.579800",
+            "latitude": 48.587223,
+            "longitude": 19.126969,
             "localization_degree": 1
         },
         {
             "id": "31444",
-            "coordinate_x": "-1247294.913000",
-            "coordinate_y": "-425281.064800",
+            "latitude": 48.562977,
+            "longitude": 19.066491,
             "localization_degree": 1
         },
         {
             "id": "31476",
-            "coordinate_x": "-1258317.547000",
-            "coordinate_y": "-438020.621500",
+            "latitude": 48.4554,
+            "longitude": 18.905931,
             "localization_degree": 1
         },
         {
             "id": "31388",
-            "coordinate_x": "-1226164.469000",
-            "coordinate_y": "-408622.933400",
+            "latitude": 48.763555,
+            "longitude": 19.270853,
             "localization_degree": 1
         },
         {
             "id": "31418",
-            "coordinate_x": "-1248256.045000",
-            "coordinate_y": "-422012.225400",
+            "latitude": 48.556559,
+            "longitude": 19.11163,
             "localization_degree": 1
         },
         {
             "id": "31435",
-            "coordinate_x": "-1245016.881000",
-            "coordinate_y": "-524392.969500",
+            "latitude": 48.50857,
+            "longitude": 17.726428,
             "localization_degree": 3
         },
         {
             "id": "31449",
-            "coordinate_x": "-1300871.612000",
-            "coordinate_y": "-466160.624300",
+            "latitude": 48.053787,
+            "longitude": 18.573677,
             "localization_degree": 3
         },
         {
             "id": "31450",
-            "coordinate_x": "-1321108.512000",
-            "coordinate_y": "-495962.867300",
+            "latitude": 47.849904,
+            "longitude": 18.198877,
             "localization_degree": 3
         },
         {
             "id": "31341",
-            "coordinate_x": "-1261469.276000",
-            "coordinate_y": "-501192.414700",
+            "latitude": 48.380104,
+            "longitude": 18.05889,
             "localization_degree": 1
         },
         {
             "id": "31499",
-            "coordinate_x": "-1285385.161000",
-            "coordinate_y": "-517264.109200",
+            "latitude": 48.152935,
+            "longitude": 17.872125,
             "localization_degree": 1
         },
         {
             "id": "31500",
-            "coordinate_x": "-1285444.300000",
-            "coordinate_y": "-517246.686800",
+            "latitude": 48.152419,
+            "longitude": 17.87243,
             "localization_degree": 1
         },
         {
             "id": "31501",
-            "coordinate_x": "-1264950.223000",
-            "coordinate_y": "-504622.438600",
+            "latitude": 48.346187,
+            "longitude": 18.016944,
             "localization_degree": 1
         },
         {
             "id": "31502",
-            "coordinate_x": "-1302122.780000",
-            "coordinate_y": "-538834.762200",
+            "latitude": 47.985103,
+            "longitude": 17.604714,
             "localization_degree": 1
         },
         {
             "id": "31503",
-            "coordinate_x": "-1301758.134000",
-            "coordinate_y": "-541441.215200",
+            "latitude": 47.986153,
+            "longitude": 17.569492,
             "localization_degree": 1
         },
         {
             "id": "31504",
-            "coordinate_x": "-1171261.930000",
-            "coordinate_y": "-397972.074600",
+            "latitude": 49.262888,
+            "longitude": 19.362124,
             "localization_degree": 1
         },
         {
             "id": "31506",
-            "coordinate_x": "-1316549.158000",
-            "coordinate_y": "-527506.197500",
+            "latitude": 47.86542,
+            "longitude": 17.773615,
             "localization_degree": 1
         },
         {
             "id": "31507",
-            "coordinate_x": "-1304039.138000",
-            "coordinate_y": "-489178.092500",
+            "latitude": 48.008097,
+            "longitude": 18.26968,
             "localization_degree": 1
         },
         {
             "id": "31510",
-            "coordinate_x": "-1229983.698760",
-            "coordinate_y": "-458166.537800",
+            "latitude": 48.695061,
+            "longitude": 18.603323,
             "localization_degree": 1
         },
         {
             "id": "31511",
-            "coordinate_x": "-1244697.503070",
-            "coordinate_y": "-518484.097051",
+            "latitude": 48.516329,
+            "longitude": 17.80567,
             "localization_degree": 1
         }
     ]
