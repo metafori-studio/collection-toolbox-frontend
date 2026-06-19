@@ -75,6 +75,11 @@ onMounted(() => {
   loadItems();
 });
 
+watch(() => id, async () => {
+  await loadDetail();
+  await loadItems();
+});
+
 watch(reloadTriggers, async () => {
   loadItems();
 });

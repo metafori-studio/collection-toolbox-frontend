@@ -3,7 +3,7 @@
     <div class="flex items-center justify-between gap-4 mb-4">
       <div>
         <h2
-          v-if="meta.total"
+          v-if="meta.total !== undefined && meta.total !== null"
           class="text-heading-4"
         >
           {{ $t('itemList.totalObjects', meta.total) }}
