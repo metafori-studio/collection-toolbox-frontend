@@ -15,7 +15,7 @@ const getMapPoints = async (): Promise<MapPoint[]> => {
   if (USE_MOCK) {
     return mockMapPoints.data as MapPoint[];
   }
-  const { data } = await api.get('/activities/map-points');
+  const { data } = await api.get('/archeo/activities/map-points');
   return data.data as MapPoint[];
 };
 
@@ -23,7 +23,7 @@ const getList = async (): Promise<Record<string, unknown>[]> => {
   if (USE_MOCK) {
     return mockIndex.data as Record<string, unknown>[];
   }
-  const { data } = await api.get('/activities?per_page=1000');
+  const { data } = await api.get('/archeo/activities?per_page=100');
   return data.data as Record<string, unknown>[];
 };
 
@@ -31,7 +31,7 @@ const getDetail = async (id: string): Promise<Record<string, unknown>> => {
   if (USE_MOCK) {
     return mockDetail.data as Record<string, unknown>;
   }
-  const { data } = await api.get(`/activities/${id}`);
+  const { data } = await api.get(`/archeo/activities/${id}`);
   return data.data;
 };
 

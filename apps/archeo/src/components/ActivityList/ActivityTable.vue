@@ -57,12 +57,12 @@
             <RouterLink
               :to="{
                 name: 'DetailMap',
-                params: { id: item.id },
+                params: { id: item.activity_number },
               }"
               :class="[focusBeforeClasses]"
               class="before:absolute before:z-10 before:inset-0"
             >
-              {{ item.id }}
+              {{ item.activity_number }}
             </RouterLink>
           </td>
           <td

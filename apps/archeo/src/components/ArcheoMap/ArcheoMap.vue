@@ -119,15 +119,14 @@ import {
 import ActivityLevel from '@/components/ActivityLevel.vue';
 import ArcheoMapPopover from './ArcheoMapPopover.vue';
 
-import sjtskToLngLat from '@/misc/sjtskToLngLat';
 import pinLevel1 from '@/assets/map/pin-level1.svg';
 import pinLevel2 from '@/assets/map/pin-level2.svg';
 import pinLevel3 from '@/assets/map/pin-level3.svg';
 
 export type MapPoint = {
   id: string
-  coordinate_x: string
-  coordinate_y: string
+  latitude: number
+  longitude: number
   localization_degree: number
 };
 
@@ -167,9 +166,7 @@ mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN;
 const mapContainer = ref<HTMLDivElement | null>(null);
 
 // Converted and clean map points
-const toClean = (pts: MapPoint[]) => pts.map(
-  (p) => sjtskToLngLat(Number(p.coordinate_x), Number(p.coordinate_y)),
-);
+const toClean = (pts: MapPoint[]): [number, number][] => pts.map((p): [number, number] => [p.longitude, p.latitude]);
 const mapPointsClean = computed(() => toClean(mapPoints));
 
 function calculateDefaultCamera(points: [number, number][]): CameraOptions {

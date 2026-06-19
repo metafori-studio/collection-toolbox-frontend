@@ -4,9 +4,9 @@
       class="md:flex-1 md:sticky md:top-14"
       :map-points="[{
         id: detail.id,
-        coordinate_x: detail.coordinate_x,
-        coordinate_y: detail.coordinate_y,
-        localization_degree: detail.localization_degree,
+        latitude: detail.gcs_coordinates.latitude,
+        longitude: detail.gcs_coordinates.longitude,
+        localization_degree: detail.gcs_coordinates.localization_degree,
       }]"
       :controls="{
         legend: false,
@@ -24,9 +24,16 @@
 <script setup lang="ts">
 import { BaseViewer } from '@metafori/components';
 
-import ArcheoMap, { type MapPoint } from '@/components/ArcheoMap/ArcheoMap.vue';
+import ArcheoMap from '@/components/ArcheoMap/ArcheoMap.vue';
 
 defineProps<{
-  detail: MapPoint
+  detail: {
+    id: string
+    gcs_coordinates: {
+      latitude: number
+      longitude: number
+      localization_degree: number
+    }
+  }
 }>();
 </script>
