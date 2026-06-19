@@ -30,11 +30,11 @@ export default defineConfig(({ mode }) => {
     server: {
       proxy: {
         '/api': {
-          target: env.VITE_REMOTE_URL,
+          target: env.VITE_API_REMOTE_URL,
           changeOrigin: true,
         },
         '/sanctum': {
-          target: env.VITE_REMOTE_URL,
+          target: env.VITE_API_REMOTE_URL,
           changeOrigin: true,
         },
       },
