@@ -2,7 +2,7 @@
   <RouterLink
     :to="{
       name: 'DetailMap',
-      params: { id: item.id },
+      params: { id: item.activity_number },
     }"
     class="
       bg-white w-full text-left rounded-xl border border-neutral-200 p-3 transition-all
@@ -12,7 +12,7 @@
   >
     <div class="flex items-center justify-between mb-1">
       <span class="text-xs font-mono text-primary-500">
-        {{ item.id }}
+        {{ item.activity_number }}
       </span>
       <ActivityLevel
         :level="1"
