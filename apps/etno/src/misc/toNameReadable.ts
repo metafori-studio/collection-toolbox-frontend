@@ -1,10 +1,8 @@
-type Person = { display_name: string; family_name?: string; given_name?: string };
-type Originator = { label?: string; person?: Person };
-type PersonOrOriginator = Person | Originator;
+import type { PersonOrOriginator } from '@/api';
 
 const resolveDisplayName = (entry: PersonOrOriginator): string | undefined => {
-  if ('display_name' in entry) return entry.display_name;
-  if ('label' in entry) return entry.label;
+  if ('display_name' in entry && entry.display_name) return entry.display_name;
+  if ('label' in entry && entry.label) return entry.label;
   if ('person' in entry) return entry.person?.display_name;
   return undefined;
 };

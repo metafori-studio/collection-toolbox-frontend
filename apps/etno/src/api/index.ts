@@ -197,4 +197,7 @@ export type {
   ListItem,
   ListMeta,
   Detail,
+  Person,
+  Originator,
+  PersonOrOriginator,
 } from './types';

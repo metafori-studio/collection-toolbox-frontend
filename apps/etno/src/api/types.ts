@@ -1,7 +1,7 @@
 export type ListItem = Record<string, unknown>
 export type ListMeta = Record<string, unknown>
 
-type DetailPerson = {
+export type Person = {
   id: number
   given_name: string | null
   family_name: string | null
@@ -9,33 +9,29 @@ type DetailPerson = {
   orcid: string | null
 }
 
-type DetailOriginator = {
+export type Originator = {
   id: number
   label: string | null
-  person: DetailPerson | null
+  person: Person | null
+}
+
+export type PersonOrOriginator = Person | Originator;
+
+type DetailDistrict = {
+  id: number
+  name: string
+  region?: {
+    id: number
+    name: string
+    country?: { id: number; name: string }
+  }
 }
 
 type DetailLocality = {
   id: number
   name: string
-  district?: {
-    id: number
-    name: string
-    region?: {
-      id: number
-      name: string
-      country?: { id: number; name: string }
-    }
-    parent?: {
-      id: number
-      name: string
-      region?: {
-        id: number
-        name: string
-        country?: { id: number; name: string }
-      }
-    }
-  }
+  district?: DetailDistrict
+  parent?: DetailDistrict
 }
 
 type DetailMedia = {
@@ -80,9 +76,9 @@ export type Detail = {
   institution: { id: number; name: string; ror_id: string | null } | null
   project: { id: number; title: string } | null
   locality: DetailLocality | null
-  authors: DetailPerson[]
-  researchers: DetailPerson[]
-  originators: DetailOriginator[]
+  authors: PersonOrOriginator[]
+  researchers: PersonOrOriginator[]
+  originators: PersonOrOriginator[]
   keywords: { id: number; name: string }[]
   research_collections: { id: number; title: string }[]
   document_id?: string | null
