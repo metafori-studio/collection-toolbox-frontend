@@ -201,11 +201,14 @@ const applyFilter = (filterId: string, filterValue: string) => {
 };
 
 const toPersonValues = (people: PersonOrOriginator[] | undefined) =>
-  (people ?? []).map((person) => ({
-    text: resolveDisplayName(person),
-    filterId: 'author.person_id',
-    filterValue: String(person.id),
-  }));
+  (people ?? []).map((entry) => {
+    const personId = 'person' in entry ? entry.person?.id : entry.id;
+    return {
+      text: resolveDisplayName(entry),
+      filterId: 'author.person_id',
+      filterValue: String(personId),
+    };
+  });
 
 // Tables
 const basicInfo = computed(() => [

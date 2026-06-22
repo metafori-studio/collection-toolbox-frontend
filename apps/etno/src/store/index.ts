@@ -15,5 +15,5 @@ export const filterValues = ref<Record<string, string[] | RangeValue>>(structure
 export const resetFilterValues = () => { filterValues.value = structuredClone(filterDefaults); };
 export const resetFilterItem = (id: string) => {
   const item = allFilterItems.find((i) => i.id === id);
-  if (item) filterValues.value[id] = structuredClone(item.defaultValue);
+  if (item) filterValues.value[id] = structuredClone(item.defaultValue ?? []);
 };
