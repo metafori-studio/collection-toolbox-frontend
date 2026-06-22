@@ -27,7 +27,6 @@
     <FilterWidget
       v-show="filterOpen"
       :aggregations="aggregations"
-      @update="filterValues = $event"
     />
     <div class="p-4 flex flex-col lg:flex-row">
       <div
@@ -64,7 +63,7 @@ import ItemList from '@/components/ItemList/ItemList.vue';
 import FilterWidget from '@/components/Filter/FilterWidget.vue';
 
 import { getMapPoints, getList, getAggregations, type ListItem, type ListMeta } from '@/api';
-import { filterOpen, filterWidgetWidth } from '@/store';
+import { filterOpen, filterWidgetWidth, filterValues } from '@/store';
 import { type AggregationOption } from '@/misc/filterTypes';
 import { useListControls } from '@/composables/useListControls';
 
@@ -75,7 +74,6 @@ const mapPoints = ref<MapPoint[]>([]);
 const items = ref<ListItem[]>([]);
 const itemsMeta = ref<ListMeta>({});
 
-const filterValues = ref<Record<string, string[]>>({});
 const aggregations = ref<Record<string, AggregationOption[]>>({});
 
 // View state - list controls
