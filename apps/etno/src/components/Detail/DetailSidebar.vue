@@ -43,7 +43,8 @@
         :title="$t('detail.section.basicInfo')"
       >
         <DetailTable
-          :items="basicInfo"
+          :rows="basicInfo"
+          @select-filter="applyFilter"
         />
       </DetailSection>
 
@@ -63,9 +64,13 @@
           <li
             v-for="keyword in detail.keywords"
             :key="keyword.id"
-            class="rounded-md px-2 py-0.5 text-xs font-semibold bg-primary-100 text-primary-700"
-            v-text="keyword.name"
-          />
+          >
+            <button
+              class="rounded-md px-2 py-0.5 text-xs font-semibold bg-primary-100 text-primary-700 cursor-pointer hover:bg-primary-200 transition-colors"
+              @click="applyFilter('keyword.id', String(keyword.id))"
+              v-text="keyword.name"
+            />
+          </li>
         </ul>
       </DetailSection>
 
@@ -77,7 +82,8 @@
         :title="tableDesc.title"
       >
         <DetailTable
-          :items="tableDesc.items"
+          :rows="tableDesc.items"
+          @select-filter="applyFilter"
         />
         <div class="flex flex-col gap-2">
           <div
@@ -120,7 +126,8 @@
         :title="tableAuthors.title"
       >
         <DetailTable
-          :items="tableAuthors.items"
+          :rows="tableAuthors.items"
+          @select-filter="applyFilter"
         />
       </DetailSection>
 
@@ -128,7 +135,8 @@
         :title="tableGeographic.title"
       >
         <DetailTable
-          :items="tableGeographic.items"
+          :rows="tableGeographic.items"
+          @select-filter="applyFilter"
         />
       </DetailSection>
 
@@ -136,7 +144,8 @@
         :title="tableFormal.title"
       >
         <DetailTable
-          :items="tableFormal.items"
+          :rows="tableFormal.items"
+          @select-filter="applyFilter"
         />
       </DetailSection>
 
@@ -144,7 +153,7 @@
         :title="tableAdministrative.title"
       >
         <DetailTable
-          :items="tableAdministrative.items"
+          :rows="tableAdministrative.items"
         />
       </DetailSection>
     </div>
@@ -154,15 +163,17 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
-import { type Detail } from '@/api';
+import { useRouter } from 'vue-router';
+import { type Detail, type PersonOrOriginator } from '@/api';
 import { useTranslateEnum } from '@/composables/useTranslateEnum';
 
 import { InputSelect } from '@metafori/components';
 import DetailSection from './DetailSection.vue';
 import DetailTable from './DetailTable.vue';
 
-import { toNameReadable } from '@/misc/toNameReadable';
 import { toYearRange } from '@/misc/toYearRange';
+import { resolveDisplayName } from '@/misc/toNameReadable';
+import { filterValues } from '@/store';
 
 const {
   detail,
@@ -180,21 +191,43 @@ defineEmits<{
   'update:viewerActive': [value: string]
 }>();
 
+const router = useRouter();
 const { t } = useI18n();
 const { translateEnum } = useTranslateEnum();
 
+const applyFilter = (filterId: string, filterValue: string) => {
+  filterValues.value[filterId] = [filterValue];
+  router.push({ name: 'Explore' });
+};
+
+const toPersonValues = (people: PersonOrOriginator[] | undefined) =>
+  (people ?? []).map((person) => ({
+    text: resolveDisplayName(person),
+    filterId: 'author.person_id',
+    filterValue: String(person.id),
+  }));
+
+// Tables
 const basicInfo = computed(() => [
   {
     label: t('detail.table.authorship'),
-    value: toNameReadable(detail.authors),
+    values: toPersonValues(detail.authors),
   },
   {
     label: t('detail.table.documentType'),
-    value: translateEnum('ItemType', detail.type),
+    value: {
+      text: translateEnum('ItemType', detail.type),
+      filterId: 'type',
+      filterValue: detail.type,
+    },
   },
   {
     label: t('detail.table.researchCollection'),
-    value: detail.research_collections?.map((o: { title: string }) => o.title).join(', '),
+    values: detail.research_collections?.map((o) => ({
+      text: o.title,
+      filterId: 'research_collection.id',
+      filterValue: String(o.id),
+    })),
   },
 ]);
 
@@ -203,7 +236,11 @@ const tableDesc = computed(() => ({
   items: [
     {
       label: t('detail.table.language'),
-      value: translateEnum('Language', detail.language),
+      value: {
+        text: translateEnum('Language', detail.language),
+        filterId: 'language',
+        filterValue: detail.language,
+      },
     },
   ],
 }));
@@ -213,15 +250,15 @@ const tableAuthors = computed(() => ({
   items: [
     {
       label: t('detail.table.authorship'),
-      value: toNameReadable(detail.authors),
+      values: toPersonValues(detail.authors),
     },
     {
       label: t('detail.table.research'),
-      value: toNameReadable(detail.researchers),
+      values: toPersonValues(detail.researchers),
     },
     {
       label: t('detail.table.origin'),
-      value: toNameReadable(detail.originators),
+      values: toPersonValues(detail.originators),
     },
   ],
 }));
@@ -234,10 +271,38 @@ const tableGeographic = computed(() => {
   return {
     title: t('detail.section.geographic'),
     items: [
-      { label: t('detail.table.municipality'), value: locality?.name },
-      { label: t('detail.table.district'), value: district?.name },
-      { label: t('detail.table.region'), value: region?.name },
-      { label: t('detail.table.country'), value: country?.name },
+      {
+        label: t('detail.table.municipality'),
+        value: {
+          text: locality?.name,
+          filterId: 'municipality.id',
+          filterValue: locality?.id?.toString(),
+        },
+      },
+      {
+        label: t('detail.table.district'),
+        value: {
+          text: district?.name,
+          filterId: 'district.id',
+          filterValue: district?.id?.toString(),
+        },
+      },
+      {
+        label: t('detail.table.region'),
+        value: {
+          text: region?.name,
+          filterId: 'region.id',
+          filterValue: region?.id?.toString(),
+        },
+      },
+      {
+        label: t('detail.table.country'),
+        value: {
+          text: country?.name,
+          filterId: 'country.id',
+          filterValue: country?.id?.toString(),
+        },
+      },
     ],
   };
 });
@@ -247,27 +312,35 @@ const tableFormal = computed(() => ({
   items: [
     {
       label: t('detail.table.institution'),
-      value: detail.institution?.name,
+      value: { text: detail.institution?.name },
     },
     {
       label: t('detail.table.collectionMethod'),
-      value: translateEnum('CollectionMethod', detail.collection_method),
+      value: {
+        text: translateEnum('CollectionMethod', detail.collection_method),
+        filterId: 'collection_method',
+        filterValue: detail.collection_method,
+      },
     },
     {
       label: t('detail.table.accrualMethod'),
-      value: translateEnum('AccrualMethod', detail.accrual_method),
+      value: { text: translateEnum('AccrualMethod', detail.accrual_method) },
     },
     {
       label: t('detail.table.documentType'),
-      value: translateEnum('ItemType', detail.type),
+      value: {
+        text: translateEnum('ItemType', detail.type),
+        filterId: 'type',
+        filterValue: detail.type,
+      },
     },
     {
       label: t('detail.table.timeOfRealization'),
-      value: toYearRange(detail.time_period_start, detail.time_period_end),
+      value: { text: toYearRange(detail.time_period_start, detail.time_period_end) },
     },
     {
       label: t('detail.table.submissionDate'),
-      value: toYearRange(detail.submission_date_start, detail.submission_date_end),
+      value: { text: toYearRange(detail.submission_date_start, detail.submission_date_end) },
     },
   ],
 }));
@@ -277,11 +350,11 @@ const tableAdministrative = computed(() => ({
   items: [
     {
       label: t('detail.table.accessRights'),
-      value: translateEnum('AccessRights', detail.access_rights),
+      value: { text: translateEnum('AccessRights', detail.access_rights) },
     },
     {
       label: t('detail.table.license'),
-      value: translateEnum('License', detail.license),
+      value: { text: translateEnum('License', detail.license) },
     },
   ],
 }));
