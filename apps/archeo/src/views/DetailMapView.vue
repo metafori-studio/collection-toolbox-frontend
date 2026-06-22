@@ -6,7 +6,7 @@
         id: detail.id,
         latitude: detail.gcs_coordinates.latitude,
         longitude: detail.gcs_coordinates.longitude,
-        localization_degree: detail.gcs_coordinates.localization_degree,
+        localization_degree: detail.localization_degree,
       }]"
       :controls="{
         legend: false,
@@ -29,10 +29,10 @@ import ArcheoMap from '@/components/ArcheoMap/ArcheoMap.vue';
 defineProps<{
   detail: {
     id: string
+    localization_degree: number
     gcs_coordinates: {
       latitude: number
       longitude: number
-      localization_degree: number
     }
   }
 }>();
