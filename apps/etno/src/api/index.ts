@@ -43,7 +43,7 @@ const getMapPoints = async (): Promise<MapPoint[]> => {
 };
 
 const getList = async (
-  filter: Record<string, string[]> = {},
+  filter: Record<string, unknown> = {},
   orderBy: string = 'id',
   orderAsc: boolean = true,
   page: number = 1,
@@ -58,7 +58,8 @@ const getList = async (
   params.append('sort', orderAsc ? orderBy : `-${orderBy}`);
   // Filter params
   Object.entries(filter).forEach(([key, values]) => {
-    values.forEach((value) => {
+    if (!Array.isArray(values)) return;
+    values.forEach((value: string) => {
       params.append(`filter[${key}][]`, value);
     });
   });
@@ -69,7 +70,7 @@ const getList = async (
 };
 
 const getAggregations = async (
-  filter: Record<string, string[]> = {},
+  filter: Record<string, unknown> = {},
 ): Promise<Record<string, unknown>> => {
   if (USE_MOCK) {
     return mockAggregations.data as Record<string, unknown>;
@@ -78,7 +79,8 @@ const getAggregations = async (
   const params = new URLSearchParams();
   // Filter params
   Object.entries(filter).forEach(([key, values]) => {
-    values.forEach((value) => {
+    if (!Array.isArray(values)) return;
+    values.forEach((value: string) => {
       params.append(`filter[${key}][]`, value);
     });
   });

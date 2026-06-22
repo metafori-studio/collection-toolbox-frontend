@@ -98,8 +98,6 @@ import {
   computed,
   onMounted,
   onUnmounted,
-  watch,
-  toRaw,
 } from 'vue';
 import { useI18n } from 'vue-i18n';
 
@@ -116,7 +114,7 @@ import {
 } from '@metafori/components';
 import FilterCard from './FilterCard.vue';
 
-import { filterWidgetWidthRaw } from '@/store';
+import { filterWidgetWidthRaw, filterValues, resetFilterValues, resetFilterItem } from '@/store';
 import { normalizeString } from '@metafori/shared';
 import {
   type FilterItem as FilterItemDef,
@@ -132,7 +130,6 @@ const {
   aggregations?: Record<string, AggregationOption[]>;
 }>();
 
-const emit = defineEmits(['update']);
 
 const widgetEl = ref<HTMLElement | null>(null);
 
@@ -172,8 +169,6 @@ const getOptions = (property: string) => {
 
 //
 const allFilterItems = filterSections.flatMap((s) => s.items);
-const filterDefaults = Object.fromEntries(allFilterItems.map((item) => [item.id, item.defaultValue ?? []]));
-const filterValues = ref<Record<string, string[] | RangeValue>>(structuredClone(filterDefaults));
 
 const nowOpen = ref<string | null>(null);
 const nowOpenObj = computed(() => allFilterItems.find((item) => item.id === nowOpen.value) ?? null);
@@ -182,13 +177,7 @@ const openItem = (item: FilterItemDef) => {
   query.value = '';
 };
 const closeItem = () => nowOpen.value = null;
-const resetItem = (item: FilterItemDef) => {
-  filterValues.value[item.id] = structuredClone(item.defaultValue);
-};
-const resetAll = () => filterValues.value = structuredClone(filterDefaults);
+const resetItem = (item: FilterItemDef) => resetFilterItem(item.id);
+const resetAll = () => resetFilterValues();
 
-// Update values
-watch(filterValues, (newVal) => {
-  emit('update', toRaw(newVal));
-}, { deep: true });
 </script>
