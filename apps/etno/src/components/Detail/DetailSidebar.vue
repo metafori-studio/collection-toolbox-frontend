@@ -401,7 +401,7 @@ const tableAdministrative = computed(() => ({
 }));
 
 const doiUrl = computed(() => detail.doi ? `https://doi.org/${detail.doi}` : null);
-const citationText = computed(() => `${detail.how_to_cite} ${doiUrl.value ?? ''}`.trim());
+const citationText = computed(() => `${detail.how_to_cite ?? ''} ${doiUrl.value ?? ''}`.trim());
 
 const copyCitation = () => {
   if (!citationText.value) return;
