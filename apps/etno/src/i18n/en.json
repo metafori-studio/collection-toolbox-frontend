@@ -118,7 +118,7 @@
     "loading": "Searching…"
   },
   "itemList": {
-    "totalObjects": "{total} objects",
+    "totalObjects": "{n} object | {n} objects",
     "showing": "Showing {from}-{to}",
     "sortBy": "Sort by",
     "sortOptions": {
