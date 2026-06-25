@@ -71,7 +71,11 @@
       "geographic": "Geografické údaje",
       "map": "Mapa",
       "researchOriginContext": "Pôvod a kontext výskumu",
-      "rightsAndAccess": "Práva a prístup"
+      "rightsAndAccess": "Práva a prístup",
+      "additionalNotes": "Doplňujúce údaje"
+    },
+    "citation": {
+      "copy": "Kopírovať citáciu"
     },
     "table": {
       "authorship": "Autorstvo",
@@ -90,12 +94,11 @@
       "timeOfRealization": "Čas realizácie",
       "submissionDate": "Dátum odovzdania",
       "accessRights": "Prístupové práva",
-      "license": "Licencia"
-    },
-    "notes": {
-      "general": "Všeobecná poznámka",
-      "content": "Obsahová poznámka",
-      "technical": "Technická poznámka"
+      "license": "Licencia",
+      "howToCite": "Ako citovať",
+      "generalNote": "Všeobecná poznámka",
+      "contentNote": "Obsahová poznámka",
+      "technicalNote": "Technická poznámka"
     },
     "boolean": {
       "true": "Áno",

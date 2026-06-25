@@ -81,6 +81,7 @@ export type Detail = {
   originators: PersonOrOriginator[]
   keywords: { id: number; name: string }[]
   research_collections: { id: number; title: string }[]
+  how_to_cite: string | null
   document_id?: string | null
   media_type?: string | null
   first_media?: DetailMedia | null

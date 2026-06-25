@@ -85,24 +85,16 @@
           :rows="tableDesc.items"
           @select-filter="applyFilter"
         />
-        <div class="flex flex-col gap-2">
-          <div
-            v-if="detail.general_note"
-            class="flex flex-col gap-1 rounded-md border border-neutral-300 bg-neutral-100 px-3 py-2.5 text-neutral-600"
-          >
-            <h3 class="text-label-sm font-bold text-neutral-500">
-              {{ $t('detail.notes.general') }}
-            </h3>
-            <p class="text-sm font-medium">
-              {{ detail.general_note }}
-            </p>
-          </div>
+        <div
+          v-if="detail.content_note || detail.technical_note"
+          class="flex flex-col gap-2"
+        >
           <div
             v-if="detail.content_note"
             class="flex flex-col gap-1 rounded-md border border-neutral-300 bg-neutral-100 px-3 py-2.5 text-neutral-600"
           >
             <h3 class="text-label-sm font-bold text-neutral-500">
-              {{ $t('detail.notes.content') }}
+              {{ $t('detail.table.contentNote') }}
             </h3>
             <p class="text-sm font-medium">
               {{ detail.content_note }}
@@ -113,7 +105,7 @@
             class="flex flex-col gap-1 rounded-md border border-neutral-300 bg-neutral-100 px-3 py-2.5 text-neutral-600"
           >
             <h3 class="text-label-sm font-bold text-neutral-500">
-              {{ $t('detail.notes.technical') }}
+              {{ $t('detail.table.technicalNote') }}
             </h3>
             <p class="text-sm font-medium">
               {{ detail.technical_note }}
@@ -156,6 +148,52 @@
           :rows="tableAdministrative.items"
         />
       </DetailSection>
+
+      <DetailSection
+        v-if="detail.general_note || citationText"
+        :title="$t('detail.section.additionalNotes')"
+      >
+        <div class="space-y-4">
+          <div
+            v-if="detail.general_note"
+            class="flex flex-col gap-1 rounded-md border border-neutral-300 bg-neutral-100 px-3 py-2.5 text-neutral-600"
+          >
+            <h3 class="text-xs font-bold text-neutral-500 uppercase tracking-wide">
+              {{ $t('detail.table.generalNote') }}
+            </h3>
+            <p class="text-sm font-medium">
+              {{ detail.general_note }}
+            </p>
+          </div>
+          <div
+            v-if="detail.how_to_cite"
+            class="flex flex-col gap-1.5"
+          >
+            <h4 class="text-xs font-bold text-neutral-500 uppercase tracking-wide">
+              {{ $t('detail.table.howToCite') }}
+            </h4>
+            <p class="text-sm font-medium leading-relaxed text-neutral-800">
+              {{ detail.how_to_cite }}
+              <a
+                v-if="doiUrl"
+                :href="doiUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-primary-500 hover:underline break-all"
+              >{{ doiUrl }}</a>
+            </p>
+            <div>
+              <BaseButton
+                variant="secondary"
+                size="small"
+                @click="copyCitation"
+              >
+                {{ $t('detail.citation.copy') }}
+              </BaseButton>
+            </div>
+          </div>
+        </div>
+      </DetailSection>
     </div>
   </div>
 </template>
@@ -167,7 +205,7 @@ import { useRouter } from 'vue-router';
 import { type Detail, type PersonOrOriginator } from '@/api';
 import { useTranslateEnum } from '@/composables/useTranslateEnum';
 
-import { InputSelect } from '@metafori/components';
+import { InputSelect, BaseButton } from '@metafori/components';
 import DetailSection from './DetailSection.vue';
 import DetailTable from './DetailTable.vue';
 
@@ -361,4 +399,12 @@ const tableAdministrative = computed(() => ({
     },
   ],
 }));
+
+const doiUrl = computed(() => detail.doi ? `https://doi.org/${detail.doi}` : null);
+const citationText = computed(() => `${detail.how_to_cite} ${doiUrl.value ?? ''}`.trim());
+
+const copyCitation = () => {
+  if (!citationText.value) return;
+  navigator.clipboard.writeText(citationText.value);
+};
 </script>

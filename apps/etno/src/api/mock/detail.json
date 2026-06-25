@@ -5,7 +5,7 @@
         "title": "",
         "subtitle": "",
         "abstract": "",
-        "general_note": "",
+        "general_note": "Tento dokument bol získaný v rámci terénneho výskumu.",
         "terms_of_use": "Error delectus itaque quis aspernatur dolores. Temporibus ipsa quia a eius voluptatibus maxime magnam. Neque qui eveniet consequatur quia porro illo nihil veniam.",
         "location_note": "In necessitatibus qui rerum et quis ut sed. Rerum velit eaque voluptatum aliquid praesentium. Voluptates tempore sunt reiciendis magnam atque asperiores suscipit qui.",
         "content_note": "",
@@ -133,6 +133,7 @@
             }
         ],
         "document_id": "LI279735",
+        "how_to_cite": "Ernser, Cathy. (2021). Document Title. Wiegand PLC.",
         "media_type": "videos",
         "first_media": {
             "id": 1,
