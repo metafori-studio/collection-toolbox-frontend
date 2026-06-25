@@ -29,7 +29,7 @@ const routes = [
       },
       {
         name: 'Document',
-        path: 'document/:id/',
+        path: 'documents/:id/',
         component: DocumentView,
         props: true,
       },
