@@ -73,7 +73,11 @@
       "geographic": "Geographic data",
       "map": "Map",
       "researchOriginContext": "Research origin and context",
-      "rightsAndAccess": "Rights and access"
+      "rightsAndAccess": "Rights and access",
+      "additionalNotes": "Additional notes"
+    },
+    "citation": {
+      "copy": "Copy citation"
     },
     "table": {
       "authorship": "Authorship",
@@ -92,12 +96,11 @@
       "timeOfRealization": "Time of realization",
       "submissionDate": "Submission date",
       "accessRights": "Access rights",
-      "license": "License"
-    },
-    "notes": {
-      "general": "General note",
-      "content": "Content note",
-      "technical": "Technical note"
+      "license": "License",
+      "howToCite": "How to cite",
+      "generalNote": "General note",
+      "contentNote": "Content note",
+      "technicalNote": "Technical note"
     },
     "boolean": {
       "true": "Yes",
