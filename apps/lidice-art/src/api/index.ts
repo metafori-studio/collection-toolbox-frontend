@@ -1,0 +1,51 @@
+import axios from 'axios';
+import mockIndex from './mock/index.json';
+
+const USE_MOCK = import.meta.env.VITE_USE_MOCK === 'true';
+
+const api = axios.create({
+  baseURL: import.meta.env.VITE_API_BASE,
+  timeout: 10_000,
+});
+
+export type Artwork = {
+  id: number;
+  image: string;
+  title: string;
+  author: string;
+  year: string;
+};
+
+const PER_PAGE = 12;
+
+type ListResponse = {
+  data: Artwork[];
+  meta: {
+    total: number,
+  };
+};
+
+const getList = async (
+  orderBy: string = 'id',
+  page: number = 1,
+): Promise<ListResponse> => {
+  if (USE_MOCK) {
+    const all = mockIndex.data as Artwork[];
+    const start = (page - 1) * PER_PAGE;
+    const sliced = all.slice(start, start + PER_PAGE);
+    return {
+      data: sliced,
+      meta: { total: all.length },
+    };
+  }
+  const { data } = await api.get(`/artworks?sort=${orderBy}&per_page=${PER_PAGE}&page=${page}`);
+  return {
+    data: data.data as Artwork[],
+    meta: {
+      total: data.meta.total as number },
+    };
+};
+
+export {
+  getList,
+};

@@ -41,4 +41,11 @@
   --color-status-info-100: #DBEAFE;
   --color-status-info-500: #3B82F6;
   --color-status-info-700: #1D4ED8;
+
+  /* Text color */
+  --color-text-primary: var(--color-neutral-900);
+  --color-text-secondary: var(--color-neutral-700);
+  --color-text-tertiary: var(--color-neutral-500);
+  --color-text-inverse: var(--color-neutral-0);
+
 }

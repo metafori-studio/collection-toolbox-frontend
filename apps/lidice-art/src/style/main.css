@@ -30,8 +30,8 @@
   --color-footer-bg: var(--color-primary-200);
 
   /* Typography */
-  --font-body: Montserrat, sans-serif;
-  --font-headline: Raleway, sans-serif;
+  --font-body: Raleway, sans-serif;
+  --font-headline: Montserrat, sans-serif;
 
   --font-weight-regular: 400;
   --font-weight-medium: 500;
