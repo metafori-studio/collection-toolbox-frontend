@@ -37,3 +37,6 @@ export { default as AppHeader } from './components/layout/AppHeader';
 export { default as AppFooter } from './components/layout/AppFooter';
 export { default as AppFooterNew } from './components/layout/AppFooterNew';
 export { default as AppHeaderNew } from './components/layout/AppHeaderNew';
+
+// Cards
+export { default as ArtworkCard } from './components/cards/ArtworkCard';
