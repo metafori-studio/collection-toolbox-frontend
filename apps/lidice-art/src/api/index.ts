@@ -31,7 +31,7 @@ export type ArtworkDetail = {
   artistic_types: string[];
   material: string;
   technique: string;
-  aquisition: {
+  acquisition: {
     method: string;
     year: string;
   };

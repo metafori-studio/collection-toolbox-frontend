@@ -1,31 +1,38 @@
 <template>
-  <ul class="flex gap-2">
-    <template
-      v-for="(item, i) in items"
-      :key="item.label"
-    >
-      <li class="text-label">
-        <RouterLink
-          v-if="item.to"
-          :to="item.to"
-          class="underline"
-        >
-          {{ item.label }}
-        </RouterLink>
-        <span v-else>
-          {{ item.label }}
-        </span>
-      </li>
-      <li
-        v-if="i < items.length - 1"
-        class="text-gray-400"
+  <nav aria-label="breadcrumb">
+    <ul class="flex gap-2">
+      <template
+        v-for="(item, i) in items"
+        :key="item.label"
       >
-        <BaseIcon
-          icon="arrowRight"
-        />
-      </li>
-    </template>
-  </ul>
+        <li
+          class="text-label"
+        >
+          <RouterLink
+            v-if="item.to"
+            :to="item.to"
+            class="underline"
+          >
+            {{ item.label }}
+          </RouterLink>
+          <span
+            v-else
+            :aria-current="i === items.length - 1 ? 'page' : undefined"
+          >
+            {{ item.label }}
+          </span>
+        </li>
+        <li
+          v-if="i < items.length - 1"
+          class="text-text-tertiary"
+        >
+          <BaseIcon
+            icon="arrowRight"
+          />
+        </li>
+      </template>
+    </ul>
+  </nav>
 </template>
 
 <script lang="ts" setup>
