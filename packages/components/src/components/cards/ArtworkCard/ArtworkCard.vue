@@ -5,6 +5,10 @@
   >
     <img
       :src="image"
+      :style="{
+        aspectRatio,
+      }"
+      class="w-full object-cover"
       alt=""
     >
     <div>
@@ -22,18 +26,30 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue';
+import { RouterLink, type RouteLocationRaw } from 'vue-router';
+
 const {
   image,
+  imageWidth = undefined,
+  imageHeight = undefined,
   title,
   author,
   year,
-  to = null,
+  to,
 } = defineProps<{
   image: string,
+  imageWidth?: number,
+  imageHeight?: number,
   title: string
   author: string,
   year: string,
-  to?: unknown,
+  to: RouteLocationRaw,
 }>();
+
+const aspectRatio = computed(() => imageWidth && imageHeight
+  ? `${imageWidth} / ${imageHeight}`
+  : '4 / 3',
+);
 
 </script>

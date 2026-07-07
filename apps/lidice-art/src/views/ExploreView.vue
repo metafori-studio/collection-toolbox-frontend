@@ -17,19 +17,25 @@
         />
       </label>
     </div>
-    <div class="">
-      <div class="flex flex-col gap-4 md:grid md:grid-cols-4 mb-16">
-        <ArtworkCard
-          v-for="item in items"
-          :key="item.id"
-          :image="item.image"
-          :title="item.title"
-          :author="item.author"
-          :year="item.year"
-          :to="{ name: 'ArtworkDetail', params: { id: item.id } }"
-        />
-      </div>
-      <div class="flex flex-col items-center gap-8">
+    <div>
+      <MasonryWall
+        :items="items"
+        :column-width="300"
+        :gap="16"
+      >
+        <template #default="{ item }">
+          <ArtworkCard
+            :image="item.image"
+            :image-width="item.imageWidth"
+            :image-height="item.imageHeight"
+            :title="item.title"
+            :author="item.author"
+            :year="item.year"
+            :to="{ name: 'ArtworkDetail', params: { id: item.id } }"
+          />
+        </template>
+      </MasonryWall>
+      <div class="flex flex-col items-center gap-8 mt-8">
         <div class="text-center text-label">
           Zobrazených 1-{{ items.length }} z {{ total }} diel.
         </div>
@@ -46,6 +52,7 @@
 </template>
 <script setup lang="ts">
 import { ref, computed, watch } from 'vue';
+import { MasonryWall } from '@yeger/vue-masonry-wall';
 
 import {
   InputSelect,
