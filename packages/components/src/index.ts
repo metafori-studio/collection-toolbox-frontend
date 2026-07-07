@@ -10,7 +10,9 @@ export { InputCheckbox, InputCheckboxList } from './components/atoms/InputCheckb
 export { InputRadio, InputRadioList } from './components/atoms/InputRadio';
 export { default as InputText } from './components/atoms/InputText';
 export { default as InputSelect } from './components/atoms/InputSelect';
+export { default as InputMultiselect, type MultiselectOption } from './components/atoms/InputMultiselect';
 export { default as InputRange, type RangeValue } from './components/molecules/InputRange';
+export { default as AppliedFilterChip } from './components/atoms/AppliedFilterChip';
 
 // Molecules
 export { default as FilterItem } from './components/molecules/FilterItem';
