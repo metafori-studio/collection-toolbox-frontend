@@ -25,7 +25,7 @@
   --color-primary-900: #141414;
 
   /* Semantics */
-  --color-header-bg: var(--color-primary-200);
+  --color-header-bg: var(--color-primary-500);
   --color-header-border: transparent;
   --color-footer-bg: var(--color-primary-200);
 
