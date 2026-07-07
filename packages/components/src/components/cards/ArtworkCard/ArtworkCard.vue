@@ -9,7 +9,7 @@
         aspectRatio,
       }"
       class="w-full object-cover"
-      alt=""
+      :alt="title"
     >
     <div>
       <h2 class="text-title-card mb-1">
