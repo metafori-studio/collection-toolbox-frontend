@@ -92,11 +92,11 @@ const metadataItems = computed(() => {
     },
     {
       label: 'Spôsob akvizície',
-      value: detail.value.aquisition.method,
+      value: detail.value.acquisition.method,
     },
     {
       label: 'Rok akvizície',
-      value: detail.value.aquisition.year,
+      value: detail.value.acquisition.year,
     },
     {
       label: 'Lokácia / pôvod',
