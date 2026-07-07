@@ -6,6 +6,8 @@
     <button
       :id="id"
       type="button"
+      aria-haspopup="listbox"
+      :aria-expanded="isOpen"
       class="w-full flex items-center gap-2 rounded-lg bg-neutral-0 border border-neutral-300 px-3 py-2 text-label text-left"
       :class="[focusClasses, {
         // Disabled
@@ -14,6 +16,7 @@
       }]"
       :disabled="disabled"
       @click="toggle"
+      @keydown.esc="close"
     >
       <span
         v-if="model.length"
