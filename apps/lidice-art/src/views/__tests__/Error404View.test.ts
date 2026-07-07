@@ -72,7 +72,7 @@ describe('Error404View — router', () => {
     await router.isReady();
 
     const resolved = router.resolve('/');
-    expect(resolved.name).toBe('Home');
+    expect(resolved.name).toBe('Explore');
 
     const resolvedInfo = router.resolve('/info');
     expect(resolvedInfo.name).toBe('Info');

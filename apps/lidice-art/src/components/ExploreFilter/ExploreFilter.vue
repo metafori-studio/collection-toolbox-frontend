@@ -8,7 +8,7 @@
         />
         <div>
           <h2 class="mb-2 text-label text-text-tertiary">
-            Filtrovať výlsedky
+            Filtrovať výsledky
           </h2>
           <div class="flex flex-col gap-2 md:flex-row md:flex-wrap md:gap-4">
             <InputMultiselect
