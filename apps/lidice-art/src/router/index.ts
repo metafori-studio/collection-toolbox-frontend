@@ -2,6 +2,7 @@ import { createWebHistory, createRouter } from 'vue-router';
 
 // import HomeView from '@/views/HomeView.vue';
 import ExploreView from '@/views/ExploreView.vue';
+import ArtworkDetailView from '@/views/ArtworkDetailView.vue';
 import InfoView from '@/views/InfoView.vue';
 import Error404View from '@/views/Error404View.vue';
 
@@ -15,7 +16,7 @@ export const routes = [
     name: 'ArtworkDetail',
     path: '/artwork/:id',
     props: true,
-    component: ExploreView,
+    component: ArtworkDetailView,
   },
   {
     name: 'Info',

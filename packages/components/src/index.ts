@@ -42,3 +42,10 @@ export { default as AppHeaderNew } from './components/layout/AppHeaderNew';
 
 // Cards
 export { default as ArtworkCard } from './components/cards/ArtworkCard';
+
+// Navigation
+export { default as BreadcrumbList, type BreadcrumbItem } from './components/navigation/BreadcrumbList';
+
+// Detail
+export { default as MetadataTable, type MetadataRecord } from './components/detail/MetadataTable';
+export { default as DetailSection } from './components/detail/DetailSection';
