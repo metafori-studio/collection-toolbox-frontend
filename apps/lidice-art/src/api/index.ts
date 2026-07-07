@@ -11,6 +11,8 @@ const api = axios.create({
 export type Artwork = {
   id: number;
   image: string;
+  imageWidth?: number;
+  imageHeight?: number;
   title: string;
   author: string;
   year: string;
@@ -25,12 +27,22 @@ type ListResponse = {
   };
 };
 
+const withMockImageDimensions = (artwork: Artwork): Artwork => {
+  const match = artwork.image.match(/\/(\d+)\/(\d+)$/);
+  if (!match) return artwork;
+  return {
+    ...artwork,
+    imageWidth: Number(match[1]),
+    imageHeight: Number(match[2]),
+  };
+};
+
 const getList = async (
   orderBy: string = 'id',
   page: number = 1,
 ): Promise<ListResponse> => {
   if (USE_MOCK) {
-    const all = mockIndex.data as Artwork[];
+    const all = (mockIndex.data as Artwork[]).map(withMockImageDimensions);
     const start = (page - 1) * PER_PAGE;
     const sliced = all.slice(start, start + PER_PAGE);
     return {
