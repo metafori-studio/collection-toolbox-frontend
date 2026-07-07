@@ -1,5 +1,6 @@
 import axios from 'axios';
 import mockIndex from './mock/index.json';
+import mockDetail from './mock/detail.json';
 
 const USE_MOCK = import.meta.env.VITE_USE_MOCK === 'true';
 
@@ -16,6 +17,27 @@ export type Artwork = {
   title: string;
   author: string;
   year: string;
+};
+
+export type ArtworkDetail = {
+  id: number;
+  title: string;
+  author: string;
+  dating: string;
+  dimensions: {
+    width: string;
+    height: string;
+  };
+  artistic_types: string[];
+  material: string;
+  technique: string;
+  aquisition: {
+    method: string;
+    year: string;
+  };
+  location_origin: string;
+  inventory_number: string;
+  copyright: string;
 };
 
 const PER_PAGE = 12;
@@ -58,6 +80,15 @@ const getList = async (
     };
 };
 
+const getById = async (id: string): Promise<ArtworkDetail> => {
+  if (USE_MOCK) {
+    return mockDetail as ArtworkDetail;
+  }
+  const { data } = await api.get(`/artworks/${id}`);
+  return data.data as ArtworkDetail;
+};
+
 export {
   getList,
+  getById,
 };
