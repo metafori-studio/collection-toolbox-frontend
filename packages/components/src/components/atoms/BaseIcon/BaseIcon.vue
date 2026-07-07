@@ -94,7 +94,7 @@ const {
   weight = 'regular',
 } = defineProps<{
   icon?: IconName
-  size?: 16 | 20 | 24 | 32 | 80 | 96
+  size?: 16 | 20 | 24 | 32 | 48 | 80 | 96
   weight?: 'regular' | 'fill'
 }>();
 
