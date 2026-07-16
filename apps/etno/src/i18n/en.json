@@ -149,9 +149,11 @@
       "researchCollection": "Research collection",
       "author": "Author",
       "municipality": "Municipality",
+      "municipalityPart": "Municipality part",
       "district": "District",
       "region": "Region",
       "country": "Country",
+      "locationOther": "Location (other)",
       "documentType": "Document type",
       "collectionMethod": "Collection method",
       "language": "Language"
