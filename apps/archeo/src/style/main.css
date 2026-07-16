@@ -1,0 +1,21 @@
+@import "@metafori/components/assets/main.css";
+
+@theme {
+  /* Primary */
+  /* Force blue primary color for archeo */
+  --color-primary-50: #E5F0FF;
+  --color-primary-100: #CDE0FF;
+  --color-primary-200: #A0C3FF;
+  --color-primary-300: #74A4FF;
+  --color-primary-400: #4784FF;
+  --color-primary-500: #1A62FF;
+  --color-primary-600: #034AE8;
+  --color-primary-700: #043CB9;
+  --color-primary-800: #052E8B;
+  --color-primary-900: #05205D;
+
+  /* Level colors */
+  --color-activity-level1: #E5484D;
+  --color-activity-level2: #22C55E;
+  --color-activity-level3: #E8C01E;
+}
