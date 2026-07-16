@@ -37,6 +37,9 @@
         <h1 class="text-heading-3">
           {{ detail.title }}
         </h1>
+        <p v-if="detail.subtitle">
+          {{ detail.subtitle }}
+        </p>
       </div>
 
       <DetailSection
@@ -130,6 +133,15 @@
           :rows="tableGeographic.items"
           @select-filter="applyFilter"
         />
+      </DetailSection>
+
+      <DetailSection
+        v-if="detail.location_note"
+        :title="$t('detail.section.locationNote')"
+      >
+        <p class="text-sm text-neutral-500">
+          {{ detail.location_note }}
+        </p>
       </DetailSection>
 
       <DetailSection
@@ -270,6 +282,16 @@ const basicInfo = computed(() => [
       filterValue: String(o.id),
     })),
   },
+  {
+    label: t('detail.table.termsOfUse'),
+    value: { text: detail.terms_of_use },
+  },
+  {
+    label: t('detail.table.extents'),
+    values: detail.extents.map((e) => ({
+      text: translateEnum('ExtentUnit', e.unit),
+    })),
+  },
 ]);
 
 const tableDesc = computed(() => ({
@@ -368,14 +390,6 @@ const tableFormal = computed(() => ({
       value: { text: translateEnum('AccrualMethod', detail.accrual_method) },
     },
     {
-      label: t('detail.table.documentType'),
-      value: {
-        text: translateEnum('ItemType', detail.type),
-        filterId: 'type',
-        filterValue: detail.type,
-      },
-    },
-    {
       label: t('detail.table.timeOfRealization'),
       value: { text: toYearRange(detail.time_period_start, detail.time_period_end) },
     },
@@ -383,6 +397,13 @@ const tableFormal = computed(() => ({
       label: t('detail.table.submissionDate'),
       value: { text: toYearRange(detail.submission_date_start, detail.submission_date_end) },
     },
+    {
+      label: t('detail.table.project'),
+      value: {
+        text: detail.project?.title,
+      },
+    },
+
   ],
 }));
 

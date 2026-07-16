@@ -72,7 +72,8 @@
       "map": "Mapa",
       "researchOriginContext": "Pôvod a kontext výskumu",
       "rightsAndAccess": "Práva a prístup",
-      "additionalNotes": "Doplňujúce údaje"
+      "additionalNotes": "Doplňujúce údaje",
+      "locationNote": "Poznámky k lokalite"
     },
     "citation": {
       "copy": "Kopírovať citáciu"
@@ -82,15 +83,15 @@
       "documentType": "Typ dokumentu",
       "researchCollection": "Výskumná zbierka",
       "language": "Jazyk",
-      "research": "Výskum",
-      "origin": "Pôvod",
+      "research": "Výskumníci",
+      "origin": "Pôvodcovia",
       "municipality": "Obec",
       "district": "Okres",
       "region": "Kraj",
       "country": "Štát",
       "institution": "Inštitúcia",
       "collectionMethod": "Spôsob zberu",
-      "accrualMethod": "Spôsob nadobudnutia",
+      "accrualMethod": "Spôsob získania",
       "timeOfRealization": "Čas realizácie",
       "submissionDate": "Dátum odovzdania",
       "accessRights": "Prístupové práva",
@@ -98,7 +99,9 @@
       "howToCite": "Ako citovať",
       "generalNote": "Všeobecná poznámka",
       "contentNote": "Obsahová poznámka",
-      "technicalNote": "Technická poznámka"
+      "technicalNote": "Technická poznámka",
+      "termsOfUse": "Podmienky použitia",
+      "extents": "Rozsah"
     },
     "boolean": {
       "true": "Áno",
@@ -124,11 +127,6 @@
       "title": "Názov",
       "timePeriod": "Čas aktivity"
     }
-  },
-  "itemCard": {
-    "authorship": "Autorstvo:",
-    "research": "Výskum:",
-    "origin": "Pôvod:"
   },
   "pagination": {
     "label": "Stránkovanie",

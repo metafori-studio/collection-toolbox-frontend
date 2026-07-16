@@ -74,7 +74,8 @@
       "map": "Map",
       "researchOriginContext": "Research origin and context",
       "rightsAndAccess": "Rights and access",
-      "additionalNotes": "Additional notes"
+      "additionalNotes": "Additional notes",
+      "locationNote": "Location notes"
     },
     "citation": {
       "copy": "Copy citation"
@@ -100,7 +101,9 @@
       "howToCite": "How to cite",
       "generalNote": "General note",
       "contentNote": "Content note",
-      "technicalNote": "Technical note"
+      "technicalNote": "Technical note",
+      "termsOfUse": "Terms of use",
+      "extents": "Extents"
     },
     "boolean": {
       "true": "Yes",
@@ -126,11 +129,6 @@
       "title": "Title",
       "timePeriod": "Time period"
     }
-  },
-  "itemCard": {
-    "authorship": "Authorship:",
-    "research": "Research:",
-    "origin": "Origin:"
   },
   "pagination": {
     "label": "Pagination",
