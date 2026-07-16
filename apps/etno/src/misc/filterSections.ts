@@ -36,6 +36,12 @@ export const filterSections: FilterSection[] = [
         defaultValue: <string[]>[],
       },
       {
+        id: 'municipality_part.id',
+        label: 'filter.items.municipalityPart',
+        type: 'checkbox',
+        defaultValue: <string[]>[],
+      },
+      {
         id: 'district.id',
         label: 'filter.items.district',
         type: 'checkbox',
@@ -50,6 +56,12 @@ export const filterSections: FilterSection[] = [
       {
         id: 'country.id',
         label: 'filter.items.country',
+        type: 'checkbox',
+        defaultValue: <string[]>[],
+      },
+      {
+        id: 'location.id',
+        label: 'filter.items.locationOther',
         type: 'checkbox',
         defaultValue: <string[]>[],
       },

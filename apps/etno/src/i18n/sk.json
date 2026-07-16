@@ -147,9 +147,11 @@
       "researchCollection": "Výskumná zbierka",
       "author": "Autor",
       "municipality": "Obec",
+      "municipalityPart": "Časť obce",
       "district": "Okres",
       "region": "Kraj",
       "country": "Štát",
+      "locationOther": "Lokalita (iné)",
       "documentType": "Typ dokumentu",
       "collectionMethod": "Spôsob zberu",
       "language": "Jazyk"
