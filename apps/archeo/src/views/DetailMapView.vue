@@ -14,8 +14,8 @@
         zoomOut: true,
         center: false,
         tileType: true,
-        copyCoordinates: true,
-        openMaps: true,
+        copyCoordinates: false,
+        openMaps: false,
       }"
     />
   </BaseViewer>
