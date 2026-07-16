@@ -80,22 +80,19 @@
     "openGallery": "Otvoriť galériu",
     "table": {
       "activityNumber": "Číslo aktivity",
-      "cvs": "ČVS",
+      "cvs": "ČVD",
       "registrationYear": "Rok zaevidovania",
       "activityYear": "Rok aktivity",
       "activityType": "Druh aktivity",
-      "actionNumber": "Číslo akcie",
       "cadastralArea": "Katastrálne územie",
       "municipality": "Obec",
       "position": "Poloha",
       "district": "Okres",
       "researchLeader": "Vedúci výskumu",
-      "authorNs": "Autor – NS",
+      "authorNs": "Autor – VD",
       "institution": "Inštitúcia",
       "localizationDegree": "Stupeň lokalizácie",
-      "hasGisLink": "Existuje GIS vrstva",
-      "coordinateX": "Súradnica X",
-      "coordinateY": "Súradnica Y"
+      "hasGisLink": "Existuje GIS vrstva"
     },
     "boolean": {
       "yes": "Áno",

@@ -50,32 +50,6 @@
       </DetailSection>
 
       <DetailSection
-        v-if="detail.galleries?.length"
-        :title="$t('detail.sections.images')"
-      >
-        <template #actions>
-          <BaseButton
-            size="small"
-            variant="secondary"
-            @click="$router.push({ name: 'DetailGallery' })"
-          >
-            {{ $t('detail.openGallery') }}
-            <BaseIcon icon="arrowRight" />
-          </BaseButton>
-        </template>
-        <div class="grid grid-cols-2 gap-2">
-          <GalleryCard
-            v-for="(gallery, i) in detail.galleries"
-            :key="i"
-            :to="{ name: 'DetailGallery' }"
-            :title="gallery.title"
-            :image-count="gallery.images.length"
-            :preview="gallery.images[0]?.thumbnail || ''"
-          />
-        </div>
-      </DetailSection>
-
-      <DetailSection
         v-if="detail.youtube_id"
         :title="$t('detail.sections.video')"
       >
@@ -117,6 +91,32 @@
         <DetailTable
           :items="table.items"
         />
+      </DetailSection>
+
+      <DetailSection
+        v-if="detail.galleries?.length"
+        :title="$t('detail.sections.images')"
+      >
+        <template #actions>
+          <BaseButton
+            size="small"
+            variant="secondary"
+            @click="$router.push({ name: 'DetailGallery' })"
+          >
+            {{ $t('detail.openGallery') }}
+            <BaseIcon icon="arrowRight" />
+          </BaseButton>
+        </template>
+        <div class="grid grid-cols-2 gap-2">
+          <GalleryCard
+            v-for="(gallery, i) in detail.galleries"
+            :key="i"
+            :to="{ name: 'DetailGallery' }"
+            :title="gallery.title"
+            :image-count="gallery.images.length"
+            :preview="gallery.images[0]?.thumbnail || ''"
+          />
+        </div>
       </DetailSection>
     </div>
 
@@ -187,7 +187,6 @@ const tables = computed(() => [
       { label: t('detail.table.registrationYear'), value: detail.value.registration_year },
       { label: t('detail.table.activityYear'), value: detail.value.activity_year_start },
       { label: t('detail.table.activityType'), value: detail.value.activity_type },
-      { label: t('detail.table.actionNumber'), value: detail.value.action_number },
     ],
   },
   {
@@ -212,8 +211,6 @@ const tables = computed(() => [
     items: [
       { label: t('detail.table.localizationDegree'), value: detail.value.localization_degree },
       { label: t('detail.table.hasGisLink'), value: detail.value.has_gis_link },
-      { label: t('detail.table.coordinateX'), value: detail.value.coordinate_x },
-      { label: t('detail.table.coordinateY'), value: detail.value.coordinate_y },
     ],
   },
 ]);
