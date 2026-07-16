@@ -63,11 +63,11 @@ const {
 }>();
 
 const orderAsc = ref(true);
-const orderBy = ref('id');
+const orderBy = ref('municipality');
 const currentPage = ref(1);
 const orderByOptions = computed(() => [
-  { label: t('activityList.orderByOptions.id'), value: 'id' },
   { label: t('activityList.orderByOptions.municipality'), value: 'municipality' },
+  { label: t('activityList.orderByOptions.id'), value: 'id' },
   { label: t('activityList.orderByOptions.cadastralArea'), value: 'cadastral_area' },
   { label: t('activityList.orderByOptions.district'), value: 'district' },
   { label: t('activityList.orderByOptions.position'), value: 'position' },
