@@ -58,21 +58,21 @@
         v-if="authorsReadable"
         class="text-xs text-neutral-500"
       >
-        {{ $t('itemCard.authorship') }}
+        {{ $t('detail.table.authorship') }}:
         <span>{{ authorsReadable }}</span>
       </div>
       <div
         v-if="researchersReadable"
         class="text-xs text-neutral-500"
       >
-        {{ $t('itemCard.research') }}
+        {{ $t('detail.table.research') }}:
         <span>{{ researchersReadable }}</span>
       </div>
       <div
         v-if="originatorsReadable"
         class="text-xs text-neutral-500"
       >
-        {{ $t('itemCard.origin') }}
+        {{ $t('detail.table.origin') }}:
         <span>{{ originatorsReadable }}</span>
       </div>
     </div>
