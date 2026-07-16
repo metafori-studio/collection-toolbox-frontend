@@ -4,9 +4,9 @@
       class="rounded-full"
       :class="{
         // Levels
-        'bg-status-success-500': level === 1,
-        'bg-status-warning-500': level === 2,
-        'bg-status-error-500': level === 3,
+        'bg-activity-level1': level === 1,
+        'bg-activity-level2': level === 2,
+        'bg-activity-level3': level === 3,
 
         // Sizes
         'size-2': label,
@@ -26,8 +26,12 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{
+const {
+  level,
+  label,
+} = defineProps<{
   level: 1 | 2 | 3
   label: boolean
 }>();
+
 </script>
