@@ -327,46 +327,16 @@ const tableAuthors = computed(() => ({
 }));
 
 const tableGeographic = computed(() => {
-  const locality = detail.locality;
-  const district = locality?.district || locality?.parent;
-  const region = district?.region;
-  const country = region?.country;
   return {
     title: t('detail.section.geographic'),
-    items: [
-      {
-        label: t('detail.table.municipality'),
-        value: {
-          text: locality?.name,
-          filterId: 'municipality.id',
-          filterValue: locality?.id?.toString(),
-        },
+    items: detail.locality.map((item) => ({
+      label: t(`detail.table.${item.type}`),
+      value: {
+        text: item.name,
+        filterId: `${item.type}.id`,
+        filterValue: String(item.id),
       },
-      {
-        label: t('detail.table.district'),
-        value: {
-          text: district?.name,
-          filterId: 'district.id',
-          filterValue: district?.id?.toString(),
-        },
-      },
-      {
-        label: t('detail.table.region'),
-        value: {
-          text: region?.name,
-          filterId: 'region.id',
-          filterValue: region?.id?.toString(),
-        },
-      },
-      {
-        label: t('detail.table.country'),
-        value: {
-          text: country?.name,
-          filterId: 'country.id',
-          filterValue: country?.id?.toString(),
-        },
-      },
-    ],
+    })),
   };
 });
 
