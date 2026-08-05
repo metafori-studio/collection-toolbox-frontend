@@ -1,11 +1,11 @@
-import { format, parseISO } from 'date-fns';
+import { format, isValid, parseISO } from 'date-fns';
 import { sk } from 'date-fns/locale';
 
 type Precision = 'day' | 'month' | 'year';
 
 interface Period {
-	precision?: Precision | null
-	is_range?: boolean
+  precision?: Precision | null
+  is_range?: boolean
   start: string | null
   end: string | null
 }
@@ -30,13 +30,21 @@ const formatDatePeriod = (period: Period) => {
     end,
   } = period;
 
-  if (!start || !precision) return null;
+  if (!start || !precision) {
+    return null;
+  }
 
   const startParsed = parseISO(start);
+  if (!isValid(startParsed)) {
+    return null;
+  }
   const startFormatted = formatDateSingle(startParsed, precision);
 
   if (isRange && end) {
     const endParsed = parseISO(end);
+    if (!isValid(endParsed)) {
+      return null;
+    }
     const endFormatted = formatDateSingle(endParsed, precision);
     return `${startFormatted} - ${endFormatted}`;
   } else {
