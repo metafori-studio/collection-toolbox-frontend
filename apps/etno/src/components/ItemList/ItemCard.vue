@@ -46,10 +46,10 @@
       <div class="flex flex-wrap gap-x-1 text-xs text-neutral-500">
         {{ item.locality?.name }}
         <span
-          v-if="item.locality?.name && yearRange"
+          v-if="item.locality?.name && datePeriod"
           aria-hidden
         >·</span>
-        {{ yearRange }}
+        {{ datePeriod }}
       </div>
       <h3 class="text-base font-semibold">
         {{ item.title }}
@@ -88,8 +88,8 @@ import { BaseIcon, focusClasses, MediaImage } from '@metafori/components';
 import { getIconForMediaType, getThemeForMediaType } from '@/misc/mediaTypeHelpers';
 import MediaTypeChip from '@/components/MediaTypeChip.vue';
 
+import { formatDatePeriod } from '@metafori/shared';
 import { toNameReadable } from '@/misc/toNameReadable';
-import { toYearRange } from '@/misc/toYearRange';
 
 const {
   item,
@@ -103,7 +103,12 @@ const { translateEnum } = useTranslateEnum();
 const authorsReadable = computed(() => toNameReadable(item.authors));
 const researchersReadable = computed(() => toNameReadable(item.researchers));
 const originatorsReadable = computed(() => toNameReadable(item.originators));
-const yearRange = computed(() => toYearRange(item.time_period_start, item.time_period_end));
+const datePeriod = computed(() => formatDatePeriod({
+  precision: item.time_period_settings?.precision,
+  is_range: item.time_period_settings?.is_range,
+  start: item.time_period_start,
+  end: item.time_period_end,
+}));
 const icon = computed(() => getIconForMediaType(item.media_type));
 const theme = computed(() => getThemeForMediaType(item.media_type));
 </script>
