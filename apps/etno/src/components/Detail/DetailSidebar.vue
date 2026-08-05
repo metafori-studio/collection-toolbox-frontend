@@ -221,7 +221,7 @@ import { InputSelect, BaseButton } from '@metafori/components';
 import DetailSection from './DetailSection.vue';
 import DetailTable from './DetailTable.vue';
 
-import { toYearRange } from '@/misc/toYearRange';
+import { formatDatePeriod } from '@metafori/shared';
 import { resolveDisplayName } from '@/misc/toNameReadable';
 import { filterValues } from '@/store';
 
@@ -361,11 +361,25 @@ const tableFormal = computed(() => ({
     },
     {
       label: t('detail.table.timeOfRealization'),
-      value: { text: toYearRange(detail.time_period_start, detail.time_period_end) },
+      value: {
+        text: formatDatePeriod({
+          is_range: detail.time_period_settings?.is_range,
+          precision: detail.time_period_settings?.precision,
+          start: detail.time_period_start,
+          end: detail.time_period_end,
+        }),
+      },
     },
     {
       label: t('detail.table.submissionDate'),
-      value: { text: toYearRange(detail.submission_date_start, detail.submission_date_end) },
+      value: {
+        text: formatDatePeriod({
+          is_range: detail.submission_date_settings?.is_range,
+          precision: detail.submission_date_settings?.precision,
+          start: detail.submission_date_start,
+          end: detail.submission_date_end,
+        }),
+      },
     },
     {
       label: t('detail.table.project'),
