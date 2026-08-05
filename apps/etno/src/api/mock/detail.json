@@ -50,22 +50,28 @@
             "id": 65,
             "title": "Eum totam autem ab mollitia aut at."
         },
-        "locality": {
-            "id": 5,
-            "name": "North Anais",
-            "district": {
+        "locality": [
+            {
+                "type": "location",
                 "id": 5,
-                "name": "Karleechester",
-                "region": {
-                    "id": 5,
-                    "name": "North Carolina",
-                    "country": {
-                        "id": 5,
-                        "name": "Gambia"
-                    }
-                }
+                "name": "North Anais"
+            },
+            {
+                "type": "municipality",
+                "id": 5,
+                "name": "Anais"
+            },
+            {
+                "type": "region",
+                "id": 5,
+                "name": "Karleechester"
+            },
+            {
+                "type": "country",
+                "id": 5,
+                "name": "Gambia"
             }
-        },
+        ],
         "authors": [
             {
                 "id": 34,

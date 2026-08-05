@@ -17,21 +17,10 @@ export type Originator = {
 
 export type PersonOrOriginator = Person | Originator;
 
-type DetailDistrict = {
+type DetailLocalityItem = {
+  type: string
   id: number
   name: string
-  region?: {
-    id: number
-    name: string
-    country?: { id: number; name: string }
-  }
-}
-
-type DetailLocality = {
-  id: number
-  name: string
-  district?: DetailDistrict
-  parent?: DetailDistrict
 }
 
 type DetailMedia = {
@@ -75,7 +64,7 @@ export type Detail = {
   publication_date_settings: Record<string, unknown> | null
   institution: { id: number; name: string; ror_id: string | null } | null
   project: { id: number; title: string } | null
-  locality: DetailLocality | null
+  locality: DetailLocalityItem[]
   authors: PersonOrOriginator[]
   researchers: PersonOrOriginator[]
   originators: PersonOrOriginator[]
