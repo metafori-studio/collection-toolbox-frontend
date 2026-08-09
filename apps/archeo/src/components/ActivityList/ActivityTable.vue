@@ -51,9 +51,9 @@
         <tr
           v-for="item in items"
           :key="item.id"
-          class="border-b border-neutral-50 hover:bg-neutral-50 transition-colors relative"
+          class="border-b border-neutral-100 hover:bg-neutral-50 transition-colors relative"
         >
-          <td class="align-top py-3 px-3 text-mono font-mono text-primary-500">
+          <td class="align-top py-3 px-3 text-code font-mono text-primary-500">
             <RouterLink
               :to="{
                 name: 'DetailMap',

@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div class="flex flex-col min-h-screen">
     <ArcheoHeader />
-    <router-view />
-    <ModalIntro />
+    <router-view class="flex-1" />
   </div>
+  <ModalIntro />
 </template>
 
 <script setup lang="ts">

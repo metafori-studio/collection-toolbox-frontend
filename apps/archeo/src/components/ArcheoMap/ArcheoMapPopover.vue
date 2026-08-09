@@ -1,5 +1,5 @@
 <template>
-  <div class="absolute right-4 top-4 bg-white rounded-lg shadow-lg p-3 flex flex-col gap-3 w-60">
+  <div class="absolute bg-white rounded-lg shadow-lg p-3 flex flex-col gap-3 w-60">
     <button
       class="absolute top-2 right-2 p-1 rounded hover:bg-neutral-100"
       :aria-label="$t('mapPopover.close')"
@@ -11,7 +11,7 @@
       />
     </button>
 
-    <span class="text-mono font-mono text-primary-500">
+    <span class="text-code font-mono text-primary-500">
       {{ $t('mapPopover.activityNumber', { id }) }}
     </span>
     <ActivityLevel
@@ -25,6 +25,7 @@
       {{ $t('mapPopover.detail') }}
       <BaseIcon icon="arrowRight" />
     </BaseButton>
+    <div class="absolute top-full left-1/2 -ml-2 border-[8px] border-transparent border-t-white" />
   </div>
 </template>
 

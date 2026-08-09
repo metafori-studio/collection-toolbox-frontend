@@ -23,7 +23,9 @@
     </template>
 
     <template #center>
-      <span class="font-bold">{{ $t('appName') }}</span>
+      <span class="font-bold">
+        {{ appTitle ?? $t('appName') }}
+      </span>
     </template>
 
     <template #right>
@@ -65,7 +67,7 @@ import { computed } from 'vue';
 import { useRoute } from 'vue-router';
 import { BaseButton, BaseIcon } from '@metafori/components';
 
-import { filterOpen, detailPanelOpen } from '@/store';
+import { filterOpen, detailPanelOpen, appTitle } from '@/store';
 
 const route = useRoute();
 

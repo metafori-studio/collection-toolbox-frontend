@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col md:flex-row md:items-start min-h-screen"
+    class="flex flex-col md:flex-row min-h-screen"
   >
     <router-view
       v-if="isLoaded"
@@ -138,7 +138,13 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue';
+import {
+  ref,
+  computed,
+  onMounted,
+  onBeforeUnmount,
+  watch,
+} from 'vue';
 import { useI18n } from 'vue-i18n';
 
 import {
@@ -153,7 +159,7 @@ import DocumentCard from '@/components/Detail/DocumentCard.vue';
 import ModalAttachmentRequest from '@/components/Detail/ModalAttachmentRequest.vue';
 import GalleryCard from '@/components/Detail/GalleryCard.vue';
 
-import { detailPanelOpen } from '@/store';
+import { appTitle, detailPanelOpen } from '@/store';
 import { getDetail } from '@/api';
 
 const { t } = useI18n();
@@ -221,6 +227,14 @@ const title = computed(() => {
     return detail.value.municipality;
   }
   return `${detail.value.municipality} • ${detail.value.cadastral_area}`;
+});
+
+watch(title, () => {
+  appTitle.value = title.value;
+});
+
+onBeforeUnmount(() => {
+  appTitle.value = null;
 });
 
 // Attachments
