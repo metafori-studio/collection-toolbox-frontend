@@ -1,4 +1,3 @@
-import type { RangeValue } from '@metafori/components';
 import type { FilterSection } from './filterTypes';
 
 export const filterSections: FilterSection[] = [
@@ -8,7 +7,7 @@ export const filterSections: FilterSection[] = [
     items: [
       {
         id: 'municipality',
-        label: 'Obce',
+        label: 'Obec',
         type: 'checkbox',
         defaultValue: <string[]>[],
         options: [
@@ -48,11 +47,8 @@ export const filterSections: FilterSection[] = [
       {
         id: 'date',
         label: 'Datovanie',
-        type: 'range',
-        defaultValue: <RangeValue>{
-          min: 1920,
-          max: 2025,
-        },
+        type: 'checkbox',
+        defaultValue: <string[]>[],
         options: [
           { value: 'paleolit', label: 'Paleolit' },
           { value: 'neolit', label: 'Neolit' },

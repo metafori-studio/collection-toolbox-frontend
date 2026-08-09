@@ -9,7 +9,8 @@
       v-if="allowPopover && selectedPoint"
       :id="selectedPoint.id"
       :localization-degree="selectedPoint.localization_degree"
-      @close="selectedPoint = null"
+      :style="popoverStyle"
+      @close="selectedPoint = null; selectedPointCoordinates = null"
     />
 
     <div class="absolute left-4 top-4 flex gap-2">
@@ -196,6 +197,21 @@ const MAP_DEFAULT = calculateDefaultCamera(mapPointsClean.value);
 
 type SelectedPoint = { id: string; localization_degree: 1 | 2 | 3 };
 const selectedPoint = ref<SelectedPoint | null>(null);
+const selectedPointCoordinates = ref<[number, number] | null>(null);
+const popoverPosition = ref({ x: 0, y: 0 });
+
+const POPOVER_OFFSET_Y = 44;
+function updatePopoverPosition() {
+  if (!map || !selectedPointCoordinates.value) return;
+  const { x, y } = map.project(selectedPointCoordinates.value);
+  popoverPosition.value = { x, y: y - POPOVER_OFFSET_Y };
+}
+
+const popoverStyle = computed(() => ({
+  left: `${popoverPosition.value.x}px`,
+  top: `${popoverPosition.value.y}px`,
+  transform: 'translate(-50%, -100%)',
+}));
 
 function addPoints() {
   const pointsGeoJSON: GeoJSON.FeatureCollection = {
@@ -286,7 +302,11 @@ function addPoints() {
       if (!feature) return;
       const { id, localization_degree } = feature.properties as SelectedPoint;
       selectedPoint.value = { id, localization_degree };
+      selectedPointCoordinates.value = (feature.geometry as GeoJSON.Point).coordinates as [number, number];
+      updatePopoverPosition();
     });
+
+    map!.on('move', updatePopoverPosition);
 
     map!.on('mouseenter', 'clusters', () => { map!.getCanvas().style.cursor = 'pointer'; });
     map!.on('mouseleave', 'clusters', () => { map!.getCanvas().style.cursor = ''; });
@@ -312,7 +332,10 @@ onMounted(() => {
 
   map.once('style.load', addPoints);
 
-  resizeObserver = new ResizeObserver(() => map?.resize());
+  resizeObserver = new ResizeObserver(() => {
+    map?.resize();
+    updatePopoverPosition();
+  });
   resizeObserver.observe(mapContainer.value);
 });
 
