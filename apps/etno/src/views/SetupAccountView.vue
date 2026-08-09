@@ -74,14 +74,14 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 
 import { BaseButton, InputText } from '@metafori/components';
 
 import type { AxiosError } from 'axios';
-import { getCsrfCookie, setPassword } from '@/api';
+import { setPassword } from '@/api';
 
 const {
   email,
@@ -97,10 +97,6 @@ const passwordRepeat = ref('');
 
 const error = ref('');
 const router = useRouter();
-
-onMounted(() => {
-  getCsrfCookie();
-});
 
 const submit = async () => {
   error.value = '';
