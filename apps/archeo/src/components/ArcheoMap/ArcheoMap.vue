@@ -306,8 +306,6 @@ function addPoints() {
       updatePopoverPosition();
     });
 
-    map!.on('move', updatePopoverPosition);
-
     map!.on('mouseenter', 'clusters', () => { map!.getCanvas().style.cursor = 'pointer'; });
     map!.on('mouseleave', 'clusters', () => { map!.getCanvas().style.cursor = ''; });
     map!.on('mouseenter', 'points', () => { map!.getCanvas().style.cursor = 'pointer'; });
@@ -331,6 +329,7 @@ onMounted(() => {
   });
 
   map.once('style.load', addPoints);
+  map.on('move', updatePopoverPosition);
 
   resizeObserver = new ResizeObserver(() => {
     map?.resize();
