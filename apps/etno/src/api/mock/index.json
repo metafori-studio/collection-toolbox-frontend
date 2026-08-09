@@ -27,21 +27,19 @@
                 "dot-matrix-printing",
                 "audio-recording"
             ],
-            "time_period_start": "2021-02-25T00:00:00.000000Z",
-            "time_period_end": null,
-            "time_period_settings": {
-                "is_range": false,
-                "precision": "month"
+            "time_period":{
+                "precision":"month",
+                "is_range":false,
+                "start":"2021-02-25T00:00:00.000000Z",
+                "end":null
             },
-            "submission_date_start": "1957-02-27T00:00:00.000000Z",
-            "submission_date_end": "1969-08-12T00:00:00.000000Z",
-            "submission_date_settings": {
-                "is_range": true,
-                "precision": "month"
+            "submission_date":{
+                "precision":"year",
+                "is_range":false,
+                "start":"2023-01-01T00:00:00.000000Z",
+                "end":"2023-12-31T00:00:00.000000Z"
             },
-            "publication_date_start": null,
-            "publication_date_end": null,
-            "publication_date_settings": null,
+            "publication_date": null,
             "locality": {
                 "id": 5,
                 "name": "North Anais",
@@ -126,23 +124,23 @@
             "access_rights": null,
             "license": "cc-by-nc-nd",
             "production_methods": null,
-            "time_period_start": "1948-12-27T00:00:00.000000Z",
-            "time_period_end": null,
-            "time_period_settings": {
-                "is_range": false,
-                "precision": "day"
+            "time_period":{
+                "precision":"month",
+                "is_range":false,
+                "start":"2021-02-25T00:00:00.000000Z",
+                "end":null
             },
-            "submission_date_start": "1992-01-25T00:00:00.000000Z",
-            "submission_date_end": null,
-            "submission_date_settings": {
-                "is_range": false,
-                "precision": "year"
+            "submission_date":{
+                "precision":"year",
+                "is_range":false,
+                "start":"2023-01-01T00:00:00.000000Z",
+                "end":"2023-12-31T00:00:00.000000Z"
             },
-            "publication_date_start": "1982-07-30T00:00:00.000000Z",
-            "publication_date_end": "1984-12-07T00:00:00.000000Z",
-            "publication_date_settings": {
-                "is_range": true,
-                "precision": "month"
+            "publication_date":{
+                "precision":"month",
+                "is_range":true,
+                "start":"1982-07-30T00:00:00.000000Z",
+                "end":"1984-12-07T00:00:00.000000Z"
             },
             "locality": {
                 "id": 11,

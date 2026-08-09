@@ -1,3 +1,5 @@
+import { type DatePeriod } from '@metafori/shared';
+
 export type ListItem = Record<string, unknown>
 export type ListMeta = Record<string, unknown>
 
@@ -34,11 +36,6 @@ type DetailLocality = {
   parent?: DetailDistrict
 }
 
-type DateSettings = {
-  precision: 'day' | 'month' | 'year'
-  is_range?: boolean
-}
-
 type DetailMedia = {
   id: number
   name: string
@@ -69,15 +66,9 @@ export type Detail = {
   license: string | null
   production_methods: string[]
   extents: { value: string; unit: string }[]
-  time_period_start: string | null
-  time_period_end: string | null
-  time_period_settings: DateSettings | null
-  submission_date_start: string | null
-  submission_date_end: string | null
-  submission_date_settings: DateSettings | null
-  publication_date_start: string | null
-  publication_date_end: string | null
-  publication_date_settings: DateSettings | null
+  time_period: DatePeriod | null
+  submission_date: DatePeriod | null
+  publication_date: DatePeriod | null
   institution: { id: number; name: string; ror_id: string | null } | null
   project: { id: number; title: string } | null
   locality: DetailLocality | null
