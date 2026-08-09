@@ -1,4 +1,5 @@
 import { createWebHistory, createRouter, type RouteLocationNormalized } from 'vue-router';
+import { queryString } from '@metafori/shared';
 
 import ExploreView from '@/views/ExploreView.vue';
 import DetailView from '@/views/DetailView.vue';
@@ -61,8 +62,8 @@ const routes = [
     path: '/reset-password',
     component: ResetPassword,
     props: (route: RouteLocationNormalized) => ({
-      email: route.query.email as string ?? '',
-      token: route.query.token as string ?? '',
+      email: queryString(route.query.email),
+      token: queryString(route.query.token),
     }),
   },
   {
@@ -70,8 +71,8 @@ const routes = [
     path: '/setup-account',
     component: SetupAccountView,
     props: (route: RouteLocationNormalized) => ({
-      email: route.query.email as string ?? '',
-      token: route.query.token as string ?? '',
+      email: queryString(route.query.email),
+      token: queryString(route.query.token),
     }),
   },
   {
