@@ -362,23 +362,13 @@ const tableFormal = computed(() => ({
     {
       label: t('detail.table.timeOfRealization'),
       value: {
-        text: formatDatePeriod({
-          is_range: detail.time_period_settings?.is_range,
-          precision: detail.time_period_settings?.precision,
-          start: detail.time_period_start,
-          end: detail.time_period_end,
-        }),
+        text: formatDatePeriod(detail.time_period),
       },
     },
     {
       label: t('detail.table.submissionDate'),
       value: {
-        text: formatDatePeriod({
-          is_range: detail.submission_date_settings?.is_range,
-          precision: detail.submission_date_settings?.precision,
-          start: detail.submission_date_start,
-          end: detail.submission_date_end,
-        }),
+        text: formatDatePeriod(detail.submission_date),
       },
     },
     {
