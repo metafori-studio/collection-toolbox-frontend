@@ -49,29 +49,74 @@
         <BaseIcon icon="info" />
         <span class="hidden md:block">{{ $t('header.info') }}</span>
       </BaseButton>
-      <BaseButton
-        variant="secondary"
+
+      <BaseDropdown
         size="small"
+        direction="bottom-left"
       >
-        <BaseIcon icon="user" />
-        <span class="hidden md:block">{{ $t('header.user') }}</span>
-      </BaseButton>
+        <template #trigger>
+          <BaseIcon icon="user" />
+          <span class="hidden md:block">{{ $t('header.user') }}</span>
+        </template>
+
+        <div class="p-2 flex flex-col gap-2">
+          <BaseButton
+            v-if="!isLoggedIn"
+            variant="secondary"
+            size="small"
+            @click="$router.push({ name: 'Login' })"
+          >
+            <BaseIcon icon="signIn" />
+            {{ $t('header.login') }}
+          </BaseButton>
+          <BaseButton
+            v-if="!isLoggedIn"
+            variant="secondary"
+            size="small"
+            @click="$router.push({ name: 'Signup' })"
+          >
+            <BaseIcon icon="userPlus" />
+            {{ $t('header.signup') }}
+          </BaseButton>
+          <BaseButton
+            v-if="isLoggedIn"
+            variant="secondary"
+            size="small"
+            @click="tryLogout()"
+          >
+            <BaseIcon icon="signOut" />
+            {{ $t('header.logout') }}
+          </BaseButton>
+        </div>
+      </BaseDropdown>
     </template>
   </AppHeader>
 </template>
 
 <script setup lang="ts">
-import { AppHeader } from '@metafori/components';
+import {
+  AppHeader,
+  BaseButton,
+  BaseIcon,
+  BaseDropdown,
+} from '@metafori/components';
 
 import { computed } from 'vue';
-import { useRoute } from 'vue-router';
-import { BaseButton, BaseIcon } from '@metafori/components';
+import { useRoute, useRouter } from 'vue-router';
 
-import { filterOpen, detailPanelOpen, appTitle } from '@/store';
+import { filterOpen, detailPanelOpen, appTitle, isLoggedIn } from '@/store';
+import { logout } from '@/api';
 
 const route = useRoute();
+const router = useRouter();
 
 const isExplore = computed(() => route.name === 'Explore');
 const isDetail = computed(() => route.name?.toString().includes('Detail'));
 
+const tryLogout = async () => {
+  const response = await logout();
+  if (response.status === 200) {
+    router.push({ name: 'Explore' });
+  }
+};
 </script>

@@ -27,6 +27,10 @@ export default defineConfig(({ mode }) => {
           target: env.VITE_API_REMOTE_URL,
           changeOrigin: true,
         },
+        '/sanctum': {
+          target: env.VITE_API_REMOTE_URL,
+          changeOrigin: true,
+        },
       },
     },
   };
