@@ -9,7 +9,11 @@
     "next": "Následující",
     "zoomOut": "Oddálit",
     "zoomIn": "Přiblížit",
-    "resetZoom": "Resetovat přiblížení"
+    "resetZoom": "Resetovat přiblížení",
+    "image": {
+      "noImages": "Žádné obrázky k dispozici",
+      "errorLoad": "Nepodařilo se načíst obrázek"
+    }
   },
   "common": {
     "retry": "Zkusit znovu"
