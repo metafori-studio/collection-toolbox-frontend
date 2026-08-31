@@ -9,6 +9,10 @@
     "next": "Nasledujúce",
     "zoomOut": "Oddialiť",
     "zoomIn": "Priblížiť",
-    "resetZoom": "Resetovať priblíženie"
+    "resetZoom": "Resetovať priblíženie",
+    "image": {
+      "noImages": "Žiadne obrázky k dispozícii",
+      "errorLoad": "Nepodarilo sa načítať obrázok"
+    }
   }
 }

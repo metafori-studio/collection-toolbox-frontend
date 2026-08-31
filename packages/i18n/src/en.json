@@ -9,6 +9,10 @@
     "next": "Next",
     "zoomOut": "Zoom out",
     "zoomIn": "Zoom in",
-    "resetZoom": "Reset zoom"
+    "resetZoom": "Reset zoom",
+    "image": {
+      "noImages": "No images available",
+      "errorLoad": "Failed to load image"
+    }
   }
 }
