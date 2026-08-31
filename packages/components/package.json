@@ -30,6 +30,7 @@
     "@phosphor-icons/vue": "^2.2.1",
     "@tailwindcss/vite": "^4.1.18",
     "openseadragon": "^6.1.0",
+    "pdfjs-dist": "^4.10.38",
     "tailwindcss": "^4.1.18",
     "vidstack": "^1.12.13",
     "vue": "^3.5.28",

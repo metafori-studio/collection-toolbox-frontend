@@ -39,7 +39,8 @@ export {
 export { default as MapViewer } from './components/viewers/MapViewer';
 export { default as VideoViewer } from './components/viewers/VideoViewer';
 export { default as AudioViewer } from './components/viewers/AudioViewer';
-export { default as PdfViewer } from './components/viewers/PdfViewer';
+export { PdfViewer, PdfCanvas, PdfThumbnailStrip } from './components/viewers/PdfViewer';
+export type { PdfSource, PdfViewerProps } from './components/viewers/PdfViewer';
 export { default as TranscriptViewer } from './components/viewers/TranscriptViewer';
 export { isDeepZoomImage } from './components/viewers/media';
 export type { ViewerMediaResource, ViewerMediaKind } from './components/viewers/media';
