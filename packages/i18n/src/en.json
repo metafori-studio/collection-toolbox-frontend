@@ -10,6 +10,10 @@
     "zoomOut": "Zoom out",
     "zoomIn": "Zoom in",
     "resetZoom": "Reset zoom",
+    "pdf": {
+      "page": "PDF page {page}",
+      "thumbnail": "PDF page {page} thumbnail"
+    },
     "image": {
       "noImages": "No images available",
       "errorLoad": "Failed to load image"
