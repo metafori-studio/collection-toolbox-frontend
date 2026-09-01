@@ -105,7 +105,9 @@
       "contentNote": "Content note",
       "technicalNote": "Technical note",
       "termsOfUse": "Terms of use",
-      "extents": "Extents"
+      "extents": "Extents",
+      "project": "Project",
+      "doi": "DOI"
     },
     "boolean": {
       "true": "Yes",

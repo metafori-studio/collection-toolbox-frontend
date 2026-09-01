@@ -73,7 +73,7 @@
       "researchOriginContext": "Pôvod a kontext výskumu",
       "rightsAndAccess": "Práva a prístup",
       "additionalNotes": "Doplňujúce údaje",
-      "locationNote": "Poznámky k lokalite"
+      "locationNote": "Poznámka k lokalite"
     },
     "citation": {
       "copy": "Kopírovať citáciu"
@@ -103,7 +103,9 @@
       "contentNote": "Obsahová poznámka",
       "technicalNote": "Technická poznámka",
       "termsOfUse": "Podmienky použitia",
-      "extents": "Rozsah"
+      "extents": "Rozsah",
+      "project": "Projekt",
+      "doi": "DOI"
     },
     "boolean": {
       "true": "Áno",
