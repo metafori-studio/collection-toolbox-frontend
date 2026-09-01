@@ -167,25 +167,125 @@
             "documents": [
                 {
                     "id": 3,
-                    "name": "Research document",
-                    "file_name": "research-document.pdf",
-                    "human_readable_size": "142 KB",
+                    "name": "Variable page sizes test document",
+                    "file_name": "variable-page-sizes-test.pdf",
+                    "human_readable_size": "5.3 KB",
                     "mime_type": "application/pdf",
-                    "url": "https://pdfobject.com/pdf/sample.pdf",
+                    "url": "https://mozilla.github.io/pdf.js/web/compressed.tracemonkey-pldi-09.pdf",
                     "conversions": {}
                 }
             ],
             "images": [
                 {
                     "id": 4,
-                    "name": "Research image",
-                    "file_name": "research-image.jpg",
+                    "name": "Research image 1",
+                    "file_name": "research-image-1.jpg",
                     "human_readable_size": "86 KB",
                     "mime_type": "image/jpeg",
-                    "url": "https://fastly.picsum.photos/id/791/1200/800.jpg?hmac=kZdqKhNSfF_pcDO8i2BaLww4I8h_phrKmi8BCuc_tEY",
+                    "url": "https://openseadragon.github.io/example-images/grand-canyon-landscape-overlooking.jpg",
                     "conversions": {
-                        "thumb": "https://fastly.picsum.photos/id/791/400/300.jpg?hmac=Ih25EqC17SgnqsgEitvV1TNQxVnBv8fQ5_MNaU7LGD4"
+                        "thumbnail": "https://openseadragon.github.io/example-images/grand-canyon-landscape-overlooking.jpg"
                     }
+                },
+                {
+                    "id": 14,
+                    "name": "Small image example",
+                    "file_name": "small-image-example.png",
+                    "human_readable_size": "3 KB",
+                    "mime_type": "image/png",
+                    "url": "https://placehold.co/160x120/png?text=Small+image",
+                    "conversions": {
+                        "thumbnail": "https://placehold.co/160x120/png?text=Small+image"
+                    }
+                },
+                {
+                    "id": 10,
+                    "name": "Research image 2",
+                    "file_name": "research-image-2.jpg",
+                    "human_readable_size": "74 KB",
+                    "mime_type": "image/jpeg",
+                    "url": "https://openseadragon.github.io/example-images/rbc/rbc0001/2003/2003rosen1799/0001q.jpg",
+                    "conversions": {
+                        "thumbnail": "https://openseadragon.github.io/example-images/rbc/rbc0001/2003/2003rosen1799/0001q.jpg"
+                    }
+                },
+                {
+                    "id": 11,
+                    "name": "Research image 3",
+                    "file_name": "research-image-3.jpg",
+                    "human_readable_size": "91 KB",
+                    "mime_type": "image/jpeg",
+                    "url": "https://openseadragon.github.io/example-images/rbc/rbc0001/2003/2003rosen1799/0001r.jpg",
+                    "conversions": {
+                        "thumbnail": "https://openseadragon.github.io/example-images/rbc/rbc0001/2003/2003rosen1799/0001r.jpg"
+                    }
+                },
+                {
+                    "id": 12,
+                    "name": "Research image 4",
+                    "file_name": "research-image-4.jpg",
+                    "human_readable_size": "68 KB",
+                    "mime_type": "image/jpeg",
+                    "url": "https://openseadragon.github.io/example-images/rbc/rbc0001/2003/2003rosen1799/0001v.jpg",
+                    "conversions": {
+                        "thumbnail": "https://openseadragon.github.io/example-images/rbc/rbc0001/2003/2003rosen1799/0001v.jpg"
+                    }
+                },
+                {
+                    "id": 13,
+                    "name": "Research image 5",
+                    "file_name": "research-image-5.jpg",
+                    "human_readable_size": "82 KB",
+                    "mime_type": "image/jpeg",
+                    "url": "https://openseadragon.github.io/example-images/rpbaasm/0900/0908/090801v.jpg",
+                    "conversions": {
+                        "thumbnail": "https://openseadragon.github.io/example-images/rpbaasm/0900/0908/090801v.jpg"
+                    }
+                },
+                {
+                    "id": 5,
+                    "name": "Deep Zoom research image 1",
+                    "file_name": "B014812_hq_2007-04.jp2.dzi",
+                    "human_readable_size": "",
+                    "mime_type": "application/dzi",
+                    "url": "https://iip.offgridlab.sk/zoom/?path=MGHQ%2FVolne_um%2FSU%2FB014812_hq_2007-04.jp2.dzi",
+                    "conversions": {}
+                },
+                {
+                    "id": 6,
+                    "name": "Deep Zoom research image 2",
+                    "file_name": "B014813_hq_2007-04.jp2.dzi",
+                    "human_readable_size": "",
+                    "mime_type": "application/dzi",
+                    "url": "https://openseadragon.github.io/example-images/pnp/ppmsca/05900/05954/05954.dzi",
+                    "conversions": {}
+                },
+                {
+                    "id": 7,
+                    "name": "Deep Zoom research image 3",
+                    "file_name": "B014814_hq_2007-04.jp2.dzi",
+                    "human_readable_size": "",
+                    "mime_type": "application/dzi",
+                    "url": "https://openseadragon.github.io/example-images/pnp/ppmsca/05900/05954/05955.dzi",
+                    "conversions": {}
+                },
+                {
+                    "id": 8,
+                    "name": "Deep Zoom research image 4",
+                    "file_name": "B014815_hq_2007-04.jp2.dzi",
+                    "human_readable_size": "",
+                    "mime_type": "application/dzi",
+                    "url": "https://openseadragon.github.io/example-images/pnp/ppmsca/05900/05954/05956.dzi",
+                    "conversions": {}
+                },
+                {
+                    "id": 9,
+                    "name": "Deep Zoom research image 5",
+                    "file_name": "B014816_hq_2007-04.jp2.dzi",
+                    "human_readable_size": "",
+                    "mime_type": "application/dzi",
+                    "url": "https://openseadragon.github.io/example-images/pnp/ppmsca/05900/05954/05957.dzi",
+                    "conversions": {}
                 }
             ],
             "videos": [
