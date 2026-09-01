@@ -1,7 +1,11 @@
 <template>
   <button
-    class="inline-flex gap-2 items-center justify-center rounded-lg font-bold border"
+    class="inline-flex gap-2 items-center justify-center font-bold border"
     :class="[focusClasses, {
+      // Rounded
+      'rounded-lg': rounded === 'large',
+      'rounded-full': rounded === 'full',
+
       // Sizes
       'h-10 p-2': size === 'regular',
       'h-8 px-2 py-1 text-sm': size === 'small',
@@ -12,6 +16,7 @@
 
       'bg-status-error text-neutral-0 hover:bg-status-error-600 active:bg-status-700 border-transparent': variant === 'danger-primary',
       'bg-neutral-0 text-status-error hover:bg-status-error-100 active:bg-status-200 border-transparent': variant === 'danger-secondary',
+      'border-transparent hover:bg-neutral-800/10 active:bg-white/20': variant === 'media',
 
       // Block
       'w-full': block,
@@ -32,23 +37,26 @@
 import { focusClasses, disabledClasses } from '../../../misc/reusableCss';
 
 export type ButtonSize = 'small' | 'regular';
+export type ButtonVariant = 'primary' | 'secondary' | 'danger-primary' | 'danger-secondary' | 'media';
+export type ButtonRounded = 'large' | 'full';
 
 const {
   size = 'regular',
   variant = 'primary',
+  rounded = 'large',
   block = false,
   disabled = false,
   type = 'button',
 } = defineProps<{
   size?: ButtonSize
-  variant?: 'primary' | 'secondary' | 'danger-primary' | 'danger-secondary'
-  block?: boolean,
-  disabled?: boolean,
-  type?: 'button' | 'submit' | 'reset',
+  variant?: ButtonVariant
+  rounded?: ButtonRounded
+  block?: boolean
+  disabled?: boolean
+  type?: 'button' | 'submit' | 'reset'
 }>();
 
 defineEmits([
   'click',
 ]);
-
 </script>

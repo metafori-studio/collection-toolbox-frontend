@@ -41,4 +41,17 @@
   --color-status-info-100: #DBEAFE;
   --color-status-info-500: #3B82F6;
   --color-status-info-700: #1D4ED8;
+
+  /* Brand color */
+  --color-canvas-light: #F5F4F1;
+
+  /* Backdrop */
+  --color-backdrop-overlay: #0E0E0E;
+
+  /* Surface */
+  --color-bg-brand: var(--color-canvas-light);
+  --color-media-overlay: var(--color-backdrop-overlay);
+
+  /* Text */
+  --color-text-media-control: var(--color-neutral-0);
 }

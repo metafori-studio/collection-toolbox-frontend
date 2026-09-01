@@ -2,5 +2,13 @@
   "error404": {
     "title": "Error 404",
     "text": "If the problem persists, please contact the service administrator."
+  },
+  "viewer": {
+    "loading": "Loading...",
+    "previous": "Previous",
+    "next": "Next",
+    "zoomOut": "Zoom out",
+    "zoomIn": "Zoom in",
+    "resetZoom": "Reset zoom"
   }
 }

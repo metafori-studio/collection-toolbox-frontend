@@ -1,7 +1,7 @@
 export { focusClasses, focusBeforeClasses, disabledClasses } from './misc/reusableCss';
 
 // Atoms
-export { default as BaseButton, type ButtonSize } from './components/atoms/BaseButton';
+export { default as BaseButton, type ButtonSize, type ButtonVariant, type ButtonRounded } from './components/atoms/BaseButton';
 export { default as BaseDropdown } from './components/atoms/BaseDropdown';
 export { default as BaseIcon, type IconName } from './components/atoms/BaseIcon';
 export { default as MediaImage, type MediaImageTheme } from './components/atoms/MediaImage';
@@ -21,6 +21,17 @@ export { default as ErrorState } from './components/molecules/ErrorState';
 
 // Viewers
 export { default as BaseViewer } from './components/viewers/BaseViewer';
+export {
+  default as ThumbnailStrip,
+  ThumbnailStripThumb,
+} from './components/viewers/ThumbnailStrip';
+export {
+  default as MediaToolbar,
+  ViewerToolbar,
+  MediaViewerButton,
+  MediaToolbarSeparator,
+  type MediaToolbarVariant,
+} from './components/viewers/MediaToolbar';
 export { default as ImageViewer } from './components/viewers/ImageViewer';
 export { default as MapViewer } from './components/viewers/MapViewer';
 export { default as VideoViewer } from './components/viewers/VideoViewer';
