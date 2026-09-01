@@ -2,5 +2,13 @@
   "error404": {
     "title": "Chyba 404",
     "text": "V prípade pretrvávajúcich ťažkostí kontaktujte prevádzkovateľa služieb."
+  },
+  "viewer": {
+    "loading": "Načítavanie...",
+    "previous": "Predchádzajúce",
+    "next": "Nasledujúce",
+    "zoomOut": "Oddialiť",
+    "zoomIn": "Priblížiť",
+    "resetZoom": "Resetovať priblíženie"
   }
 }
