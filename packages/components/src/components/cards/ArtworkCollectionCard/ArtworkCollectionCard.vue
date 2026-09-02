@@ -4,7 +4,7 @@
   >
     <img
       :src="collection.image"
-      alt=""
+      :alt="collection.name"
       class="object-cover md:w-[300px]"
     >
     <div class="p-3 md:p-6 space-y-2">
@@ -18,7 +18,7 @@
         </li>
         <li class="flex gap-1 items-center">
           <BaseIcon icon="image" />
-          {{ collection.artwork_count }} diel
+          {{ collection.artwork_count }} {{ pluralize(collection.artwork_count, ['dielo', 'diela', 'diel']) }}
         </li>
       </ul>
       <p>{{ collection.about }}</p>
@@ -33,6 +33,7 @@
 
 <script lang="ts" setup>
 import { type ArtworkCollection } from '../../../types/artwork';
+import { pluralize } from '@metafori/shared';
 
 import {
   BaseButton,
