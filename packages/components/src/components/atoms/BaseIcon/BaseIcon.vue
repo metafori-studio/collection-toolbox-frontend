@@ -44,6 +44,7 @@ import {
   PhPlay,
   PhBug,
   PhList,
+  PhCalendarBlank,
 } from '@phosphor-icons/vue';
 
 export const icons = {
@@ -82,6 +83,7 @@ export const icons = {
   play: PhPlay,
   bug: PhBug,
   list: PhList,
+  calendar: PhCalendarBlank,
 };
 
 export type IconName = keyof typeof icons;

@@ -1,5 +1,10 @@
 export { focusClasses, focusBeforeClasses, disabledClasses } from './misc/reusableCss';
 
+// Types
+export type {
+  Artwork, ArtworkCollection, ArtworkDetail, ArtworkListResponse,
+} from './types/artwork';
+
 // Atoms
 export { default as BaseButton, type ButtonSize } from './components/atoms/BaseButton';
 export { default as BaseDropdown } from './components/atoms/BaseDropdown';
@@ -49,3 +54,8 @@ export { default as BreadcrumbList, type BreadcrumbItem } from './components/nav
 // Detail
 export { default as MetadataTable, type MetadataRecord } from './components/detail/MetadataTable';
 export { default as DetailSection } from './components/detail/DetailSection';
+
+// Views
+export { default as ArtworkDetailView } from './components/screens/ArtworkDetailView';
+export { default as ExploreView } from './components/screens/ExploreView';
+export { default as Error404View } from './components/screens/Error404View';

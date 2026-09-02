@@ -8,7 +8,7 @@
     <input
       v-model="model"
       type="text"
-      class="w-full text-display-3 border-b-2 placeholder:text-text-primary pl-16 py-1"
+      class="w-full text-current text-display-3 border-b-2 placeholder:text-current pl-16 py-1"
       :class="[ focusClasses ]"
       placeholder="Hľadaj v katalógu"
     >
