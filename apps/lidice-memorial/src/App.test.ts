@@ -24,7 +24,7 @@ describe('App', () => {
 
   it('mounts and renders the home view', () => {
     expect(wrapper.find('div').exists()).toBe(true);
-    expect(wrapper.text()).toContain('Hello World');
+    expect(wrapper.text()).toContain('Filtrovať výsledky');
   });
 
   it('renders the header', () => {

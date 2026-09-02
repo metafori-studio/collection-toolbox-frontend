@@ -1,9 +1,10 @@
 <template>
-  <div>
-    <div class="flex flex-col md:flex-row">
+  <div v-if="!isLoading && detail">
+    <div
+      class="flex flex-col md:flex-row"
+    >
       <div class="flex-1 bg-neutral-700 min-h-[260px]" />
       <div
-        v-if="!isLoading && detail"
         class="md:w-[400px] p-6 flex flex-col gap-8"
       >
         <BreadcrumbList
@@ -38,26 +39,32 @@
       </div>
     </div>
     <div class="container py-16">
-      <h2 class="text-heading-2">
-        Súčasť…
+      <h2 class="text-heading-2 max-sm:mb-4">
+        Súčasť {{ detail.collections.length }} kolekcie
       </h2>
+      <ArtworkCollectionCard
+        v-for="collection in detail.collections"
+        :key="collection.id"
+        :collection="collection"
+      />
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { ref, watch, computed } from 'vue';
-import {
-  BreadcrumbList,
-  DetailSection,
-  MetadataTable,
-} from '@metafori/components';
-import { getById, type ArtworkDetail } from '@/api';
+import BreadcrumbList from '../../navigation/BreadcrumbList';
+import DetailSection from '../../detail/DetailSection';
+import MetadataTable from '../../detail/MetadataTable';
+import ArtworkCollectionCard from '../../cards/ArtworkCollectionCard';
+import { type ArtworkDetail } from '../../../types/artwork';
 
 const {
   id,
+  getById,
 } = defineProps<{
   id: string
+  getById: (id: string) => Promise<ArtworkDetail>
 }>();
 
 const isLoading = ref(false);

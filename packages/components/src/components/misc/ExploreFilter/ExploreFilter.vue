@@ -1,10 +1,20 @@
 <template>
-  <div class="mb-16">
-    <div class="bg-primary-500 py-6 mb-8">
+  <div
+    class="mb-16"
+  >
+    <div
+      class="py-6 mb-8 border-b-2 border-border-default"
+      :class="{
+        'bg-primary-500': highlight === 'filter'
+      }"
+    >
       <div class="container">
         <ExploreSearchInput
           v-model="query"
           class="mb-10"
+          :class="{
+            'text-primary-500': highlight === 'search',
+          }"
         />
         <div>
           <h2 class="mb-2 text-label text-text-tertiary">
@@ -60,6 +70,12 @@ import {
   AppliedFilterChip,
 } from '@metafori/components';
 import ExploreSearchInput from './ExploreSearchInput.vue';
+
+const {
+  highlight = undefined,
+} = defineProps<{
+  highlight?: 'filter' | 'search' | undefined
+}>();
 
 const query = ref('');
 

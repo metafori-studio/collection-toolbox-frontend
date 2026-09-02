@@ -1,6 +1,8 @@
 <template>
   <div class="">
-    <ExploreFilter />
+    <ExploreFilter
+      :highlight="highlight"
+    />
 
     <div class="container pb-8">
       <div class="flex items-center justify-between mb-8 min-h-[75px]">
@@ -57,7 +59,7 @@
 <script setup lang="ts">
 import { ref, computed, watch } from 'vue';
 import { MasonryWall } from '@yeger/vue-masonry-wall';
-import ExploreFilter from '@/components/ExploreFilter/ExploreFilter.vue';
+import ExploreFilter from '../../misc/ExploreFilter';
 
 import {
   InputSelect,
@@ -66,7 +68,15 @@ import {
 } from '@metafori/components';
 
 import { pluralize } from '@metafori/shared';
-import { getList, type Artwork } from '@/api';
+import { type Artwork, type ArtworkListResponse } from '../../../types/artwork';
+
+const {
+  getList,
+  highlight = undefined,
+} = defineProps<{
+  getList: (orderBy: string, page: number) => Promise<ArtworkListResponse>
+  highlight?: 'filter' | 'search' | undefined
+}>();
 
 // Items
 const orderBy = ref('age');
