@@ -22,7 +22,22 @@
           />
         </label>
       </div>
-      <div>
+      <div
+        v-if="error"
+        class="flex justify-center py-16"
+      >
+        <ErrorState
+          title="Nepodarilo sa načítať diela"
+          text="Skúste to prosím znova."
+        >
+          <template #action>
+            <BaseButton @click="loadItems">
+              Skúsiť znova
+            </BaseButton>
+          </template>
+        </ErrorState>
+      </div>
+      <div v-else>
         <MasonryWall
           :items="items"
           :column-width="300"
@@ -65,6 +80,7 @@ import {
   InputSelect,
   ArtworkCard,
   BaseButton,
+  ErrorState,
 } from '@metafori/components';
 
 import { pluralize } from '@metafori/shared';
@@ -90,19 +106,46 @@ const orderbyOptions = [
 const items = ref<Artwork[]>([]);
 const total = ref(0);
 const page = ref(1);
+const error = ref(false);
 const artworkCountReadable = computed(() => `${total.value} ${pluralize(total.value, ['dielo', 'diela', 'diel'])}`);
 
+let requestId = 0;
+
 const loadItems = async () => {
+  const currentRequestId = ++requestId;
   page.value = 1;
-  const result = await getList(orderBy.value, 1);
-  items.value = result.data;
-  total.value = result.meta.total;
+  error.value = false;
+  try {
+    const result = await getList(orderBy.value, 1);
+    if (currentRequestId !== requestId) {
+      return;
+    }
+    items.value = result.data;
+    total.value = result.meta.total;
+  } catch {
+    if (currentRequestId !== requestId) {
+      return;
+    }
+    error.value = true;
+  }
 };
 
 const loadMore = async () => {
+  const currentRequestId = ++requestId;
   page.value += 1;
-  const result = await getList(orderBy.value, page.value);
-  items.value = [...items.value, ...result.data];
+  try {
+    const result = await getList(orderBy.value, page.value);
+    if (currentRequestId !== requestId) {
+      return;
+    }
+    items.value = [...items.value, ...result.data];
+  } catch {
+    if (currentRequestId !== requestId) {
+      return;
+    }
+    page.value -= 1;
+    error.value = true;
+  }
 };
 
 watch(orderBy, loadItems);

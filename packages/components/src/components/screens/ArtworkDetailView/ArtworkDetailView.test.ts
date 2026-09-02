@@ -93,4 +93,51 @@ describe('ArtworkDetailView', () => {
     expect(getById).toHaveBeenCalledTimes(2);
     expect(getById).toHaveBeenLastCalledWith('2');
   });
+
+  it('ignores a stale response when an earlier request resolves after a newer one', async () => {
+    const artworkDetail2: ArtworkDetail = { ...artworkDetail, id: 2, title: 'Las Meninas' };
+    let resolveFirst: (value: ArtworkDetail) => void = () => {};
+    const getById = vi.fn()
+      .mockImplementationOnce(() => new Promise<ArtworkDetail>((resolve) => {
+        resolveFirst = resolve;
+      }))
+      .mockResolvedValueOnce(artworkDetail2);
+
+    const wrapper = mountView({ id: '1', getById });
+    await flushPromises();
+
+    await wrapper.setProps({ id: '2' });
+    await flushPromises();
+
+    expect(wrapper.find('h1').text()).toBe('Las Meninas');
+
+    resolveFirst(artworkDetail);
+    await flushPromises();
+
+    expect(wrapper.find('h1').text()).toBe('Las Meninas');
+  });
+
+  it('renders an error state instead of getting stuck loading when getById rejects', async () => {
+    const wrapper = mountView({ getById: vi.fn().mockRejectedValue(new Error('Network error')) });
+    await flushPromises();
+
+    expect(wrapper.findComponent({ name: 'ErrorState' }).exists()).toBe(true);
+    expect(wrapper.find('h1').exists()).toBe(false);
+  });
+
+  it('retries loading when the error state action is clicked', async () => {
+    const getById = vi.fn()
+      .mockRejectedValueOnce(new Error('Network error'))
+      .mockResolvedValueOnce(artworkDetail);
+    const wrapper = mountView({ getById });
+    await flushPromises();
+    expect(wrapper.findComponent({ name: 'ErrorState' }).exists()).toBe(true);
+
+    await wrapper.findComponent({ name: 'ErrorState' }).get('button').trigger('click');
+    await flushPromises();
+
+    expect(getById).toHaveBeenCalledTimes(2);
+    expect(wrapper.findComponent({ name: 'ErrorState' }).exists()).toBe(false);
+    expect(wrapper.find('h1').text()).toBe('Guernica');
+  });
 });
