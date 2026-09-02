@@ -44,6 +44,7 @@ import {
   PhPlay,
   PhBug,
   PhList,
+  PhCalendarBlank,
 } from '@phosphor-icons/vue';
 
 export const icons = {
@@ -82,6 +83,7 @@ export const icons = {
   play: PhPlay,
   bug: PhBug,
   list: PhList,
+  calendar: PhCalendarBlank,
 };
 
 export type IconName = keyof typeof icons;
@@ -94,7 +96,7 @@ const {
   weight = 'regular',
 } = defineProps<{
   icon?: IconName
-  size?: 16 | 20 | 24 | 32 | 80 | 96
+  size?: 16 | 20 | 24 | 32 | 48 | 80 | 96
   weight?: 'regular' | 'fill'
 }>();
 
