@@ -47,6 +47,7 @@ export { default as AppHeaderNew } from './components/layout/AppHeaderNew';
 
 // Cards
 export { default as ArtworkCard } from './components/cards/ArtworkCard';
+export { default as ArtworkCollectionCard } from './components/cards/ArtworkCollectionCard';
 
 // Navigation
 export { default as BreadcrumbList, type BreadcrumbItem } from './components/navigation/BreadcrumbList';

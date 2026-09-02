@@ -124,4 +124,13 @@ describe('InputMultiselect', () => {
     expect(wrapper.findAllComponents({ name: 'InputCheckbox' })).toHaveLength(0);
     expect(wrapper.text().toLowerCase()).toContain('no results');
   });
+
+  // Keyboard
+  it('closes on Escape from the search input', async () => {
+    const wrapper = m(InputMultiselect, { props: { options } });
+    await wrapper.find('button').trigger('click');
+    expect(wrapper.findAllComponents({ name: 'InputCheckbox' })).toHaveLength(3);
+    await wrapper.find('input[type="search"]').trigger('keydown', { key: 'Escape' });
+    expect(wrapper.findAllComponents({ name: 'InputCheckbox' })).toHaveLength(0);
+  });
 });

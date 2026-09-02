@@ -2,9 +2,11 @@
   <div
     ref="containerRef"
     class="relative"
+    @keydown.esc="handleEscape"
   >
     <button
       :id="id"
+      ref="triggerRef"
       type="button"
       aria-haspopup="listbox"
       :aria-expanded="isOpen"
@@ -16,7 +18,6 @@
       }]"
       :disabled="disabled"
       @click="toggle"
-      @keydown.esc="close"
     >
       <span
         v-if="model.length"
@@ -97,6 +98,7 @@ const model = defineModel<string[]>({ default: () => [] });
 const isOpen = ref(false);
 const query = ref('');
 const containerRef = ref<HTMLElement | null>(null);
+const triggerRef = ref<HTMLButtonElement | null>(null);
 
 // Options
 const filteredOptions = computed(() => {
@@ -128,6 +130,14 @@ function toggle() {
 
 function close() {
   isOpen.value = false;
+}
+
+function handleEscape() {
+  if (!isOpen.value) {
+    return;
+  }
+  close();
+  triggerRef.value?.focus();
 }
 
 function handleOutsideClick(event: MouseEvent) {

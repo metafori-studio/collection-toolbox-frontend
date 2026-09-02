@@ -12,6 +12,7 @@
             v-if="item.to"
             :to="item.to"
             class="underline"
+            :aria-current="i === items.length - 1 ? 'page' : undefined"
           >
             {{ item.label }}
           </RouterLink>

@@ -1,5 +1,20 @@
 <template>
-  <div v-if="!isLoading && detail">
+  <div
+    v-if="error"
+    class="flex justify-center py-16"
+  >
+    <ErrorState
+      title="Nepodarilo sa načítať dielo"
+      text="Skúste to prosím znova."
+    >
+      <template #action>
+        <BaseButton @click="loadDetail">
+          Skúsiť znova
+        </BaseButton>
+      </template>
+    </ErrorState>
+  </div>
+  <div v-else-if="!isLoading && detail">
     <div
       class="flex flex-col md:flex-row"
     >
@@ -39,7 +54,7 @@
       </div>
     </div>
     <div class="container py-16">
-      <h2 class="text-heading-2 max-sm:mb-4">
+      <h2 class="text-heading-2 mb-4">
         Súčasť {{ detail.collections.length }} kolekcie
       </h2>
       <ArtworkCollectionCard
@@ -57,6 +72,8 @@ import BreadcrumbList from '../../navigation/BreadcrumbList';
 import DetailSection from '../../detail/DetailSection';
 import MetadataTable from '../../detail/MetadataTable';
 import ArtworkCollectionCard from '../../cards/ArtworkCollectionCard';
+import ErrorState from '../../molecules/ErrorState';
+import BaseButton from '../../atoms/BaseButton';
 import { type ArtworkDetail } from '../../../types/artwork';
 
 const {
@@ -68,12 +85,31 @@ const {
 }>();
 
 const isLoading = ref(false);
+const error = ref(false);
 const detail = ref<ArtworkDetail | null>(null);
 
+let requestId = 0;
+
 const loadDetail = async () => {
+  const currentRequestId = ++requestId;
   isLoading.value = true;
-  detail.value = await getById(id);
-  isLoading.value = false;
+  error.value = false;
+  try {
+    const result = await getById(id);
+    if (currentRequestId !== requestId) {
+      return;
+    }
+    detail.value = result;
+  } catch {
+    if (currentRequestId !== requestId) {
+      return;
+    }
+    error.value = true;
+  } finally {
+    if (currentRequestId === requestId) {
+      isLoading.value = false;
+    }
+  }
 };
 
 const metadataItems = computed(() => {

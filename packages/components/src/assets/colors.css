@@ -52,5 +52,5 @@
   --color-border-default: var(--color-neutral-200);
   --color-border-subtle: var(--color-neutral-100);
   --color-border-strong: var(--color-neutral-500);
-  --color-border-focus: var(--color-brand-900);
+  --color-border-focus: var(--color-primary-900);
 }

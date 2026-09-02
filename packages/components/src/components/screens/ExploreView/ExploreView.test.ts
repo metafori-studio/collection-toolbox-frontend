@@ -68,6 +68,32 @@ describe('ExploreView', () => {
     expect(getList).toHaveBeenCalledWith('-age', 1);
   });
 
+  it('ignores a stale response when an earlier query resolves after a newer one', async () => {
+    let resolveFirst: (value: ArtworkListResponse) => void = () => {};
+    const getList = vi.fn()
+      .mockResolvedValueOnce(listResponse([makeArtwork(1)], 2))
+      .mockImplementationOnce(() => new Promise<ArtworkListResponse>((resolve) => {
+        resolveFirst = resolve;
+      }))
+      .mockResolvedValueOnce(listResponse([makeArtwork(2)], 5));
+    const { wrapper } = mountView(getList);
+    await flushPromises();
+
+    await wrapper.find('select').setValue('-age');
+    await flushPromises();
+    await wrapper.find('select').setValue('id');
+    await flushPromises();
+
+    expect(wrapper.text()).toContain('5');
+    expect(wrapper.findAllComponents({ name: 'ArtworkCard' })).toHaveLength(1);
+
+    resolveFirst(listResponse([makeArtwork(1), makeArtwork(3)], 2));
+    await flushPromises();
+
+    expect(wrapper.text()).toContain('5');
+    expect(wrapper.findAllComponents({ name: 'ArtworkCard' })).toHaveLength(1);
+  });
+
   it('appends the next page of items when "Zobraziť ďalšie" is clicked', async () => {
     const getList = vi.fn()
       .mockResolvedValueOnce(listResponse([makeArtwork(1)], 2))
@@ -89,5 +115,29 @@ describe('ExploreView', () => {
     const { wrapper } = mountView(vi.fn().mockResolvedValue(listResponse([makeArtwork(1), makeArtwork(2)], 2)));
     await flushPromises();
     expect(findLoadMoreButton(wrapper)).toBeUndefined();
+  });
+
+  it('renders an error state instead of getting stuck loading when getList rejects', async () => {
+    const { wrapper } = mountView(vi.fn().mockRejectedValue(new Error('Network error')));
+    await flushPromises();
+
+    expect(wrapper.findComponent({ name: 'ErrorState' }).exists()).toBe(true);
+    expect(wrapper.findAllComponents({ name: 'ArtworkCard' })).toHaveLength(0);
+  });
+
+  it('retries loading when the error state action is clicked', async () => {
+    const getList = vi.fn()
+      .mockRejectedValueOnce(new Error('Network error'))
+      .mockResolvedValueOnce(listResponse([makeArtwork(1)], 1));
+    const { wrapper } = mountView(getList);
+    await flushPromises();
+    expect(wrapper.findComponent({ name: 'ErrorState' }).exists()).toBe(true);
+
+    await wrapper.findComponent({ name: 'ErrorState' }).get('button').trigger('click');
+    await flushPromises();
+
+    expect(getList).toHaveBeenCalledTimes(2);
+    expect(wrapper.findComponent({ name: 'ErrorState' }).exists()).toBe(false);
+    expect(wrapper.findAllComponents({ name: 'ArtworkCard' })).toHaveLength(1);
   });
 });
