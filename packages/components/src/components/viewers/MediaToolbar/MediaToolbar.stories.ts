@@ -43,6 +43,10 @@ export const Pill: Story = {
         <MediaViewerButton title="Zoom In">
           <BaseIcon icon="zoomIn" :size="16" />
         </MediaViewerButton>
+
+        <MediaViewerButton title="Reset Zoom">
+          <BaseIcon icon="zoomReset" :size="16" />
+        </MediaViewerButton>
       </MediaToolbar>
     `,
   }),
