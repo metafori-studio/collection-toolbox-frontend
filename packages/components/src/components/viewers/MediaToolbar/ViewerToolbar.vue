@@ -11,7 +11,7 @@
       />
     </MediaViewerButton>
 
-    <span class="px-2 text-center text-xs font-semibold text-white/90 select-none">
+    <span class="px-2 text-center text-sm font-medium tracking-normal text-text-media-control select-none">
       {{ current }}/{{ total }}
     </span>
 
@@ -39,7 +39,7 @@
       />
     </MediaViewerButton>
 
-    <span class="inline-flex w-12 justify-center text-center text-xs font-semibold text-white/90 tabular-nums select-none">
+    <span class="inline-flex w-12 justify-center text-center text-sm font-medium tracking-normal text-text-media-control tabular-nums select-none">
       <template v-if="zoomPercentage !== null">
         {{ zoomPercentage }}%
       </template>
