@@ -1,32 +1,34 @@
 <template>
   <MediaToolbar variant="pill">
-    <MediaViewerButton
-      :title="t('viewer.previous')"
-      :disabled="current <= 1"
-      @click="emit('previous')"
-    >
-      <BaseIcon
-        icon="arrowLeft"
-        :size="20"
-      />
-    </MediaViewerButton>
+    <template v-if="total > 1">
+      <MediaViewerButton
+        :title="t('viewer.previous')"
+        :disabled="current <= 1"
+        @click="emit('previous')"
+      >
+        <BaseIcon
+          icon="arrowLeft"
+          :size="20"
+        />
+      </MediaViewerButton>
 
-    <span class="px-2 text-center text-sm font-medium tracking-normal text-text-media-control select-none">
-      {{ current }}/{{ total }}
-    </span>
+      <span class="px-2 text-center text-sm font-medium tracking-normal text-text-media-control select-none">
+        {{ current }}/{{ total }}
+      </span>
 
-    <MediaViewerButton
-      :title="t('viewer.next')"
-      :disabled="current >= total"
-      @click="emit('next')"
-    >
-      <BaseIcon
-        icon="arrowRight"
-        :size="20"
-      />
-    </MediaViewerButton>
+      <MediaViewerButton
+        :title="t('viewer.next')"
+        :disabled="current >= total"
+        @click="emit('next')"
+      >
+        <BaseIcon
+          icon="arrowRight"
+          :size="20"
+        />
+      </MediaViewerButton>
 
-    <MediaToolbarSeparator />
+      <MediaToolbarSeparator />
+    </template>
 
     <MediaViewerButton
       :title="t('viewer.zoomOut')"
