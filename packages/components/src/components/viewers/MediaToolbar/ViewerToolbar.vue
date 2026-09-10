@@ -6,7 +6,7 @@
       @click="emit('previous')"
     >
       <BaseIcon
-        icon="caretLeft"
+        icon="arrowLeft"
         :size="20"
       />
     </MediaViewerButton>
@@ -21,7 +21,7 @@
       @click="emit('next')"
     >
       <BaseIcon
-        icon="caretRight"
+        icon="arrowRight"
         :size="20"
       />
     </MediaViewerButton>
