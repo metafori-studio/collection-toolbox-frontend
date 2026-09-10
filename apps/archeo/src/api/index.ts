@@ -5,7 +5,7 @@ import mockDetail from './mock/detail.json';
 import { type MapPoint } from '@/components/ArcheoMap/ArcheoMap.vue';
 import { isLoggedIn } from '@/store';
 
-const USE_MOCK = import.meta.env.VITE_USE_MOCK === 'true';;
+const USE_MOCK = import.meta.env.VITE_USE_MOCK === 'true';
 
 const api = axios.create({
   baseURL: import.meta.env.VITE_API_BASE,
