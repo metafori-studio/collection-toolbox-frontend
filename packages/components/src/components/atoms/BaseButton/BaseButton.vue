@@ -16,7 +16,7 @@
 
       'bg-status-error text-neutral-0 hover:bg-status-error-600 active:bg-status-700 border-transparent': variant === 'danger-primary',
       'bg-neutral-0 text-status-error hover:bg-status-error-100 active:bg-status-200 border-transparent': variant === 'danger-secondary',
-      'border-transparent hover:bg-neutral-800/10 active:bg-white/20': variant === 'media',
+      'border-transparent bg-transparent enabled:hover:bg-neutral-800 enabled:active:bg-neutral-700': variant === 'media',
 
       // Block
       'w-full': block,
