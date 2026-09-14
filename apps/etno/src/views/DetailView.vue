@@ -1,16 +1,7 @@
 <template>
   <div
-    class="flex flex-col md:flex-row"
+    class="flex flex-col md:flex-row min-h-[calc(100dvh-3.5rem)]"
   >
-    <BaseButton
-      class="fixed z-20 left-4 top-16"
-      size="small"
-      @click="$router.push({ name: 'Explore' })"
-    >
-      <BaseIcon icon="caretLeft" />
-      {{ $t('detail.navigation.backToExplore') }}
-    </BaseButton>
-
     <BaseButton
       class="fixed z-20 right-4 top-16"
       variant="secondary"
@@ -29,17 +20,24 @@
       />
     </BaseButton>
 
-    <component
-      :is="activeViewerComponent"
+    <div
       v-if="isLoaded"
-      :detail="detail"
-    />
+      class="z-0 flex flex-none md:flex-1 sticky top-14 h-[calc(100dvh-3.5rem)] max-h-[calc(100dvh-3.5rem)] min-h-0 min-w-0 overflow-hidden w-full md:w-auto"
+    >
+      <component
+        :is="activeViewerComponent"
+        :detail="detail"
+        :on-refresh-url="refreshMediaUrl"
+      />
+    </div>
 
     <DetailSidebar
       v-if="isLoaded && detailPanelOpen"
+      class="relative z-10 w-full shrink-0 md:w-[392px]"
       :detail="detail"
       :viewer-active="viewerActive"
       :available-viewers="availableViewers"
+      @update:viewer-active="viewerActive = $event as ViewerKey"
     />
 
     <div
@@ -78,6 +76,34 @@ const {
 const router = useRouter();
 
 const detail = ref<Detail>({} as Detail);
+let detailRefreshPromise: Promise<Detail> | null = null;
+const refreshedUrlSources = new Map<string, string>();
+
+async function refreshMediaUrl(expiredUrl?: string): Promise<string | void> {
+  if (!expiredUrl) return;
+  const sourceUrl = refreshedUrlSources.get(expiredUrl) ?? expiredUrl;
+
+  const mediaEntry = Object.entries(detail.value.media ?? {}).find(([, items]) => (
+    items?.some((item) => item.url === sourceUrl)
+  ));
+  if (!mediaEntry) return;
+
+  const [mediaKind, items] = mediaEntry;
+  const expiredMedia = items?.find((item) => item.url === sourceUrl);
+  if (!expiredMedia) return;
+
+  detailRefreshPromise ??= getDetail(id).finally(() => {
+    detailRefreshPromise = null;
+  });
+  const refreshedDetail = await detailRefreshPromise;
+  const refreshedMedia = refreshedDetail.media?.[mediaKind as ViewerMediaKind]?.find((item) => (
+    item.id === expiredMedia.id
+  ));
+
+  if (!refreshedMedia?.url) return;
+  refreshedUrlSources.set(refreshedMedia.url, sourceUrl);
+  return refreshedMedia.url;
+}
 
 onMounted(async () => {
   try {
@@ -91,7 +117,6 @@ onMounted(async () => {
 const isLoaded = computed(() => !!detail.value.id);
 
 type ViewerKey = 'image' | 'map' | 'pdf' | 'audio' | 'video' | 'transcript';
-type DetailMedia = Partial<Record<ViewerMediaKind, { transcript?: string | null }[]>>;
 
 const viewerActive = ref<ViewerKey>('image');
 
@@ -131,8 +156,8 @@ const availableViewers = computed(() => [
   {
     key: 'transcript' as const,
     component: TranscriptViewer,
-    available: Object.values((detail.value.media ?? {}) as DetailMedia).some((items) => (
-      items?.some((item) => !!item.transcript)
+    available: Object.values(detail.value.media ?? {}).some((items) => (
+      items.some((item) => !!item.transcript)
     )),
   },
 ].filter((viewer) => viewer.available));
@@ -148,10 +173,12 @@ const getInitialViewer = (): ViewerKey => {
   return availableViewers.value[0]?.key ?? 'image';
 };
 
+const activeViewer = computed(() => (
+  availableViewers.value.find((viewer) => viewer.key === viewerActive.value)
+));
+
 const activeViewerComponent = computed(() => (
-  availableViewers.value.find((viewer) => viewer.key === viewerActive.value)?.component
-  ?? availableViewers.value[0]?.component
-  ?? null
+  activeViewer.value?.component
 ));
 
 </script>

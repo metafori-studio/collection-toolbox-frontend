@@ -11,6 +11,13 @@ export type ViewerMediaResource = {
   transcript?: string | null;
 };
 
+export const isDeepZoomImage = (image: ViewerMediaResource | string): boolean => {
+  if (typeof image === 'string') return /\.dzi(?:$|[?#&])/i.test(image);
+  return image.mime_type === 'application/dzi'
+    || image.mime_type === 'application/deepzoom+xml'
+    || /\.dzi(?:$|[?#&])/i.test(image.url);
+};
+
 export type ViewerDetail = {
   title?: string;
   media?: Partial<Record<ViewerMediaKind, ViewerMediaResource[]>>;

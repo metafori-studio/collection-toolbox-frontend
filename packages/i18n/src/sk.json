@@ -9,6 +9,14 @@
     "next": "Nasledujúce",
     "zoomOut": "Oddialiť",
     "zoomIn": "Priblížiť",
-    "resetZoom": "Resetovať priblíženie"
+    "resetZoom": "Resetovať priblíženie",
+    "pdf": {
+      "page": "PDF strana {page}",
+      "thumbnail": "Náhľad PDF strany {page}"
+    },
+    "image": {
+      "noImages": "Žiadne obrázky k dispozícii",
+      "errorLoad": "Nepodarilo sa načítať obrázok"
+    }
   }
 }

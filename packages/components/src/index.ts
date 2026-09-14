@@ -32,13 +32,18 @@ export {
   MediaToolbarSeparator,
   type MediaToolbarVariant,
 } from './components/viewers/MediaToolbar';
-export { default as ImageViewer } from './components/viewers/ImageViewer';
+export {
+  default as ImageViewer,
+  type ImageViewerProps,
+} from './components/viewers/ImageViewer';
 export { default as MapViewer } from './components/viewers/MapViewer';
 export { default as VideoViewer } from './components/viewers/VideoViewer';
 export { default as AudioViewer } from './components/viewers/AudioViewer';
-export { default as PdfViewer } from './components/viewers/PdfViewer';
+export { PdfViewer, PdfCanvas, PdfThumbnailStrip } from './components/viewers/PdfViewer';
+export type { PdfSource, PdfViewerProps } from './components/viewers/PdfViewer';
 export { default as TranscriptViewer } from './components/viewers/TranscriptViewer';
-export type { ViewerMediaKind } from './components/viewers/media';
+export { isDeepZoomImage } from './components/viewers/media';
+export type { ViewerMediaResource, ViewerMediaKind } from './components/viewers/media';
 
 // Content
 export { default as BaseParagraph } from './components/content/BaseParagraph';
