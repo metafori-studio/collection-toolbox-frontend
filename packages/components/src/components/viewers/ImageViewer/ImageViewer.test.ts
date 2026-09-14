@@ -254,6 +254,31 @@ describe('ImageViewer', () => {
     expect(osdMock.instances[0]?.destroy).toHaveBeenCalledOnce();
   });
 
+  it('shows and toggles the transcript for the selected image', async () => {
+    wrapper = mount(ImageViewer, { props: { images: [
+      { url: 'one.jpg', transcript: 'First image transcript' },
+      { url: 'two.jpg', transcript: 'Second image transcript' },
+      { url: 'three.jpg' },
+    ] } });
+    await flushPromises();
+
+    expect(wrapper.text()).toContain('First image transcript');
+    await wrapper.get('button').trigger('click');
+    expect(wrapper.text()).not.toContain('First image transcript');
+    expect(wrapper.text()).toContain('Show transcript');
+
+    await wrapper.get('button[title="Next"]').trigger('click');
+    await flushPromises();
+    expect(wrapper.text()).not.toContain('Second image transcript');
+    await wrapper.get('button:not([title])').trigger('click');
+    expect(wrapper.text()).toContain('Second image transcript');
+
+    await wrapper.get('button[title="Next"]').trigger('click');
+    await flushPromises();
+    expect(wrapper.text()).not.toContain('Show transcript');
+    expect(wrapper.text()).not.toContain('Hide transcript');
+  });
+
   it('navigates with left/right from the viewer area and retains focus across image changes', async () => {
     wrapper = mount(ImageViewer, {
       attachTo: document.body,

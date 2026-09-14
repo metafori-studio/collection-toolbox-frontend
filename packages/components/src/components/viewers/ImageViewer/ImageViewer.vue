@@ -1,79 +1,99 @@
 <template>
-  <MediaViewerFrame
-    class="select-none"
-    layout="native"
-    @toolbar-resize="handleToolbarResize"
-    @previous="previousImage"
-    @next="nextImage"
-    @first="selectImage(0)"
-    @last="selectImage(images.length - 1)"
-  >
-    <template #thumbnails>
-      <ImageThumbnailStrip
-        v-if="images.length > 1"
-        class="order-last lg:order-first"
-        :images="images"
-        :current-index="currentIndex"
-        @select-image="selectImage"
-      />
-    </template>
-
-    <div
-      v-if="currentImage"
-      class="relative flex h-[100cqh] min-h-full min-w-full w-full shrink-0 items-center justify-center"
+  <div class="relative flex min-w-0 flex-1">
+    <BaseButton
+      v-if="transcript"
+      variant="secondary"
+      size="small"
+      class="absolute right-4 top-2 z-20"
+      @click="showTranscript = !showTranscript"
     >
-      <div
-        :key="currentIndex"
-        ref="viewerElement"
-        class="h-full w-full bg-bg-brand"
-        role="img"
-        :aria-label="currentImage.name || currentImage.file_name || ''"
-      />
-    </div>
+      {{ showTranscript ? 'Hide transcript' : 'Show transcript' }}
+    </BaseButton>
 
-    <template #overlays>
+    <MediaViewerFrame
+      class="min-w-0 flex-1 select-none"
+      layout="native"
+      @toolbar-resize="handleToolbarResize"
+      @previous="previousImage"
+      @next="nextImage"
+      @first="selectImage(0)"
+      @last="selectImage(images.length - 1)"
+    >
+      <template #thumbnails>
+        <ImageThumbnailStrip
+          v-if="images.length > 1"
+          class="order-last lg:order-first"
+          :images="images"
+          :current-index="currentIndex"
+          @select-image="selectImage"
+        />
+      </template>
+
       <div
-        v-if="status === 'loading'"
-        class="absolute inset-0 z-10 flex items-center justify-center bg-bg-brand text-sm font-medium text-neutral-500"
+        v-if="currentImage"
+        class="relative flex h-[100cqh] min-h-full min-w-full w-full shrink-0 items-center justify-center"
       >
-        {{ t('viewer.loading') }}
+        <div
+          :key="currentIndex"
+          ref="viewerElement"
+          class="h-full w-full bg-bg-brand"
+          role="img"
+          :aria-label="currentImage.name || currentImage.file_name || ''"
+        />
       </div>
 
-      <div
-        v-if="status === 'error'"
-        class="absolute inset-0 z-10 flex items-center justify-center bg-bg-brand p-4"
-      >
-        <p class="max-w-lg text-center text-sm font-medium text-neutral-600">
-          {{ t('viewer.image.errorLoad') }}
-        </p>
-      </div>
-    </template>
+      <template #overlays>
+        <div
+          v-if="status === 'loading'"
+          class="absolute inset-0 z-10 flex items-center justify-center bg-bg-brand text-sm font-medium text-neutral-500"
+        >
+          {{ t('viewer.loading') }}
+        </div>
 
-    <template #toolbar>
-      <ViewerToolbar
-        v-if="images.length > 0"
-        :current="currentIndex + 1"
-        :total="images.length"
-        :zoom-percentage="displayedZoomPercentage"
-        :can-zoom-out="canZoomOut"
-        :can-zoom-in="canZoomIn"
-        :can-reset-zoom="canResetZoom"
-        @previous="previousImage"
-        @next="nextImage"
-        @zoom-in="zoomIn"
-        @zoom-out="zoomOut"
-        @reset-zoom="resetZoom"
-      />
-    </template>
-  </MediaViewerFrame>
+        <div
+          v-if="status === 'error'"
+          class="absolute inset-0 z-10 flex items-center justify-center bg-bg-brand p-4"
+        >
+          <p class="max-w-lg text-center text-sm font-medium text-neutral-600">
+            {{ t('viewer.image.errorLoad') }}
+          </p>
+        </div>
+      </template>
+
+      <template #toolbar>
+        <ViewerToolbar
+          v-if="images.length > 0"
+          :current="currentIndex + 1"
+          :total="images.length"
+          :zoom-percentage="displayedZoomPercentage"
+          :can-zoom-out="canZoomOut"
+          :can-zoom-in="canZoomIn"
+          :can-reset-zoom="canResetZoom"
+          @previous="previousImage"
+          @next="nextImage"
+          @zoom-in="zoomIn"
+          @zoom-out="zoomOut"
+          @reset-zoom="resetZoom"
+        />
+      </template>
+    </MediaViewerFrame>
+
+    <TranscriptViewer
+      v-if="transcript && showTranscript"
+      :transcript="transcript"
+      side-panel
+    />
+  </div>
 </template>
 
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
+import BaseButton from '../../atoms/BaseButton';
 import ImageThumbnailStrip from './ImageThumbnailStrip.vue';
 import MediaViewerFrame from '../MediaViewerFrame.vue';
 import ViewerToolbar from '../MediaToolbar/ViewerToolbar.vue';
+import TranscriptViewer from '../TranscriptViewer';
 import type { ViewerMediaResource, ViewerDetail } from '../media';
 import { useImageCollection } from '../useImageCollection';
 import { useOpenSeadragonViewer } from './useOpenSeadragonViewer';
@@ -99,10 +119,12 @@ const emit = defineEmits<{
 
 const { t } = useI18n();
 const viewerElement = ref<HTMLElement | null>(null);
+const showTranscript = ref(true);
 const {
   currentImage, currentIndex, images, nextImage,
   overrideImageUrl, previousImage, selectImage,
 } = useImageCollection(props, emit);
+const transcript = computed(() => currentImage.value?.transcript ?? null);
 
 const {
   status, handleToolbarResize, canResetZoom, canZoomIn, canZoomOut,
