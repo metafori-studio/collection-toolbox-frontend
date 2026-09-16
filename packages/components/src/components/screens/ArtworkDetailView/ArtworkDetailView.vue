@@ -4,12 +4,12 @@
     class="flex justify-center py-16"
   >
     <ErrorState
-      title="Nepodarilo sa načítať dielo"
-      text="Skúste to prosím znova."
+      :title="t('artworkDetail.error.title')"
+      :text="t('artworkDetail.error.text')"
     >
       <template #action>
         <BaseButton @click="loadDetail">
-          Skúsiť znova
+          {{ t('common.retry') }}
         </BaseButton>
       </template>
     </ErrorState>
@@ -24,8 +24,8 @@
       >
         <BreadcrumbList
           :items="[
-            { label: 'Katalóg', to: { name: 'Explore' } },
-            { label: 'Detail diela' },
+            { label: t('artworkDetail.breadcrumbCatalogue'), to: { name: 'Explore' } },
+            { label: t('artworkDetail.breadcrumbCurrent') },
           ]"
         />
 
@@ -39,7 +39,7 @@
         </div>
 
         <DetailSection
-          title="Údaje o diele"
+          :title="t('artworkDetail.aboutArtwork')"
         >
           <MetadataTable
             :items="metadataItems"
@@ -47,15 +47,16 @@
         </DetailSection>
 
         <DetailSection
-          title="Licencia"
+          v-if="license"
+          :title="t('artworkDetail.license')"
         >
-          <p>Copyright © Památník Lidice/Lidice Memorial</p>
+          <p>{{ license }}</p>
         </DetailSection>
       </div>
     </div>
     <div class="container py-16">
       <h2 class="text-heading-2 mb-4">
-        Súčasť {{ detail.collections.length }} kolekcie
+        {{ t('artworkDetail.partOfCollections', { count: detail.collections.length }, detail.collections.length) }}
       </h2>
       <ArtworkCollectionCard
         v-for="collection in detail.collections"
@@ -68,6 +69,7 @@
 
 <script lang="ts" setup>
 import { ref, watch, computed } from 'vue';
+import { useI18n } from 'vue-i18n';
 import BreadcrumbList from '../../navigation/BreadcrumbList';
 import DetailSection from '../../detail/DetailSection';
 import MetadataTable from '../../detail/MetadataTable';
@@ -79,10 +81,14 @@ import { type ArtworkDetail } from '../../../types/artwork';
 const {
   id,
   getById,
+  license = undefined,
 } = defineProps<{
   id: string
   getById: (id: string) => Promise<ArtworkDetail>
+  license?: string
 }>();
+
+const { t } = useI18n();
 
 const isLoading = ref(false);
 const error = ref(false);
@@ -118,35 +124,35 @@ const metadataItems = computed(() => {
   }
   return [
     {
-      label: 'Datace',
+      label: t('artworkDetail.metadata.dating'),
       value: detail.value.dating,
     },
     {
-      label: 'Rozměry',
+      label: t('artworkDetail.metadata.dimensions'),
       value: `${detail.value.dimensions.width} x ${detail.value.dimensions.height}`,
     },
     {
-      label: 'Materiál',
+      label: t('artworkDetail.metadata.material'),
       value: detail.value.material,
     },
     {
-      label: 'Technika',
+      label: t('artworkDetail.metadata.technique'),
       value: detail.value.technique,
     },
     {
-      label: 'Spôsob akvizície',
+      label: t('artworkDetail.metadata.acquisitionMethod'),
       value: detail.value.acquisition.method,
     },
     {
-      label: 'Rok akvizície',
+      label: t('artworkDetail.metadata.acquisitionYear'),
       value: detail.value.acquisition.year,
     },
     {
-      label: 'Lokácia / pôvod',
+      label: t('artworkDetail.metadata.locationOrigin'),
       value: detail.value.location_origin,
     },
     {
-      label: 'Inventární číslo',
+      label: t('artworkDetail.metadata.inventoryNumber'),
       value: detail.value.inventory_number,
     },
   ];

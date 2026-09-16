@@ -10,16 +10,19 @@
       type="text"
       class="w-full text-current text-display-3 border-b-2 placeholder:text-current pl-16 py-1"
       :class="[ focusClasses ]"
-      placeholder="Hľadaj v katalógu"
+      :placeholder="t('exploreFilter.searchPlaceholder')"
     >
   </div>
 </template>
 
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
 import {
   BaseIcon,
   focusClasses,
 } from '@metafori/components';
+
+const { t } = useI18n();
 
 const model = defineModel<string>();
 

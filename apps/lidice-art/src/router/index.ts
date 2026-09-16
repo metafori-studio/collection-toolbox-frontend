@@ -1,5 +1,6 @@
 import { createWebHistory, createRouter, type RouteLocationNormalizedLoaded } from 'vue-router';
 import { routerScrollBehavior } from '@metafori/shared';
+import i18n from '@/i18n';
 import { getById, getList } from '@/api';
 
 import InfoView from '@/views/InfoView.vue';
@@ -25,6 +26,7 @@ export const routes = [
     props: (route: RouteLocationNormalizedLoaded) => ({
       id: route.params.id,
       getById,
+      license: i18n.global.t('footer.copyright'),
     }),
     component: ArtworkDetailView,
   },

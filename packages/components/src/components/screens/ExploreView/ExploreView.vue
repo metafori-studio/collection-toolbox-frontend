@@ -13,7 +13,7 @@
           class="flex items-center gap-4"
           for="orderby"
         >
-          Zoradenie
+          {{ t('explore.orderBy') }}
           <InputSelect
             id="orderby"
             v-model="orderBy"
@@ -27,12 +27,12 @@
         class="flex justify-center py-16"
       >
         <ErrorState
-          title="Nepodarilo sa načítať diela"
-          text="Skúste to prosím znova."
+          :title="t('explore.error.title')"
+          :text="t('explore.error.text')"
         >
           <template #action>
             <BaseButton @click="loadItems">
-              Skúsiť znova
+              {{ t('common.retry') }}
             </BaseButton>
           </template>
         </ErrorState>
@@ -57,14 +57,14 @@
         </MasonryWall>
         <div class="flex flex-col items-center gap-8 mt-8">
           <div class="text-center text-label">
-            Zobrazených 1-{{ items.length }} z {{ total }} diel.
+            {{ t('explore.shownCount', { shown: items.length, total }) }}
           </div>
           <BaseButton
             v-if="items.length < total"
             variant="secondary"
             @click="loadMore"
           >
-            Zobraziť ďalšie
+            {{ t('explore.loadMore') }}
           </BaseButton>
         </div>
       </div>
@@ -73,6 +73,7 @@
 </template>
 <script setup lang="ts">
 import { ref, computed, watch } from 'vue';
+import { useI18n } from 'vue-i18n';
 import { MasonryWall } from '@yeger/vue-masonry-wall';
 import ExploreFilter from '../../misc/ExploreFilter';
 
@@ -83,7 +84,6 @@ import {
   ErrorState,
 } from '@metafori/components';
 
-import { pluralize } from '@metafori/shared';
 import { type Artwork, type ArtworkListResponse } from '../../../types/artwork';
 
 const {
@@ -94,20 +94,22 @@ const {
   highlight?: 'filter' | 'search' | undefined
 }>();
 
+const { t } = useI18n();
+
 // Items
 const orderBy = ref('age');
 
-const orderbyOptions = [
-  { label: 'Od najnovšieho', value: 'age' },
-  { label: 'Od najstaršieho', value: '-age' },
-  { label: 'Podľa ID', value: 'id' },
-];
+const orderbyOptions = computed(() => [
+  { label: t('explore.orderByOptions.newest'), value: 'age' },
+  { label: t('explore.orderByOptions.oldest'), value: '-age' },
+  { label: t('explore.orderByOptions.id'), value: 'id' },
+]);
 
 const items = ref<Artwork[]>([]);
 const total = ref(0);
 const page = ref(1);
 const error = ref(false);
-const artworkCountReadable = computed(() => `${total.value} ${pluralize(total.value, ['dielo', 'diela', 'diel'])}`);
+const artworkCountReadable = computed(() => t('artwork.count', { count: total.value }, total.value));
 
 let requestId = 0;
 

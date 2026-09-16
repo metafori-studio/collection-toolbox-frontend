@@ -18,22 +18,22 @@
         </li>
         <li class="flex gap-1 items-center">
           <BaseIcon icon="image" />
-          {{ collection.artwork_count }} {{ pluralize(collection.artwork_count, ['dielo', 'diela', 'diel']) }}
+          {{ t('artwork.count', { count: collection.artwork_count }, collection.artwork_count) }}
         </li>
       </ul>
       <p>{{ collection.about }}</p>
       <BaseButton
         variant="secondary"
       >
-        Zobraziť kolekciu
+        {{ t('collectionCard.view') }}
       </BaseButton>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+import { useI18n } from 'vue-i18n';
 import { type ArtworkCollection } from '../../../types/artwork';
-import { pluralize } from '@metafori/shared';
 
 import {
   BaseButton,
@@ -45,4 +45,6 @@ const {
 } = defineProps<{
   collection: ArtworkCollection
 }>();
+
+const { t } = useI18n();
 </script>
