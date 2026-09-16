@@ -26,7 +26,7 @@
         {{ model.length }}
       </span>
       <span class="truncate">
-        {{ label }}
+        {{ label ?? t('multiselect.label') }}
       </span>
       <BaseIcon
         icon="caretDown"
@@ -43,7 +43,7 @@
           v-model="query"
           type="search"
           icon="magnifyingGlass"
-          :placeholder="SEARCH_PLACEHOLDER"
+          :placeholder="t('multiselect.searchPlaceholder')"
         />
       </div>
       <div class="max-h-60 overflow-y-auto">
@@ -58,7 +58,7 @@
           v-if="filteredOptions.length === 0"
           class="px-4 py-2 text-sm text-neutral-400"
         >
-          {{ NO_RESULTS_LABEL }}
+          {{ t('multiselect.noResults') }}
         </div>
       </div>
     </div>
@@ -67,6 +67,7 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue';
+import { useI18n } from 'vue-i18n';
 import { focusClasses, disabledClasses } from '../../../misc/reusableCss';
 import BaseIcon from '../BaseIcon';
 import InputText from '../InputText';
@@ -78,20 +79,19 @@ export type MultiselectOption = {
   disabled?: boolean
 };
 
-const SEARCH_PLACEHOLDER = 'Search…';
-const NO_RESULTS_LABEL = 'No results found';
-
 const {
   options,
   id = undefined,
   disabled = false,
-  label = 'Select…',
+  label = undefined,
 } = defineProps<{
   options: MultiselectOption[]
   id?: string
   disabled?: boolean
   label?: string
 }>();
+
+const { t } = useI18n();
 
 const model = defineModel<string[]>({ default: () => [] });
 

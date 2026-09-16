@@ -20,6 +20,7 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue';
+import { useI18n } from 'vue-i18n';
 
 import BaseIcon from '../BaseIcon/BaseIcon.vue';
 import { focusClasses } from '../../../misc/reusableCss';
@@ -36,6 +37,8 @@ defineEmits([
   'clear',
 ]);
 
-const ariaLabel = computed(() => `Clear filter ${label} ${value}`);
+const { t } = useI18n();
+
+const ariaLabel = computed(() => t('filterChip.clear', { label, value }));
 
 </script>

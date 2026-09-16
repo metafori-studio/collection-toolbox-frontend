@@ -1,5 +1,10 @@
-import type { Preview } from '@storybook/vue3-vite';
+import { setup, type Preview } from '@storybook/vue3-vite';
 import '../src/assets/main.css';
+import i18n from '../src/i18n';
+
+setup((app) => {
+  app.use(i18n);
+});
 
 const preview: Preview = {
   parameters: {

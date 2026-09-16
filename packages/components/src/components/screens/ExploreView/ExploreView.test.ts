@@ -6,6 +6,12 @@ import { createRouter, createMemoryHistory } from 'vue-router';
 import ExploreView from './ExploreView.vue';
 import { type Artwork, type ArtworkListResponse } from '../../../types/artwork';
 
+vi.mock('vue-i18n', () => ({
+  useI18n: () => ({
+    t: (key: string) => key,
+  }),
+}));
+
 const router = createRouter({
   history: createMemoryHistory(),
   routes: [
@@ -36,7 +42,7 @@ const mountView = (getList = vi.fn().mockResolvedValue(listResponse([makeArtwork
 
 const findLoadMoreButton = (wrapper: ReturnType<typeof mount>) => wrapper
   .findAll('button')
-  .find((button) => button.text() === 'Zobraziť ďalšie');
+  .find((button) => button.text() === 'explore.loadMore');
 
 describe('ExploreView', () => {
   it('calls getList on mount with the default order and first page', () => {
@@ -54,7 +60,8 @@ describe('ExploreView', () => {
     const getList = vi.fn().mockResolvedValue(listResponse([makeArtwork(1)], 5));
     const { wrapper } = mountView(getList);
     await flushPromises();
-    expect(wrapper.text()).toContain('5');
+    expect(wrapper.findComponent({ name: 'ArtworkCard' }).exists()).toBe(true);
+    expect(wrapper.get('.text-heading-2').text()).toBe('artwork.count');
   });
 
   it('reloads items from page 1 when the order changes', async () => {
@@ -84,17 +91,18 @@ describe('ExploreView', () => {
     await wrapper.find('select').setValue('id');
     await flushPromises();
 
-    expect(wrapper.text()).toContain('5');
+    // total is 5 with 1 item loaded, so the "load more" button stays visible
+    expect(findLoadMoreButton(wrapper)).toBeDefined();
     expect(wrapper.findAllComponents({ name: 'ArtworkCard' })).toHaveLength(1);
 
     resolveFirst(listResponse([makeArtwork(1), makeArtwork(3)], 2));
     await flushPromises();
 
-    expect(wrapper.text()).toContain('5');
+    expect(findLoadMoreButton(wrapper)).toBeDefined();
     expect(wrapper.findAllComponents({ name: 'ArtworkCard' })).toHaveLength(1);
   });
 
-  it('appends the next page of items when "Zobraziť ďalšie" is clicked', async () => {
+  it('appends the next page of items when the "load more" button is clicked', async () => {
     const getList = vi.fn()
       .mockResolvedValueOnce(listResponse([makeArtwork(1)], 2))
       .mockResolvedValueOnce(listResponse([makeArtwork(2)], 2));

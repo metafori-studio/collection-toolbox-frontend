@@ -1,6 +1,12 @@
-import { describe, it, expect, afterEach } from 'vitest';
+import { describe, it, expect, afterEach, vi } from 'vitest';
 import { mount } from '@vue/test-utils';
 import InputMultiselect from './InputMultiselect.vue';
+
+vi.mock('vue-i18n', () => ({
+  useI18n: () => ({
+    t: (key: string) => key,
+  }),
+}));
 
 const options = [
   { value: 'a', label: 'Option A' },
@@ -122,7 +128,7 @@ describe('InputMultiselect', () => {
     await wrapper.find('button').trigger('click');
     await wrapper.find('input[type="search"]').setValue('zzz');
     expect(wrapper.findAllComponents({ name: 'InputCheckbox' })).toHaveLength(0);
-    expect(wrapper.text().toLowerCase()).toContain('no results');
+    expect(wrapper.text()).toContain('multiselect.noResults');
   });
 
   // Keyboard

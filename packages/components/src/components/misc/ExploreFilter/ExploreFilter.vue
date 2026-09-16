@@ -18,7 +18,7 @@
         />
         <div>
           <h2 class="mb-2 text-label text-text-tertiary">
-            Filtrovať výsledky
+            {{ t('exploreFilter.filterResults') }}
           </h2>
           <div class="flex flex-col gap-2 md:flex-row md:flex-wrap md:gap-4">
             <InputMultiselect
@@ -26,7 +26,7 @@
               :key="filterGroup.key"
               v-model="filterGroup.model.value"
               :options="filterGroup.options"
-              :label="filterGroup.label"
+              :label="t(filterGroup.labelKey)"
               class="flex-1 md:min-w-[400px]"
             />
           </div>
@@ -36,7 +36,7 @@
     <div class="container flex justify-between">
       <div class="flex items-center gap-3">
         <h3 class="label text-text-tertiary">
-          Aplikované filtre
+          {{ t('exploreFilter.appliedFilters') }}
         </h3>
 
         <div class="flex flex-wrap gap-2">
@@ -54,7 +54,7 @@
           variant="secondary"
           @click="clearAllFilters"
         >
-          Odstrániť všetky filtre
+          {{ t('exploreFilter.clearAll') }}
         </BaseButton>
       </div>
     </div>
@@ -63,6 +63,7 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue';
+import { useI18n } from 'vue-i18n';
 
 import {
   InputMultiselect,
@@ -77,12 +78,15 @@ const {
   highlight?: 'filter' | 'search' | undefined
 }>();
 
+const { t } = useI18n();
+
 const query = ref('');
 
+// TODO: replace with filter options provided by the API.
 const filterGroups = [
   {
     key: 'author',
-    label: 'Autor',
+    labelKey: 'exploreFilter.groups.author',
     model: ref<string[]>([]),
     options: [
       { value: 'PICASSO', label: 'Pablo Picasso' },
@@ -94,7 +98,7 @@ const filterGroups = [
   },
   {
     key: 'artType',
-    label: 'Výtvarný druh',
+    labelKey: 'exploreFilter.groups.artType',
     model: ref<string[]>([]),
     options: [
       { value: 'PAINTING', label: 'Maľba' },
@@ -106,7 +110,7 @@ const filterGroups = [
   },
   {
     key: 'technique',
-    label: 'Technika',
+    labelKey: 'exploreFilter.groups.technique',
     model: ref<string[]>([]),
     options: [
       { value: 'OIL', label: 'Olej' },
@@ -118,7 +122,7 @@ const filterGroups = [
   },
   {
     key: 'material',
-    label: 'Materiál',
+    labelKey: 'exploreFilter.groups.material',
     model: ref<string[]>([]),
     options: [
       { value: 'CANVAS', label: 'Plátno' },
@@ -129,7 +133,7 @@ const filterGroups = [
   },
   {
     key: 'year',
-    label: 'Roky',
+    labelKey: 'exploreFilter.groups.year',
     model: ref<string[]>([]),
     options: [
       { value: '1930S', label: '1930 – 1939' },
@@ -145,7 +149,7 @@ const appliedFilters = computed(() => filterGroups.flatMap((group) => group.opti
   .map((option) => ({
     filterKey: group.key,
     value: option.value,
-    filterLabel: group.label,
+    filterLabel: t(group.labelKey),
     valueLabel: option.label,
     clear: () => {
       group.model.value = group.model.value.filter((v) => v !== option.value);

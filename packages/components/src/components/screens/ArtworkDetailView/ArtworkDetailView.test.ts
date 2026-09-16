@@ -6,6 +6,12 @@ import { createRouter, createMemoryHistory } from 'vue-router';
 import ArtworkDetailView from './ArtworkDetailView.vue';
 import { type ArtworkDetail } from '../../../types/artwork';
 
+vi.mock('vue-i18n', () => ({
+  useI18n: () => ({
+    t: (key: string) => key,
+  }),
+}));
+
 const router = createRouter({
   history: createMemoryHistory(),
   routes: [

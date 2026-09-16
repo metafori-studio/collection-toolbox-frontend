@@ -1,5 +1,5 @@
 <template>
-  <nav aria-label="breadcrumb">
+  <nav :aria-label="t('breadcrumb.label')">
     <ul class="flex gap-2">
       <template
         v-for="(item, i) in items"
@@ -37,6 +37,7 @@
 </template>
 
 <script lang="ts" setup>
+import { useI18n } from 'vue-i18n';
 import type { RouteLocationRaw } from 'vue-router';
 import BaseIcon from '../../atoms/BaseIcon';
 
@@ -50,4 +51,6 @@ const {
 } = defineProps<{
   items: BreadcrumbItem[]
 }>();
+
+const { t } = useI18n();
 </script>
