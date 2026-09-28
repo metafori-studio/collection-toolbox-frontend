@@ -1,0 +1,114 @@
+{
+    "id": 1,
+    "name": "Krajina v premenách času",
+    "about": "Preskúmajte 16 majstrovských diel zo slovenských výtvarných zbierok. Sledujte detaily, výrazy a príbehy postáv — a objavujte diela v nových súvislostiach.",
+    "summary": "Preskúmajte 16 majstrovských diel zo slovenských výtvarných zbierok. Sledujte detaily, výrazy a príbehy postáv — a objavujte diela v nových súvislostiach.",
+    "images": [
+        "https://picsum.photos/id/28/800/533",
+        "https://picsum.photos/id/29/800/533"
+    ],
+    "date": "2024-03-01",
+    "author": "Mgr. Jana Obrázková",
+    "category": "Stredoveké umenie",
+    "artwork_count": 14,
+    "artworks": [
+        {
+            "id": 1,
+            "image": "https://picsum.photos/id/10/780/620",
+            "title": "Tatranská krajina s figurálnou stafážou abstrakcie",
+            "author": "Karol Tibély",
+            "year": "1930"
+        },
+        {
+            "id": 2,
+            "image": "https://picsum.photos/id/20/540/700",
+            "title": "Portrét ženy v červenom",
+            "author": "Ľudovít Fulla",
+            "year": "1945"
+        },
+        {
+            "id": 3,
+            "image": "https://picsum.photos/id/39/680/560",
+            "title": "Zátiší s ovocím",
+            "author": "Martin Benka",
+            "year": "1952"
+        },
+        {
+            "id": 4,
+            "image": "https://picsum.photos/id/48/500/750",
+            "title": "Dedina pri Váhu",
+            "author": "Miloš Alexander Bazovský",
+            "year": "1938"
+        },
+        {
+            "id": 5,
+            "image": "https://picsum.photos/id/57/720/580",
+            "title": "Kúpanie chlapcov",
+            "author": "Ján Hála",
+            "year": "1921"
+        },
+        {
+            "id": 6,
+            "image": "https://picsum.photos/id/65/600/800",
+            "title": "Abstrakcia č. 12",
+            "author": "Ernest Zmeták",
+            "year": "1967"
+        },
+        {
+            "id": 7,
+            "image": "https://picsum.photos/id/74/760/500",
+            "title": "Letný deň na dedinskom dvore",
+            "author": "Gustáv Mallý",
+            "year": "1910"
+        },
+        {
+            "id": 8,
+            "image": "https://picsum.photos/id/83/550/690",
+            "title": "Dievča s knihou",
+            "author": "Jaroslav Augusta",
+            "year": "1948"
+        },
+        {
+            "id": 9,
+            "image": "https://picsum.photos/id/91/800/640",
+            "title": "Jesenná krajina",
+            "author": "Ľudovít Čordák",
+            "year": "1935"
+        },
+        {
+            "id": 10,
+            "image": "https://picsum.photos/id/103/620/780",
+            "title": "Rybári pri mori",
+            "author": "Imrich Weiner-Kráľ",
+            "year": "1929"
+        },
+        {
+            "id": 11,
+            "image": "https://picsum.photos/id/119/740/560",
+            "title": "Zimná noc v meste",
+            "author": "Ján Mudroch",
+            "year": "1950"
+        },
+        {
+            "id": 12,
+            "image": "https://picsum.photos/id/128/510/770",
+            "title": "Kvetinová záhrada",
+            "author": "Cyprián Majerník",
+            "year": "1943"
+        },
+        {
+            "id": 13,
+            "image": "https://picsum.photos/id/137/680/530",
+            "title": "Starý mlyn",
+            "author": "Ľudovít Fulla",
+            "year": "1960"
+        },
+        {
+            "id": 14,
+            "image": "https://picsum.photos/id/145/800/590",
+            "title": "Detský portrét",
+            "author": "Koloman Sokol",
+            "year": "1932"
+        }
+    ]
+}

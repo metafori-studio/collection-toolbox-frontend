@@ -2,7 +2,7 @@ export { focusClasses, focusBeforeClasses, disabledClasses } from './misc/reusab
 
 // Types
 export type {
-  Artwork, ArtworkCollection, ArtworkDetail, ArtworkListResponse,
+  Artwork, ArtworkCollection, ArtworkCollectionDetail, ArtworkCollectionListResponse, ArtworkDetail, ArtworkListResponse,
 } from './types/artwork';
 
 // Atoms
@@ -25,6 +25,8 @@ export { default as FilterSection } from './components/molecules/FilterSection';
 export { default as InfoBox } from './components/molecules/InfoBox';
 export { default as ModalWindow } from './components/molecules/ModalWindow';
 export { default as ErrorState } from './components/molecules/ErrorState';
+export { default as ArtworkCollectionImageGrid } from './components/molecules/ArtworkCollectionImageGrid';
+export { default as ArtworkCollectionMeta } from './components/molecules/ArtworkCollectionMeta';
 
 // Viewers
 export { default as BaseViewer } from './components/viewers/BaseViewer';
@@ -71,3 +73,5 @@ export { default as DetailSection } from './components/detail/DetailSection';
 export { default as ArtworkDetailView } from './components/screens/ArtworkDetailView';
 export { default as ExploreView } from './components/screens/ExploreView';
 export { default as Error404View } from './components/screens/Error404View';
+export { default as ArtworkCollectionListView } from './components/screens/ArtworkCollectionListView';
+export { default as ArtworkCollectionDetailView } from './components/screens/ArtworkCollectionDetailView';

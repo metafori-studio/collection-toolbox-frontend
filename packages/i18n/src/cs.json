@@ -69,6 +69,29 @@
   "collectionCard": {
     "view": "Zobrazit kolekci"
   },
+  "collectionImageGrid": {
+    "imageAlt": "{title}, obrázek {index}"
+  },
+  "collectionList": {
+    "title": "Kolekce",
+    "subtitle": "Kurátorské výběry z archivu",
+    "otherCollections": "Další kolekce",
+    "orderBy": "Seřadit kolekce",
+    "orderByOptions": {
+      "newest": "Od nejnovější",
+      "oldest": "Od nejstarší",
+      "name": "Podle názvu",
+      "artworkCount": "Podle počtu děl"
+    }
+  },
+  "collectionDetail": {
+    "breadcrumbCollections": "Kolekce",
+    "artworkCount": "{count} dílo v kolekci | {count} díla v kolekci | {count} děl v kolekci",
+    "error": {
+      "title": "Nepodařilo se načíst kolekci",
+      "text": "Zkuste to prosím znovu."
+    }
+  },
   "multiselect": {
     "label": "Vyberte…",
     "searchPlaceholder": "Hledat…",

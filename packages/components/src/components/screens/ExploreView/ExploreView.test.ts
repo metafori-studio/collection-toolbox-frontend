@@ -119,6 +119,30 @@ describe('ExploreView', () => {
     expect(wrapper.findAllComponents({ name: 'ArtworkCard' })).toHaveLength(2);
   });
 
+  it('ignores "load more" while a page request is in flight', async () => {
+    let resolveSecond: (value: ArtworkListResponse) => void = () => {};
+    const getList = vi.fn()
+      .mockResolvedValueOnce(listResponse([makeArtwork(1)], 3))
+      .mockReturnValueOnce(new Promise((resolve) => { resolveSecond = resolve; }))
+      .mockResolvedValueOnce(listResponse([makeArtwork(3)], 3));
+    const { wrapper } = mountView(getList);
+    await flushPromises();
+
+    const button = findLoadMoreButton(wrapper)!;
+    await button.trigger('click');
+    await button.trigger('click');
+    expect(getList).toHaveBeenCalledTimes(2);
+
+    resolveSecond(listResponse([makeArtwork(2)], 3));
+    await flushPromises();
+
+    await findLoadMoreButton(wrapper)!.trigger('click');
+    await flushPromises();
+
+    expect(getList).toHaveBeenLastCalledWith('age', 3);
+    expect(wrapper.findAllComponents({ name: 'ArtworkCard' })).toHaveLength(3);
+  });
+
   it('hides the "load more" button once all items are loaded', async () => {
     const { wrapper } = mountView(vi.fn().mockResolvedValue(listResponse([makeArtwork(1), makeArtwork(2)], 2)));
     await flushPromises();

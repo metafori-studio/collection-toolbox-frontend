@@ -69,6 +69,29 @@
   "collectionCard": {
     "view": "View collection"
   },
+  "collectionImageGrid": {
+    "imageAlt": "{title}, image {index}"
+  },
+  "collectionList": {
+    "title": "Collections",
+    "subtitle": "Curated selections from the archive",
+    "otherCollections": "More collections",
+    "orderBy": "Sort collections",
+    "orderByOptions": {
+      "newest": "Newest first",
+      "oldest": "Oldest first",
+      "name": "By name",
+      "artworkCount": "By number of artworks"
+    }
+  },
+  "collectionDetail": {
+    "breadcrumbCollections": "Collections",
+    "artworkCount": "{count} artwork in the collection | {count} artworks in the collection",
+    "error": {
+      "title": "Failed to load the collection",
+      "text": "Please try again."
+    }
+  },
   "multiselect": {
     "label": "Select…",
     "searchPlaceholder": "Search…",

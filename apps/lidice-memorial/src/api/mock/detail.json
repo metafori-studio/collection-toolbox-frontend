@@ -26,7 +26,9 @@
             "id": 1,
             "name": "Názov kolekcie",
             "about": "Preskúmajte 16 majstrovských diel zo slovenských výtvarných zbierok. Sledujte detaily, výrazy a príbehy postáv — a objavujte diela v nových súvislostiach.",
-            "image": "https://picsum.photos/id/91/800/533",
+            "images": [
+                "https://picsum.photos/id/91/800/533"
+            ],
             "date": "2024-03-01",
             "artwork_count": 1267
         }
