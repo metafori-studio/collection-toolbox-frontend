@@ -37,7 +37,7 @@ const artworkDetail: ArtworkDetail = {
       id: 10,
       name: '20th Century Art',
       about: 'A collection of 20th century artworks.',
-      image: 'https://example.com/collection.jpg',
+      images: ['https://example.com/collection.jpg'],
       date: '2020',
       artwork_count: 42,
     },

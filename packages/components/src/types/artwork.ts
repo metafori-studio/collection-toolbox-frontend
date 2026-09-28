@@ -19,9 +19,20 @@ export type ArtworkCollection = {
   id: number;
   name: string;
   about: string;
-  image: string;
+  images: string[];
   date: string;
+  author?: string;
+  category?: string;
   artwork_count: number;
+};
+
+export type ArtworkCollectionDetail = ArtworkCollection & {
+  summary: string;
+};
+
+export type ArtworkCollectionListResponse = {
+  highlighted: ArtworkCollection[];
+  rest: ArtworkCollection[];
 };
 
 export type ArtworkDetail = {

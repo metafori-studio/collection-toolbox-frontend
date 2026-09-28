@@ -1,5 +1,10 @@
 {
   "appName": "Lidice Memorial",
+  "header": {
+    "catalogue": "Catalogue",
+    "collections": "Collections",
+    "info": "Info"
+  },
   "footer": {
     "about": "Catalogue of the cultural heritage collection",
     "copyright": "Copyright © Památník Lidice/Lidice Memorial"

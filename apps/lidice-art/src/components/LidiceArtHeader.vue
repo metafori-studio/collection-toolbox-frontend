@@ -1,19 +1,29 @@
 <template>
   <AppHeaderNew>
     <template #logo>
-      <img
-        :src="LogoLidiceArt"
-        :alt="$t('appName')"
-        class="h-[20px] md:h-[32px]"
-      >
+      <router-link :to="{ name: 'Explore' }">
+        <img
+          :src="LogoLidiceArt"
+          :alt="$t('appName')"
+          class="h-[20px] md:h-[32px]"
+        >
+      </router-link>
     </template>
 
     <template #nav-primary>
-      <li>One</li>
-      <li>Two</li>
+      <li>
+        <router-link :to="{ name: 'Explore' }">
+          {{ $t('header.catalogue') }}
+        </router-link>
+      </li>
+      <li>
+        <router-link :to="{ name: 'CollectionList' }">
+          {{ $t('header.collections') }}
+        </router-link>
+      </li>
       <li>
         <router-link :to="{ name: 'Info' }">
-          Info
+          {{ $t('header.info') }}
         </router-link>
       </li>
     </template>
