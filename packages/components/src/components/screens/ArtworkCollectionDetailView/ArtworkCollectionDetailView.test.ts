@@ -129,6 +129,30 @@ describe('ArtworkCollectionDetailView', () => {
     expect(findButton(wrapper, 'explore.loadMore')).toBeUndefined();
   });
 
+  it('ignores load more while a page request is in flight', async () => {
+    let resolveSecond: (value: ArtworkListResponse) => void = () => {};
+    const getCollectionArtworks = vi.fn()
+      .mockResolvedValueOnce(listResponse([makeArtwork(1)], 3))
+      .mockReturnValueOnce(new Promise((resolve) => { resolveSecond = resolve; }))
+      .mockResolvedValueOnce(listResponse([makeArtwork(3)], 3));
+    const { wrapper } = mountView({ getCollectionArtworks });
+    await flushPromises();
+
+    const button = findButton(wrapper, 'explore.loadMore')!;
+    await button.trigger('click');
+    await button.trigger('click');
+    expect(getCollectionArtworks).toHaveBeenCalledTimes(2);
+
+    resolveSecond(listResponse([makeArtwork(2)], 3));
+    await flushPromises();
+
+    await findButton(wrapper, 'explore.loadMore')!.trigger('click');
+    await flushPromises();
+
+    expect(getCollectionArtworks).toHaveBeenLastCalledWith('10', 3);
+    expect(wrapper.findAllComponents({ name: 'ArtworkCard' })).toHaveLength(3);
+  });
+
   it('shows an error state and retries when the collection fails to load', async () => {
     const getCollectionById = vi.fn()
       .mockRejectedValueOnce(new Error('fail'))

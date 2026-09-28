@@ -62,6 +62,7 @@
           <BaseButton
             v-if="items.length < total"
             variant="secondary"
+            :disabled="isLoadingMore"
             @click="loadMore"
           >
             {{ t('explore.loadMore') }}
@@ -111,12 +112,18 @@ const page = ref(1);
 const error = ref(false);
 const artworkCountReadable = computed(() => t('artwork.count', { count: total.value }, total.value));
 
+const isLoadingItems = ref(false);
+const isLoadingMore = ref(false);
+
 let requestId = 0;
 
 const loadItems = async () => {
   const currentRequestId = ++requestId;
   page.value = 1;
   error.value = false;
+  isLoadingItems.value = true;
+  // A new first page supersedes any in-flight load more request
+  isLoadingMore.value = false;
   try {
     const result = await getList(orderBy.value, 1);
     if (currentRequestId !== requestId) {
@@ -129,24 +136,36 @@ const loadItems = async () => {
       return;
     }
     error.value = true;
+  } finally {
+    if (currentRequestId === requestId) {
+      isLoadingItems.value = false;
+    }
   }
 };
 
 const loadMore = async () => {
+  if (isLoadingItems.value || isLoadingMore.value) {
+    return;
+  }
   const currentRequestId = ++requestId;
-  page.value += 1;
+  const nextPage = page.value + 1;
+  isLoadingMore.value = true;
   try {
-    const result = await getList(orderBy.value, page.value);
+    const result = await getList(orderBy.value, nextPage);
     if (currentRequestId !== requestId) {
       return;
     }
+    page.value = nextPage;
     items.value = [...items.value, ...result.data];
   } catch {
     if (currentRequestId !== requestId) {
       return;
     }
-    page.value -= 1;
     error.value = true;
+  } finally {
+    if (currentRequestId === requestId) {
+      isLoadingMore.value = false;
+    }
   }
 };
 
