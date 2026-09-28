@@ -1,0 +1,83 @@
+{
+    "highlighted": [
+        {
+            "id": 1,
+            "name": "Názov kolekcie",
+            "about": "Preskúmajte 16 majstrovských diel zo slovenských výtvarných zbierok. Sledujte detaily, výrazy a príbehy postáv — a objavujte diela v nových súvislostiach.",
+            "images": [
+                "https://picsum.photos/id/1041/800/533"
+            ],
+            "date": "2024-03-01",
+            "author": "Mgr. Jana Obrázková",
+            "category": "Stredoveké umenie",
+            "artwork_count": 1267
+        },
+        {
+            "id": 2,
+            "name": "Krajina v premenách času",
+            "about": "Výber krajinomalieb od romantizmu po modernu. Sledujte, ako sa pohľad umelcov na prírodu, svetlo a priestor menil naprieč generáciami.",
+            "images": [
+                "https://picsum.photos/id/28/800/533",
+                "https://picsum.photos/id/29/800/533"
+            ],
+            "date": "2024-05-15",
+            "author": "Mgr. Jana Obrázková",
+            "category": "Maliarstvo",
+            "artwork_count": 342
+        }  
+    ],
+    "rest": [
+        {
+            "id": 1,
+            "name": "Názov kolekcie",
+            "about": "Preskúmajte 16 majstrovských diel zo slovenských výtvarných zbierok. Sledujte detaily, výrazy a príbehy postáv — a objavujte diela v nových súvislostiach.",
+            "images": [
+                "https://picsum.photos/id/91/800/533"
+            ],
+            "date": "2024-03-01",
+            "author": "Mgr. Jana Obrázková",
+            "category": "Stredoveké umenie",
+            "artwork_count": 1267
+        },
+        {
+            "id": 2,
+            "name": "Krajina v premenách času",
+            "about": "Výber krajinomalieb od romantizmu po modernu. Sledujte, ako sa pohľad umelcov na prírodu, svetlo a priestor menil naprieč generáciami.",
+            "images": [
+                "https://picsum.photos/id/28/800/533",
+                "https://picsum.photos/id/29/800/533"
+            ],
+            "date": "2024-05-15",
+            "author": "Mgr. Jana Obrázková",
+            "category": "Maliarstvo",
+            "artwork_count": 342
+        },
+        {
+            "id": 3,
+            "name": "Portréty a podobizne",
+            "about": "Tváre, ktoré prežili stáročia. Kolekcia portrétov šľachty, mešťanov i anonymných postáv odhaľuje módu, spoločenské postavenie a osobné príbehy.",
+            "images": [
+                "https://picsum.photos/id/64/800/533"
+            ],
+            "date": "2024-09-10",
+            "author": "Mgr. Jana Obrázková",
+            "category": "Maliarstvo",
+            "artwork_count": 518
+        },
+        {
+            "id": 4,
+            "name": "Grafika 20. storočia",
+            "about": "Linoryty, lepty a litografie domácich autorov. Objavte techniky, experimenty a témy, ktoré formovali slovenskú grafickú tvorbu minulého storočia.",
+            "images": [
+                "https://picsum.photos/id/103/800/533",
+                "https://picsum.photos/id/15/800/533",
+                "https://picsum.photos/id/16/800/533",
+                "https://picsum.photos/id/17/800/533"
+            ],
+            "date": "2025-01-20",
+            "author": "Mgr. Jana Obrázková",
+            "category": "Grafika",
+            "artwork_count": 89
+        }
+    ]
+}

@@ -58,11 +58,22 @@
       <h2 class="text-heading-2 mb-4">
         {{ t('artworkDetail.partOfCollections', { count: detail.collections.length }, detail.collections.length) }}
       </h2>
-      <ArtworkCollectionCard
-        v-for="collection in detail.collections"
-        :key="collection.id"
-        :collection="collection"
-      />
+      <div
+        v-if="detail.collections"
+        class="flex flex-col gap-4"
+      >
+        <ArtworkCollectionCard
+          v-for="collection in detail.collections"
+          :key="collection.id"
+          :collection="collection"
+          layout="horizontal"
+          show-button
+          @open="$router.push({
+            name: 'CollectionDetail',
+            params: { id: collection.id },
+          })"
+        />
+      </div>
     </div>
   </div>
 </template>

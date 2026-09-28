@@ -1,29 +1,28 @@
 <template>
   <div
-    class="border border-neutral-300 rounded-lg overflow-hidden flex flex-col md:flex-row"
+    class="border border-neutral-300 rounded-lg overflow-hidden flex flex-col gap-4 p-3 md:p-4 "
+    :class="{
+      'md:flex-row': layout === 'horizontal'
+    }"
   >
-    <img
-      :src="collection.image"
-      :alt="collection.name"
-      class="object-cover md:w-[300px]"
-    >
-    <div class="p-3 md:p-6 space-y-2">
+    <ArtworkCollectionImageGrid
+      :images="collection.images"
+      :title="collection.name"
+      :class="{
+        'h-[213px]': layout === 'vertical',
+        'md:min-w-[300px] md:w-[300px]': layout === 'horizontal'
+      }"
+    />
+    <div class="space-y-2">
       <h3 class="text-heading-3">
         {{ collection.name }}
       </h3>
-      <ul class="flex gap-4 text-label text-text-tertiary">
-        <li class="flex gap-1 items-center">
-          <BaseIcon icon="calendar" />
-          {{ collection.date }}
-        </li>
-        <li class="flex gap-1 items-center">
-          <BaseIcon icon="image" />
-          {{ t('artwork.count', { count: collection.artwork_count }, collection.artwork_count) }}
-        </li>
-      </ul>
+      <ArtworkCollectionMeta :collection="collection" />
       <p>{{ collection.about }}</p>
       <BaseButton
+        v-if="showButton"
         variant="secondary"
+        @click="emit('open')"
       >
         {{ t('collectionCard.view') }}
       </BaseButton>
@@ -34,17 +33,24 @@
 <script lang="ts" setup>
 import { useI18n } from 'vue-i18n';
 import { type ArtworkCollection } from '../../../types/artwork';
+import ArtworkCollectionImageGrid from '../../molecules/ArtworkCollectionImageGrid';
+import ArtworkCollectionMeta from '../../molecules/ArtworkCollectionMeta';
 
 import {
   BaseButton,
-  BaseIcon,
 } from '@metafori/components';
 
 const {
   collection,
+  layout = 'vertical',
+  showButton = false,
 } = defineProps<{
   collection: ArtworkCollection
+  layout?: 'vertical' | 'horizontal'
+  showButton?: boolean
 }>();
+
+const emit = defineEmits(['open']);
 
 const { t } = useI18n();
 </script>
