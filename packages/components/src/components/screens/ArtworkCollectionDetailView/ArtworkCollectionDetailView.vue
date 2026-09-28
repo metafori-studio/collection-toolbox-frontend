@@ -90,6 +90,7 @@
           <BaseButton
             v-if="artworks.length < total"
             variant="secondary"
+            :disabled="isLoadingMore"
             @click="loadMore"
           >
             {{ t('explore.loadMore') }}
@@ -162,6 +163,8 @@ const artworks = ref<Artwork[]>([]);
 const total = ref(0);
 const page = ref(1);
 const artworksError = ref(false);
+const isLoadingArtworks = ref(false);
+const isLoadingMore = ref(false);
 const artworkCountReadable = computed(() => t('collectionDetail.artworkCount', { count: total.value }, total.value));
 
 let artworksRequestId = 0;
@@ -170,6 +173,9 @@ const loadArtworks = async () => {
   const currentRequestId = ++artworksRequestId;
   page.value = 1;
   artworksError.value = false;
+  isLoadingArtworks.value = true;
+  // A new first page supersedes any in-flight load more request
+  isLoadingMore.value = false;
   try {
     const result = await getCollectionArtworks(id, 1);
     if (currentRequestId !== artworksRequestId) {
@@ -182,24 +188,36 @@ const loadArtworks = async () => {
       return;
     }
     artworksError.value = true;
+  } finally {
+    if (currentRequestId === artworksRequestId) {
+      isLoadingArtworks.value = false;
+    }
   }
 };
 
 const loadMore = async () => {
+  if (isLoadingArtworks.value || isLoadingMore.value) {
+    return;
+  }
   const currentRequestId = ++artworksRequestId;
-  page.value += 1;
+  const nextPage = page.value + 1;
+  isLoadingMore.value = true;
   try {
-    const result = await getCollectionArtworks(id, page.value);
+    const result = await getCollectionArtworks(id, nextPage);
     if (currentRequestId !== artworksRequestId) {
       return;
     }
+    page.value = nextPage;
     artworks.value = [...artworks.value, ...result.data];
   } catch {
     if (currentRequestId !== artworksRequestId) {
       return;
     }
-    page.value -= 1;
     artworksError.value = true;
+  } finally {
+    if (currentRequestId === artworksRequestId) {
+      isLoadingMore.value = false;
+    }
   }
 };
 
