@@ -2,5 +2,82 @@
   "error404": {
     "title": "Chyba 404",
     "text": "V případě přetrvávajících potíží kontaktujte provozovatele služeb."
+  },
+  "viewer": {
+    "loading": "Načítání...",
+    "previous": "Předchozí",
+    "next": "Následující",
+    "zoomOut": "Oddálit",
+    "zoomIn": "Přiblížit",
+    "resetZoom": "Resetovat přiblížení"
+  },
+  "common": {
+    "retry": "Zkusit znovu"
+  },
+  "artwork": {
+    "count": "{count} dílo | {count} díla | {count} děl"
+  },
+  "explore": {
+    "title": "Katalog",
+    "orderBy": "Řazení",
+    "orderByOptions": {
+      "newest": "Od nejnovějšího",
+      "oldest": "Od nejstaršího",
+      "id": "Podle ID"
+    },
+    "shownCount": "Zobrazeno 1-{shown} z {total} děl.",
+    "loadMore": "Zobrazit další",
+    "error": {
+      "title": "Nepodařilo se načíst díla",
+      "text": "Zkuste to prosím znovu."
+    }
+  },
+  "exploreFilter": {
+    "searchPlaceholder": "Hledej v katalogu",
+    "filterResults": "Filtrovat výsledky",
+    "appliedFilters": "Aplikované filtry",
+    "clearAll": "Odstranit všechny filtry",
+    "groups": {
+      "author": "Autor",
+      "artType": "Výtvarný druh",
+      "technique": "Technika",
+      "material": "Materiál",
+      "year": "Roky"
+    }
+  },
+  "artworkDetail": {
+    "breadcrumbCatalogue": "Katalog",
+    "breadcrumbCurrent": "Detail díla",
+    "aboutArtwork": "Údaje o díle",
+    "license": "Licence",
+    "partOfCollections": "Součást {count} kolekce | Součást {count} kolekcí | Součást {count} kolekcí",
+    "metadata": {
+      "dating": "Datace",
+      "dimensions": "Rozměry",
+      "material": "Materiál",
+      "technique": "Technika",
+      "acquisitionMethod": "Způsob akvizice",
+      "acquisitionYear": "Rok akvizice",
+      "locationOrigin": "Lokace / původ",
+      "inventoryNumber": "Inventární číslo"
+    },
+    "error": {
+      "title": "Nepodařilo se načíst dílo",
+      "text": "Zkuste to prosím znovu."
+    }
+  },
+  "collectionCard": {
+    "view": "Zobrazit kolekci"
+  },
+  "multiselect": {
+    "label": "Vyberte…",
+    "searchPlaceholder": "Hledat…",
+    "noResults": "Nenalezeny žádné výsledky"
+  },
+  "filterChip": {
+    "clear": "Odstranit filtr {label} {value}"
+  },
+  "breadcrumb": {
+    "label": "Drobečková navigace"
   }
 }

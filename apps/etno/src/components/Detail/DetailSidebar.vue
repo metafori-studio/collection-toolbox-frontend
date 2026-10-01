@@ -263,6 +263,12 @@ const toPersonValues = (people: PersonOrOriginator[] | undefined) =>
 // Tables
 const basicInfo = computed(() => [
   {
+    label: t('detail.table.doi'),
+    value: {
+      text: detail.doi,
+    },
+  },
+  {
     label: t('detail.table.authorship'),
     values: toPersonValues(detail.authors),
   },
@@ -285,12 +291,6 @@ const basicInfo = computed(() => [
   {
     label: t('detail.table.termsOfUse'),
     value: { text: detail.terms_of_use },
-  },
-  {
-    label: t('detail.table.extents'),
-    values: detail.extents.map((e) => ({
-      text: translateEnum('ExtentUnit', e.unit),
-    })),
   },
 ]);
 
@@ -375,9 +375,16 @@ const tableFormal = computed(() => ({
       label: t('detail.table.project'),
       value: {
         text: detail.project?.title,
+        filterId: 'project',
+        filterValue: String(detail.project?.id),
       },
     },
-
+    {
+      label: t('detail.table.extents'),
+      values: detail.extents.map((e) => ({
+        text: `${translateEnum('ExtentUnit', e.unit)} - ${e.value}`,
+      })),
+    },
   ],
 }));
 

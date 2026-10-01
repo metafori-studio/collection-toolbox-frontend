@@ -1,0 +1,56 @@
+<template>
+  <nav :aria-label="t('breadcrumb.label')">
+    <ul class="flex gap-2">
+      <template
+        v-for="(item, i) in items"
+        :key="item.label"
+      >
+        <li
+          class="text-label"
+        >
+          <RouterLink
+            v-if="item.to"
+            :to="item.to"
+            class="underline"
+            :aria-current="i === items.length - 1 ? 'page' : undefined"
+          >
+            {{ item.label }}
+          </RouterLink>
+          <span
+            v-else
+            :aria-current="i === items.length - 1 ? 'page' : undefined"
+          >
+            {{ item.label }}
+          </span>
+        </li>
+        <li
+          v-if="i < items.length - 1"
+          class="text-text-tertiary"
+        >
+          <BaseIcon
+            icon="arrowRight"
+          />
+        </li>
+      </template>
+    </ul>
+  </nav>
+</template>
+
+<script lang="ts" setup>
+import { useI18n } from 'vue-i18n';
+import type { RouteLocationRaw } from 'vue-router';
+import BaseIcon from '../../atoms/BaseIcon';
+
+export type BreadcrumbItem = {
+  label: string
+  to?: RouteLocationRaw
+};
+
+const {
+  items,
+} = defineProps<{
+  items: BreadcrumbItem[]
+}>();
+
+const { t } = useI18n();
+</script>

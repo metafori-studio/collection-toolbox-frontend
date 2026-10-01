@@ -1,0 +1,28 @@
+import { createI18n } from 'vue-i18n';
+import { sk, en, cs } from '@metafori/i18n';
+
+const i18n = createI18n({
+  legacy: false,
+  globalInjection: true,
+  locale: 'sk',
+  fallbackLocale: 'sk',
+  messages: {
+    sk,
+    en,
+    cs,
+  },
+  pluralRules: {
+    sk: (choice) => {
+      if (choice === 1) return 0;
+      if (choice >= 2 && choice <= 4) return 1;
+      return 2;
+    },
+    cs: (choice) => {
+      if (choice === 1) return 0;
+      if (choice >= 2 && choice <= 4) return 1;
+      return 2;
+    },
+  },
+});
+
+export default i18n;

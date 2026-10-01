@@ -1,7 +1,12 @@
 export { focusClasses, focusBeforeClasses, disabledClasses } from './misc/reusableCss';
 
+// Types
+export type {
+  Artwork, ArtworkCollection, ArtworkDetail, ArtworkListResponse,
+} from './types/artwork';
+
 // Atoms
-export { default as BaseButton, type ButtonSize } from './components/atoms/BaseButton';
+export { default as BaseButton, type ButtonSize, type ButtonVariant, type ButtonRounded } from './components/atoms/BaseButton';
 export { default as BaseDropdown } from './components/atoms/BaseDropdown';
 export { default as BaseIcon, type IconName } from './components/atoms/BaseIcon';
 export { default as MediaImage, type MediaImageTheme } from './components/atoms/MediaImage';
@@ -10,7 +15,9 @@ export { InputCheckbox, InputCheckboxList } from './components/atoms/InputCheckb
 export { InputRadio, InputRadioList } from './components/atoms/InputRadio';
 export { default as InputText } from './components/atoms/InputText';
 export { default as InputSelect } from './components/atoms/InputSelect';
+export { default as InputMultiselect, type MultiselectOption } from './components/atoms/InputMultiselect';
 export { default as InputRange, type RangeValue } from './components/molecules/InputRange';
+export { default as AppliedFilterChip } from './components/atoms/AppliedFilterChip';
 
 // Molecules
 export { default as FilterItem } from './components/molecules/FilterItem';
@@ -21,6 +28,17 @@ export { default as ErrorState } from './components/molecules/ErrorState';
 
 // Viewers
 export { default as BaseViewer } from './components/viewers/BaseViewer';
+export {
+  default as ThumbnailStrip,
+  ThumbnailStripThumb,
+} from './components/viewers/ThumbnailStrip';
+export {
+  default as MediaToolbar,
+  ViewerToolbar,
+  MediaViewerButton,
+  MediaToolbarSeparator,
+  type MediaToolbarVariant,
+} from './components/viewers/MediaToolbar';
 export { default as ImageViewer } from './components/viewers/ImageViewer';
 export { default as MapViewer } from './components/viewers/MapViewer';
 export { default as VideoViewer } from './components/viewers/VideoViewer';
@@ -37,3 +55,19 @@ export { default as AppHeader } from './components/layout/AppHeader';
 export { default as AppFooter } from './components/layout/AppFooter';
 export { default as AppFooterNew } from './components/layout/AppFooterNew';
 export { default as AppHeaderNew } from './components/layout/AppHeaderNew';
+
+// Cards
+export { default as ArtworkCard } from './components/cards/ArtworkCard';
+export { default as ArtworkCollectionCard } from './components/cards/ArtworkCollectionCard';
+
+// Navigation
+export { default as BreadcrumbList, type BreadcrumbItem } from './components/navigation/BreadcrumbList';
+
+// Detail
+export { default as MetadataTable, type MetadataRecord } from './components/detail/MetadataTable';
+export { default as DetailSection } from './components/detail/DetailSection';
+
+// Views
+export { default as ArtworkDetailView } from './components/screens/ArtworkDetailView';
+export { default as ExploreView } from './components/screens/ExploreView';
+export { default as Error404View } from './components/screens/Error404View';

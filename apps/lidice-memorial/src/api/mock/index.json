@@ -1,0 +1,214 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "image": "https://picsum.photos/id/10/780/620",
+            "title": "Tatranská krajina s figurálnou stafážou abstrakcie",
+            "author": "Karol Tibély",
+            "year": "1930"
+        },
+        {
+            "id": 2,
+            "image": "https://picsum.photos/id/20/540/700",
+            "title": "Portrét ženy v červenom",
+            "author": "Ľudovít Fulla",
+            "year": "1945"
+        },
+        {
+            "id": 3,
+            "image": "https://picsum.photos/id/39/680/560",
+            "title": "Zátiší s ovocím",
+            "author": "Martin Benka",
+            "year": "1952"
+        },
+        {
+            "id": 4,
+            "image": "https://picsum.photos/id/48/500/750",
+            "title": "Dedina pri Váhu",
+            "author": "Miloš Alexander Bazovský",
+            "year": "1938"
+        },
+        {
+            "id": 5,
+            "image": "https://picsum.photos/id/57/720/580",
+            "title": "Kúpanie chlapcov",
+            "author": "Ján Hála",
+            "year": "1921"
+        },
+        {
+            "id": 6,
+            "image": "https://picsum.photos/id/65/600/800",
+            "title": "Abstrakcia č. 12",
+            "author": "Ernest Zmeták",
+            "year": "1967"
+        },
+        {
+            "id": 7,
+            "image": "https://picsum.photos/id/74/760/500",
+            "title": "Letný deň na dedinskom dvore",
+            "author": "Gustáv Mallý",
+            "year": "1910"
+        },
+        {
+            "id": 8,
+            "image": "https://picsum.photos/id/83/550/690",
+            "title": "Dievča s knihou",
+            "author": "Jaroslav Augusta",
+            "year": "1948"
+        },
+        {
+            "id": 9,
+            "image": "https://picsum.photos/id/91/800/640",
+            "title": "Jesenná krajina",
+            "author": "Ľudovít Čordák",
+            "year": "1935"
+        },
+        {
+            "id": 10,
+            "image": "https://picsum.photos/id/103/620/780",
+            "title": "Rybári pri mori",
+            "author": "Imrich Weiner-Kráľ",
+            "year": "1929"
+        },
+        {
+            "id": 11,
+            "image": "https://picsum.photos/id/119/740/560",
+            "title": "Zimná noc v meste",
+            "author": "Ján Mudroch",
+            "year": "1950"
+        },
+        {
+            "id": 12,
+            "image": "https://picsum.photos/id/128/510/770",
+            "title": "Kvetinová záhrada",
+            "author": "Cyprián Majerník",
+            "year": "1943"
+        },
+        {
+            "id": 13,
+            "image": "https://picsum.photos/id/137/680/530",
+            "title": "Starý mlyn",
+            "author": "Ľudovít Fulla",
+            "year": "1960"
+        },
+        {
+            "id": 14,
+            "image": "https://picsum.photos/id/145/800/590",
+            "title": "Detský portrét",
+            "author": "Koloman Sokol",
+            "year": "1932"
+        },
+        {
+            "id": 15,
+            "image": "https://picsum.photos/id/152/570/720",
+            "title": "Podvečer nad riekou",
+            "author": "Miloš Alexander Bazovský",
+            "year": "1955"
+        },
+        {
+            "id": 16,
+            "image": "https://picsum.photos/id/163/790/610",
+            "title": "Slovenská chalupa",
+            "author": "Martin Benka",
+            "year": "1947"
+        },
+        {
+            "id": 17,
+            "image": "https://picsum.photos/id/175/640/800",
+            "title": "Tanečnice",
+            "author": "Július Nemčík",
+            "year": "1962"
+        },
+        {
+            "id": 18,
+            "image": "https://picsum.photos/id/188/500/660",
+            "title": "Ranná hmla",
+            "author": "Karol Ondreička",
+            "year": "1958"
+        },
+        {
+            "id": 19,
+            "image": "https://picsum.photos/id/196/730/540",
+            "title": "Západ slnka nad horami",
+            "author": "Ján Hála",
+            "year": "1939"
+        },
+        {
+            "id": 20,
+            "image": "https://picsum.photos/id/201/590/760",
+            "title": "Mestský trh",
+            "author": "Ernest Zmeták",
+            "year": "1954"
+        },
+        {
+            "id": 21,
+            "image": "https://picsum.photos/id/212/770/520",
+            "title": "Lesná cesta",
+            "author": "Vladimír Kompánek",
+            "year": "1971"
+        },
+        {
+            "id": 22,
+            "image": "https://picsum.photos/id/225/610/790",
+            "title": "Materstvo",
+            "author": "Rudolf Pribiš",
+            "year": "1948"
+        },
+        {
+            "id": 23,
+            "image": "https://picsum.photos/id/236/680/510",
+            "title": "Búrka nad poliami",
+            "author": "Cyprián Majerník",
+            "year": "1940"
+        },
+        {
+            "id": 24,
+            "image": "https://picsum.photos/id/250/800/670",
+            "title": "Nočný Barcelona",
+            "author": "Ján Mudroch",
+            "year": "1963"
+        },
+        {
+            "id": 25,
+            "image": "https://picsum.photos/id/260/530/800",
+            "title": "Ovčí pastier",
+            "author": "Gustáv Mallý",
+            "year": "1918"
+        },
+        {
+            "id": 26,
+            "image": "https://picsum.photos/id/273/750/580",
+            "title": "Kvetnaté lúky",
+            "author": "Ľudovít Čordák",
+            "year": "1942"
+        },
+        {
+            "id": 27,
+            "image": "https://picsum.photos/id/287/620/500",
+            "title": "Zátiší s džbánom",
+            "author": "Koloman Sokol",
+            "year": "1927"
+        },
+        {
+            "id": 28,
+            "image": "https://picsum.photos/id/301/560/730",
+            "title": "Pohľad z okna",
+            "author": "Imrich Weiner-Kráľ",
+            "year": "1936"
+        },
+        {
+            "id": 29,
+            "image": "https://picsum.photos/id/314/800/550",
+            "title": "Priateľky",
+            "author": "Rudolf Pribiš",
+            "year": "1957"
+        },
+        {
+            "id": 30,
+            "image": "https://picsum.photos/id/326/670/790",
+            "title": "Sklená hora",
+            "author": "Vladimír Kompánek",
+            "year": "1974"
+        }
+    ]
+}

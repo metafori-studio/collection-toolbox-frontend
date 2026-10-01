@@ -2,5 +2,82 @@
   "error404": {
     "title": "Error 404",
     "text": "If the problem persists, please contact the service administrator."
+  },
+  "viewer": {
+    "loading": "Loading...",
+    "previous": "Previous",
+    "next": "Next",
+    "zoomOut": "Zoom out",
+    "zoomIn": "Zoom in",
+    "resetZoom": "Reset zoom"
+  },
+  "common": {
+    "retry": "Try again"
+  },
+  "artwork": {
+    "count": "{count} artwork | {count} artworks"
+  },
+  "explore": {
+    "title": "Catalogue",
+    "orderBy": "Sort by",
+    "orderByOptions": {
+      "newest": "Newest first",
+      "oldest": "Oldest first",
+      "id": "By ID"
+    },
+    "shownCount": "Showing 1-{shown} of {total} artworks.",
+    "loadMore": "Show more",
+    "error": {
+      "title": "Could not load artworks",
+      "text": "Please try again."
+    }
+  },
+  "exploreFilter": {
+    "searchPlaceholder": "Search the catalogue",
+    "filterResults": "Filter results",
+    "appliedFilters": "Applied filters",
+    "clearAll": "Clear all filters",
+    "groups": {
+      "author": "Author",
+      "artType": "Art type",
+      "technique": "Technique",
+      "material": "Material",
+      "year": "Years"
+    }
+  },
+  "artworkDetail": {
+    "breadcrumbCatalogue": "Catalogue",
+    "breadcrumbCurrent": "Artwork detail",
+    "aboutArtwork": "Artwork details",
+    "license": "License",
+    "partOfCollections": "Part of {count} collection | Part of {count} collections",
+    "metadata": {
+      "dating": "Dating",
+      "dimensions": "Dimensions",
+      "material": "Material",
+      "technique": "Technique",
+      "acquisitionMethod": "Acquisition method",
+      "acquisitionYear": "Acquisition year",
+      "locationOrigin": "Location / origin",
+      "inventoryNumber": "Inventory number"
+    },
+    "error": {
+      "title": "Could not load the artwork",
+      "text": "Please try again."
+    }
+  },
+  "collectionCard": {
+    "view": "View collection"
+  },
+  "multiselect": {
+    "label": "Select…",
+    "searchPlaceholder": "Search…",
+    "noResults": "No results found"
+  },
+  "filterChip": {
+    "clear": "Clear filter {label} {value}"
+  },
+  "breadcrumb": {
+    "label": "Breadcrumb"
   }
 }

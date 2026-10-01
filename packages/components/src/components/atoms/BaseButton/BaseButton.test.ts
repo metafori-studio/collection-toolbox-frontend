@@ -46,6 +46,22 @@ describe('BaseButton', () => {
     expect(wrapper.classes()).toContain('text-status-error');
   });
 
+  it('applies media variant classes', () => {
+    const wrapper = mount(BaseButton, { props: { variant: 'media' } });
+    expect(wrapper.classes()).toContain('border-transparent');
+  });
+
+  // Rounded
+  it('applies rounded-lg class by default or when rounded is large', () => {
+    const wrapper = mount(BaseButton);
+    expect(wrapper.classes()).toContain('rounded-lg');
+  });
+
+  it('applies rounded-full class when rounded is full', () => {
+    const wrapper = mount(BaseButton, { props: { rounded: 'full' } });
+    expect(wrapper.classes()).toContain('rounded-full');
+  });
+
   // Block
   it('applies w-full class when block is true', () => {
     const wrapper = mount(BaseButton, { props: { block: true } });

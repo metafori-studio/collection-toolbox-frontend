@@ -2,5 +2,82 @@
   "error404": {
     "title": "Chyba 404",
     "text": "V prípade pretrvávajúcich ťažkostí kontaktujte prevádzkovateľa služieb."
+  },
+  "viewer": {
+    "loading": "Načítavanie...",
+    "previous": "Predchádzajúce",
+    "next": "Nasledujúce",
+    "zoomOut": "Oddialiť",
+    "zoomIn": "Priblížiť",
+    "resetZoom": "Resetovať priblíženie"
+  },
+  "common": {
+    "retry": "Skúsiť znova"
+  },
+  "artwork": {
+    "count": "{count} dielo | {count} diela | {count} diel"
+  },
+  "explore": {
+    "title": "Katalóg",
+    "orderBy": "Zoradenie",
+    "orderByOptions": {
+      "newest": "Od najnovšieho",
+      "oldest": "Od najstaršieho",
+      "id": "Podľa ID"
+    },
+    "shownCount": "Zobrazených 1-{shown} z {total} diel.",
+    "loadMore": "Zobraziť ďalšie",
+    "error": {
+      "title": "Nepodarilo sa načítať diela",
+      "text": "Skúste to prosím znova."
+    }
+  },
+  "exploreFilter": {
+    "searchPlaceholder": "Hľadaj v katalógu",
+    "filterResults": "Filtrovať výsledky",
+    "appliedFilters": "Aplikované filtre",
+    "clearAll": "Odstrániť všetky filtre",
+    "groups": {
+      "author": "Autor",
+      "artType": "Výtvarný druh",
+      "technique": "Technika",
+      "material": "Materiál",
+      "year": "Roky"
+    }
+  },
+  "artworkDetail": {
+    "breadcrumbCatalogue": "Katalóg",
+    "breadcrumbCurrent": "Detail diela",
+    "aboutArtwork": "Údaje o diele",
+    "license": "Licencia",
+    "partOfCollections": "Súčasť {count} kolekcie | Súčasť {count} kolekcií | Súčasť {count} kolekcií",
+    "metadata": {
+      "dating": "Datovanie",
+      "dimensions": "Rozmery",
+      "material": "Materiál",
+      "technique": "Technika",
+      "acquisitionMethod": "Spôsob akvizície",
+      "acquisitionYear": "Rok akvizície",
+      "locationOrigin": "Lokácia / pôvod",
+      "inventoryNumber": "Inventárne číslo"
+    },
+    "error": {
+      "title": "Nepodarilo sa načítať dielo",
+      "text": "Skúste to prosím znova."
+    }
+  },
+  "collectionCard": {
+    "view": "Zobraziť kolekciu"
+  },
+  "multiselect": {
+    "label": "Vyberte…",
+    "searchPlaceholder": "Hľadať…",
+    "noResults": "Nenašli sa žiadne výsledky"
+  },
+  "filterChip": {
+    "clear": "Odstrániť filter {label} {value}"
+  },
+  "breadcrumb": {
+    "label": "Drobčeková navigácia"
   }
 }

@@ -44,6 +44,10 @@ import {
   PhPlay,
   PhBug,
   PhList,
+  PhMagnifyingGlassPlus,
+  PhMagnifyingGlassMinus,
+  PhArrowCounterClockwise,
+  PhCalendarBlank,
 } from '@phosphor-icons/vue';
 
 export const icons = {
@@ -63,6 +67,7 @@ export const icons = {
   arrowDown: PhArrowDown,
   arrowLeft: PhArrowLeft,
   arrowRight: PhArrowRight,
+  zoomReset: PhArrowCounterClockwise,
   minus: PhMinus,
   plus: PhPlus,
   gpsFix: PhGpsFix,
@@ -82,6 +87,9 @@ export const icons = {
   play: PhPlay,
   bug: PhBug,
   list: PhList,
+  zoomIn: PhMagnifyingGlassPlus,
+  zoomOut: PhMagnifyingGlassMinus,
+  calendar: PhCalendarBlank,
 };
 
 export type IconName = keyof typeof icons;
@@ -94,7 +102,7 @@ const {
   weight = 'regular',
 } = defineProps<{
   icon?: IconName
-  size?: 16 | 20 | 24 | 32 | 80 | 96
+  size?: 16 | 20 | 24 | 32 | 48 | 80 | 96
   weight?: 'regular' | 'fill'
 }>();
 

@@ -1,14 +1,34 @@
-import { createWebHistory, createRouter } from 'vue-router';
+import { createWebHistory, createRouter, type RouteLocationNormalizedLoaded } from 'vue-router';
+import { routerScrollBehavior } from '@metafori/shared';
+import i18n from '@/i18n';
+import { getById, getList } from '@/api';
 
-import HomeView from '@/views/HomeView.vue';
 import InfoView from '@/views/InfoView.vue';
-import Error404View from '@/views/Error404View.vue';
+import {
+  ExploreView,
+  ArtworkDetailView,
+  Error404View,
+} from '@metafori/components';
 
 export const routes = [
   {
-    name: 'Home',
+    name: 'Explore',
     path: '/',
-    component: HomeView,
+    props: () => ({
+      getList,
+      highlight: 'filter',
+    }),
+    component: ExploreView,
+  },
+  {
+    name: 'ArtworkDetail',
+    path: '/artwork/:id',
+    props: (route: RouteLocationNormalizedLoaded) => ({
+      id: route.params.id,
+      getById,
+      license: i18n.global.t('footer.copyright'),
+    }),
+    component: ArtworkDetailView,
   },
   {
     name: 'Info',
@@ -20,14 +40,13 @@ export const routes = [
     path: '/:pathMatch(.*)*',
     component: Error404View,
   },
+
 ];
 
 const router = createRouter({
   history: createWebHistory(),
   routes,
-  scrollBehavior() {
-    return { top: 0 };
-  },
+  scrollBehavior: routerScrollBehavior,
 });
 
 export default router;
