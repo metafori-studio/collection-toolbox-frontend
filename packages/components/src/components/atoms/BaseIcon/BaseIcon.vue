@@ -48,6 +48,7 @@ import {
   PhMagnifyingGlassMinus,
   PhArrowCounterClockwise,
   PhCalendarBlank,
+  PhArrowsHorizontal,
 } from '@phosphor-icons/vue';
 
 export const icons = {
@@ -90,6 +91,7 @@ export const icons = {
   zoomIn: PhMagnifyingGlassPlus,
   zoomOut: PhMagnifyingGlassMinus,
   calendar: PhCalendarBlank,
+  arrowsHorizontal: PhArrowsHorizontal,
 };
 
 export type IconName = keyof typeof icons;

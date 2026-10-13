@@ -25,8 +25,9 @@ export { default as FilterSection } from './components/molecules/FilterSection';
 export { default as InfoBox } from './components/molecules/InfoBox';
 export { default as ModalWindow } from './components/molecules/ModalWindow';
 export { default as ErrorState } from './components/molecules/ErrorState';
-export { default as ArtworkCollectionImageGrid } from './components/molecules/ArtworkCollectionImageGrid';
 export { default as ArtworkCollectionMeta } from './components/molecules/ArtworkCollectionMeta';
+export { default as ArtworkCollectionThumbnail } from './components/molecules/ArtworkCollectionThumbnail';
+export { default as ArtworkCollectionThumbnailGrid } from './components/molecules/ArtworkCollectionThumbnailGrid';
 
 // Viewers
 export { default as BaseViewer } from './components/viewers/BaseViewer';

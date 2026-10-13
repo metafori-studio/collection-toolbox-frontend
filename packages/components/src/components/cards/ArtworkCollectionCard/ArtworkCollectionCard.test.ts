@@ -15,7 +15,7 @@ const collection: ArtworkCollection = {
   id: 1,
   name: 'Collection',
   about: 'About the collection',
-  images: ['https://example.com/1.jpg', 'https://example.com/2.jpg'],
+  thumbnail: 'https://example.com/1.jpg',
   date: '2024-03-01',
   artwork_count: 42,
 };
@@ -31,10 +31,10 @@ describe('ArtworkCollectionCard', () => {
     expect(wrapper.text()).toContain('About the collection');
   });
 
-  it('passes images and name to the image grid', () => {
-    const grid = mountCard().findComponent({ name: 'ArtworkCollectionImageGrid' });
-    expect(grid.props('images')).toEqual(collection.images);
-    expect(grid.props('title')).toBe('Collection');
+  it('renders the thumbnail with the collection name as alt', () => {
+    const img = mountCard().get('img');
+    expect(img.attributes('src')).toBe(collection.thumbnail);
+    expect(img.attributes('alt')).toBe('Collection');
   });
 
   it('passes the collection to the meta list', () => {
@@ -45,23 +45,19 @@ describe('ArtworkCollectionCard', () => {
   it('uses the vertical layout by default', () => {
     const wrapper = mountCard();
     expect(wrapper.classes()).not.toContain('md:flex-row');
-    expect(wrapper.findComponent({ name: 'ArtworkCollectionImageGrid' }).classes()).toContain('h-[213px]');
+    expect(wrapper.get('img').classes()).toContain('h-[213px]');
   });
 
   it('switches to a row on desktop in the horizontal layout', () => {
     const wrapper = mountCard({ layout: 'horizontal' });
     expect(wrapper.classes()).toContain('md:flex-row');
-    const grid = wrapper.findComponent({ name: 'ArtworkCollectionImageGrid' });
-    expect(grid.classes()).toContain('md:w-[300px]');
-    expect(grid.classes()).not.toContain('h-[213px]');
-  });
-
-  it('hides the button by default', () => {
-    expect(mountCard().find('button').exists()).toBe(false);
+    const img = wrapper.get('img');
+    expect(img.classes()).toContain('md:w-[300px]');
+    expect(img.classes()).not.toContain('h-[213px]');
   });
 
   it('emits open when the button is clicked', async () => {
-    const wrapper = mountCard({ showButton: true });
+    const wrapper = mountCard();
     const button = wrapper.get('button');
     expect(button.text()).toBe('collectionCard.view');
 

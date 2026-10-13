@@ -67,7 +67,6 @@
           :key="collection.id"
           :collection="collection"
           layout="horizontal"
-          show-button
           @open="$router.push({
             name: 'CollectionDetail',
             params: { id: collection.id },

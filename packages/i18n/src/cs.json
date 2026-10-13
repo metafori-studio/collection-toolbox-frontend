@@ -77,7 +77,7 @@
   "collectionCard": {
     "view": "Zobrazit kolekci"
   },
-  "collectionImageGrid": {
+  "collectionThumbnailGrid": {
     "imageAlt": "{title}, obrázek {index}"
   },
   "collectionList": {

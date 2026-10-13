@@ -15,7 +15,7 @@
           :key="collection.id"
           :collection="collection"
           layout="horizontal"
-          show-button
+          borderless
           @open="$router.push({
             name: 'CollectionDetail',
             params: { id: collection.id },
@@ -50,7 +50,6 @@
             :key="collection.id"
             :collection="collection"
             layout="vertical"
-            show-button
             @open="$router.push({
               name: 'CollectionDetail',
               params: { id: collection.id },

@@ -77,7 +77,7 @@
   "collectionCard": {
     "view": "Zobraziť kolekciu"
   },
-  "collectionImageGrid": {
+  "collectionThumbnailGrid": {
     "imageAlt": "{title}, obrázok {index}"
   },
   "collectionList": {

@@ -29,7 +29,7 @@ const collection: ArtworkCollectionDetail = {
   name: '20th Century Art',
   about: 'A collection of 20th century artworks.',
   summary: 'Selected works of the 20th century.',
-  images: ['https://example.com/1.jpg', 'https://example.com/2.jpg'],
+  thumbnail: 'https://example.com/1.jpg',
   date: '2020',
   artwork_count: 42,
 };
@@ -87,12 +87,12 @@ describe('ArtworkCollectionDetailView', () => {
     ]);
   });
 
-  it('passes the collection to the image grid and meta list', async () => {
+  it('renders the thumbnail and passes the collection to the meta list', async () => {
     const { wrapper } = mountView();
     await flushPromises();
-    const grid = wrapper.findComponent({ name: 'ArtworkCollectionImageGrid' });
-    expect(grid.props('images')).toEqual(collection.images);
-    expect(grid.props('title')).toBe('20th Century Art');
+    const img = wrapper.get('img');
+    expect(img.attributes('src')).toBe(collection.thumbnail);
+    expect(img.attributes('alt')).toBe('20th Century Art');
     expect(wrapper.findComponent({ name: 'ArtworkCollectionMeta' }).props('collection')).toEqual(collection);
   });
 

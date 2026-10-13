@@ -24,10 +24,10 @@
           ]"
           class="mb-6 lg:mb-10"
         />
-        <ArtworkCollectionImageGrid
-          :images="detail.images"
+        <ArtworkCollectionThumbnail
+          :src="detail.thumbnail"
           :title="detail.name"
-          class="h-[240px] lg:h-[580px] mb-6 lg:mb-10"
+          class="w-full h-[240px] lg:h-[580px] mb-6 lg:mb-10"
         />
         <h1 class="text-display-3 mb-6">
           {{ detail.name }}
@@ -109,8 +109,8 @@ import ArtworkCard from '../../cards/ArtworkCard';
 import ErrorState from '../../molecules/ErrorState';
 import BaseButton from '../../atoms/BaseButton';
 import BreadcrumbList from '../../navigation/BreadcrumbList';
-import ArtworkCollectionImageGrid from '../../molecules/ArtworkCollectionImageGrid';
 import ArtworkCollectionMeta from '../../molecules/ArtworkCollectionMeta';
+import ArtworkCollectionThumbnail from '../../molecules/ArtworkCollectionThumbnail';
 import {
   type Artwork,
   type ArtworkCollectionDetail,
