@@ -27,7 +27,7 @@ const makeCollection = (id: number): ArtworkCollection => ({
   id,
   name: `Collection ${id}`,
   about: 'About',
-  images: ['https://example.com/1.jpg'],
+  thumbnail: 'https://example.com/1.jpg',
   date: '2024-03-01',
   artwork_count: 10,
 });

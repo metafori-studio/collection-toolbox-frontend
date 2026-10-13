@@ -26,6 +26,13 @@
       <BaseIcon icon="user" />
       {{ collection.author }}
     </li>
+    <li
+      v-if="collection.datespan"
+      class="flex gap-1 items-center"
+    >
+      <BaseIcon icon="arrowsHorizontal" />
+      {{ collection.datespan }}
+    </li>
   </ul>
 </template>
 

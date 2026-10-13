@@ -1,12 +1,23 @@
 <template>
   <div
-    class="border border-neutral-300 rounded-lg overflow-hidden flex flex-col gap-4 p-3 md:p-4 "
+    class="flex flex-col gap-4"
     :class="{
-      'md:flex-row': layout === 'horizontal'
+      'md:flex-row': layout === 'horizontal',
+      'border border-neutral-300 rounded-lg p-3 md:p-4': !borderless
     }"
   >
-    <ArtworkCollectionImageGrid
-      :images="collection.images"
+    <ArtworkCollectionThumbnailGrid
+      v-if="collection.thumbnails?.length"
+      :images="collection.thumbnails"
+      :title="collection.name"
+      :class="{
+        'h-[213px]': layout === 'vertical',
+        'md:min-w-[300px] md:w-[300px]': layout === 'horizontal'
+      }"
+    />
+    <ArtworkCollectionThumbnail
+      v-else
+      :src="collection.thumbnail"
       :title="collection.name"
       :class="{
         'h-[213px]': layout === 'vertical',
@@ -20,7 +31,6 @@
       <ArtworkCollectionMeta :collection="collection" />
       <p>{{ collection.about }}</p>
       <BaseButton
-        v-if="showButton"
         variant="secondary"
         @click="emit('open')"
       >
@@ -33,8 +43,9 @@
 <script lang="ts" setup>
 import { useI18n } from 'vue-i18n';
 import { type ArtworkCollection } from '../../../types/artwork';
-import ArtworkCollectionImageGrid from '../../molecules/ArtworkCollectionImageGrid';
 import ArtworkCollectionMeta from '../../molecules/ArtworkCollectionMeta';
+import ArtworkCollectionThumbnail from '../../molecules/ArtworkCollectionThumbnail';
+import ArtworkCollectionThumbnailGrid from '../../molecules/ArtworkCollectionThumbnailGrid';
 
 import {
   BaseButton,
@@ -43,11 +54,11 @@ import {
 const {
   collection,
   layout = 'vertical',
-  showButton = false,
+  borderless = false,
 } = defineProps<{
   collection: ArtworkCollection
   layout?: 'vertical' | 'horizontal'
-  showButton?: boolean
+  borderless?: boolean
 }>();
 
 const emit = defineEmits(['open']);

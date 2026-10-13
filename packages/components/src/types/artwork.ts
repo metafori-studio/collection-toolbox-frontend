@@ -19,10 +19,12 @@ export type ArtworkCollection = {
   id: number;
   name: string;
   about: string;
-  images: string[];
+  thumbnail: string;
+  thumbnails?: string[];
   date: string;
   author?: string;
   category?: string;
+  datespan?: string;
   artwork_count: number;
 };
 

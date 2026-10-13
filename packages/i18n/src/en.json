@@ -69,7 +69,7 @@
   "collectionCard": {
     "view": "View collection"
   },
-  "collectionImageGrid": {
+  "collectionThumbnailGrid": {
     "imageAlt": "{title}, image {index}"
   },
   "collectionList": {
