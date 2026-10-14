@@ -12,13 +12,20 @@ import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue';
 import type { PDFDocumentProxy, RenderTask } from 'pdfjs-dist';
 import { isCancellationOrDestroyedError } from './pdfErrors';
 
-const props = defineProps<{
-  document?: PDFDocumentProxy | null;
-  pageNumber: number;
-  scale?: number;
-  fitSize?: number;
-  fit?: boolean;
-  label?: string;
+const {
+  document: pdfDocument = null,
+  pageNumber,
+  scale = 1,
+  fitSize = undefined,
+  fit = false,
+  label = undefined,
+} = defineProps<{
+  document?: PDFDocumentProxy | null
+  pageNumber: number
+  scale?: number
+  fitSize?: number
+  fit?: boolean
+  label?: string
 }>();
 
 const emit = defineEmits<{
@@ -27,10 +34,10 @@ const emit = defineEmits<{
 
 const canvas = ref<HTMLCanvasElement | null>(null);
 const pageSize = ref({ width: 0, height: 0 });
-const displayScale = computed(() => props.fitSize && pageSize.value.width && pageSize.value.height
-  ? Math.min(props.fitSize / pageSize.value.width, props.fitSize / pageSize.value.height)
-  : props.scale ?? 1);
-const displayStyle = computed(() => props.fit ? {
+const displayScale = computed(() => fitSize && pageSize.value.width && pageSize.value.height
+  ? Math.min(fitSize / pageSize.value.width, fitSize / pageSize.value.height)
+  : scale);
+const displayStyle = computed(() => fit ? {
   '--pdf-page-width': `${pageSize.value.width}px`,
   '--pdf-page-aspect': pageSize.value.height ? pageSize.value.width / pageSize.value.height : undefined,
 } : {
@@ -54,13 +61,13 @@ async function renderPage() {
     }
     renderTask = null;
   }
-  if (cancelled || !canvas.value || !props.document) return;
+  if (cancelled || !canvas.value || !pdfDocument) return;
 
-  const currentDoc = props.document;
+  const currentDoc = pdfDocument;
 
   try {
-    const page = await currentDoc.getPage(props.pageNumber);
-    if (cancelled || version !== renderVersion || !canvas.value || props.document !== currentDoc) return;
+    const page = await currentDoc.getPage(pageNumber);
+    if (cancelled || version !== renderVersion || !canvas.value || pdfDocument !== currentDoc) return;
 
     const unscaled = page.getViewport({ scale: 1 });
     pageSize.value = { width: unscaled.width, height: unscaled.height };
@@ -80,12 +87,12 @@ async function renderPage() {
     });
     renderTask = currentTask;
     await currentTask.promise;
-    if (cancelled || version !== renderVersion || !canvas.value || props.document !== currentDoc) return;
+    if (cancelled || version !== renderVersion || !canvas.value || pdfDocument !== currentDoc) return;
     canvas.value.width = target.width;
     canvas.value.height = target.height;
     canvas.value.getContext('2d')?.drawImage(target, 0, 0);
   } catch (error: unknown) {
-    if (cancelled || version !== renderVersion || props.document !== currentDoc || isCancellationOrDestroyedError(error)) {
+    if (cancelled || version !== renderVersion || pdfDocument !== currentDoc || isCancellationOrDestroyedError(error)) {
       return;
     }
     console.error('[PdfCanvas] Failed to render page:', error);
@@ -98,8 +105,8 @@ async function renderPage() {
 }
 
 onMounted(() => { void renderPage(); });
-watch(() => [props.document, props.pageNumber, props.fitSize], () => { void renderPage(); });
-watch(() => props.scale, () => {
+watch(() => [pdfDocument, pageNumber, fitSize], () => { void renderPage(); });
+watch(() => scale, () => {
   // CSS updates the displayed size immediately. Wait until continuous wheel or
   // pinch input settles before doing the expensive high-resolution PDF render.
   if (scaleRenderTimer) clearTimeout(scaleRenderTimer);

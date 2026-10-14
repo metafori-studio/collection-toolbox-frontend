@@ -105,12 +105,12 @@ export interface ImageViewerProps {
   onRefreshUrl?: (expiredUrl?: string) => Promise<string | void>;
 }
 
-const props = withDefaults(defineProps<ImageViewerProps>(), {
-  images: () => [],
-  modelValue: 1,
-  detail: null,
-  onRefreshUrl: undefined,
-});
+const {
+  images: imagesProp = [],
+  modelValue = 1,
+  detail = null,
+  onRefreshUrl = undefined,
+} = defineProps<ImageViewerProps>();
 
 const emit = defineEmits<{
   (event: 'update:modelValue', imageNumber: number): void;
@@ -123,7 +123,11 @@ const showTranscript = ref(true);
 const {
   currentImage, currentIndex, images, nextImage,
   overrideImageUrl, previousImage, selectImage,
-} = useImageCollection(props, emit);
+} = useImageCollection({
+  get images() { return imagesProp; },
+  get modelValue() { return modelValue; },
+  get detail() { return detail; },
+}, emit);
 const transcript = computed(() => currentImage.value?.transcript ?? null);
 
 const {
@@ -133,7 +137,7 @@ const {
   element: viewerElement,
   image: currentImage,
   source: computed(() => images.value[currentIndex.value]),
-  refreshHandler: computed(() => props.onRefreshUrl),
+  refreshHandler: computed(() => onRefreshUrl),
   onUrlRefreshed: (url) => overrideImageUrl(currentIndex.value, url),
 });
 

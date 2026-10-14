@@ -20,15 +20,20 @@ import { onBeforeUnmount, onMounted, ref, watch } from 'vue';
 import type { PDFDocumentProxy } from 'pdfjs-dist';
 import PdfCanvas from './PdfCanvas.vue';
 
-const props = defineProps<{
-  document?: PDFDocumentProxy | null;
-  pageNumber: number;
-  label: string;
-  active?: boolean;
+const {
+  document = null,
+  pageNumber,
+  label,
+  active = false,
+} = defineProps<{
+  document?: PDFDocumentProxy | null
+  pageNumber: number
+  label: string
+  active?: boolean
 }>();
 const emit = defineEmits<{ (event: 'render-error', error: unknown): void }>();
 const target = ref<HTMLElement | null>(null);
-const isVisible = ref(!!props.active);
+const isVisible = ref(active);
 let observer: IntersectionObserver | null = null;
 
 onMounted(() => {
@@ -45,8 +50,8 @@ onMounted(() => {
 
 onBeforeUnmount(() => observer?.disconnect());
 
-watch(() => props.active, (active) => {
-  if (active) {
+watch(() => active, (isActive) => {
+  if (isActive) {
     isVisible.value = true;
     observer?.disconnect();
     observer = null;
