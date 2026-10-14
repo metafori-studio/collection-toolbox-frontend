@@ -9,7 +9,7 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {
     size: { control: 'inline-radio', options: ['regular', 'small'] },
-    variant: { control: 'select', options: ['primary', 'secondary', 'danger-primary', 'danger-secondary', 'media'] },
+    variant: { control: 'select', options: ['primary', 'secondary', 'danger-primary', 'danger-secondary'] },
     rounded: { control: 'inline-radio', options: ['large', 'full'] },
   },
 } satisfies Meta<typeof BaseButton>;
@@ -40,19 +40,6 @@ export const Secondary: Story = {
     components: { BaseButton },
     setup() { return { args }; },
     template: '<BaseButton v-bind="args">Button</BaseButton>',
-  }),
-};
-
-export const Media: Story = {
-  args: {
-    variant: 'media',
-    size: 'regular',
-    disabled: false,
-  },
-  render: (args) => ({
-    components: { BaseButton },
-    setup() { return { args }; },
-    template: '<BaseButton v-bind="args">Media Button</BaseButton>',
   }),
 };
 

@@ -85,7 +85,7 @@ describe('MediaToolbar Component Suite', () => {
   });
 
   describe('MediaViewerButton', () => {
-    it('wraps BaseButton with media variant and renders slot content', async () => {
+    it('renders a round button with title and slot content', async () => {
       const wrapper = mount(MediaViewerButton, {
         props: {
           title: 'Previous Page',
@@ -96,6 +96,7 @@ describe('MediaToolbar Component Suite', () => {
       });
 
       expect(wrapper.attributes('title')).toBe('Previous Page');
+      expect(wrapper.attributes('type')).toBe('button');
       expect(wrapper.classes()).toContain('rounded-full');
       expect(wrapper.find('.icon-slot').text()).toBe('Icon');
       await wrapper.trigger('click');
