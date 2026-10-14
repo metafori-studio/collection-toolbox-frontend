@@ -59,8 +59,10 @@ type ValueItem = {
   filterValue?: string | null;
 };
 
-const { rows } = defineProps<{
-  rows: Row[]
+const {
+  rows = [],
+} = defineProps<{
+  rows?: Row[]
 }>();
 
 defineEmits<{
