@@ -8,7 +8,7 @@
   <div
     v-else
     class="flex items-center justify-center"
-    :class="themeClasses[props.theme]"
+    :class="themeClasses[theme]"
   >
     <BaseIcon
       :icon="icon"
@@ -23,17 +23,17 @@ import BaseIcon, { type IconName } from '../BaseIcon/BaseIcon.vue';
 
 export type MediaImageTheme = 'green' | 'amber' | 'red' | 'purple' | 'neutral';
 
-const props = withDefaults(defineProps<{
+const {
+  src = null,
+  alt = '',
+  icon = 'stack',
+  theme = 'neutral',
+} = defineProps<{
   src?: string | null
   alt?: string | undefined
   icon?: IconName
   theme?: MediaImageTheme
-}>(), {
-  src: null,
-  alt: '',
-  icon: 'stack',
-  theme: 'neutral',
-});
+}>();
 
 const themeClasses: Record<MediaImageTheme, string> = {
   green: 'bg-green-50 text-green-800',

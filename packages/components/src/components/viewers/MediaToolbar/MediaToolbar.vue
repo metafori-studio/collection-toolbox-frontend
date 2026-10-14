@@ -13,12 +13,9 @@
 <script setup lang="ts">
 export type MediaToolbarVariant = 'pill' | 'full';
 
-withDefaults(
-  defineProps<{
-    variant?: MediaToolbarVariant;
-  }>(),
-  {
-    variant: 'pill',
-  },
-);
+const {
+  variant = 'pill',
+} = defineProps<{
+  variant?: MediaToolbarVariant
+}>();
 </script>

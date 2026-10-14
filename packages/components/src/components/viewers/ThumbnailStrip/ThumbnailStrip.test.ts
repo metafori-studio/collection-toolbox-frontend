@@ -52,13 +52,11 @@ describe('ThumbnailStrip Component Suite', () => {
       props: { page: 12, label: 'Localized item 12' },
     });
     const button = wrapper.get('button');
-    const tile = button.get('div');
-    const badge = tile.get('div');
+    const badge = button.get('div');
 
-    expect(button.classes()).toEqual(expect.arrayContaining(['h-16', 'w-16']));
-    expect(tile.classes()).toEqual(expect.arrayContaining(['h-full', 'w-full']));
-    expect(tile.classes()).toContain('rounded-sm');
-    expect(badge.classes()).toEqual(expect.arrayContaining(['bottom-0', 'right-0', 'h-4', 'min-w-4']));
+    expect(button.classes()).toEqual(expect.arrayContaining(['h-16', 'w-16', 'rounded-sm', 'overflow-hidden']));
+    expect(badge.classes()).toEqual(expect.arrayContaining(['absolute', 'bottom-0.5', 'right-0.5']));
+    expect(badge.text()).toBe('12');
     expect(badge.classes()).not.toContain('rounded-xs');
     expect(button.attributes('aria-label')).toBe('Localized item 12');
   });

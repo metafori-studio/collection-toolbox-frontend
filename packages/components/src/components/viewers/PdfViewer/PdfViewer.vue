@@ -120,13 +120,13 @@ export interface PdfViewerProps {
   onRefreshUrl?: (expiredUrl?: string) => Promise<string | void>;
 }
 
-const props = withDefaults(defineProps<PdfViewerProps>(), {
-  url: '',
-  sources: () => [],
-  modelValue: 1,
-  detail: null,
-  onRefreshUrl: undefined,
-});
+const {
+  url: urlProp = '',
+  sources = [],
+  modelValue = 1,
+  detail = null,
+  onRefreshUrl = undefined,
+} = defineProps<PdfViewerProps>();
 const { t } = useI18n();
 
 GlobalWorkerOptions.workerSrc = pdfWorkerUrl;
@@ -136,7 +136,7 @@ const selectedSourceUrl = ref('');
 const loadState = shallowRef<
   { status: 'idle' | 'loading' | 'ready' } | { status: 'error'; message: string }
 >({ status: 'idle' });
-const currentPage = ref(props.modelValue);
+const currentPage = ref(modelValue);
 const pageDimension = ref<{ width: number; height: number } | null>(null);
 const pdfCanvas = ref<InstanceType<typeof PdfCanvas> | null>(null);
 const renderedPdfElement = computed<HTMLCanvasElement | null>(() => pdfCanvas.value?.canvas ?? null);
@@ -191,15 +191,15 @@ const pageStageStyle = computed(() => isFit.value || !pageDimension.value ? {} :
   height: `${pageDimension.value.height * scale.value}px`,
 }));
 const sourceOptions = computed<SelectOption[]>(() => {
-  if (props.sources?.length) return props.sources.map(({ label, url }) => ({ label, value: url }));
-  const documents = props.detail?.media?.documents || [];
+  if (sources.length) return sources.map(({ label, url }) => ({ label, value: url }));
+  const documents = detail?.media?.documents || [];
   if (documents.length) {
     return documents.map((document, index) => ({
       label: document.name || `Document ${index + 1}`,
       value: document.url,
     }));
   }
-  return props.url ? [{ label: 'Document 1', value: props.url }] : [];
+  return urlProp ? [{ label: 'Document 1', value: urlProp }] : [];
 });
 
 async function disposeDocument() {
@@ -235,7 +235,7 @@ async function loadDocument(url: string, resetPage = false) {
   const version = ++loadVersion;
   loadState.value = { status: url ? 'loading' : 'idle' };
   pageDimension.value = null;
-  currentPage.value = resetPage ? 1 : Math.max(1, props.modelValue);
+  currentPage.value = resetPage ? 1 : Math.max(1, modelValue);
   customScale.value = null;
   await disposeDocument();
   if (version !== loadVersion) return;
@@ -251,7 +251,7 @@ async function loadDocument(url: string, resetPage = false) {
       url,
       chunkSize: rangeChunkSize,
       signal: controller.signal,
-      refreshUrl: props.onRefreshUrl,
+      refreshUrl: onRefreshUrl,
       onError: async (error) => {
         if (version !== loadVersion) return;
         loadVersion += 1;
@@ -346,7 +346,7 @@ watch(currentPage, () => {
   void updatePageDimension();
 });
 
-watch(() => props.modelValue, (pageNumber) => {
+watch(() => modelValue, (pageNumber) => {
   if (pageNumber && pageNumber !== currentPage.value) selectPage(pageNumber);
 });
 

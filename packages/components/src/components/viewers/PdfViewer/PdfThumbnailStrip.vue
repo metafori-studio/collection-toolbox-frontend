@@ -31,9 +31,12 @@ import PdfLazyThumbnail from './PdfLazyThumbnail.vue';
 
 const { t } = useI18n();
 
-const props = defineProps<{
-  document?: PDFDocumentProxy | null;
-  currentPage: number;
+const {
+  document = null,
+  currentPage,
+} = defineProps<{
+  document?: PDFDocumentProxy | null
+  currentPage: number
 }>();
 
 const emit = defineEmits<{
@@ -41,5 +44,5 @@ const emit = defineEmits<{
   (event: 'render-error', error: unknown): void;
 }>();
 
-const pageCount = computed(() => props.document?.numPages || 0);
+const pageCount = computed(() => document?.numPages || 0);
 </script>

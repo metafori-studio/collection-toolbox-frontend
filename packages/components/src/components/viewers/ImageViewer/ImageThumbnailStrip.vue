@@ -28,9 +28,12 @@ import ThumbnailStripThumb from '../ThumbnailStrip/ThumbnailStripThumb.vue';
 import type { ViewerMediaResource } from '../media';
 import ImageThumbnail from './ImageThumbnail.vue';
 
-defineProps<{
-  images: ViewerMediaResource[];
-  currentIndex: number;
+const {
+  images,
+  currentIndex,
+} = defineProps<{
+  images: ViewerMediaResource[]
+  currentIndex: number
 }>();
 
 const emit = defineEmits<{

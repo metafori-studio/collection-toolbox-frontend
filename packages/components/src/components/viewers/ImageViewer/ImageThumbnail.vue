@@ -20,10 +20,13 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
 
-const props = withDefaults(defineProps<{
-  src?: string;
-  alt?: string;
-}>(), { src: undefined, alt: '' });
+const {
+  src = undefined,
+  alt = '',
+} = defineProps<{
+  src?: string
+  alt?: string
+}>();
 
 const imageElement = ref<HTMLImageElement | null>(null);
 const hasError = ref(false);
@@ -32,5 +35,5 @@ function handleError(event: Event) {
   if (event.currentTarget === imageElement.value) hasError.value = true;
 }
 
-watch(() => props.src, () => { hasError.value = false; });
+watch(() => src, () => { hasError.value = false; });
 </script>

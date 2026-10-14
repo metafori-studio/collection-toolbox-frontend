@@ -8,7 +8,7 @@
 
         <div
           ref="toolbarRow"
-          class="col-start-1 row-start-2 z-10 flex justify-center p-4 pointer-events-none [&>*]:static [&>*]:pointer-events-auto [&>*]:transform-none"
+          class="col-start-1 row-start-2 z-20 flex justify-center p-4 pointer-events-none [&>*]:static [&>*]:pointer-events-auto [&>*]:transform-none"
         >
           <slot name="toolbar" />
         </div>
@@ -43,11 +43,15 @@
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref } from 'vue';
 
-withDefaults(defineProps<{
-  layout?: 'fit' | 'pannable' | 'native';
-  panning?: boolean;
-  pinchable?: boolean;
-}>(), { layout: 'fit', panning: false, pinchable: false });
+const {
+  layout = 'fit',
+  panning = false,
+  pinchable = false,
+} = defineProps<{
+  layout?: 'fit' | 'pannable' | 'native'
+  panning?: boolean
+  pinchable?: boolean
+}>();
 
 const toolbarRow = ref<HTMLElement | null>(null);
 const toolbarHeight = ref(0);

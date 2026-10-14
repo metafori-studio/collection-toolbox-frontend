@@ -78,13 +78,20 @@ import MediaToolbar from './MediaToolbar.vue';
 import MediaViewerButton from './MediaViewerButton.vue';
 import MediaToolbarSeparator from './MediaToolbarSeparator.vue';
 
-defineProps<{
-  current: number;
-  total: number;
-  zoomPercentage: number | null;
-  canZoomOut: boolean;
-  canZoomIn: boolean;
-  canResetZoom: boolean;
+const {
+  current,
+  total,
+  zoomPercentage,
+  canZoomOut,
+  canZoomIn,
+  canResetZoom,
+} = defineProps<{
+  current: number
+  total: number
+  zoomPercentage: number | null
+  canZoomOut: boolean
+  canZoomIn: boolean
+  canResetZoom: boolean
 }>();
 
 const emit = defineEmits<{
