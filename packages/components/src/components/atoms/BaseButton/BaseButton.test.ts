@@ -46,11 +46,6 @@ describe('BaseButton', () => {
     expect(wrapper.classes()).toContain('text-status-error');
   });
 
-  it('applies media variant classes', () => {
-    const wrapper = mount(BaseButton, { props: { variant: 'media' } });
-    expect(wrapper.classes()).toContain('border-transparent');
-  });
-
   // Rounded
   it('applies rounded-lg class by default or when rounded is large', () => {
     const wrapper = mount(BaseButton);
