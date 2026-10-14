@@ -1,13 +1,21 @@
 import { createWebHistory, createRouter, type RouteLocationNormalizedLoaded } from 'vue-router';
 import { routerScrollBehavior } from '@metafori/shared';
 import i18n from '@/i18n';
-import { getById, getList } from '@/api';
+import {
+  getById,
+  getList,
+  getCollections,
+  getCollectionById,
+  getCollectionArtworks,
+} from '@/api';
 
 import InfoView from '@/views/InfoView.vue';
 import {
   ExploreView,
   ArtworkDetailView,
   Error404View,
+  ArtworkCollectionListView,
+  ArtworkCollectionDetailView,
 } from '@metafori/components';
 
 export const routes = [
@@ -29,6 +37,24 @@ export const routes = [
       license: i18n.global.t('footer.copyright'),
     }),
     component: ArtworkDetailView,
+  },
+  {
+    name: 'CollectionList',
+    path: '/collections',
+    props: () => ({
+      getCollections,
+    }),
+    component: ArtworkCollectionListView,
+  },
+  {
+    name: 'CollectionDetail',
+    path: '/collections/:id',
+    props: (route: RouteLocationNormalizedLoaded) => ({
+      id: route.params.id,
+      getCollectionById,
+      getCollectionArtworks,
+    }),
+    component: ArtworkCollectionDetailView,
   },
   {
     name: 'Info',
