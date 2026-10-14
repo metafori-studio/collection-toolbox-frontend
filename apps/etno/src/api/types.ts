@@ -60,7 +60,7 @@ export type Detail = {
   publication_date: DatePeriod | null
   institution: { id: number; name: string; ror_id: string | null } | null
   project: { id: number; title: string } | null
-  locality: DetailLocalityItem[]
+  locality?: DetailLocalityItem[]
   authors: PersonOrOriginator[]
   researchers: PersonOrOriginator[]
   originators: PersonOrOriginator[]

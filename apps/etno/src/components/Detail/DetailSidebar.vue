@@ -329,7 +329,7 @@ const tableAuthors = computed(() => ({
 const tableGeographic = computed(() => {
   return {
     title: t('detail.section.geographic'),
-    items: detail.locality.map((item) => ({
+    items: detail.locality?.map((item) => ({
       label: t(`detail.table.${item.type}`),
       value: {
         text: item.name,
