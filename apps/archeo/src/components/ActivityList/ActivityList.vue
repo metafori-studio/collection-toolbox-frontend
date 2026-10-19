@@ -1,8 +1,11 @@
 <template>
   <div class="@container flex-1">
     <div class="flex items-center justify-between mb-4">
-      <h2 class="text-heading-4">
-        {{ $t('activityList.count', items.length) }}
+      <h2
+        v-if="meta.total !== undefined && meta.total !== null"
+        class="text-heading-4"
+      >
+        {{ $t('activityList.count', meta.total) }}
       </h2>
       <div class="flex items-center gap-2">
         <label for="orderBy">
@@ -10,12 +13,13 @@
         </label>
         <InputSelect
           id="orderBy"
-          v-model="orderBy"
+          :model-value="orderBy"
           :options="orderByOptions"
+          @update:model-value="emit('update:orderBy', $event)"
         />
         <BaseButton
           variant="secondary"
-          @click="orderAsc = !orderAsc"
+          @click="emit('update:orderAsc', !orderAsc)"
         >
           <BaseIcon
             :icon="orderAsc ? 'arrowUp' : 'arrowDown'"
@@ -24,22 +28,23 @@
       </div>
     </div>
     <ActivityCardList
-      :items="pagedItems"
+      :items="items"
       class="@3xl:hidden"
     />
     <ActivityTable
-      :items="pagedItems"
+      :items="items"
       class="hidden @3xl:block"
     />
     <ActivityListPagination
-      v-model="currentPage"
-      :total-pages="totalPages"
+      :model-value="meta.current_page ?? 1"
+      :total-pages="meta.last_page ?? 1"
+      @update:model-value="emit('update:page', $event)"
     />
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref, computed, watch } from 'vue';
+import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 import {
@@ -50,21 +55,25 @@ import {
 import ActivityTable from './ActivityTable.vue';
 import ActivityCardList from './ActivityCardList.vue';
 import ActivityListPagination from './ActivityListPagination.vue';
+import type { ListMeta } from '@/api';
 
 const { t } = useI18n();
 
-const PAGE_SIZE = 20;
-
 const {
   items = [],
+  meta = {},
+  orderBy = 'municipality',
+  orderAsc = true,
 } = defineProps<{
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  items?: any[]
+  items?: any[];
+  meta?: ListMeta;
+  orderBy?: string;
+  orderAsc?: boolean;
 }>();
 
-const orderAsc = ref(true);
-const orderBy = ref('municipality');
-const currentPage = ref(1);
+const emit = defineEmits(['update:orderBy', 'update:orderAsc', 'update:page']);
+
 const orderByOptions = computed(() => [
   { label: t('activityList.orderByOptions.municipality'), value: 'municipality' },
   { label: t('activityList.orderByOptions.id'), value: 'id' },
@@ -72,29 +81,5 @@ const orderByOptions = computed(() => [
   { label: t('activityList.orderByOptions.district'), value: 'district' },
   { label: t('activityList.orderByOptions.position'), value: 'position' },
 ]);
-
-const sortedItems = computed(() => {
-  const direction = orderAsc.value ? 1 : -1;
-
-  return [...items].sort((a, b) => {
-    const valA = a[orderBy.value];
-    const valB = b[orderBy.value];
-
-    if (valA < valB) return -direction;
-    if (valA > valB) return direction;
-    return 0;
-  });
-});
-
-const totalPages = computed(() => Math.ceil(sortedItems.value.length / PAGE_SIZE));
-
-const pagedItems = computed(() => {
-  const start = (currentPage.value - 1) * PAGE_SIZE;
-  return sortedItems.value.slice(start, start + PAGE_SIZE);
-});
-
-watch([orderBy, orderAsc], () => {
-  currentPage.value = 1;
-});
 
 </script>

@@ -26,21 +26,14 @@
             "Chebenov\u00e1 P."
         ],
         "institution": null,
-        "dating_ns": [
-            "Doba bronzov\u00e1",
-            "Doba hal\u0161tatsk\u00e1",
-            "Doba lat\u00e9nska",
-            "Doba r\u00edmska",
-            "Stredovek"
+        "dating_ns": null,
+        "dating_ceans": null,
+        "dating_site_type": [
+            "Stredovek 15. storo\u010die - s\u00eddlisko",
+            "Novovek - 17. storo\u010die - s\u00eddlisko",
+            "Novovek - 18. storo\u010die - s\u00eddlisko",
+            "Novovek - 19. storo\u010die - s\u00eddlisko"
         ],
-        "dating_ceans": [
-            "BZ-ne",
-            "HA",
-            "LT",
-            "RI",
-            "ST"
-        ],
-        "dating_site_type": null,
         "site_type_original": "s\u00eddlisko",
         "size_category": "mal\u00e1",
         "attachments": [
@@ -54,6 +47,17 @@
                 "size": "155 MB",
                 "pages": 24,
                 "link": "https://pdfobject.com/pdf/sample.pdf"
+            }
+        ],
+        "pdfs": [
+            {
+                "id": 46,
+                "name": "20909_23ns",
+                "file_name": "20909_23ns.pdf",
+                "human_readable_size": "28.79 MB",
+                "mime_type": "application\/pdf",
+                "url": "https:\/\/s3.archeomap.sav.sk\/collection-toolbox-assets\/31111\/46\/20909_23ns.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YIHY4SILOQJ5955ZM29Z%2F20261102%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261102T093413Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Signature=6877e985e79d4eb8524d94564b6d70cb9bd7ad517cc9d17b6a7d89a1013c87b1",
+                "conversions": []
             }
         ],
         "galleries": [

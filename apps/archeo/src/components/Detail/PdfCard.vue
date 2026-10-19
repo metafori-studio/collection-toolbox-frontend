@@ -20,7 +20,7 @@
           class="text-xs font-normal text-neutral-400"
         >
           <span v-if="available">
-            {{ size }} · {{ pages }}
+            {{ size }}
           </span>
           <span v-else>
             {{ $t('document.onRequest') }}
@@ -52,12 +52,10 @@ const {
   name,
   available = false,
   size = '',
-  pages = undefined,
 } = defineProps<{
   name: string
   available?: boolean
   size?: string
-  pages?: number
 }>();
 
 </script>

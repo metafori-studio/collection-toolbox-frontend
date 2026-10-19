@@ -33,18 +33,17 @@
       </div>
 
       <DetailSection
-        v-if="detail.attachments?.length"
+        v-if="detail.pdfs?.length"
         :title="$t('detail.sections.documents')"
       >
         <div class="flex flex-col gap-2">
-          <DocumentCard
-            v-for="(attachment, i) in detail.attachments"
+          <PdfCard
+            v-for="(pdf, i) in detail.pdfs"
             :key="i"
-            :name="attachment.name"
-            :available="attachment.available"
-            :size="attachment.size"
-            :pages="attachment.pages"
-            @click="openAttachment(attachment)"
+            :name="pdf.name"
+            :available="true"
+            :size="pdf.human_readable_size"
+            @click="openAttachment(pdf)"
           />
         </div>
       </DetailSection>
@@ -67,12 +66,12 @@
       </DetailSection>
 
       <DetailSection
-        v-if="detail.dating_ns?.length"
+        v-if="detail.dating_site_type?.length"
         :title="$t('detail.sections.datingType')"
       >
         <div class="flex flex-wrap gap-2">
           <ActivityChip
-            v-for="(item, i) in detail.dating_ns"
+            v-for="(item, i) in detail.dating_site_type"
             :key="i"
           >
             {{ item }}
@@ -155,7 +154,7 @@ import ActivityChip from '@/components/ActivityChip.vue';
 import ActivityLevel from '@/components/ActivityLevel.vue';
 import DetailSection from '@/components/Detail/DetailSection.vue';
 import DetailTable from '@/components/Detail/DetailTable.vue';
-import DocumentCard from '@/components/Detail/DocumentCard.vue';
+import PdfCard from '@/components/Detail/PdfCard.vue';
 import ModalAttachmentRequest from '@/components/Detail/ModalAttachmentRequest.vue';
 import GalleryCard from '@/components/Detail/GalleryCard.vue';
 
@@ -239,13 +238,8 @@ onBeforeUnmount(() => {
 
 // Attachments
 const requestAttachmentModalVisible = ref(false);
-const openAttachment = (attachment: { available: boolean; link?: string; }) => {
-  if (attachment.available) {
-    window.open(attachment.link);
-  }
-  else {
-    requestAttachmentModalVisible.value = true;
-  }
+const openAttachment = (attachment: { url?: string; }) => {
+  window.open(attachment.url);
 };
 
 </script>

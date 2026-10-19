@@ -1,603 +1,776 @@
 {
     "data": [
         {
-            "id": 138,
-            "activity_number": "31053",
-            "activity_year_start": 2023,
-            "activity_year_end": 2023,
-            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - intern\u00e1",
-            "action_number": "5\/2023",
-            "registration_year": 2023,
-            "cadastral_area": "Bud\u010da",
-            "municipality": "Bud\u010da",
-            "position": "Konopisk\u00e1",
-            "district": "Zvolen",
-            "localization_degree": 1,
-            "coordinate_x": -1246730.205,
-            "coordinate_y": -424841.4829,
-            "gcs_coordinates": {
-                "latitude": 48.568339,
-                "longitude": 19.071856
-            },
-            "has_gis_link": true,
-            "cvs_number": 21179,
-            "research_leader": "Beljak J.",
-            "author_ns": [
-                "Beljak J."
-            ],
-            "institution": null,
-            "dating_ns": [
-                "Pravek",
-                "Stredovek",
-                "Novovek"
-            ],
-            "dating_ceans": [
-                "EN",
-                "BZ",
-                "ST",
-                "NV"
-            ],
-            "dating_site_type": null,
-            "site_type_original": "s\u00eddlisko",
-            "size_category": "mal\u00e1",
-            "galleries": []
-        },
-        {
-            "id": 145,
-            "activity_number": "30921",
+            "id": 57,
+            "activity_number": "31111",
             "activity_year_start": 2022,
-            "activity_year_end": 2024,
-            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - intern\u00e1",
-            "action_number": "47\/2022",
-            "registration_year": 2022,
-            "cadastral_area": "Vel\u010dice",
-            "municipality": "Vel\u010dice",
-            "position": "Roz\u0161\u00edrenie vodovodu a kanaliz\u00e1cie IBV Ve\u013ek\u00e1 Str\u00e1\u0148, p.\u010d. 209\/1; 586\/1, 2; 721\/2",
-            "district": "Zlat\u00e9 Moravce",
-            "localization_degree": 1,
-            "coordinate_x": -1259290.958,
-            "coordinate_y": -482364.3098,
-            "gcs_coordinates": {
-                "latitude": 48.414303,
-                "longitude": 18.309657
-            },
-            "has_gis_link": true,
-            "cvs_number": 21186,
-            "research_leader": "Cheben M.",
-            "author_ns": [
-                "Bobek P.",
-                "Cheben M."
-            ],
-            "institution": null,
-            "dating_ns": [
-                "Pravek"
-            ],
-            "dating_ceans": [
-                "PK"
-            ],
-            "dating_site_type": null,
-            "site_type_original": "neur\u010dite\u013en\u00e9",
-            "size_category": "mal\u00e1",
-            "galleries": []
-        },
-        {
-            "id": 134,
-            "activity_number": "31400",
-            "activity_year_start": 2024,
-            "activity_year_end": 2024,
-            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - intern\u00e1",
-            "action_number": "37\/2024",
-            "registration_year": 2024,
-            "cadastral_area": "Tren\u010dianska Tepl\u00e1",
-            "municipality": "Tren\u010dianska Tepl\u00e1",
-            "position": "FTTC, Tren\u010dianska Tepl\u00e1 1150BB, Pr\u00edles, p.\u010d. 2012\/1,4,5,9,11, 1723\/4, 2015\/2, 2016",
-            "district": "Tren\u010d\u00edn",
-            "localization_degree": 1,
-            "coordinate_x": -1198898.4,
-            "coordinate_y": -489370.3223,
-            "gcs_coordinates": {
-                "latitude": 48.949985,
-                "longitude": 18.144188
-            },
-            "has_gis_link": true,
-            "cvs_number": 21175,
-            "research_leader": "Vang\u013eov\u00e1 T.",
-            "author_ns": [
-                "Vang\u013eov\u00e1 T."
-            ],
-            "institution": "Ar\u00da SAV",
-            "dating_ns": [
-                "negat\u00edvne"
-            ],
-            "dating_ceans": [
-                "negat\u00edvne"
-            ],
-            "dating_site_type": null,
-            "site_type_original": null,
-            "size_category": "mal\u00e1",
-            "galleries": []
-        },
-        {
-            "id": 137,
-            "activity_number": "31149",
-            "activity_year_start": 2023,
-            "activity_year_end": 2024,
-            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - intern\u00e1",
-            "action_number": "25\/2023",
+            "activity_year_end": 2022,
+            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - extern\u00e1",
+            "action_number": null,
             "registration_year": 2023,
-            "cadastral_area": "Ipe\u013esk\u00e9 Predmostie",
-            "municipality": "Ipe\u013esk\u00e9 Predmostie",
-            "position": "Novostavba obecn\u00fdch n\u00e1jomn\u00fdch bytov 16 B. J., p.\u010d. 62\/2, 65\/4, 74\/8,4,5, 79\/1-3,5, 80\/2, 82\/1....",
-            "district": "Ve\u013ek\u00fd Krt\u00ed\u0161",
-            "localization_degree": 1,
-            "coordinate_x": -1302685.781,
-            "coordinate_y": -430185.5416,
-            "gcs_coordinates": {
-                "latitude": 48.0629,
-                "longitude": 19.056732
-            },
-            "has_gis_link": true,
-            "cvs_number": 21178,
-            "research_leader": "Debn\u00e1r P.",
-            "author_ns": [
-                "Debn\u00e1r P."
-            ],
-            "institution": null,
-            "dating_ns": [
-                "Novovek"
-            ],
-            "dating_ceans": [
-                "NV-19",
-                "NV-20"
-            ],
-            "dating_site_type": null,
-            "site_type_original": "s\u00eddlisko",
-            "size_category": "mal\u00e1",
-            "galleries": []
-        },
-        {
-            "id": 141,
-            "activity_number": "31345",
-            "activity_year_start": 2024,
-            "activity_year_end": 2024,
-            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - intern\u00e1",
-            "action_number": "7\/2024",
-            "registration_year": 2024,
-            "cadastral_area": "Zvolen",
-            "municipality": "Zvolen",
-            "position": "Rekon\u0161trukcia RD, T. G. Masaryka, p.\u010d. 2324\/46",
+            "cadastral_area": "Babin\u00e1",
+            "municipality": "Babin\u00e1",
+            "position": "RD, p.\u010d. 224, 225\/1, 225\/2\/35",
             "district": "Zvolen",
             "localization_degree": 1,
-            "coordinate_x": -1246761.024,
-            "coordinate_y": -421298.5982,
+            "coordinate_x": -1261499.157,
+            "coordinate_y": -424229.1692,
             "gcs_coordinates": {
-                "latitude": 48.570445,
-                "longitude": 19.119763
+                "latitude": 48.436298,
+                "longitude": 19.095098
             },
             "has_gis_link": true,
-            "cvs_number": 21182,
-            "research_leader": "Debn\u00e1r P.",
+            "cvs_number": 20909,
+            "research_leader": "Kvietkov\u00e1 V.",
             "author_ns": [
-                "Debn\u00e1r P."
+                "Kvietok M.",
+                "Kvietkov\u00e1 V.",
+                "Egyudov\u00e1 D."
             ],
-            "institution": "Ar\u00da SAV",
-            "dating_ns": [
-                "Doba bronzov\u00e1-lu\u017eick\u00e1"
-            ],
-            "dating_ceans": [
-                "BZ-lu"
-            ],
-            "dating_site_type": [
-                "Doba bronzov\u00e1 - lu\u017eick\u00e1 - pohrebisko"
-            ],
-            "site_type_original": "pohrebisko",
-            "size_category": "mal\u00e1",
-            "galleries": []
-        },
-        {
-            "id": 144,
-            "activity_number": "31378",
-            "activity_year_start": 2024,
-            "activity_year_end": 2024,
-            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - intern\u00e1",
-            "action_number": "27\/2024",
-            "registration_year": 2024,
-            "cadastral_area": "Ve\u013ek\u00fd Meder",
-            "municipality": "Ve\u013ek\u00fd Meder",
-            "position": "OC, Mostov\u00e1 ul., p.\u010d. 1462\/1",
-            "district": "Dunajsk\u00e1 Streda",
-            "localization_degree": 1,
-            "coordinate_x": -1316150.188,
-            "coordinate_y": -528376.3848,
-            "gcs_coordinates": {
-                "latitude": 47.868272,
-                "longitude": 17.761544
-            },
-            "has_gis_link": true,
-            "cvs_number": 21185,
-            "research_leader": "Cheben M.",
-            "author_ns": [
-                "Cheben M.",
-                "Chebenov\u00e1 P."
-            ],
-            "institution": "Ar\u00da SAV",
-            "dating_ns": [
-                "negat\u00edvne"
-            ],
-            "dating_ceans": [
-                "negat\u00edvne"
-            ],
-            "dating_site_type": null,
-            "site_type_original": null,
-            "size_category": "mal\u00e1",
-            "galleries": []
-        },
-        {
-            "id": 132,
-            "activity_number": "31407",
-            "activity_year_start": 2024,
-            "activity_year_end": 2024,
-            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - intern\u00e1",
-            "action_number": "38\/2024",
-            "registration_year": 2024,
-            "cadastral_area": "Rimavsk\u00e1 Sobota",
-            "municipality": "Rimavsk\u00e1 Sobota",
-            "position": "K\u013ea\u010diansk\u00e9 l\u00faky - II.etapa, p.\u010d. 2875\/1, 2875\/8, 2875\/9, 2875\/6, 2875\/7, 2875\/10",
-            "district": "Rimavsk\u00e1 Sobota",
-            "localization_degree": 1,
-            "coordinate_x": -1269813.542,
-            "coordinate_y": -358448.1888,
-            "gcs_coordinates": {
-                "latitude": 48.402487,
-                "longitude": 19.989525
-            },
-            "has_gis_link": true,
-            "cvs_number": 21173,
-            "research_leader": "Vojte\u010dek M., Cheben M.",
-            "author_ns": [
-                "Cheben M."
-            ],
-            "institution": null,
+            "institution": "Midland Adventure, s.r.o.",
             "dating_ns": null,
             "dating_ceans": null,
-            "dating_site_type": null,
-            "site_type_original": null,
-            "size_category": "mal\u00e1",
-            "galleries": []
-        },
-        {
-            "id": 133,
-            "activity_number": "31408",
-            "activity_year_start": 2023,
-            "activity_year_end": 2023,
-            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - intern\u00e1",
-            "action_number": "39\/2024",
-            "registration_year": 2024,
-            "cadastral_area": "Rimavsk\u00e1 Sobota",
-            "municipality": "Rimavsk\u00e1 Sobota",
-            "position": "K\u013ea\u010dansk\u00e9 l\u00faky II. etapa - trafostanica",
-            "district": "Rimavsk\u00e1 Sobota",
-            "localization_degree": 1,
-            "coordinate_x": -1270357.177,
-            "coordinate_y": -358551.8088,
-            "gcs_coordinates": {
-                "latitude": 48.397549,
-                "longitude": 19.988591
-            },
-            "has_gis_link": true,
-            "cvs_number": 21174,
-            "research_leader": "Vojte\u010dek M., Cheben M.",
-            "author_ns": [
-                "Cheben M."
-            ],
-            "institution": null,
-            "dating_ns": null,
-            "dating_ceans": null,
-            "dating_site_type": null,
-            "site_type_original": null,
-            "size_category": "mal\u00e1",
-            "galleries": []
-        },
-        {
-            "id": 135,
-            "activity_number": "31209",
-            "activity_year_start": 2023,
-            "activity_year_end": 2023,
-            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - intern\u00e1",
-            "action_number": "63\/2023",
-            "registration_year": 2023,
-            "cadastral_area": "\u010cabradsk\u00fd Vrbovok",
-            "municipality": "\u010cabradsk\u00fd Vrbovok",
-            "position": "NKP Hrad \u010cabra\u010f, p.\u010d. 1401\/3",
-            "district": "Krupina",
-            "localization_degree": 1,
-            "coordinate_x": -1282770.23,
-            "coordinate_y": -424769.2578,
-            "gcs_coordinates": {
-                "latitude": 48.245163,
-                "longitude": 19.109267
-            },
-            "has_gis_link": true,
-            "cvs_number": 21176,
-            "research_leader": "Debn\u00e1r P.",
-            "author_ns": [
-                "Debn\u00e1r P.",
-                "Mordovin M.",
-                "Rakonczay R."
-            ],
-            "institution": null,
-            "dating_ns": [
-                "Doba bronzov\u00e1",
-                "Stredovek",
-                "Novovek"
-            ],
-            "dating_ceans": [
-                "BZ",
-                "ST",
-                "NV"
-            ],
-            "dating_site_type": null,
-            "site_type_original": "s\u00eddlisko opevnen\u00e9",
-            "size_category": "ve\u013ek\u00e1",
-            "galleries": []
-        },
-        {
-            "id": 136,
-            "activity_number": "31379",
-            "activity_year_start": 2024,
-            "activity_year_end": 2024,
-            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - intern\u00e1",
-            "action_number": "28\/2024",
-            "registration_year": 2024,
-            "cadastral_area": "Nitra I",
-            "municipality": "Nitra",
-            "position": "Horn\u00fd Pal\u00e1nok, p.\u010d. 55\/2, 55\/3, 56\/1, 56\/3",
-            "district": "Nitra",
-            "localization_degree": 1,
-            "coordinate_x": -1268675.701,
-            "coordinate_y": -499305.8169,
-            "gcs_coordinates": {
-                "latitude": 48.31704,
-                "longitude": 18.092814
-            },
-            "has_gis_link": true,
-            "cvs_number": 21177,
-            "research_leader": "Kissov\u00e1 M.",
-            "author_ns": [
-                "Kissov\u00e1 M.",
-                "Bedn\u00e1r P"
-            ],
-            "institution": "Ar\u00da SAV",
-            "dating_ns": [
-                "Novovek-19.stor."
-            ],
-            "dating_ceans": [
-                "NV-19",
-                "RZ"
-            ],
             "dating_site_type": [
+                "Stredovek 15. storo\u010die - s\u00eddlisko",
+                "Novovek - 17. storo\u010die - s\u00eddlisko",
+                "Novovek - 18. storo\u010die - s\u00eddlisko",
                 "Novovek - 19. storo\u010die - s\u00eddlisko"
             ],
-            "site_type_original": "s\u00eddlisko",
-            "size_category": "mal\u00e1",
-            "galleries": []
-        },
-        {
-            "id": 139,
-            "activity_number": "31373",
-            "activity_year_start": 2024,
-            "activity_year_end": 2024,
-            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - intern\u00e1",
-            "action_number": "25\/2024",
-            "registration_year": 2024,
-            "cadastral_area": "Ve\u013ek\u00fd Lap\u00e1\u0161",
-            "municipality": "Ve\u013ek\u00fd Lap\u00e1\u0161",
-            "position": "F2BTS-FO-0142BR, Pri kaplnke, Doliny, Kraliny",
-            "district": "Nitra",
-            "localization_degree": 1,
-            "coordinate_x": -1272027.502,
-            "coordinate_y": -493259.8575,
-            "gcs_coordinates": {
-                "latitude": 48.29176,
-                "longitude": 18.177951
-            },
-            "has_gis_link": true,
-            "cvs_number": 21180,
-            "research_leader": "Bobek P.",
-            "author_ns": [
-                "Bobek P."
-            ],
-            "institution": "Ar\u00da SAV",
-            "dating_ns": [
-                "negat\u00edvne"
-            ],
-            "dating_ceans": [
-                "negat\u00edvne"
-            ],
-            "dating_site_type": null,
             "site_type_original": null,
             "size_category": "mal\u00e1",
             "galleries": []
         },
         {
-            "id": 140,
-            "activity_number": "31256",
-            "activity_year_start": 2023,
-            "activity_year_end": 2024,
-            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - intern\u00e1",
-            "action_number": "89\/2023",
+            "id": 62,
+            "activity_number": "31116",
+            "activity_year_start": 2022,
+            "activity_year_end": 2022,
+            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - extern\u00e1",
+            "action_number": null,
             "registration_year": 2023,
-            "cadastral_area": "Topo\u013e\u010dany",
-            "municipality": "Topo\u013e\u010dany",
-            "position": "\u0160kult\u00e9tyho ulica \u2013 rekon\u0161trukcia vodovodu, p.\u010d. 303\/1, 304\/2",
-            "district": "Topo\u013e\u010dany",
+            "cadastral_area": "Babin\u00e1",
+            "municipality": "Babin\u00e1",
+            "position": "Prestavba, pr\u00edstavba a nadstavba obecnej budovy s\u00fap. \u010d. 97, p.\u010d. 264\/2-5, 3259\/1",
+            "district": "Zvolen",
             "localization_degree": 1,
-            "coordinate_x": -1242292.393,
-            "coordinate_y": -490871.963,
+            "coordinate_x": -1261514.732,
+            "coordinate_y": -424277.1493,
             "gcs_coordinates": {
-                "latitude": 48.560038,
-                "longitude": 18.175215
+                "latitude": 48.436126,
+                "longitude": 19.094468
             },
             "has_gis_link": true,
-            "cvs_number": 21181,
-            "research_leader": "Milov\u00e1 B.",
+            "cvs_number": 20914,
+            "research_leader": "Kvietok M.",
             "author_ns": [
-                "Milov\u00e1 B."
+                "Kvietok M.",
+                "Tom\u00e1\u0161ik R."
             ],
-            "institution": null,
-            "dating_ns": [
-                "Novovek"
+            "institution": "Midland Adventure, s.r.o.",
+            "dating_ns": null,
+            "dating_ceans": null,
+            "dating_site_type": [
+                "Novovek - 18. storo\u010die - are\u00e1l v\u00fdrobn\u00fd",
+                "Novovek - 19. storo\u010die - are\u00e1l v\u00fdrobn\u00fd"
             ],
-            "dating_ceans": [
-                "NV-19",
-                "NV-20"
-            ],
-            "dating_site_type": null,
-            "site_type_original": "s\u00eddlisko",
+            "site_type_original": null,
             "size_category": "mal\u00e1",
             "galleries": []
         },
         {
-            "id": 142,
-            "activity_number": "31425",
-            "activity_year_start": 2024,
-            "activity_year_end": 2024,
-            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - intern\u00e1",
-            "action_number": "52\/2024",
+            "id": 236,
+            "activity_number": "31315",
+            "activity_year_start": 2023,
+            "activity_year_end": 2023,
+            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - extern\u00e1",
+            "action_number": null,
             "registration_year": 2024,
-            "cadastral_area": "Dvory nad \u017ditavou",
-            "municipality": "Dvory nad \u017ditavou",
-            "position": "Pri novoz\u00e1mockom chot\u00e1ri",
-            "district": "Nov\u00e9 Z\u00e1mky",
+            "cadastral_area": "Bad\u00edn",
+            "municipality": "Bad\u00edn",
+            "position": "Nad Mo\u010didlami, ul. Oslobodite\u013eov, Re\u0161taur\u00e1cia Koliba, p.\u010d. 1024\/1,2,4, 1492\/5, 3172\/1",
+            "district": "Bansk\u00e1 Bystrica",
             "localization_degree": 1,
-            "coordinate_x": -1302218.662,
-            "coordinate_y": -490417.2449,
+            "coordinate_x": -1236214.404,
+            "coordinate_y": -419265.8038,
             "gcs_coordinates": {
-                "latitude": 48.023454,
-                "longitude": 18.25104
+                "latitude": 48.666393,
+                "longitude": 19.136623
             },
             "has_gis_link": true,
-            "cvs_number": 21183,
-            "research_leader": "Cheben M.",
+            "cvs_number": 21086,
+            "research_leader": "Kvietok M.",
             "author_ns": [
-                "Cheben M.",
-                "Chebenov\u00e1 P."
+                "Molota T.",
+                "Kvietok M."
             ],
-            "institution": null,
-            "dating_ns": [
-                "Doba bronzov\u00e1",
-                "Doba hal\u0161tatsk\u00e1",
-                "Doba lat\u00e9nska",
-                "Doba r\u00edmska",
-                "Stredovek"
+            "institution": "Midland Adventure, s.r.o.",
+            "dating_ns": null,
+            "dating_ceans": null,
+            "dating_site_type": [
+                "negat\u00edvne"
             ],
-            "dating_ceans": [
-                "BZ-ne",
-                "HA",
-                "LT",
-                "RI",
-                "ST"
-            ],
-            "dating_site_type": null,
-            "site_type_original": "s\u00eddlisko",
+            "site_type_original": null,
             "size_category": "mal\u00e1",
             "galleries": []
         },
         {
-            "id": 143,
-            "activity_number": "31391",
-            "activity_year_start": 2024,
-            "activity_year_end": 2024,
-            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - intern\u00e1",
-            "action_number": "35\/2024",
+            "id": 225,
+            "activity_number": "31304",
+            "activity_year_start": 2023,
+            "activity_year_end": 2023,
+            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - extern\u00e1",
+            "action_number": null,
             "registration_year": 2024,
-            "cadastral_area": "Jasov\u00e1",
-            "municipality": "Jasov\u00e1",
-            "position": "F2BTS-FO - 1322BR Jasov\u00e1\u201c, Pod z\u00e1hradami, Izb\u00edk, Od Kolty",
-            "district": "Nov\u00e9 Z\u00e1mky",
+            "cadastral_area": "Bad\u00edn",
+            "municipality": "Bad\u00edn",
+            "position": "RD, p.\u010d. 1244\/19, 1244\/4, 3196\/1, 1100\/8",
+            "district": "Bansk\u00e1 Bystrica",
             "localization_degree": 1,
-            "coordinate_x": -1306232.293,
-            "coordinate_y": -481630.8845,
+            "coordinate_x": -1236761.97,
+            "coordinate_y": -419806.8502,
             "gcs_coordinates": {
-                "latitude": 47.994206,
-                "longitude": 18.372946
+                "latitude": 48.66112,
+                "longitude": 19.12985
             },
             "has_gis_link": true,
-            "cvs_number": 21184,
-            "research_leader": "Cheben M.",
+            "cvs_number": 21075,
+            "research_leader": "Kvietkov\u00e1 V.",
             "author_ns": [
-                "Cheben M.",
-                "Chebenov\u00e1 P."
+                "Kvietok M.",
+                "Kvietkov\u00e1 V."
             ],
-            "institution": "Ar\u00da SAV",
-            "dating_ns": [
-                "negat\u00edvne"
+            "institution": "Midland Adventure, s.r.o.",
+            "dating_ns": null,
+            "dating_ceans": null,
+            "dating_site_type": [
+                "nedatovate\u013en\u00e9"
             ],
-            "dating_ceans": [
-                "negat\u00edvne"
-            ],
-            "dating_site_type": null,
             "site_type_original": null,
             "size_category": "mal\u00e1",
             "galleries": []
         },
         {
             "id": 146,
-            "activity_number": "31071",
+            "activity_number": "30393",
+            "activity_year_start": 2021,
+            "activity_year_end": 2021,
+            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - intern\u00e1",
+            "action_number": "3\/2021",
+            "registration_year": 2023,
+            "cadastral_area": "Banka",
+            "municipality": "Banka",
+            "position": "\u0160tepnice 2, p.\u010d. 2014\/31",
+            "district": "Pie\u0161\u0165any",
+            "localization_degree": 1,
+            "coordinate_x": -1238009.731,
+            "coordinate_y": -514750.1612,
+            "gcs_coordinates": {
+                "latitude": 48.579293,
+                "longitude": 17.847755
+            },
+            "has_gis_link": true,
+            "cvs_number": 20998,
+            "research_leader": "Nemergut A., \u017da\u00e1r O.",
+            "author_ns": [
+                "Nemergut A.",
+                "\u017da\u00e1r O.",
+                "\u017da\u00e1rov\u00e1 \u013d.",
+                "a kol."
+            ],
+            "institution": "Ar\u00da SAV",
+            "dating_ns": null,
+            "dating_ceans": null,
+            "dating_site_type": [
+                "Paleolit - szeletien - s\u00eddlisko"
+            ],
+            "site_type_original": null,
+            "size_category": "ve\u013ek\u00e1",
+            "galleries": []
+        },
+        {
+            "id": 153,
+            "activity_number": "30992",
+            "activity_year_start": 2022,
+            "activity_year_end": 2022,
+            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - intern\u00e1",
+            "action_number": "66\/2022",
+            "registration_year": 2023,
+            "cadastral_area": "Banka",
+            "municipality": "Banka",
+            "position": "Kostol sv. Martina, p.\u010d. 1",
+            "district": "Pie\u0161\u0165any",
+            "localization_degree": 1,
+            "coordinate_x": -1237484.816,
+            "coordinate_y": -514338.3754,
+            "gcs_coordinates": {
+                "latitude": 48.584331,
+                "longitude": 17.852666
+            },
+            "has_gis_link": true,
+            "cvs_number": 21005,
+            "research_leader": "Samuel M.",
+            "author_ns": [
+                "Samuel M."
+            ],
+            "institution": "Ar\u00da SAV",
+            "dating_ns": null,
+            "dating_ceans": null,
+            "dating_site_type": [
+                "Novovek - 17. storo\u010die - are\u00e1l kultov\u00fd",
+                "Novovek - 19. storo\u010die - are\u00e1l kultov\u00fd",
+                "Novovek - 20. storo\u010die - are\u00e1l kultov\u00fd"
+            ],
+            "site_type_original": null,
+            "size_category": "mal\u00e1",
+            "galleries": []
+        },
+        {
+            "id": 154,
+            "activity_number": "31232",
             "activity_year_start": 2023,
             "activity_year_end": 2023,
             "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - intern\u00e1",
-            "action_number": "14\/2023",
+            "action_number": "74\/2023",
             "registration_year": 2023,
-            "cadastral_area": "Valaliky",
-            "municipality": "Valaliky",
-            "position": "Pri R\u00e1diu, n\u00e1lezisko 2 - V\u0155bov\u00e1 pustatina, p.\u010d. 1300\/164",
-            "district": "Ko\u0161ice - okolie",
+            "cadastral_area": "Banka",
+            "municipality": "Banka",
+            "position": "Kostol sv. Martina, p.\u010d. 1",
+            "district": "Pie\u0161\u0165any",
             "localization_degree": 1,
-            "coordinate_x": -1249064.892,
-            "coordinate_y": -262332.1925,
+            "coordinate_x": -1237481.196,
+            "coordinate_y": -514326.8576,
             "gcs_coordinates": {
-                "latitude": 48.636122,
-                "longitude": 21.27344
+                "latitude": 48.584373,
+                "longitude": 17.852817
             },
             "has_gis_link": true,
-            "cvs_number": 21187,
-            "research_leader": "Vojte\u010dek M., Cheben M.",
+            "cvs_number": 21006,
+            "research_leader": "Samuel M.",
             "author_ns": [
-                "Ga\u0161par A.",
-                "Ol\u0161av \u0160.",
-                "Vojte\u010dek M.",
-                "Cheben M."
+                "Samuel M."
             ],
-            "institution": null,
-            "dating_ns": [
-                "Eneolit-badensk\u00e1",
-                "Doba bronzov\u00e1-otomansk\u00e1",
-                "Doba bronzov\u00e1-pilinsk\u00e1",
-                "Stredovek"
+            "institution": "Ar\u00da SAV",
+            "dating_ns": null,
+            "dating_ceans": null,
+            "dating_site_type": [
+                "Stredovek - vrcholn\u00fd - are\u00e1l kultov\u00fd",
+                "Stredovek - neskor\u00fd - are\u00e1l kultov\u00fd",
+                "Novovek - are\u00e1l kultov\u00fd"
             ],
-            "dating_ceans": [
-                "EN-ba",
-                "BZ-pi",
-                "BZ-ot",
-                "ST"
+            "site_type_original": null,
+            "size_category": "mal\u00e1",
+            "galleries": []
+        },
+        {
+            "id": 85,
+            "activity_number": "31139",
+            "activity_year_start": 2022,
+            "activity_year_end": 2022,
+            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - extern\u00e1",
+            "action_number": null,
+            "registration_year": 2023,
+            "cadastral_area": "Bansk\u00e1 Bystrica",
+            "municipality": "Bansk\u00e1 Bystrica",
+            "position": "Cis\u00e1rsky dom, n\u00e1m. SNP \u010d. 20, p.\u010d. 1770\/1",
+            "district": "Bansk\u00e1 Bystrica",
+            "localization_degree": 1,
+            "coordinate_x": -1228488.068,
+            "coordinate_y": -417816.206,
+            "gcs_coordinates": {
+                "latitude": 48.736654,
+                "longitude": 19.148477
+            },
+            "has_gis_link": true,
+            "cvs_number": 20937,
+            "research_leader": "Kvietok M.",
+            "author_ns": [
+                "Kvietok M.",
+                "Kvietkov\u00e1 V.",
+                "Molota T."
             ],
-            "dating_site_type": null,
-            "site_type_original": "s\u00eddlisko, pohrebisko",
-            "size_category": "ve\u013ek\u00e1",
+            "institution": "Midland Adventure, s.r.o.",
+            "dating_ns": null,
+            "dating_ceans": null,
+            "dating_site_type": [
+                "Novovek - 16. storo\u010die - s\u00eddlisko opevnen\u00e9"
+            ],
+            "site_type_original": null,
+            "size_category": "mal\u00e1",
+            "galleries": []
+        },
+        {
+            "id": 82,
+            "activity_number": "31136",
+            "activity_year_start": 2022,
+            "activity_year_end": 2022,
+            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - extern\u00e1",
+            "action_number": null,
+            "registration_year": 2023,
+            "cadastral_area": "Radva\u0148",
+            "municipality": "Bansk\u00e1 Bystrica",
+            "position": "Ka\u0161tie\u013e Radvansk\u00fdch, p.\u010d. 3357",
+            "district": "Bansk\u00e1 Bystrica",
+            "localization_degree": 1,
+            "coordinate_x": -1229994.308,
+            "coordinate_y": -418719.6822,
+            "gcs_coordinates": {
+                "latitude": 48.722543,
+                "longitude": 19.137748
+            },
+            "has_gis_link": true,
+            "cvs_number": 20934,
+            "research_leader": "Kvietkov\u00e1 V.",
+            "author_ns": [
+                "Kvietok M."
+            ],
+            "institution": "Midland Adventure, s.r.o.",
+            "dating_ns": null,
+            "dating_ceans": null,
+            "dating_site_type": [
+                "Eneolit - lengyelsk\u00e1 IV (Ludanice) - s\u00eddlisko",
+                "Stredovek - v\u010dasn\u00fd - s\u00eddlisko",
+                "Stredovek - 15. storo\u010die - s\u00eddlisko opevnen\u00e9",
+                "Novovek - 16. storo\u010die - s\u00eddlisko opevnen\u00e9",
+                "Novovek - 17. storo\u010die - s\u00eddlisko opevnen\u00e9",
+                "Novovek - 18. storo\u010die - s\u00eddlisko opevnen\u00e9"
+            ],
+            "site_type_original": null,
+            "size_category": "mal\u00e1",
+            "galleries": []
+        },
+        {
+            "id": 207,
+            "activity_number": "31286",
+            "activity_year_start": 2022,
+            "activity_year_end": 2023,
+            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - extern\u00e1",
+            "action_number": null,
+            "registration_year": 2024,
+            "cadastral_area": "Radva\u0148",
+            "municipality": "Bansk\u00e1 Bystrica",
+            "position": "RD s trojgar\u00e1\u017eou a skladom, p.\u010d. 2848, 2849",
+            "district": "Bansk\u00e1 Bystrica",
+            "localization_degree": 1,
+            "coordinate_x": -1230513.774,
+            "coordinate_y": -420359.1569,
+            "gcs_coordinates": {
+                "latitude": 48.716787,
+                "longitude": 19.116051
+            },
+            "has_gis_link": true,
+            "cvs_number": 21057,
+            "research_leader": "Molota T.",
+            "author_ns": [
+                "Kvietok M.",
+                "Pinter R.",
+                "Tom\u00e1\u0161ik R."
+            ],
+            "institution": "Midland Adventure, s.r.o.",
+            "dating_ns": null,
+            "dating_ceans": null,
+            "dating_site_type": [
+                "Novovek - 19. storo\u010die - s\u00eddlisko"
+            ],
+            "site_type_original": null,
+            "size_category": "mal\u00e1",
+            "galleries": []
+        },
+        {
+            "id": 40,
+            "activity_number": "31092",
+            "activity_year_start": 2022,
+            "activity_year_end": 2022,
+            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - extern\u00e1",
+            "action_number": null,
+            "registration_year": 2023,
+            "cadastral_area": "S\u00e1sov\u00e1",
+            "municipality": "Bansk\u00e1 Bystrica",
+            "position": "RD, p.\u010d. 750\/3,5, 780\/1,5,7-10",
+            "district": "Bansk\u00e1 Bystrica",
+            "localization_degree": 1,
+            "coordinate_x": -1226190.74,
+            "coordinate_y": -416693.4626,
+            "gcs_coordinates": {
+                "latitude": 48.758006,
+                "longitude": 19.161392
+            },
+            "has_gis_link": true,
+            "cvs_number": 20892,
+            "research_leader": "Kvietkov\u00e1 V.",
+            "author_ns": [
+                "Kvietok M.",
+                "Pinter R.",
+                "Egyudov\u00e1 D.",
+                "Molota T."
+            ],
+            "institution": "Midland Adventure, s.r.o.",
+            "dating_ns": null,
+            "dating_ceans": null,
+            "dating_site_type": [
+                "Doba bronzov\u00e1 - lu\u017eick\u00e1 - neur\u010dite\u013en\u00e9",
+                "Stredovek - 14. storo\u010die - neur\u010dite\u013en\u00e9",
+                "Stredovek - 15. storo\u010die - neur\u010dite\u013en\u00e9",
+                "Novovek - 16. storo\u010die - neur\u010dite\u013en\u00e9"
+            ],
+            "site_type_original": null,
+            "size_category": "mal\u00e1",
+            "galleries": []
+        },
+        {
+            "id": 79,
+            "activity_number": "31133",
+            "activity_year_start": 2022,
+            "activity_year_end": 2022,
+            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - extern\u00e1",
+            "action_number": null,
+            "registration_year": 2023,
+            "cadastral_area": "Bansk\u00e1 Bystrica",
+            "municipality": "Bansk\u00e1 Bystrica",
+            "position": "NKP H\u00e1mor, Laskomersk\u00e1 ul., p.\u010d. 2290\/2,5,27,29,41",
+            "district": "Bansk\u00e1 Bystrica",
+            "localization_degree": 1,
+            "coordinate_x": -1227494.193,
+            "coordinate_y": -418215.922,
+            "gcs_coordinates": {
+                "latitude": 48.745301,
+                "longitude": 19.142055
+            },
+            "has_gis_link": true,
+            "cvs_number": 20931,
+            "research_leader": "Kvietok M.",
+            "author_ns": [
+                "Kvietok M.",
+                "Tom\u00e1\u0161ik R.",
+                "Pinter R.",
+                "Molota T."
+            ],
+            "institution": "Midland Adventure, s.r.o.",
+            "dating_ns": null,
+            "dating_ceans": null,
+            "dating_site_type": [
+                "Novovek - are\u00e1l v\u00fdrobn\u00fd"
+            ],
+            "site_type_original": null,
+            "size_category": "mal\u00e1",
+            "galleries": []
+        },
+        {
+            "id": 14,
+            "activity_number": "30881",
+            "activity_year_start": 2022,
+            "activity_year_end": 2022,
+            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - intern\u00e1",
+            "action_number": "28\/2022",
+            "registration_year": 2023,
+            "cadastral_area": "Bansk\u00e1 Bystrica",
+            "municipality": "Bansk\u00e1 Bystrica",
+            "position": "Rekon\u0161trukcia komunik\u00e1cie, ul. Bakossova a n\u00e1m. \u0160 Moyzesa, p\u010d. 5422\/1,5,3, 5419\/1,7",
+            "district": "Bansk\u00e1 Bystrica",
+            "localization_degree": 1,
+            "coordinate_x": -1228289.834,
+            "coordinate_y": -417788.5659,
+            "gcs_coordinates": {
+                "latitude": 48.738451,
+                "longitude": 19.148652
+            },
+            "has_gis_link": true,
+            "cvs_number": 20866,
+            "research_leader": "Debn\u00e1r P.",
+            "author_ns": [
+                "Debn\u00e1r P."
+            ],
+            "institution": "Ar\u00da SAV",
+            "dating_ns": null,
+            "dating_ceans": null,
+            "dating_site_type": [
+                "Novovek - s\u00eddlisko"
+            ],
+            "site_type_original": null,
+            "size_category": "mal\u00e1",
+            "galleries": []
+        },
+        {
+            "id": 81,
+            "activity_number": "31135",
+            "activity_year_start": 2022,
+            "activity_year_end": 2022,
+            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - extern\u00e1",
+            "action_number": null,
+            "registration_year": 2023,
+            "cadastral_area": "Bansk\u00e1 Bystrica",
+            "municipality": "Bansk\u00e1 Bystrica",
+            "position": "N\u00e1mestie \u0160.Moyzesa, Pret\u00f3rium-obnova, p.\u010d. 2\/1",
+            "district": "Bansk\u00e1 Bystrica",
+            "localization_degree": 1,
+            "coordinate_x": -1228378.187,
+            "coordinate_y": -417676.1195,
+            "gcs_coordinates": {
+                "latitude": 48.737733,
+                "longitude": 19.150266
+            },
+            "has_gis_link": true,
+            "cvs_number": 20933,
+            "research_leader": "Molota T.",
+            "author_ns": [
+                "Kvietok M.",
+                "Tom\u00e1\u0161ik R."
+            ],
+            "institution": "Midland Adventure, s.r.o.",
+            "dating_ns": null,
+            "dating_ceans": null,
+            "dating_site_type": [
+                "Stredovek - 14. storo\u010die - s\u00eddlisko",
+                "Stredovek - 15. storo\u010die - s\u00eddlisko",
+                "Novovek - 16. storo\u010die - s\u00eddlisko",
+                "Novovek - 17. storo\u010die - s\u00eddlisko",
+                "Novovek - 18. storo\u010die - s\u00eddlisko",
+                "Novovek - 19. storo\u010die - s\u00eddlisko"
+            ],
+            "site_type_original": null,
+            "size_category": "mal\u00e1",
+            "galleries": []
+        },
+        {
+            "id": 30,
+            "activity_number": "31082",
+            "activity_year_start": 2021,
+            "activity_year_end": 2023,
+            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - extern\u00e1",
+            "action_number": null,
+            "registration_year": 2023,
+            "cadastral_area": "Bansk\u00e1 Bystrica",
+            "municipality": "Bansk\u00e1 Bystrica",
+            "position": "Obnova NKP, Horn\u00e1 ul.6, p.\u010d. 1323",
+            "district": "Bansk\u00e1 Bystrica",
+            "localization_degree": 1,
+            "coordinate_x": -1228431.137,
+            "coordinate_y": -417582.2005,
+            "gcs_coordinates": {
+                "latitude": 48.737321,
+                "longitude": 19.151593
+            },
+            "has_gis_link": true,
+            "cvs_number": 20882,
+            "research_leader": "Kvietok M.",
+            "author_ns": [
+                "Kvietok M.",
+                "Tom\u00e1\u0161ik R.",
+                "Felcan M."
+            ],
+            "institution": "Midland Adventure, s.r.o.",
+            "dating_ns": null,
+            "dating_ceans": null,
+            "dating_site_type": [
+                "Stredovek - s\u00eddlisko",
+                "Novovek - s\u00eddlisko"
+            ],
+            "site_type_original": null,
+            "size_category": "mal\u00e1",
+            "galleries": []
+        },
+        {
+            "id": 60,
+            "activity_number": "31114",
+            "activity_year_start": 2022,
+            "activity_year_end": 2022,
+            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - extern\u00e1",
+            "action_number": null,
+            "registration_year": 2023,
+            "cadastral_area": "Bansk\u00e1 Bystrica",
+            "municipality": "Bansk\u00e1 Bystrica",
+            "position": "Rezidencia Severn\u00e1, p.\u010d. 2063\/4,5,7,39,44, 5431, 2110\/2",
+            "district": "Bansk\u00e1 Bystrica",
+            "localization_degree": 1,
+            "coordinate_x": -1227520.546,
+            "coordinate_y": -418024.4595,
+            "gcs_coordinates": {
+                "latitude": 48.745193,
+                "longitude": 19.144678
+            },
+            "has_gis_link": true,
+            "cvs_number": 20912,
+            "research_leader": "Molota T.",
+            "author_ns": [
+                "Kvietok M.",
+                "Tom\u00e1\u0161ik R.",
+                "Pinter R.",
+                "Molota T."
+            ],
+            "institution": "Midland Adventure, s.r.o.",
+            "dating_ns": null,
+            "dating_ceans": null,
+            "dating_site_type": [
+                "Novovek - 16. storo\u010die - s\u00eddlisko",
+                "Novovek - 17. storo\u010die - s\u00eddlisko",
+                "Novovek - 18. storo\u010die - s\u00eddlisko",
+                "Novovek - 19. storo\u010die - s\u00eddlisko"
+            ],
+            "site_type_original": null,
+            "size_category": "mal\u00e1",
+            "galleries": []
+        },
+        {
+            "id": 38,
+            "activity_number": "31090",
+            "activity_year_start": 2022,
+            "activity_year_end": 2022,
+            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - extern\u00e1",
+            "action_number": null,
+            "registration_year": 2023,
+            "cadastral_area": "Bansk\u00e1 Bystrica",
+            "municipality": "Bansk\u00e1 Bystrica",
+            "position": "Rekon\u0161trukcia budovy M\u0160 \u2013 Kreat\u00edvne centrum, s.r.o., Budova na n\u00e1dvor\u00ed\u201c, p.\u010d. 1766\/3,4 ",
+            "district": "Bansk\u00e1 Bystrica",
+            "localization_degree": 1,
+            "coordinate_x": -1228357.38,
+            "coordinate_y": -417840.17,
+            "gcs_coordinates": {
+                "latitude": 48.73781,
+                "longitude": 19.148021
+            },
+            "has_gis_link": true,
+            "cvs_number": 20890,
+            "research_leader": "Molota T.",
+            "author_ns": [
+                "Kvietok M.",
+                "Tom\u00e1\u0161ik R."
+            ],
+            "institution": "Midland Adventure, s.r.o.",
+            "dating_ns": null,
+            "dating_ceans": null,
+            "dating_site_type": [
+                "Stredovek - 15. storo\u010die - s\u00eddlisko",
+                "Novovek - 16. storo\u010die - s\u00eddlisko",
+                "Novovek - 17. storo\u010die - s\u00eddlisko",
+                "Novovek - 18. storo\u010die - s\u00eddlisko",
+                "Novovek - 19. storo\u010die - s\u00eddlisko"
+            ],
+            "site_type_original": null,
+            "size_category": "mal\u00e1",
+            "galleries": []
+        },
+        {
+            "id": 84,
+            "activity_number": "31138",
+            "activity_year_start": 2022,
+            "activity_year_end": 2022,
+            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - extern\u00e1",
+            "action_number": null,
+            "registration_year": 2023,
+            "cadastral_area": "Bansk\u00e1 Bystrica",
+            "municipality": "Bansk\u00e1 Bystrica",
+            "position": "NKP Kalv\u00e1ria Pov\u00fd\u0161enie sv. Kr\u00ed\u017ea, p.\u010d. 5389",
+            "district": "Bansk\u00e1 Bystrica",
+            "localization_degree": 1,
+            "coordinate_x": -1229130.12,
+            "coordinate_y": -417670.3074,
+            "gcs_coordinates": {
+                "latitude": 48.730993,
+                "longitude": 19.151102
+            },
+            "has_gis_link": true,
+            "cvs_number": 20936,
+            "research_leader": "Kvietok M.",
+            "author_ns": [
+                "Kvietok M.",
+                "Kvietkov\u00e1 V.",
+                "Molota T."
+            ],
+            "institution": "Midland Adventure, s.r.o.",
+            "dating_ns": null,
+            "dating_ceans": null,
+            "dating_site_type": [
+                "Novovek - are\u00e1l kultov\u00fd"
+            ],
+            "site_type_original": null,
+            "size_category": "mal\u00e1",
+            "galleries": []
+        },
+        {
+            "id": 70,
+            "activity_number": "31124",
+            "activity_year_start": 2022,
+            "activity_year_end": 2022,
+            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - extern\u00e1",
+            "action_number": null,
+            "registration_year": 2023,
+            "cadastral_area": "Radva\u0148",
+            "municipality": "Bansk\u00e1 Bystrica",
+            "position": "Kalin\u010diakova, pred\u013a\u017eenie verejn\u00e9ho vodovodu",
+            "district": "Bansk\u00e1 Bystrica",
+            "localization_degree": 1,
+            "coordinate_x": -1230104.97,
+            "coordinate_y": -419013.32,
+            "gcs_coordinates": {
+                "latitude": 48.721354,
+                "longitude": 19.133879
+            },
+            "has_gis_link": true,
+            "cvs_number": 20922,
+            "research_leader": "Kvietkov\u00e1 V.",
+            "author_ns": [
+                "Kvietok M.",
+                "Kvietkov\u00e1 V."
+            ],
+            "institution": "Midland Adventure, s.r.o.",
+            "dating_ns": null,
+            "dating_ceans": null,
+            "dating_site_type": [
+                "Pravek - s\u00eddlisko",
+                "Stredovek - 14. storo\u010die - s\u00eddlisko"
+            ],
+            "site_type_original": null,
+            "size_category": "mal\u00e1",
+            "galleries": []
+        },
+        {
+            "id": 212,
+            "activity_number": "31291",
+            "activity_year_start": 2022,
+            "activity_year_end": 2023,
+            "activity_type": "n\u00e1lezov\u00e1 spr\u00e1va - extern\u00e1",
+            "action_number": null,
+            "registration_year": 2024,
+            "cadastral_area": "Bansk\u00e1 Bystrica",
+            "municipality": "Bansk\u00e1 Bystrica",
+            "position": "Obnova \u201eme\u0161tianskeho domu\u201c na N\u00e1m. SNP \u010d. 9, p.\u010d. 1477",
+            "district": "Bansk\u00e1 Bystrica",
+            "localization_degree": 1,
+            "coordinate_x": -1228633.581,
+            "coordinate_y": -417865.7741,
+            "gcs_coordinates": {
+                "latitude": 48.735316,
+                "longitude": 19.147952
+            },
+            "has_gis_link": true,
+            "cvs_number": 21062,
+            "research_leader": "Kvietkov\u00e1 V.",
+            "author_ns": [
+                "Kvietok M.",
+                "Kvietkov\u00e1 V."
+            ],
+            "institution": "Midland Adventure, s.r.o.",
+            "dating_ns": null,
+            "dating_ceans": null,
+            "dating_site_type": [
+                "Stredovek - 15. storo\u010die - s\u00eddlisko",
+                "Novovek - 16. storo\u010die - s\u00eddlisko"
+            ],
+            "site_type_original": null,
+            "size_category": "mal\u00e1",
             "galleries": []
         }
     ],
     "links": {
-        "first": "https:\/\/archeo.staging.metafori.com\/api\/archeo\/activities?page=1",
-        "last": "https:\/\/archeo.staging.metafori.com\/api\/archeo\/activities?page=14",
+        "first": "https:\/\/archeomap.sav.sk\/api\/archeo\/activities?page=1",
+        "last": "https:\/\/archeomap.sav.sk\/api\/archeo\/activities?page=20",
         "prev": null,
-        "next": "https:\/\/archeo.staging.metafori.com\/api\/archeo\/activities?page=2"
+        "next": "https:\/\/archeomap.sav.sk\/api\/archeo\/activities?page=2"
     },
     "meta": {
         "current_page": 1,
         "from": 1,
-        "last_page": 14,
+        "last_page": 20,
         "links": [
             {
                 "url": null,
@@ -606,61 +779,61 @@
                 "active": false
             },
             {
-                "url": "https:\/\/archeo.staging.metafori.com\/api\/archeo\/activities?page=1",
+                "url": "https:\/\/archeomap.sav.sk\/api\/archeo\/activities?page=1",
                 "label": "1",
                 "page": 1,
                 "active": true
             },
             {
-                "url": "https:\/\/archeo.staging.metafori.com\/api\/archeo\/activities?page=2",
+                "url": "https:\/\/archeomap.sav.sk\/api\/archeo\/activities?page=2",
                 "label": "2",
                 "page": 2,
                 "active": false
             },
             {
-                "url": "https:\/\/archeo.staging.metafori.com\/api\/archeo\/activities?page=3",
+                "url": "https:\/\/archeomap.sav.sk\/api\/archeo\/activities?page=3",
                 "label": "3",
                 "page": 3,
                 "active": false
             },
             {
-                "url": "https:\/\/archeo.staging.metafori.com\/api\/archeo\/activities?page=4",
+                "url": "https:\/\/archeomap.sav.sk\/api\/archeo\/activities?page=4",
                 "label": "4",
                 "page": 4,
                 "active": false
             },
             {
-                "url": "https:\/\/archeo.staging.metafori.com\/api\/archeo\/activities?page=5",
+                "url": "https:\/\/archeomap.sav.sk\/api\/archeo\/activities?page=5",
                 "label": "5",
                 "page": 5,
                 "active": false
             },
             {
-                "url": "https:\/\/archeo.staging.metafori.com\/api\/archeo\/activities?page=6",
+                "url": "https:\/\/archeomap.sav.sk\/api\/archeo\/activities?page=6",
                 "label": "6",
                 "page": 6,
                 "active": false
             },
             {
-                "url": "https:\/\/archeo.staging.metafori.com\/api\/archeo\/activities?page=7",
+                "url": "https:\/\/archeomap.sav.sk\/api\/archeo\/activities?page=7",
                 "label": "7",
                 "page": 7,
                 "active": false
             },
             {
-                "url": "https:\/\/archeo.staging.metafori.com\/api\/archeo\/activities?page=8",
+                "url": "https:\/\/archeomap.sav.sk\/api\/archeo\/activities?page=8",
                 "label": "8",
                 "page": 8,
                 "active": false
             },
             {
-                "url": "https:\/\/archeo.staging.metafori.com\/api\/archeo\/activities?page=9",
+                "url": "https:\/\/archeomap.sav.sk\/api\/archeo\/activities?page=9",
                 "label": "9",
                 "page": 9,
                 "active": false
             },
             {
-                "url": "https:\/\/archeo.staging.metafori.com\/api\/archeo\/activities?page=10",
+                "url": "https:\/\/archeomap.sav.sk\/api\/archeo\/activities?page=10",
                 "label": "10",
                 "page": 10,
                 "active": false
@@ -671,27 +844,27 @@
                 "active": false
             },
             {
-                "url": "https:\/\/archeo.staging.metafori.com\/api\/archeo\/activities?page=13",
-                "label": "13",
-                "page": 13,
+                "url": "https:\/\/archeomap.sav.sk\/api\/archeo\/activities?page=19",
+                "label": "19",
+                "page": 19,
                 "active": false
             },
             {
-                "url": "https:\/\/archeo.staging.metafori.com\/api\/archeo\/activities?page=14",
-                "label": "14",
-                "page": 14,
+                "url": "https:\/\/archeomap.sav.sk\/api\/archeo\/activities?page=20",
+                "label": "20",
+                "page": 20,
                 "active": false
             },
             {
-                "url": "https:\/\/archeo.staging.metafori.com\/api\/archeo\/activities?page=2",
+                "url": "https:\/\/archeomap.sav.sk\/api\/archeo\/activities?page=2",
                 "label": "Next &raquo;",
                 "page": 2,
                 "active": false
             }
         ],
-        "path": "https:\/\/archeo.staging.metafori.com\/api\/archeo\/activities",
-        "per_page": 15,
-        "to": 15,
-        "total": 204
+        "path": "https:\/\/archeomap.sav.sk\/api\/archeo\/activities",
+        "per_page": 20,
+        "to": 20,
+        "total": 394
     }
 }

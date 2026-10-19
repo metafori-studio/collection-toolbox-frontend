@@ -1,5 +1,5 @@
 <template>
-  <div class="border border-neutral-200">
+  <div class="border border-neutral-200 select-none">
     <table class="w-full border-collapse">
       <thead class="sticky top-14 z-10">
         <tr class="bg-neutral-50 border-b border-b-neutral-200">
@@ -101,7 +101,7 @@
           <td class="py-3 px-3 align-top">
             <div class="flex gap-1 flex-wrap">
               <ActivityChip
-                v-for="(chip, i) in item.dating_ns"
+                v-for="(chip, i) in item.dating_site_type"
                 :key="i"
               >
                 {{ chip }}

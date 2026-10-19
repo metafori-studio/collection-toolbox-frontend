@@ -33,12 +33,31 @@ const getMapPoints = async (): Promise<MapPoint[]> => {
   return data.data as MapPoint[];
 };
 
-const getList = async (): Promise<Record<string, unknown>[]> => {
+export type ListMeta = {
+  total?: number;
+  from?: number;
+  to?: number;
+  current_page?: number;
+  last_page?: number;
+  [key: string]: unknown;
+};
+
+const getList = async (
+  orderBy: string = 'municipality',
+  orderAsc: boolean = true,
+  page: number = 1,
+): Promise<{ data: Record<string, unknown>[]; meta: ListMeta }> => {
   if (USE_MOCK) {
-    return mockIndex.data as Record<string, unknown>[];
+    return mockIndex as unknown as { data: Record<string, unknown>[]; meta: ListMeta };
   }
-  const { data } = await api.get('/archeo/activities?per_page=100');
-  return data.data as Record<string, unknown>[];
+
+  const params = new URLSearchParams();
+  params.append('per_page', '20');
+  params.append('page', page.toString());
+  params.append('sort', orderAsc ? orderBy : `-${orderBy}`);
+
+  const { data } = await api.get(`/archeo/activities?${params.toString()}`);
+  return data;
 };
 
 const getDetail = async (id: string): Promise<Record<string, unknown>> => {
