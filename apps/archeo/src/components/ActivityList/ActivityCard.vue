@@ -34,11 +34,11 @@
       </span>
     </div>
     <div
-      v-if="item.dating_ns?.length"
+      v-if="item.dating_site_type?.length"
       class="flex gap-1 flex-wrap pt-2 border-t border-t-neutral-200 mt-2"
     >
       <ActivityChip
-        v-for="(chip, i) in item.dating_ns"
+        v-for="(chip, i) in item.dating_site_type"
         :key="i"
       >
         {{ chip }}
