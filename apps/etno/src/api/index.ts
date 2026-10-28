@@ -9,7 +9,7 @@ import type { ListItem, ListMeta, Detail } from './types';
 import { isLoggedIn } from '@/store';
 import i18n from '@/i18n';
 
-const USE_MOCK = import.meta.env.VITE_USE_MOCK === 'true';;
+const USE_MOCK = import.meta.env.VITE_USE_MOCK === 'true';
 
 const api = axios.create({
   baseURL: import.meta.env.VITE_API_BASE,
