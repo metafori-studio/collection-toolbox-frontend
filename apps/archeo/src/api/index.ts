@@ -2,6 +2,7 @@ import axios from 'axios';
 import mockMapPoints from './mock/map-points.json';
 import mockIndex from './mock/index.json';
 import mockDetail from './mock/detail.json';
+import mockAggregations from './mock/aggregations.json';
 import { type MapPoint } from '@/components/ArcheoMap/ArcheoMap.vue';
 import { isLoggedIn } from '@/store';
 
@@ -42,7 +43,17 @@ export type ListMeta = {
   [key: string]: unknown;
 };
 
+const appendFilterParams = (params: URLSearchParams, filter: Record<string, unknown>) => {
+  Object.entries(filter).forEach(([key, values]) => {
+    if (!Array.isArray(values)) return;
+    values.forEach((value: string) => {
+      params.append(`filter[${key}][]`, value);
+    });
+  });
+};
+
 const getList = async (
+  filter: Record<string, unknown> = {},
   orderBy: string = 'municipality',
   orderAsc: boolean = true,
   page: number = 1,
@@ -55,9 +66,24 @@ const getList = async (
   params.append('per_page', '20');
   params.append('page', page.toString());
   params.append('sort', orderAsc ? orderBy : `-${orderBy}`);
+  appendFilterParams(params, filter);
 
   const { data } = await api.get(`/archeo/activities?${params.toString()}`);
   return data;
+};
+
+const getAggregations = async (
+  filter: Record<string, unknown> = {},
+): Promise<Record<string, unknown>> => {
+  if (USE_MOCK) {
+    return mockAggregations.data as Record<string, unknown>;
+  }
+
+  const params = new URLSearchParams();
+  appendFilterParams(params, filter);
+
+  const { data } = await api.get(`/archeo/activities/aggregations?${params.toString()}`);
+  return data.data;
 };
 
 const getDetail = async (id: string): Promise<Record<string, unknown>> => {
@@ -128,6 +154,7 @@ const resetPassword = async (payload: ResetPasswordPayload) => {
 export {
   getMapPoints,
   getList,
+  getAggregations,
   getDetail,
 
   getCsrfCookie,
