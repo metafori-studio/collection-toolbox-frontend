@@ -119,7 +119,22 @@
   },
   "filter": {
     "title": "Filter aktivít",
-    "reset": "Reset"
+    "reset": "Reset",
+    "noResults": "Žiadne výsledky",
+    "sections": {
+      "geographic": "Geografické filtre",
+      "institutional": "Inštitucionálne filtre"
+    },
+    "items": {
+      "municipality": "Obec",
+      "cadastralArea": "Kataster",
+      "district": "Okres",
+      "dating": "Datovanie",
+      "authorNs": "Autor NS",
+      "institution": "Inštitúcia",
+      "researchLeader": "Vedúci výskumu",
+      "researchYear": "Rok výskumu"
+    }
   },
   "info": {
     "title": "O projekte Archeomap",

@@ -1,0 +1,120 @@
+{
+    "data": {
+        "municipality": [
+            {
+                "value": "Banská Bystrica",
+                "label": "Banská Bystrica",
+                "count": 13
+            },
+            {
+                "value": "Banka",
+                "label": "Banka",
+                "count": 3
+            },
+            {
+                "value": "Babiná",
+                "label": "Babiná",
+                "count": 2
+            }
+        ],
+        "cadastral_area": [
+            {
+                "value": "Banská Bystrica",
+                "label": "Banská Bystrica",
+                "count": 9
+            },
+            {
+                "value": "Banka",
+                "label": "Banka",
+                "count": 3
+            },
+            {
+                "value": "Radvaň",
+                "label": "Radvaň",
+                "count": 3
+            }
+        ],
+        "district": [
+            {
+                "value": "Banská Bystrica",
+                "label": "Banská Bystrica",
+                "count": 15
+            },
+            {
+                "value": "Piešťany",
+                "label": "Piešťany",
+                "count": 3
+            },
+            {
+                "value": "Zvolen",
+                "label": "Zvolen",
+                "count": 2
+            }
+        ],
+        "dating_site_type": [
+            {
+                "value": "Novovek - 19. storočie - sídlisko",
+                "label": "Novovek - 19. storočie - sídlisko",
+                "count": 5
+            },
+            {
+                "value": "Novovek - 16. storočie - sídlisko",
+                "label": "Novovek - 16. storočie - sídlisko",
+                "count": 4
+            },
+            {
+                "value": "Novovek - 17. storočie - sídlisko",
+                "label": "Novovek - 17. storočie - sídlisko",
+                "count": 4
+            }
+        ],
+        "author_ns": [
+            {
+                "value": "Kvietok M.",
+                "label": "Kvietok M.",
+                "count": 16
+            },
+            {
+                "value": "Tomášik R.",
+                "label": "Tomášik R.",
+                "count": 7
+            }
+        ],
+        "institution": [
+            {
+                "value": "Midland Adventure, s.r.o.",
+                "label": "Midland Adventure, s.r.o.",
+                "count": 16
+            },
+            {
+                "value": "ArÚ SAV",
+                "label": "ArÚ SAV",
+                "count": 4
+            }
+        ],
+        "research_leader": [
+            {
+                "value": "Kvietková V.",
+                "label": "Kvietková V.",
+                "count": 6
+            },
+            {
+                "value": "Kvietok M.",
+                "label": "Kvietok M.",
+                "count": 6
+            }
+        ],
+        "activity_year_start": [
+            {
+                "value": "2022",
+                "label": "2022",
+                "count": 15
+            },
+            {
+                "value": "2023",
+                "label": "2023",
+                "count": 3
+            }
+        ]
+    }
+}

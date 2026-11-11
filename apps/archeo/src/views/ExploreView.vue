@@ -13,6 +13,7 @@
     />
     <FilterWidget
       v-if="filterOpen"
+      :aggregations="aggregations"
     />
     <div class="p-4 flex flex-col lg:flex-row">
       <div
@@ -43,14 +44,17 @@ import ArcheoMap, { type MapPoint } from '@/components/ArcheoMap/ArcheoMap.vue';
 import ActivityList from '@/components/ActivityList/ActivityList.vue';
 import FilterWidget from '@/components/Filter/FilterWidget.vue';
 
-import { getMapPoints, getList, type ListMeta } from '@/api';
-import { filterOpen, filterWidgetWidth } from '@/store';
+import { getMapPoints, getList, getAggregations, type ListMeta } from '@/api';
+import { filterOpen, filterWidgetWidth, filterValues } from '@/store';
+import { type AggregationOption } from '@/misc/filterTypes';
 
 const isLoadingItems = ref(true);
 
 const mapPoints = ref<MapPoint[]>([]);
 const items = ref<Record<string, unknown>[]>([]);
 const itemsMeta = ref<ListMeta>({});
+
+const aggregations = ref<Record<string, AggregationOption[]>>({});
 
 const orderBy = ref('municipality');
 const orderAsc = ref(true);
@@ -67,7 +71,7 @@ const loadMapPoints = async () => {
 const loadItems = async () => {
   isLoadingItems.value = true;
   try {
-    const response = await getList(orderBy.value, orderAsc.value, page.value);
+    const response = await getList(filterValues.value, orderBy.value, orderAsc.value, page.value);
     items.value = response.data;
     itemsMeta.value = response.meta;
   } catch {
@@ -78,9 +82,18 @@ const loadItems = async () => {
   }
 };
 
+const loadAggregations = async () => {
+  try {
+    aggregations.value = await getAggregations(filterValues.value) as Record<string, AggregationOption[]>;
+  } catch {
+    aggregations.value = {};
+  }
+};
+
 onMounted(() => {
   loadMapPoints();
   loadItems();
+  loadAggregations();
 });
 
 watch([orderBy, orderAsc], () => {
@@ -94,6 +107,18 @@ watch([orderBy, orderAsc], () => {
 
 watch(page, () => {
   loadItems();
+});
+
+watch(filterValues, () => {
+  loadAggregations();
+  // Resetting the page triggers the page watcher, which reloads items
+  if (page.value !== 1) {
+    page.value = 1;
+    return;
+  }
+  loadItems();
+}, {
+  deep: true,
 });
 
 </script>
