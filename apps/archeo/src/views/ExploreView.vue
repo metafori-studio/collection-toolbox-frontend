@@ -68,24 +68,37 @@ const loadMapPoints = async () => {
   }
 };
 
+// Request generations: only the latest request of each flow may update state
+let itemsRequestId = 0;
+let aggregationsRequestId = 0;
+
 const loadItems = async () => {
+  const requestId = ++itemsRequestId;
   isLoadingItems.value = true;
   try {
     const response = await getList(filterValues.value, orderBy.value, orderAsc.value, page.value);
+    if (requestId !== itemsRequestId) return;
     items.value = response.data;
     itemsMeta.value = response.meta;
   } catch {
+    if (requestId !== itemsRequestId) return;
     items.value = [];
     itemsMeta.value = {};
   } finally {
-    isLoadingItems.value = false;
+    if (requestId === itemsRequestId) {
+      isLoadingItems.value = false;
+    }
   }
 };
 
 const loadAggregations = async () => {
+  const requestId = ++aggregationsRequestId;
   try {
-    aggregations.value = await getAggregations(filterValues.value) as Record<string, AggregationOption[]>;
+    const response = await getAggregations(filterValues.value) as Record<string, AggregationOption[]>;
+    if (requestId !== aggregationsRequestId) return;
+    aggregations.value = response;
   } catch {
+    if (requestId !== aggregationsRequestId) return;
     aggregations.value = {};
   }
 };
