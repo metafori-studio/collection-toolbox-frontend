@@ -1,0 +1,9 @@
+creation_rules:
+  - path_regex: secrets\.development\.env$
+    age: age1vues5tdjnx0xf9uejf632qrf0spjh2f4vttc0qnautvu0fk0m3mqcgycsq
+
+  - path_regex: secrets\.staging\.env$
+    age: age1mhkx4duluzwazxaydgzksg0ptm7w6w9fw05ewnhydq25mxk7jc7qvz23h7
+
+  - path_regex: secrets\.production\.env$
+    age: age1klee2rh3vwt9q25gk6ypa46zztkp30rmn4mjmsr33hrnsnqvae3sq3rrht
