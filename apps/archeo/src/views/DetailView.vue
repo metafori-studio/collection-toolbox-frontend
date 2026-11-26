@@ -113,7 +113,7 @@
             :to="{ name: 'DetailGallery' }"
             :title="gallery.title"
             :image-count="gallery.images.length"
-            :preview="gallery.images[0]?.thumbnail || ''"
+            :preview="gallery.images[0]?.conversions.thumb || ''"
           />
         </div>
       </DetailSection>
