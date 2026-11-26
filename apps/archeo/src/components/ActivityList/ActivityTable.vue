@@ -1,5 +1,5 @@
 <template>
-  <div class="border border-neutral-200 select-none">
+  <div class="border border-neutral-200 select-none relative">
     <table class="w-full border-collapse">
       <thead class="sticky top-14 z-10">
         <tr class="bg-neutral-50 border-b border-b-neutral-200">
@@ -51,7 +51,7 @@
         <tr
           v-for="item in items"
           :key="item.id"
-          class="border-b border-neutral-100 hover:bg-neutral-50 transition-colors relative"
+          class="border-b border-neutral-100 hover:bg-neutral-50 transition-colors relative translate-x-0"
         >
           <td class="align-top py-3 px-3 text-code font-mono text-primary-500">
             <RouterLink
