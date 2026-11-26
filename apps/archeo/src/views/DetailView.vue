@@ -207,7 +207,7 @@ const tables = computed(() => [
     title: t('detail.sections.personnel'),
     items: [
       { label: t('detail.table.researchLeader'), value: detail.value.research_leader },
-      { label: t('detail.table.authorNs'), value: detail.value.author_ns },
+      { label: t('detail.table.author'), value: detail.value.author_ns?.join(', ') },
       { label: t('detail.table.institution'), value: detail.value.institution },
     ],
   },

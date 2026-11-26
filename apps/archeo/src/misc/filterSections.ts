@@ -37,7 +37,7 @@ export const filterSections: FilterSection[] = [
     items: [
       {
         id: 'author_ns',
-        label: 'filter.items.authorNs',
+        label: 'filter.items.author',
         type: 'checkbox',
         defaultValue: <string[]>[],
       },
