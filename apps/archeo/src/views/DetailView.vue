@@ -13,7 +13,7 @@
     >
       <div class="flex justify-between">
         <span class="font-mono text-xs text-primary-500 bg-primary-50 px-2 py-0.5 rounded">
-          {{ $t('detail.activityNumber', { id: detail.id }) }}
+          {{ $t('detail.activityNumber', { id: detail.activity_number }) }}
         </span>
         <ActivityLevel
           :level="localizationDegree"
