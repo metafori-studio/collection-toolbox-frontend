@@ -33,22 +33,6 @@
       </div>
 
       <DetailSection
-        v-if="detail.pdfs?.length"
-        :title="$t('detail.sections.documents')"
-      >
-        <div class="flex flex-col gap-2">
-          <PdfCard
-            v-for="(pdf, i) in detail.pdfs"
-            :key="i"
-            :name="pdf.name"
-            :available="true"
-            :size="pdf.human_readable_size"
-            @click="openAttachment(pdf)"
-          />
-        </div>
-      </DetailSection>
-
-      <DetailSection
         v-if="detail.youtube_id"
         :title="$t('detail.sections.video')"
       >
@@ -114,6 +98,22 @@
             :title="gallery.title"
             :image-count="gallery.images.length"
             :preview="gallery.images[0]?.thumbnail || ''"
+          />
+        </div>
+      </DetailSection>
+
+      <DetailSection
+        v-if="detail.pdfs?.length"
+        :title="$t('detail.sections.documents')"
+      >
+        <div class="flex flex-col gap-2">
+          <PdfCard
+            v-for="(pdf, i) in detail.pdfs"
+            :key="i"
+            :name="pdf.name"
+            :available="true"
+            :size="pdf.human_readable_size"
+            @click="openAttachment(pdf)"
           />
         </div>
       </DetailSection>
