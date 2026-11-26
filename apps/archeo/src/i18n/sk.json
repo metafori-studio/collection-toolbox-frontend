@@ -92,7 +92,7 @@
       "position": "Poloha",
       "district": "Okres",
       "researchLeader": "Vedúci výskumu",
-      "authorNs": "Autor – VD",
+      "author": "Autor VD",
       "institution": "Inštitúcia",
       "localizationDegree": "Stupeň lokalizácie",
       "hasGisLink": "Existuje GIS vrstva"
@@ -130,7 +130,7 @@
       "cadastralArea": "Kataster",
       "district": "Okres",
       "dating": "Datovanie",
-      "authorNs": "Autor NS",
+      "author": "Autor VD",
       "institution": "Inštitúcia",
       "researchLeader": "Vedúci výskumu",
       "researchYear": "Rok výskumu"
