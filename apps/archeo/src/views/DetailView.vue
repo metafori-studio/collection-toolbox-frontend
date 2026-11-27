@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col md:flex-row min-h-screen"
+    class="flex flex-col md:flex-row min-h-[calc(100dvh-3.5rem)]"
   >
     <router-view
       v-if="isLoaded"
