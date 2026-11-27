@@ -192,7 +192,7 @@
         </p>
 
         <p>Registrovaný užívateľ má voči prevádzkovateľovi právo:</p>
-        <ol class="list-[lower-alpha]">
+        <ol>
           <li>požadovať prístup k jeho osobným údajom;</li>
           <li>na opravu svojich osobných údajov;</li>
           <li>na vymazanie svojich osobných údajov;</li>
@@ -201,7 +201,7 @@
           <li>právo namietať proti spracúvaniu osobných údajov.</li>
         </ol>
         <p>Tieto práva si dotknutá osoba môže uplatniť kontaktovaním administrátora stránky:</p>
-        <ol class="list-[lower-alpha]">
+        <ol>
           <li>
             písomne zaslaním listu na adresu ArÚ SAV s uvedením mena a priezviska zodpovednej osoby ArÚ SAV,
           </li>
@@ -251,11 +251,15 @@
 
   & ul,
   & ol {
-    @apply flex flex-col gap-2 pl-6;
+    @apply flex flex-col gap-2 pl-8;
   }
 
   & ul {
     @apply list-disc;
+  }
+
+  & ol {
+    @apply list-[lower-alpha];
   }
 
   & a {
