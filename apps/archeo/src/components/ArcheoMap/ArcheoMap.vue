@@ -320,6 +320,11 @@ onMounted(() => {
   if (!mapContainer.value) return;
   map = new mapboxgl.Map({
     cooperativeGestures: true,
+    locale: {
+      'ScrollZoomBlocker.CtrlMessage': t('map.scrollZoomCtrl'),
+      'ScrollZoomBlocker.CmdMessage': t('map.scrollZoomCmd'),
+      'TouchPanBlocker.Message': t('map.touchPan'),
+    },
     container: mapContainer.value,
     style: 'mapbox://styles/mapbox/satellite-v9',
     center: MAP_DEFAULT.center,
