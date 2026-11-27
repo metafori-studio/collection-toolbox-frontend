@@ -58,7 +58,9 @@
     "center": "Vycentrovať",
     "tileTypes": {
       "orto": "Ortofotomozaika",
-      "standard": "Štandardná mapa"
+      "standard": "Štandardná mapa",
+      "historical": "Historická (vm II)",
+      "terrain": "Terénny model"
     }
   },
   "mapPopover": {

@@ -120,9 +120,11 @@ import {
 import ActivityLevel from '@/components/ActivityLevel.vue';
 import ArcheoMapPopover from './ArcheoMapPopover.vue';
 
-import pinLevel1 from '@/assets/map/pin-level1.svg';
-import pinLevel2 from '@/assets/map/pin-level2.svg';
-import pinLevel3 from '@/assets/map/pin-level3.svg';
+import createWmsStyle from '@/misc/createWmsStyle.ts';
+// Inlined as data URIs, so loading them doesn't depend on the network
+import pinLevel1 from '@/assets/map/pin-level1.svg?inline';
+import pinLevel2 from '@/assets/map/pin-level2.svg?inline';
+import pinLevel3 from '@/assets/map/pin-level3.svg?inline';
 
 export type MapPoint = {
   id: string
@@ -213,104 +215,122 @@ const popoverStyle = computed(() => ({
   transform: 'translate(-50%, -100%)',
 }));
 
-function addPoints() {
-  const pointsGeoJSON: GeoJSON.FeatureCollection = {
-    type: 'FeatureCollection',
-    features: mapPoints.map((p, i) => ({
-      type: 'Feature',
-      geometry: {
-        type: 'Point',
-        coordinates: mapPointsClean.value[i]!,
-      },
-      properties: { id: p.id, localization_degree: p.localization_degree },
-    })),
-  };
+const pointsGeoJSON = (): GeoJSON.FeatureCollection => ({
+  type: 'FeatureCollection',
+  features: mapPoints.map((p, i) => ({
+    type: 'Feature' as const,
+    geometry: {
+      type: 'Point' as const,
+      coordinates: mapPointsClean.value[i]!,
+    },
+    properties: { id: p.id, localization_degree: p.localization_degree },
+  })),
+});
 
-  const pinSrcs: [string, string][] = [
+// Pin images are decoded once and re-added to every new style.
+const pinImagesPromise = Promise.all(
+  ([
     ['pin-level1', pinLevel1],
     ['pin-level2', pinLevel2],
     ['pin-level3', pinLevel3],
-  ];
+  ] as const).map(([name, src]) => new Promise<[string, HTMLImageElement] | null>((resolve) => {
+    const img = new Image();
+    img.onload = () => resolve([name, img]);
+    img.onerror = () => resolve(null);
+    img.src = src;
+  })),
+);
 
-  Promise.all(
-    pinSrcs.map(([name, src]) => new Promise<void>((resolve) => {
-      const img = new Image();
-      img.onload = () => { map!.addImage(name, img); resolve(); };
-      img.src = src;
-    })),
-  ).then(() => {
-    map!.addSource('points', {
-      type: 'geojson',
-      data: pointsGeoJSON,
-      cluster: true,
-      clusterMaxZoom: 14,
-      clusterRadius: 50,
-    });
+// Incremented on every style load, so a stale (superseded) style load is ignored
+let styleGeneration = 0;
 
-    map!.addLayer({
-      id: 'clusters',
-      type: 'circle',
-      source: 'points',
-      filter: ['has', 'point_count'],
-      paint: {
-        'circle-color': '#171717',
-        'circle-radius': 16,
-        'circle-stroke-width': 2,
-        'circle-stroke-color': '#FFF',
-      },
-    });
+async function addPoints() {
+  const generation = ++styleGeneration;
+  const pinImages = await pinImagesPromise;
+  if (!map || generation !== styleGeneration) return;
 
-    map!.addLayer({
-      id: 'cluster-count',
-      type: 'symbol',
-      source: 'points',
-      filter: ['has', 'point_count'],
-      layout: {
-        'text-field': '{point_count_abbreviated}',
-        'text-size': 14,
-      },
-      paint: {
-        'text-color': '#fff',
-      },
-    });
+  for (const pinImage of pinImages) {
+    if (!pinImage) continue;
+    const [name, img] = pinImage;
+    if (!map.hasImage(name)) map.addImage(name, img);
+  }
 
-    map!.addLayer({
-      id: 'points',
-      type: 'symbol',
-      source: 'points',
-      filter: ['!', ['has', 'point_count']],
-      layout: {
-        'icon-image': ['match', ['get', 'localization_degree'], 2, 'pin-level2', 3, 'pin-level3', 'pin-level1'],
-        'icon-allow-overlap': true,
-        'icon-anchor': 'bottom',
-      },
-    });
+  if (map.getSource('points')) return;
 
-    map!.on('click', 'clusters', (e) => {
-      const features = map!.queryRenderedFeatures(e.point, { layers: ['clusters'] });
-      const feature = features[0];
-      if (!feature) return;
-      const clusterId = feature.properties!.cluster_id;
-      (map!.getSource('points') as mapboxgl.GeoJSONSource).getClusterExpansionZoom(clusterId, (err, zoom) => {
-        if (err || zoom == null) return;
-        map!.easeTo({ center: (feature.geometry as GeoJSON.Point).coordinates as [number, number], zoom });
-      });
-    });
-
-    map!.on('click', 'points', (e) => {
-      const feature = e.features?.[0];
-      if (!feature) return;
-      const { id, localization_degree } = feature.properties as SelectedPoint;
-      selectedPoint.value = { id, localization_degree };
-      selectedPointCoordinates.value = (feature.geometry as GeoJSON.Point).coordinates as [number, number];
-      updatePopoverPosition();
-    });
-
-    map!.on('mouseenter', 'clusters', () => { map!.getCanvas().style.cursor = 'pointer'; });
-    map!.on('mouseleave', 'clusters', () => { map!.getCanvas().style.cursor = ''; });
-    map!.on('mouseenter', 'points', () => { map!.getCanvas().style.cursor = 'pointer'; });
-    map!.on('mouseleave', 'points', () => { map!.getCanvas().style.cursor = ''; });
+  map.addSource('points', {
+    type: 'geojson',
+    data: pointsGeoJSON(),
+    cluster: true,
+    clusterMaxZoom: 14,
+    clusterRadius: 50,
   });
+
+  map.addLayer({
+    id: 'clusters',
+    type: 'circle',
+    source: 'points',
+    filter: ['has', 'point_count'],
+    paint: {
+      'circle-color': '#171717',
+      'circle-radius': 16,
+      'circle-stroke-width': 2,
+      'circle-stroke-color': '#FFF',
+    },
+  });
+
+  map.addLayer({
+    id: 'cluster-count',
+    type: 'symbol',
+    source: 'points',
+    filter: ['has', 'point_count'],
+    layout: {
+      'text-field': '{point_count_abbreviated}',
+      'text-size': 14,
+    },
+    paint: {
+      'text-color': '#fff',
+    },
+  });
+
+  map.addLayer({
+    id: 'points',
+    type: 'symbol',
+    source: 'points',
+    filter: ['!', ['has', 'point_count']],
+    layout: {
+      'icon-image': ['match', ['get', 'localization_degree'], 2, 'pin-level2', 3, 'pin-level3', 'pin-level1'],
+      'icon-allow-overlap': true,
+      'icon-anchor': 'bottom',
+    },
+  });
+}
+
+// Layer-scoped handlers survive style changes, so they are registered only once
+function registerPointHandlers(m: mapboxgl.Map) {
+  m.on('click', 'clusters', (e) => {
+    const features = m.queryRenderedFeatures(e.point, { layers: ['clusters'] });
+    const feature = features[0];
+    if (!feature) return;
+    const clusterId = feature.properties!.cluster_id;
+    (m.getSource('points') as mapboxgl.GeoJSONSource).getClusterExpansionZoom(clusterId, (err, zoom) => {
+      if (err || zoom == null) return;
+      m.easeTo({ center: (feature.geometry as GeoJSON.Point).coordinates as [number, number], zoom });
+    });
+  });
+
+  m.on('click', 'points', (e) => {
+    const feature = e.features?.[0];
+    if (!feature) return;
+    const { id, localization_degree } = feature.properties as SelectedPoint;
+    selectedPoint.value = { id, localization_degree };
+    selectedPointCoordinates.value = (feature.geometry as GeoJSON.Point).coordinates as [number, number];
+    updatePopoverPosition();
+  });
+
+  m.on('mouseenter', 'clusters', () => { m.getCanvas().style.cursor = 'pointer'; });
+  m.on('mouseleave', 'clusters', () => { m.getCanvas().style.cursor = ''; });
+  m.on('mouseenter', 'points', () => { m.getCanvas().style.cursor = 'pointer'; });
+  m.on('mouseleave', 'points', () => { m.getCanvas().style.cursor = ''; });
 }
 
 let map: mapboxgl.Map | null = null;
@@ -328,8 +348,9 @@ onMounted(() => {
     attributionControl: false,
   });
 
-  map.once('style.load', addPoints);
+  map.on('style.load', addPoints);
   map.on('move', updatePopoverPosition);
+  registerPointHandlers(map);
 
   resizeObserver = new ResizeObserver(() => {
     map?.resize();
@@ -344,38 +365,32 @@ onUnmounted(() => {
 });
 
 // Custom map controls
-const tileStyles: Record<string, string> = {
+const tileStyles: Record<string, string | mapboxgl.StyleSpecification> = {
   orto: 'mapbox://styles/mapbox/satellite-v9',
   standard: 'mapbox://styles/mapbox/streets-v12',
+  historical: createWmsStyle('https://gis.geocloud.gov.sk/geoserver/mzpsr/wms', 'vm_II', '© MŽP SR'), // II. vojenské mapovanie
+  terrain: createWmsStyle('https://zbgisws.skgeodesy.sk/zbgis_dmr_wms/service.svc/get', '0', '© ÚGKK SR'), // Terénny model 5.0
 };
 
 const tileType = ref('orto');
 const tileTypeOptions = computed(() => [
   { value: 'orto', label: t('map.tileTypes.orto') },
   { value: 'standard', label: t('map.tileTypes.standard') },
+  { value: 'historical', label: t('map.tileTypes.historical') },
+  { value: 'terrain', label: t('map.tileTypes.terrain') },
 ]);
 
 watch(() => mapPoints, () => {
   const source = map?.getSource('points') as mapboxgl.GeoJSONSource | undefined;
-  if (!source) return;
-  source.setData({
-    type: 'FeatureCollection',
-    features: mapPoints.map((p, i) => ({
-      type: 'Feature' as const,
-      geometry: {
-        type: 'Point' as const,
-        coordinates: mapPointsClean.value[i]!,
-      },
-      properties: { id: p.id, localization_degree: p.localization_degree },
-    })),
-  });
+  source?.setData(pointsGeoJSON());
 }, { deep: true });
 
 watch(tileType, (key) => {
   const style = tileStyles[key];
   if (style) {
-    map?.once('style.load', addPoints);
-    map?.setStyle(style);
+    // diff: false forces a full reload, so 'style.load' always fires and points get re-added
+    // (the font options are typed as required by mapbox-gl, undefined keeps the defaults)
+    map?.setStyle(style, { diff: false, localFontFamily: undefined, localIdeographFontFamily: undefined });
   }
 });
 
