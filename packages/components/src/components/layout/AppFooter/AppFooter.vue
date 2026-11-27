@@ -7,11 +7,15 @@
       <li
         v-for="(partner, i) in partners"
         :key="i"
-        class="max-w-[100px] md:max-w-[160px] p-2 md:p-3 bg-white rounded-lg flex items-center"
+        class="
+          max-w-[100px] md:max-w-[160px] max-h-[60px] md:max-h-[120px] shrink-0
+          bg-white rounded-lg p-2 md:p-3
+          flex items-center justify-center"
       >
         <img
           :src="partner.src"
           :alt="partner.name"
+          class="max-w-full max-h-full"
         >
       </li>
     </ul>
