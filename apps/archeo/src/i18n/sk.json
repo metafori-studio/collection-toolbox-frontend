@@ -177,5 +177,8 @@
       "contactUs": "Pre registráciu nás kontaktujte"
     },
     "unknownError": "Neznáma chyba"
+  },
+  "footer": {
+    "legalText": "Tento repozitár vznikol vďaka finančnej podpore ESFRI výskumných infraštruktúr Ministerstva školstva, výskumu, vývoja a mládeže Slovenskej republiky a národného konzorcia DARIAH-SK."
   }
 }
