@@ -9,8 +9,8 @@
         {{ $t('gallery.back') }}
       </BaseButton>
       <div
-        v-for="(gallery, i) in galleries"
-        :key="i"
+        v-for="gallery in galleries"
+        :key="gallery.id"
         class="flex flex-col gap-4"
       >
         <h2 class="text-heading-4">
@@ -18,10 +18,10 @@
         </h2>
         <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
           <img
-            v-for="(image, j) in gallery.images"
-            :key="j"
-            :src="image.thumbnail"
-            :alt="image.title"
+            v-for="image in gallery.images"
+            :key="image.id"
+            :src="image.conversions.thumb"
+            :alt="image.name"
             class="w-full aspect-square border border-neutral-200 object-cover rounded-lg"
           >
         </div>
@@ -37,8 +37,17 @@ const {
   galleries,
 } = defineProps<{
   galleries: {
+    id: number
     title: string
-    images: { title: string; thumbnail: string; full: string }[]
+    images: {
+      id: number
+      name: string
+      file_name: string
+      human_readable_size: string
+      mime_type: string
+      url: string
+      conversions: { thumb: string }
+    }[]
   }[]
 }>();
 </script>

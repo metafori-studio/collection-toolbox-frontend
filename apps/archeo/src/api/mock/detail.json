@@ -62,32 +62,58 @@
         ],
         "galleries": [
             {
-                "title": "Nálezisko",
+                "id": 5,
+                "title": "Test",
                 "images": [
                     {
-                        "title": "Fotka 1",
-                        "thumbnail": "https://fastly.picsum.photos/id/423/400/400.jpg?hmac=0Y_2e7lsenUvr1NfNU0qypVFPkACWzUNDqq-KE_aqic",
-                        "full": "https://fastly.picsum.photos/id/791/1200/800.jpg?hmac=kZdqKhNSfF_pcDO8i2BaLww4I8h_phrKmi8BCuc_tEY"
+                        "id": 119,
+                        "name": "ChatGPT Image Oct 19, 2026, 09_46_50 PM",
+                        "file_name": "ChatGPT-Image-Oct-19,-2026,-09_46_50-PM.jpg",
+                        "human_readable_size": "535.56 KB",
+                        "mime_type": "image/jpeg",
+                        "url": "https://fastly.picsum.photos/id/58/1200/1200.jpg?hmac=XEB3FhApoFF1AqRN4v1e1pfSVM7cD3fy9lmORXlgiu0",
+                        "conversions": {
+                            "thumb": "https://fastly.picsum.photos/id/58/200/200.jpg?hmac=aol3E3KC2fpsVXlPhgxLR9-CLoUQa-kbswhZx-gYzCE"
+                        }
                     },
                     {
-                        "title": "Fotka 2",
-                        "thumbnail": "https://fastly.picsum.photos/id/846/400/400.jpg?hmac=Xa6BwyUkSx5JX-S2u2AeU-a-77WUaNARUqUl4JEuEhE",
-                        "full": "https://fastly.picsum.photos/id/791/1200/800.jpg?hmac=kZdqKhNSfF_pcDO8i2BaLww4I8h_phrKmi8BCuc_tEY"
+                        "id": 120,
+                        "name": "mic-ch-101-f3-sam1-1",
+                        "file_name": "mic-ch-101-f3-sam1-1.jpg",
+                        "human_readable_size": "50.18 KB",
+                        "mime_type": "image/jpeg",
+                        "url": "https://fastly.picsum.photos/id/58/1200/1200.jpg?hmac=XEB3FhApoFF1AqRN4v1e1pfSVM7cD3fy9lmORXlgiu0",
+                        "conversions": {
+                            "thumb": "https://fastly.picsum.photos/id/58/200/200.jpg?hmac=aol3E3KC2fpsVXlPhgxLR9-CLoUQa-kbswhZx-gYzCE"
+                        }
                     }
                 ]
             },
             {
-                "title": "Plány",
+                "id": 6,
+                "title": "Test galeria 2",
                 "images": [
                     {
-                        "title": "Plán 1",
-                        "thumbnail": "https://fastly.picsum.photos/id/423/400/400.jpg?hmac=0Y_2e7lsenUvr1NfNU0qypVFPkACWzUNDqq-KE_aqic",
-                        "full": "https://fastly.picsum.photos/id/791/1200/800.jpg?hmac=kZdqKhNSfF_pcDO8i2BaLww4I8h_phrKmi8BCuc_tEY"
+                        "id": 122,
+                        "name": "a1871bc88770db8f13706b2c889e0c99",
+                        "file_name": "a1871bc88770db8f13706b2c889e0c99.jpg",
+                        "human_readable_size": "22.17 KB",
+                        "mime_type": "image/jpeg",
+                        "url": "https://fastly.picsum.photos/id/58/1200/1200.jpg?hmac=XEB3FhApoFF1AqRN4v1e1pfSVM7cD3fy9lmORXlgiu0",
+                        "conversions": {
+                            "thumb": "https://fastly.picsum.photos/id/58/200/200.jpg?hmac=aol3E3KC2fpsVXlPhgxLR9-CLoUQa-kbswhZx-gYzCE"
+                        }
                     },
                     {
-                        "title": "Plán 2",
-                        "thumbnail": "https://fastly.picsum.photos/id/846/400/400.jpg?hmac=Xa6BwyUkSx5JX-S2u2AeU-a-77WUaNARUqUl4JEuEhE",
-                        "full": "https://fastly.picsum.photos/id/791/1200/800.jpg?hmac=kZdqKhNSfF_pcDO8i2BaLww4I8h_phrKmi8BCuc_tEY"
+                        "id": 121,
+                        "name": "mic-ch-101-f3-sam1-1",
+                        "file_name": "mic-ch-101-f3-sam1-1.jpg",
+                        "human_readable_size": "50.18 KB",
+                        "mime_type": "image/jpeg",
+                        "url": "https://fastly.picsum.photos/id/58/1200/1200.jpg?hmac=XEB3FhApoFF1AqRN4v1e1pfSVM7cD3fy9lmORXlgiu0",
+                        "conversions": {
+                            "thumb": "https://fastly.picsum.photos/id/58/200/200.jpg?hmac=aol3E3KC2fpsVXlPhgxLR9-CLoUQa-kbswhZx-gYzCE"
+                        }
                     }
                 ]
             }
