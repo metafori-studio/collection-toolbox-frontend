@@ -174,7 +174,7 @@
       "submit": "Potvrdiť"
     },
     "signup": {
-      "contactUs": "Pre registráciu nás kontaktujte"
+      "contactUs": "Pre registráciu nás kontaktujte na {email}"
     },
     "unknownError": "Neznáma chyba"
   }
