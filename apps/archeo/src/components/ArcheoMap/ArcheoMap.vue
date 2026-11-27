@@ -120,6 +120,7 @@ import {
 import ActivityLevel from '@/components/ActivityLevel.vue';
 import ArcheoMapPopover from './ArcheoMapPopover.vue';
 
+import createWmsStyle from '@/misc/createWmsStyle.ts';
 import pinLevel1 from '@/assets/map/pin-level1.svg';
 import pinLevel2 from '@/assets/map/pin-level2.svg';
 import pinLevel3 from '@/assets/map/pin-level3.svg';
@@ -363,12 +364,16 @@ onUnmounted(() => {
 const tileStyles: Record<string, string | mapboxgl.StyleSpecification> = {
   orto: 'mapbox://styles/mapbox/satellite-v9',
   standard: 'mapbox://styles/mapbox/streets-v12',
+  historical: createWmsStyle('https://gis.geocloud.gov.sk/geoserver/mzpsr/wms', 'vm_II', '© MŽP SR'), // II. vojenské mapovanie
+  terrain: createWmsStyle('https://zbgisws.skgeodesy.sk/zbgis_dmr_wms/service.svc/get', '0', '© ÚGKK SR'), // Terénny model 5.0
 };
 
 const tileType = ref('orto');
 const tileTypeOptions = computed(() => [
   { value: 'orto', label: t('map.tileTypes.orto') },
   { value: 'standard', label: t('map.tileTypes.standard') },
+  { value: 'historical', label: t('map.tileTypes.historical') },
+  { value: 'terrain', label: t('map.tileTypes.terrain') },
 ]);
 
 watch(() => mapPoints, () => {
