@@ -121,9 +121,10 @@ import ActivityLevel from '@/components/ActivityLevel.vue';
 import ArcheoMapPopover from './ArcheoMapPopover.vue';
 
 import createWmsStyle from '@/misc/createWmsStyle.ts';
-import pinLevel1 from '@/assets/map/pin-level1.svg';
-import pinLevel2 from '@/assets/map/pin-level2.svg';
-import pinLevel3 from '@/assets/map/pin-level3.svg';
+// Inlined as data URIs, so loading them doesn't depend on the network
+import pinLevel1 from '@/assets/map/pin-level1.svg?inline';
+import pinLevel2 from '@/assets/map/pin-level2.svg?inline';
+import pinLevel3 from '@/assets/map/pin-level3.svg?inline';
 
 export type MapPoint = {
   id: string
@@ -226,15 +227,16 @@ const pointsGeoJSON = (): GeoJSON.FeatureCollection => ({
   })),
 });
 
-// Pin images are loaded once and re-added to every new style
+// Pin images are decoded once and re-added to every new style.
 const pinImagesPromise = Promise.all(
   ([
     ['pin-level1', pinLevel1],
     ['pin-level2', pinLevel2],
     ['pin-level3', pinLevel3],
-  ] as const).map(([name, src]) => new Promise<[string, HTMLImageElement]>((resolve) => {
+  ] as const).map(([name, src]) => new Promise<[string, HTMLImageElement] | null>((resolve) => {
     const img = new Image();
     img.onload = () => resolve([name, img]);
+    img.onerror = () => resolve(null);
     img.src = src;
   })),
 );
@@ -247,7 +249,9 @@ async function addPoints() {
   const pinImages = await pinImagesPromise;
   if (!map || generation !== styleGeneration) return;
 
-  for (const [name, img] of pinImages) {
+  for (const pinImage of pinImages) {
+    if (!pinImage) continue;
+    const [name, img] = pinImage;
     if (!map.hasImage(name)) map.addImage(name, img);
   }
 
